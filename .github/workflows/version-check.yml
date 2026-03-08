@@ -32,10 +32,20 @@ jobs:
       - name: Check version was bumped
         run: |
           CURRENT_VERSION=$(cat VERSION)
-          PREV_VERSION=$(git log --format=%s -n 2 | head -n 1 | grep -oE '[0-9]+\.[0-9]+\.[0-9]+' || echo "")
+          
+          # Get number of commits
+          COMMIT_COUNT=$(git rev-list --count HEAD)
+          
+          if [ "$COMMIT_COUNT" -eq 1 ]; then
+            echo "First commit - allowing"
+            exit 0
+          fi
+          
+          # Get previous version from previous commit
+          PREV_VERSION=$(git show HEAD~1:VERSION 2>/dev/null || echo "")
           
           if [ -z "$PREV_VERSION" ]; then
-            echo "First version bump commit - allowing"
+            echo "Previous VERSION not found - allowing"
             exit 0
           fi
           
