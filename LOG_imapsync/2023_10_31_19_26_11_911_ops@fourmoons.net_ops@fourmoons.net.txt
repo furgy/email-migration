@@ -1,0 +1,1070 @@
+Here is imapsync 2.229 on host Shawns-MacBook-Pro-2.local, a darwin system with 1.8/16.0 free GiB of RAM, 61.73% used by processes.
+with Perl 5.30.3 and Mail::IMAPClient 3.43
+Transfer started at Tuesday 31 October 2023-10-31 19:26:11 -0700 MST
+PID is 41038 my PPID is 30935
+Log file is LOG_imapsync/2023_10_31_19_26_11_911_ops@fourmoons.net_ops@fourmoons.net.txt ( to change it, use --logfile path ; or use --nolog to turn off logging )
+Load is 3.55 2.90 3.17 on 10 cores
+Current directory is /Users/shawn/Code/email/email-migration
+Real user id is shawn (uid 501)
+Effective user id is shawn (euid 501)
+$RCSfile: imapsync,v $ $Revision: 2.229 $ $Date: 2022/09/14 18:08:24 $ 
+Command line used, run by perl:
+/usr/local/bin/imapsync --host1 mail.fourmoons.net --host2 redbull.mxrouting.net --user1 ops@fourmoons.net --password1 MASKED --user2 ops@fourmoons.net --password2 MASKED --nosslcheck --delete2duplicates
+Temp directory is /var/folders/lj/pt22s9q55t1925h7_g57tt5h0000gn/T ( to change it use --tmpdir dirpath )
+kill -QUIT 41038 # special behavior: call to sub catch_exit
+kill -TERM 41038 # special behavior: call to sub catch_exit
+kill -INT 41038 # special behavior: call to sub catch_reconnect
+kill -HUP 41038 # special behavior: call to sub catch_print
+kill -USR1 41038 # special behavior: call to sub toggle_sleep
+Removing old /var/folders/lj/pt22s9q55t1925h7_g57tt5h0000gn/T/imapsync.pid since its PID 40955 is not running anymore (oo-killed?)
+Removed old /var/folders/lj/pt22s9q55t1925h7_g57tt5h0000gn/T/imapsync.pid
+PID file is /var/folders/lj/pt22s9q55t1925h7_g57tt5h0000gn/T/imapsync.pid ( to change it, use --pidfile filepath ; to avoid it use --pidfile "" )
+Writing my PID 41038 in /var/folders/lj/pt22s9q55t1925h7_g57tt5h0000gn/T/imapsync.pid
+Writing also my logfile name in /var/folders/lj/pt22s9q55t1925h7_g57tt5h0000gn/T/imapsync.pid : LOG_imapsync/2023_10_31_19_26_11_911_ops@fourmoons.net_ops@fourmoons.net.txt
+Modules version list ( use --no-modulesversion to turn off printing this Perl modules list ):
+Authen::NTLM         1.09
+CGI                  4.48
+Compress::Zlib       2.084
+Crypt::OpenSSL::RSA  0.31
+Data::Uniqid         0.12
+Digest::HMAC_MD5     1.01
+Digest::HMAC_SHA1    1.03
+Digest::MD5          2.55
+Encode               3.01
+Encode::IMAPUTF7     1.05
+File::Copy::Recursive 0.45
+File::Spec           3.78
+Getopt::Long         2.5
+HTML::Entities       3.69
+IO::Socket           1.40
+IO::Socket::INET     1.40
+IO::Socket::INET6    2.72
+IO::Socket::IP       0.39
+IO::Socket::SSL      2.068
+IO::Tee              0.65
+JSON                 4.02
+JSON::WebToken       0.05
+LWP                  6.44
+MIME::Base64         3.15
+Mail::IMAPClient     3.43
+Net::Ping            2.71
+Net::SSLeay          1.88
+Term::ReadKey        2.38
+Test::MockObject     1.20200122
+Time::HiRes          1.976
+URI::Escape          3.31
+Unicode::String      2.10
+
+Info: will resync flags for already transferred messages. Use --noresyncflags to not resync flags.
+Info: will act as --uidexpunge2
+Info: turned ON syncinternaldates, will set the internal dates (arrival dates) on host2 same as host1.
+Host1: will try to use LOGIN authentication on host1
+Host2: will try to use LOGIN authentication on host2
+Host1: imap connection timeout is 120 seconds
+Host2: imap connection timeout is 120 seconds
+Host1: imap connection keepalive is on on host1. Use --nokeepalive1 to disable it.
+Host2: imap connection keepalive is on on host2. Use --nokeepalive2 to disable it.
+Host1: IMAP server [mail.fourmoons.net] port [143] user [ops@fourmoons.net]
+Host2: IMAP server [redbull.mxrouting.net] port [143] user [ops@fourmoons.net]
+Host1: connecting and login on host1 [mail.fourmoons.net] port [143] with user [ops@fourmoons.net]
+Host1 IP address: 108.167.140.95 Local IP address: 192.168.1.34
+Host1 banner: * OK [CAPABILITY IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE NAMESPACE LITERAL+ STARTTLS AUTH=PLAIN AUTH=LOGIN] Dovecot ready.
+Host1 capability before authentication: IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE NAMESPACE LITERAL+ STARTTLS AUTH=PLAIN AUTH=LOGIN AUTH
+Host1: going to ssl because STARTTLS is in CAPABILITY. Use --notls1 or --notls2 to avoid that behavior
+DEBUG: .../IO/Socket/SSL.pm:1177: global error: Undefined SSL object
+Host1: Socket successfully converted to SSL
+Host1: mail.fourmoons.net says it has CAPABILITY for AUTHENTICATE LOGIN
+Host1: success login on [mail.fourmoons.net] with user [ops@fourmoons.net] auth [LOGIN] or [LOGIN]
+Host2: connecting and login on host2 [redbull.mxrouting.net] port [143] with user [ops@fourmoons.net]
+Host2 IP address: 45.43.208.33 Local IP address: 192.168.1.34
+Host2 banner: * OK [CAPABILITY IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE LITERAL+ STARTTLS AUTH=PLAIN] Dovecot DA ready.
+Host2 capability before authentication: IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE LITERAL+ STARTTLS AUTH=PLAIN AUTH
+Host2: going to ssl because STARTTLS is in CAPABILITY. Use --notls1 or --notls2 to avoid that behavior
+DEBUG: .../IO/Socket/SSL.pm:1177: global error: Undefined SSL object
+Host2: Socket successfully converted to SSL
+Host2: success login on [redbull.mxrouting.net] with user [ops@fourmoons.net] auth [LOGIN] or [LOGIN]
+Host1: state Authenticated
+Host2: state Authenticated
+Host1 capability once authenticated: IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE SORT SORT=DISPLAY THREAD=REFERENCES THREAD=REFS THREAD=ORDEREDSUBJECT MULTIAPPEND URL-PARTIAL CATENATE UNSELECT CHILDREN NAMESPACE UIDPLUS LIST-EXTENDED I18NLEVEL=1 CONDSTORE QRESYNC ESEARCH ESORT SEARCHRES WITHIN CONTEXT=SEARCH LIST-STATUS BINARY MOVE SNIPPET=FUZZY PREVIEW=FUZZY PREVIEW STATUS=SIZE SAVEDATE NAMESPACE LITERAL+ NOTIFY SPECIAL-USE COMPRESS=DEFLATE QUOTA THREAD I18NLEVEL CONTEXT SNIPPET PREVIEW STATUS COMPRESS
+Host2 capability once authenticated: IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE SORT SORT=DISPLAY THREAD=REFERENCES THREAD=REFS THREAD=ORDEREDSUBJECT MULTIAPPEND URL-PARTIAL CATENATE UNSELECT CHILDREN NAMESPACE UIDPLUS LIST-EXTENDED I18NLEVEL=1 CONDSTORE QRESYNC ESEARCH ESORT SEARCHRES WITHIN CONTEXT=SEARCH LIST-STATUS BINARY MOVE SNIPPET=FUZZY PREVIEW=FUZZY PREVIEW STATUS=SIZE SAVEDATE LITERAL+ NOTIFY SPECIAL-USE XAPPLEPUSHSERVICE QUOTA THREAD I18NLEVEL CONTEXT SNIPPET PREVIEW STATUS
+Host1: found ID capability. Sending/receiving ID, presented in raw IMAP for now.
+In order to avoid sending/receiving ID, use option --noid
+Sending: 6 ID ("name" "imapsync" "version" "2.229" "os" "darwin" "vendor" "Gilles LAMIRAL" "support-url" "https://imapsync.lamiral.info/" "date" "14-Sep-2022 18:08:24 +0000" "side" "host1")
+Sent 182 bytes
+Read: 	* ID ("name" "Dovecot")
+  	6 OK ID completed (0.001 + 0.000 secs).
+Host2: found ID capability. Sending/receiving ID, presented in raw IMAP for now.
+In order to avoid sending/receiving ID, use option --noid
+Sending: 6 ID ("name" "imapsync" "version" "2.229" "os" "darwin" "vendor" "Gilles LAMIRAL" "support-url" "https://imapsync.lamiral.info/" "date" "14-Sep-2022 18:08:24 +0000" "side" "host2")
+Sent 182 bytes
+Read: 	* ID ("name" "Dovecot")
+  	6 OK ID completed (0.001 + 0.000 secs).
+
+Host2: QUOTA capability found, presented in raw IMAP on next lines
+Sending: 7 GETQUOTAROOT INBOX
+Sent 22 bytes
+Read: 	7 OK No quota (0.001 + 0.000 secs).
+
+Host2: Quota current storage is 0 bytes. Limit is 0 bytes. So 0 % full
+Host1: Compression is off. Use --compress1 to allow compression on host1
+Host2: Compression is off. Use --compress2 to allow compression on host2
+Host1: found 45 folders.
+Host2: found 17 folders.
+Host1: guessing separator from folder listing: [.]
+Host1: separator given by NAMESPACE: [.]
+Host2: guessing separator from folder listing: [.]
+Host2: separator given by NAMESPACE: [.]
+Host1: guessing prefix from folder listing: [INBOX.]
+Host1: prefix given by NAMESPACE: [INBOX.]
+Host2: guessing prefix from folder listing: []
+Host2: prefix given by NAMESPACE: []
+Host1: separator and prefix: [.][INBOX.]
+Host2: separator and prefix: [.][]
+Including all folders found by default. Use --subscribed or --folder or --folderrec or --include to select specific folders. Use --exclude to unselect specific folders.
+Host1: Checking wanted folders exist. Use --nocheckfoldersexist to avoid this check (shared of public namespace targeted).
+Host1: Checking wanted folders are selectable. Use --nocheckselectable to avoid this check.
+Turned off automapping folders ( use --automap to turn on automapping )
+
+++++ Listing folders
+All foldernames are presented between brackets like [X] where X is the foldername.
+When a foldername contains non-ASCII characters it is presented in the form
+[X] = [Y] where
+X is the imap foldername you have to use in command line options and
+Y is the utf8 output just printed for convenience, to recognize it.
+
+Host1: folders list (first the raw imap format then the [X] = [Y]):
+* LIST (\HasChildren) "." INBOX
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.Martello_Mariconi - Cahokia"
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.ROI Turnkey"
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.Investors Choice - Cahokia"
+* LIST (\HasNoChildren) "." "INBOX.Apartments (Generic)"
+* LIST (\HasNoChildren \UnMarked \Junk) "." INBOX.spam
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.To Be Filed"
+* LIST (\HasNoChildren \UnMarked) "." INBOX.Action
+* LIST (\HasChildren \UnMarked) "." "INBOX.Properties - Indiana"
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.Properties - Indiana.554 Kentucky"
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.Properties - Arizona"
+* LIST (\HasChildren \UnMarked) "." "INBOX.Properties - Florida"
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.Properties - Florida.Ocala"
+* LIST (\HasNoChildren \UnMarked) "." INBOX.Starred
+* LIST (\HasChildren \UnMarked) "." INBOX.[Airmail]
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.[Airmail].Send Later"
+* LIST (\HasNoChildren \UnMarked) "." INBOX.[Airmail].Snooze
+* LIST (\HasNoChildren \UnMarked) "." INBOX.[Airmail].Done
+* LIST (\HasNoChildren \UnMarked) "." INBOX.[Airmail].Memo
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.[Airmail].To Do"
+* LIST (\HasNoChildren) "." INBOX.Anderson
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.SM - Flamingo"
+* LIST (\HasNoChildren \UnMarked) "." INBOX.Hawk
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.SM - Hawk"
+* LIST (\HasNoChildren) "." INBOX.Investing
+* LIST (\HasNoChildren \UnMarked) "." INBOX.RREI
+* LIST (\HasNoChildren) "." INBOX.Cozy
+* LIST (\HasNoChildren \UnMarked) "." INBOX.Stessa
+* LIST (\HasNoChildren) "." INBOX.Housefolios
+* LIST (\HasNoChildren) "." INBOX.BiggerPockets
+* LIST (\HasNoChildren) "." "INBOX.Chuck Baer"
+* LIST (\HasNoChildren \UnMarked) "." INBOX.PMI
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.Real Wealth Network"
+* LIST (\HasNoChildren \UnMarked) "." INBOX.Roofstock
+* LIST (\HasNoChildren \UnMarked) "." INBOX.Renshaw
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.Realty Medics"
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.Realty Doctors"
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.Property Boss"
+* LIST (\HasNoChildren \UnMarked) "." INBOX.Olmstead
+* LIST (\HasNoChildren) "." INBOX.Allstar
+* LIST (\HasNoChildren \Archive) "." INBOX.Archive
+* LIST (\HasNoChildren \Drafts) "." INBOX.Drafts
+* LIST (\HasNoChildren \UnMarked \Sent) "." INBOX.Sent
+* LIST (\HasNoChildren \UnMarked) "." INBOX.Junk
+* LIST (\HasNoChildren \UnMarked \Trash) "." INBOX.Trash
+56 OK List completed (0.001 + 0.000 secs).
+
+[INBOX]
+[INBOX.Action]
+[INBOX.Allstar]
+[INBOX.Anderson]
+[INBOX.Apartments (Generic)]
+[INBOX.Archive]
+[INBOX.BiggerPockets]
+[INBOX.Chuck Baer]
+[INBOX.Cozy]
+[INBOX.Drafts]
+[INBOX.Hawk]
+[INBOX.Housefolios]
+[INBOX.Investing]
+[INBOX.Investors Choice - Cahokia]
+[INBOX.Junk]
+[INBOX.Martello_Mariconi - Cahokia]
+[INBOX.Olmstead]
+[INBOX.PMI]
+[INBOX.Properties - Arizona]
+[INBOX.Properties - Florida]
+[INBOX.Properties - Florida.Ocala]
+[INBOX.Properties - Indiana]
+[INBOX.Properties - Indiana.554 Kentucky]
+[INBOX.Property Boss]
+[INBOX.ROI Turnkey]
+[INBOX.RREI]
+[INBOX.Real Wealth Network]
+[INBOX.Realty Doctors]
+[INBOX.Realty Medics]
+[INBOX.Renshaw]
+[INBOX.Roofstock]
+[INBOX.SM - Flamingo]
+[INBOX.SM - Hawk]
+[INBOX.Sent]
+[INBOX.Starred]
+[INBOX.Stessa]
+[INBOX.To Be Filed]
+[INBOX.Trash]
+[INBOX.[Airmail]]
+[INBOX.[Airmail].Done]
+[INBOX.[Airmail].Memo]
+[INBOX.[Airmail].Send Later]
+[INBOX.[Airmail].Snooze]
+[INBOX.[Airmail].To Do]
+[INBOX.spam]
+
+Host2: folders list (first the raw imap format then the [X] = [Y]):
+* LIST (\HasNoChildren) "." Investing
+* LIST (\HasNoChildren) "." Housefolios
+* LIST (\HasNoChildren \UnMarked) "." Hawk
+* LIST (\HasNoChildren) "." Cozy
+* LIST (\HasNoChildren) "." "Chuck Baer"
+* LIST (\HasNoChildren) "." BiggerPockets
+* LIST (\HasNoChildren \Archive) "." Archive
+* LIST (\HasNoChildren) "." "Apartments (Generic)"
+* LIST (\HasNoChildren) "." Anderson
+* LIST (\HasNoChildren) "." Allstar
+* LIST (\HasNoChildren \UnMarked) "." Action
+* LIST (\HasNoChildren \UnMarked \Trash) "." Trash
+* LIST (\HasNoChildren \UnMarked \Sent) "." Sent
+* LIST (\HasNoChildren \UnMarked \Junk) "." Junk
+* LIST (\HasNoChildren \Drafts) "." Drafts
+* LIST (\HasNoChildren \UnMarked) "." INBOX.spam
+* LIST (\HasChildren) "." INBOX
+12 OK List completed (0.001 + 0.000 secs).
+
+[Action]
+[Allstar]
+[Anderson]
+[Apartments (Generic)]
+[Archive]
+[BiggerPockets]
+[Chuck Baer]
+[Cozy]
+[Drafts]
+[Hawk]
+[Housefolios]
+[INBOX]
+[INBOX.spam]
+[Investing]
+[Junk]
+[Sent]
+[Trash]
+
+Checking SEARCH ALL works on both accounts. To avoid that check, use --nochecknoabletosearch
+Host1: checking if SEARCH ALL works on INBOX
+Host1: folder [INBOX] has 59 messages mentioned by SELECT
+Host1: folder [INBOX] has 59 messages found by SEARCH ALL
+Host1: folder [INBOX] has the same messages count (59) by SELECT and SEARCH ALL
+Host2: checking if SEARCH ALL works on INBOX
+Host2: folder [INBOX] has 59 messages mentioned by SELECT
+Host2: folder [INBOX] has 59 messages found by SEARCH ALL
+Host2: folder [INBOX] has the same messages count (59) by SELECT and SEARCH ALL
+Good! SEARCH ALL works on both accounts.
+
+Folders sizes before the synchronization. It can take some time. Be patient.
+You can remove foldersizes listings by using "--nofoldersizes" and "--nofoldersizesatend"
+but then you will also lose the ETA (Estimation Time of Arrival) given after each message copy.
+Host1 folder    1/45 [INBOX]                             Size:  12658867 Messages:    59 Biggest:   5737115
+Host2 folder    1/45 [INBOX]                             Size:  12658867 Messages:    59 Biggest:   5737115
+Host2-Host1                                                            0               0                  0
+
+Host1 folder    2/45 [INBOX.Action]                      Size:         0 Messages:     0 Biggest:         0
+Host2 folder    2/45 [Action]                            Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder    3/45 [INBOX.Allstar]                     Size:  52398649 Messages:   332 Biggest:  16219876
+Host2 folder    3/45 [Allstar]                           Size:  52398649 Messages:   332 Biggest:  16219876
+Host2-Host1                                                            0               0                  0
+
+Host1 folder    4/45 [INBOX.Anderson]                    Size:    158131 Messages:     3 Biggest:     72381
+Host2 folder    4/45 [Anderson]                          Size:    158131 Messages:     3 Biggest:     72381
+Host2-Host1                                                            0               0                  0
+
+Host1 folder    5/45 [INBOX.Apartments (Generic)]        Size:   1840667 Messages:    46 Biggest:     57465
+Host2 folder    5/45 [Apartments (Generic)]              Size:   1840667 Messages:    46 Biggest:     57465
+Host2-Host1                                                            0               0                  0
+
+Host1 folder    6/45 [INBOX.Archive]                     Size:     36970 Messages:     1 Biggest:     36970
+Host2 folder    6/45 [Archive]                           Size:     36970 Messages:     1 Biggest:     36970
+Host2-Host1                                                            0               0                  0
+
+Host1 folder    7/45 [INBOX.BiggerPockets]               Size:    303804 Messages:     2 Biggest:    152403
+Host2 folder    7/45 [BiggerPockets]                     Size:    303804 Messages:     2 Biggest:    152403
+Host2-Host1                                                            0               0                  0
+
+Host1 folder    8/45 [INBOX.Chuck Baer]                  Size:  47722257 Messages:   142 Biggest:   7878438
+Host2 folder    8/45 [Chuck Baer]                        Size:  47722257 Messages:   142 Biggest:   7878438
+Host2-Host1                                                            0               0                  0
+
+Host1 folder    9/45 [INBOX.Cozy]                        Size:    587364 Messages:    16 Biggest:     40823
+Host2 folder    9/45 [Cozy]                              Size:    587364 Messages:    16 Biggest:     40823
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   10/45 [INBOX.Drafts]                      Size:     28207 Messages:     1 Biggest:     28207
+Host2 folder   10/45 [Drafts]                            Size:     28207 Messages:     1 Biggest:     28207
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   11/45 [INBOX.Hawk]                        Size:         0 Messages:     0 Biggest:         0
+Host2 folder   11/45 [Hawk]                              Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   12/45 [INBOX.Housefolios]                 Size:   2129882 Messages:    30 Biggest:    131602
+Host2 folder   12/45 [Housefolios]                       Size:   1981479 Messages:    28 Biggest:    131602
+Host2-Host1                                                      -148403              -2                  0
+
+Host1 folder   13/45 [INBOX.Investing]                   Size: 147417604 Messages:   358 Biggest:  17252863
+Host2 folder   13/45 [Investing]                         Size:  36858544 Messages:    56 Biggest:  17252863
+Host2-Host1                                                    -110559060            -302                  0
+
+Host1 folder   14/45 [INBOX.Investors Choice - Cahokia]  Size:    426548 Messages:    12 Biggest:    122225
+Host2 folder   14/45 [Investors Choice - Cahokia]         does not exist yet
+Host2-Host1                                                      -426548             -12            -122225
+
+Host1 folder   15/45 [INBOX.Junk]                        Size:         0 Messages:     0 Biggest:         0
+Host2 folder   15/45 [Junk]                              Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   16/45 [INBOX.Martello_Mariconi - Cahokia] Size: 109036521 Messages:   281 Biggest:  21515769
+Host2 folder   16/45 [Martello_Mariconi - Cahokia]        does not exist yet
+Host2-Host1                                                    -109036521            -281          -21515769
+
+Host1 folder   17/45 [INBOX.Olmstead]                    Size:   7482311 Messages:    28 Biggest:   1485452
+Host2 folder   17/45 [Olmstead]                           does not exist yet
+Host2-Host1                                                     -7482311             -28           -1485452
+
+Host1 folder   18/45 [INBOX.PMI]                         Size:  29487595 Messages:   257 Biggest:   7675140
+Host2 folder   18/45 [PMI]                                does not exist yet
+Host2-Host1                                                    -29487595            -257           -7675140
+
+Host1 folder   19/45 [INBOX.Properties - Arizona]        Size:    270520 Messages:    14 Biggest:     41425
+Host2 folder   19/45 [Properties - Arizona]               does not exist yet
+Host2-Host1                                                      -270520             -14             -41425
+
+Host1 folder   20/45 [INBOX.Properties - Florida]        Size:  18323133 Messages:   131 Biggest:   1900289
+Host2 folder   20/45 [Properties - Florida]               does not exist yet
+Host2-Host1                                                    -18323133            -131           -1900289
+
+Host1 folder   21/45 [INBOX.Properties - Florida.Ocala]  Size:  14337520 Messages:    65 Biggest:   2208138
+Host2 folder   21/45 [Properties - Florida.Ocala]         does not exist yet
+Host2-Host1                                                    -14337520             -65           -2208138
+
+Host1 folder   22/45 [INBOX.Properties - Indiana]        Size:  12034666 Messages:    21 Biggest:   5495521
+Host2 folder   22/45 [Properties - Indiana]               does not exist yet
+Host2-Host1                                                    -12034666             -21           -5495521
+
+Host1 folder   23/45 [INBOX.Properties - Indiana.554 Kentucky] Size:   5525606 Messages:     7 Biggest:   5492083
+Host2 folder   23/45 [Properties - Indiana.554 Kentucky]  does not exist yet
+Host2-Host1                                                     -5525606              -7           -5492083
+
+Host1 folder   24/45 [INBOX.Property Boss]               Size:  14968592 Messages:    20 Biggest:   8653099
+Host2 folder   24/45 [Property Boss]                      does not exist yet
+Host2-Host1                                                    -14968592             -20           -8653099
+
+Host1 folder   25/45 [INBOX.ROI Turnkey]                 Size:     75411 Messages:     1 Biggest:     75411
+Host2 folder   25/45 [ROI Turnkey]                        does not exist yet
+Host2-Host1                                                       -75411              -1             -75411
+
+Host1 folder   26/45 [INBOX.RREI]                        Size:    992117 Messages:     3 Biggest:    927117
+Host2 folder   26/45 [RREI]                               does not exist yet
+Host2-Host1                                                      -992117              -3            -927117
+
+Host1 folder   27/45 [INBOX.Real Wealth Network]         Size:   9491628 Messages:   187 Biggest:    126984
+Host2 folder   27/45 [Real Wealth Network]                does not exist yet
+Host2-Host1                                                     -9491628            -187            -126984
+
+Host1 folder   28/45 [INBOX.Realty Doctors]              Size:   9844116 Messages:    69 Biggest:   3831712
+Host2 folder   28/45 [Realty Doctors]                     does not exist yet
+Host2-Host1                                                     -9844116             -69           -3831712
+
+Host1 folder   29/45 [INBOX.Realty Medics]               Size:  49614094 Messages:   390 Biggest:  14749970
+Host2 folder   29/45 [Realty Medics]                      does not exist yet
+Host2-Host1                                                    -49614094            -390          -14749970
+
+Host1 folder   30/45 [INBOX.Renshaw]                     Size:  30603433 Messages:   171 Biggest:  16219150
+Host2 folder   30/45 [Renshaw]                            does not exist yet
+Host2-Host1                                                    -30603433            -171          -16219150
+
+Host1 folder   31/45 [INBOX.Roofstock]                   Size:  87913159 Messages:   340 Biggest:  10471236
+Host2 folder   31/45 [Roofstock]                          does not exist yet
+Host2-Host1                                                    -87913159            -340          -10471236
+
+Host1 folder   32/45 [INBOX.SM - Flamingo]               Size: 117843049 Messages:   145 Biggest:  46448088
+Host2 folder   32/45 [SM - Flamingo]                      does not exist yet
+Host2-Host1                                                    -117843049            -145          -46448088
+
+Host1 folder   33/45 [INBOX.SM - Hawk]                   Size:  25895258 Messages:    89 Biggest:  10708442
+Host2 folder   33/45 [SM - Hawk]                          does not exist yet
+Host2-Host1                                                    -25895258             -89          -10708442
+
+Host1 folder   34/45 [INBOX.Sent]                        Size:  99337841 Messages:   249 Biggest:  45021484
+Host2 folder   34/45 [Sent]                              Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                    -99337841            -249          -45021484
+
+Host1 folder   35/45 [INBOX.Starred]                     Size:     13557 Messages:     2 Biggest:      8730
+Host2 folder   35/45 [Starred]                            does not exist yet
+Host2-Host1                                                       -13557              -2              -8730
+
+Host1 folder   36/45 [INBOX.Stessa]                      Size:   5399898 Messages:    53 Biggest:    143151
+Host2 folder   36/45 [Stessa]                             does not exist yet
+Host2-Host1                                                     -5399898             -53            -143151
+
+Host1 folder   37/45 [INBOX.To Be Filed]                 Size:  35100502 Messages:    40 Biggest:  10377166
+Host2 folder   37/45 [To Be Filed]                        does not exist yet
+Host2-Host1                                                    -35100502             -40          -10377166
+
+Host1 folder   38/45 [INBOX.Trash]                       Size:   3492690 Messages:    49 Biggest:    213143
+Host2 folder   38/45 [Trash]                             Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                     -3492690             -49            -213143
+
+Host1 folder   39/45 [INBOX.[Airmail]]                   Size:         0 Messages:     0 Biggest:         0
+Host2 folder   39/45 [[Airmail]]                          does not exist yet
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   40/45 [INBOX.[Airmail].Done]              Size:         0 Messages:     0 Biggest:         0
+Host2 folder   40/45 [[Airmail].Done]                     does not exist yet
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   41/45 [INBOX.[Airmail].Memo]              Size:         0 Messages:     0 Biggest:         0
+Host2 folder   41/45 [[Airmail].Memo]                     does not exist yet
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   42/45 [INBOX.[Airmail].Send Later]        Size:         0 Messages:     0 Biggest:         0
+Host2 folder   42/45 [[Airmail].Send Later]               does not exist yet
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   43/45 [INBOX.[Airmail].Snooze]            Size:         0 Messages:     0 Biggest:         0
+Host2 folder   43/45 [[Airmail].Snooze]                   does not exist yet
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   44/45 [INBOX.[Airmail].To Do]             Size:         0 Messages:     0 Biggest:         0
+Host2 folder   44/45 [[Airmail].To Do]                    does not exist yet
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   45/45 [INBOX.spam]                        Size:    163772 Messages:     1 Biggest:    163772
+Host2 folder   45/45 [spam]                               does not exist yet
+Host2-Host1                                                      -163772              -1            -163772
+
+Host1 Nb folders:                    45 folders
+Host2 Nb folders:                    45 folders
+
+Host1 Nb messages:                 3615 messages
+Host2 Nb messages:                  686 messages
+
+Host1 Total size:             952955939 bytes (908.810 MiB)
+Host2 Total size:             154574939 bytes (147.414 MiB)
+
+Host1 Biggest message:         46448088 bytes (44.296 MiB)
+Host2 Biggest message:         17252863 bytes (16.454 MiB)
+
+Time spent on sizing:        15.6 seconds
+++++ Looping on each one of 45 folders to sync
+ETA: Tuesday 31 October 2023-10-31 19:26:27 -0700 MST  0 s  3615/3615 msgs left
+Folder    1/45 [INBOX]                             -> [INBOX]                            
+Host1: folder [INBOX] has 59 messages in total (mentioned by SELECT)
+Host2: folder [INBOX] has 59 messages in total (mentioned by SELECT)
+Host2: folder [INBOX] permanentflags: 
+Host1: folder [INBOX] considering 59 messages
+Host2: folder [INBOX] considering 59 messages
+Host1: folder [INBOX] selected 59 messages, duplicates 0
+Host2: folder [INBOX] selected 59 messages, duplicates 0
+ETA: Tuesday 31 October 2023-10-31 20:18:05 -0700 MST  3097 s  3556/3615 msgs left
+Folder    2/45 [INBOX.Action]                      -> [Action]                           
+Host1: folder [INBOX.Action] has 0 messages in total (mentioned by SELECT)
+Host2: folder [Action] has 0 messages in total (mentioned by SELECT)
+Host2: folder [Action] permanentflags: 
+Host1: folder [INBOX.Action] considering 0 messages
+Host2: folder [Action] considering 0 messages
+Host1: folder [INBOX.Action] selected 0 messages, duplicates 0
+Host2: folder [Action] selected 0 messages, duplicates 0
+ETA: Tuesday 31 October 2023-10-31 20:38:35 -0700 MST  4326 s  3556/3615 msgs left
+Folder    3/45 [INBOX.Allstar]                     -> [Allstar]                          
+Host1: folder [INBOX.Allstar] has 332 messages in total (mentioned by SELECT)
+Host2: folder [Allstar] has 332 messages in total (mentioned by SELECT)
+Host2: folder [Allstar] permanentflags: 
+Host1: folder [INBOX.Allstar] considering 332 messages
+Host2: folder [Allstar] considering 332 messages
+Host1: folder [INBOX.Allstar] selected 332 messages, duplicates 0
+Host2: folder [Allstar] selected 332 messages, duplicates 0
+ETA: Tuesday 31 October 2023-10-31 21:30:18 -0700 MST  7428 s  3224/3615 msgs left
+Folder    4/45 [INBOX.Anderson]                    -> [Anderson]                         
+Host1: folder [INBOX.Anderson] has 3 messages in total (mentioned by SELECT)
+Host2: folder [Anderson] has 3 messages in total (mentioned by SELECT)
+Host2: folder [Anderson] permanentflags: 
+Host1: folder [INBOX.Anderson] considering 3 messages
+Host2: folder [Anderson] considering 3 messages
+Host1: folder [INBOX.Anderson] selected 3 messages, duplicates 0
+Host2: folder [Anderson] selected 3 messages, duplicates 0
+ETA: Tuesday 31 October 2023-10-31 22:04:07 -0700 MST  9457 s  3221/3615 msgs left
+Folder    5/45 [INBOX.Apartments (Generic)]        -> [Apartments (Generic)]             
+Host1: folder [INBOX.Apartments (Generic)] has 46 messages in total (mentioned by SELECT)
+Host2: folder [Apartments (Generic)] has 46 messages in total (mentioned by SELECT)
+Host2: folder [Apartments (Generic)] permanentflags: 
+Host1: folder [INBOX.Apartments (Generic)] considering 46 messages
+Host2: folder [Apartments (Generic)] considering 46 messages
+Host1: folder [INBOX.Apartments (Generic)] selected 46 messages, duplicates 0
+Host2: folder [Apartments (Generic)] selected 46 messages, duplicates 0
+ETA: Tuesday 31 October 2023-10-31 22:37:46 -0700 MST  11475 s  3175/3615 msgs left
+Folder    6/45 [INBOX.Archive]                     -> [Archive]                          
+Host1: folder [INBOX.Archive] has 1 messages in total (mentioned by SELECT)
+Host2: folder [Archive] has 1 messages in total (mentioned by SELECT)
+Host2: folder [Archive] permanentflags: 
+Host1: folder [INBOX.Archive] considering 1 messages
+Host2: folder [Archive] considering 1 messages
+Host1: folder [INBOX.Archive] selected 1 messages, duplicates 0
+Host2: folder [Archive] selected 1 messages, duplicates 0
+ETA: Tuesday 31 October 2023-10-31 23:11:30 -0700 MST  13499 s  3174/3615 msgs left
+Folder    7/45 [INBOX.BiggerPockets]               -> [BiggerPockets]                    
+Host1: folder [INBOX.BiggerPockets] has 2 messages in total (mentioned by SELECT)
+Host2: folder [BiggerPockets] has 2 messages in total (mentioned by SELECT)
+Host2: folder [BiggerPockets] permanentflags: 
+Host1: folder [INBOX.BiggerPockets] considering 2 messages
+Host2: folder [BiggerPockets] considering 2 messages
+Host1: folder [INBOX.BiggerPockets] selected 2 messages, duplicates 0
+Host2: folder [BiggerPockets] selected 2 messages, duplicates 0
+ETA: Tuesday 31 October 2023-10-31 23:44:51 -0700 MST  15500 s  3172/3615 msgs left
+Folder    8/45 [INBOX.Chuck Baer]                  -> [Chuck Baer]                       
+Host1: folder [INBOX.Chuck Baer] has 142 messages in total (mentioned by SELECT)
+Host2: folder [Chuck Baer] has 142 messages in total (mentioned by SELECT)
+Host2: folder [Chuck Baer] permanentflags: 
+Host1: folder [INBOX.Chuck Baer] considering 142 messages
+Host2: folder [Chuck Baer] considering 142 messages
+Host1: folder [INBOX.Chuck Baer] selected 142 messages, duplicates 0
+Host2: folder [Chuck Baer] selected 142 messages, duplicates 0
+ETA: Wednesday 01 November 2023-11-01 00:08:26 -0700 MST  16914 s  3030/3615 msgs left
+Folder    9/45 [INBOX.Cozy]                        -> [Cozy]                             
+Host1: folder [INBOX.Cozy] has 16 messages in total (mentioned by SELECT)
+Host2: folder [Cozy] has 16 messages in total (mentioned by SELECT)
+Host2: folder [Cozy] permanentflags: 
+Host1: folder [INBOX.Cozy] considering 16 messages
+Host2: folder [Cozy] considering 16 messages
+Host1: folder [INBOX.Cozy] selected 16 messages, duplicates 0
+Host2: folder [Cozy] selected 16 messages, duplicates 0
+ETA: Wednesday 01 November 2023-11-01 00:38:47 -0700 MST  18734 s  3014/3615 msgs left
+Folder   10/45 [INBOX.Drafts]                      -> [Drafts]                           
+Host1: folder [INBOX.Drafts] has 1 messages in total (mentioned by SELECT)
+Host2: folder [Drafts] has 1 messages in total (mentioned by SELECT)
+Host2: folder [Drafts] permanentflags: 
+Host1: folder [INBOX.Drafts] considering 1 messages
+Host2: folder [Drafts] considering 1 messages
+Host1: folder [INBOX.Drafts] selected 1 messages, duplicates 0
+Host2: folder [Drafts] selected 1 messages, duplicates 0
+ETA: Wednesday 01 November 2023-11-01 01:10:16 -0700 MST  20622 s  3013/3615 msgs left
+Folder   11/45 [INBOX.Hawk]                        -> [Hawk]                             
+Host1: folder [INBOX.Hawk] has 0 messages in total (mentioned by SELECT)
+Host2: folder [Hawk] has 0 messages in total (mentioned by SELECT)
+Host2: folder [Hawk] permanentflags: 
+Host1: folder [INBOX.Hawk] considering 0 messages
+Host2: folder [Hawk] considering 0 messages
+Host1: folder [INBOX.Hawk] selected 0 messages, duplicates 0
+Host2: folder [Hawk] selected 0 messages, duplicates 0
+ETA: Wednesday 01 November 2023-11-01 01:28:04 -0700 MST  21690 s  3013/3615 msgs left
+Folder   12/45 [INBOX.Housefolios]                 -> [Housefolios]                      
+Host1: folder [INBOX.Housefolios] has 30 messages in total (mentioned by SELECT)
+Host2: folder [Housefolios] has 28 messages in total (mentioned by SELECT)
+Host2: folder [Housefolios] permanentflags: 
+Host1: folder [INBOX.Housefolios] considering 30 messages
+Host2: folder [Housefolios] considering 28 messages
+Host1: folder [INBOX.Housefolios] selected 30 messages, duplicates 2
+Host2: folder [Housefolios] selected 28 messages, duplicates 0
+ETA: Wednesday 01 November 2023-11-01 01:56:25 -0700 MST  23390 s  2983/3615 msgs left
+Folder   13/45 [INBOX.Investing]                   -> [Investing]                        
+Host1: folder [INBOX.Investing] has 358 messages in total (mentioned by SELECT)
+Host2: folder [Investing] has 56 messages in total (mentioned by SELECT)
+Host2: folder [Investing] permanentflags: 
+Host1: folder [INBOX.Investing] considering 358 messages
+Host2: folder [Investing] considering 56 messages
+Host1: folder [INBOX.Investing] selected 358 messages, duplicates 0
+Host2: folder [Investing] selected 56 messages, duplicates 0
+msg INBOX.Investing/63 {10894621}       copied to Investing/57         0.06 msgs/s  601.656 KiB/s 10.390 MiB copied ETA: Wednesday 01 November 2023-11-01 09:49:07 -0700 MST  51743 s  2926/3615 msgs left
+msg INBOX.Investing/64 {20533}          copied to Investing/58         0.11 msgs/s  594.633 KiB/s 10.410 MiB copied ETA: Wednesday 01 November 2023-11-01 02:43:42 -0700 MST  26217 s  2925/3615 msgs left
+msg INBOX.Investing/65 {4579}           copied to Investing/59         0.17 msgs/s  587.483 KiB/s 10.414 MiB copied ETA: Wednesday 01 November 2023-11-01 00:21:38 -0700 MST  17692 s  2924/3615 msgs left
+msg INBOX.Investing/66 {967748}         copied to Investing/60         0.21 msgs/s  623.734 KiB/s 11.337 MiB copied ETA: Tuesday 31 October 2023-10-31 23:13:27 -0700 MST  13601 s  2923/3615 msgs left
+msg INBOX.Investing/67 {66638}          copied to Investing/61         0.26 msgs/s  616.493 KiB/s 11.400 MiB copied ETA: Tuesday 31 October 2023-10-31 22:31:12 -0700 MST  11067 s  2922/3615 msgs left
+msg INBOX.Investing/68 {40577}          copied to Investing/62         0.31 msgs/s  611.004 KiB/s 11.439 MiB copied ETA: Tuesday 31 October 2023-10-31 22:02:19 -0700 MST  9333 s  2921/3615 msgs left
+msg INBOX.Investing/69 {41980}          copied to Investing/63         0.36 msgs/s  605.359 KiB/s 11.479 MiB copied ETA: Tuesday 31 October 2023-10-31 21:41:47 -0700 MST  8100 s  2920/3615 msgs left
+msg INBOX.Investing/70 {9493241}        copied to Investing/64         0.32 msgs/s  829.514 KiB/s 20.533 MiB copied ETA: Tuesday 31 October 2023-10-31 22:01:01 -0700 MST  9249 s  2919/3615 msgs left
+msg INBOX.Investing/71 {8240}           copied to Investing/65         0.35 msgs/s  821.717 KiB/s 20.540 MiB copied ETA: Tuesday 31 October 2023-10-31 21:45:12 -0700 MST  8299 s  2918/3615 msgs left
+msg INBOX.Investing/72 {82953}          copied to Investing/66         0.39 msgs/s  814.460 KiB/s 20.619 MiB copied ETA: Tuesday 31 October 2023-10-31 21:32:55 -0700 MST  7562 s  2917/3615 msgs left
+msg INBOX.Investing/73 {4590}           copied to Investing/67         0.42 msgs/s  806.289 KiB/s 20.624 MiB copied ETA: Tuesday 31 October 2023-10-31 21:22:37 -0700 MST  6944 s  2916/3615 msgs left
+msg INBOX.Investing/75 {17477}          copied to Investing/68         0.45 msgs/s  797.251 KiB/s 20.641 MiB copied ETA: Tuesday 31 October 2023-10-31 21:14:14 -0700 MST  6440 s  2915/3615 msgs left
+msg INBOX.Investing/76 {29657}          copied to Investing/69         0.49 msgs/s  791.327 KiB/s 20.669 MiB copied ETA: Tuesday 31 October 2023-10-31 21:06:49 -0700 MST  5995 s  2914/3615 msgs left
+msg INBOX.Investing/77 {25575}          copied to Investing/70         0.52 msgs/s  785.150 KiB/s 20.693 MiB copied ETA: Tuesday 31 October 2023-10-31 21:00:30 -0700 MST  5616 s  2913/3615 msgs left
+msg INBOX.Investing/78 {6380}           copied to Investing/71         0.55 msgs/s  778.795 KiB/s 20.699 MiB copied ETA: Tuesday 31 October 2023-10-31 20:54:58 -0700 MST  5284 s  2912/3615 msgs left
+msg INBOX.Investing/79 {7863}           copied to Investing/72         0.58 msgs/s  772.275 KiB/s 20.707 MiB copied ETA: Tuesday 31 October 2023-10-31 20:50:10 -0700 MST  4995 s  2911/3615 msgs left
+msg INBOX.Investing/80 {473856}         copied to Investing/73         0.61 msgs/s  774.324 KiB/s 21.159 MiB copied ETA: Tuesday 31 October 2023-10-31 20:46:45 -0700 MST  4790 s  2910/3615 msgs left
+msg INBOX.Investing/81 {15650}          copied to Investing/74         0.64 msgs/s  767.899 KiB/s 21.174 MiB copied ETA: Tuesday 31 October 2023-10-31 20:42:58 -0700 MST  4563 s  2909/3615 msgs left
+msg INBOX.Investing/82 {6627}           copied to Investing/75         0.67 msgs/s  761.945 KiB/s 21.180 MiB copied ETA: Tuesday 31 October 2023-10-31 20:39:32 -0700 MST  4357 s  2908/3615 msgs left
+msg INBOX.Investing/83 {14186768}       copied to Investing/76         0.58 msgs/s  1.015 MiB/s 34.710 MiB copied ETA: Tuesday 31 October 2023-10-31 20:49:51 -0700 MST  4970 s  2907/3615 msgs left
+msg INBOX.Investing/84 {18783}          copied to Investing/77         0.61 msgs/s  1.009 MiB/s 34.727 MiB copied ETA: Tuesday 31 October 2023-10-31 20:46:24 -0700 MST  4763 s  2906/3615 msgs left
+msg INBOX.Investing/85 {55241}          copied to Investing/78         0.63 msgs/s  1.004 MiB/s 34.780 MiB copied ETA: Tuesday 31 October 2023-10-31 20:43:18 -0700 MST  4576 s  2905/3615 msgs left
+msg INBOX.Investing/86 {12935}          copied to Investing/79         0.66 msgs/s  0.997 MiB/s 34.792 MiB copied ETA: Tuesday 31 October 2023-10-31 20:40:27 -0700 MST  4405 s  2904/3615 msgs left
+msg INBOX.Investing/87 {1141835}        copied to Investing/80         0.68 msgs/s  1.011 MiB/s 35.881 MiB copied ETA: Tuesday 31 October 2023-10-31 20:38:36 -0700 MST  4294 s  2903/3615 msgs left
+msg INBOX.Investing/88 {11996}          copied to Investing/81         0.70 msgs/s  1.005 MiB/s 35.893 MiB copied ETA: Tuesday 31 October 2023-10-31 20:36:10 -0700 MST  4147 s  2902/3615 msgs left
+msg INBOX.Investing/89 {15609}          copied to Investing/82         0.72 msgs/s  0.998 MiB/s 35.908 MiB copied ETA: Tuesday 31 October 2023-10-31 20:33:56 -0700 MST  4013 s  2901/3615 msgs left
+msg INBOX.Investing/90 {125176}         copied to Investing/83         0.75 msgs/s  0.995 MiB/s 36.027 MiB copied ETA: Tuesday 31 October 2023-10-31 20:31:53 -0700 MST  3890 s  2900/3615 msgs left
+msg INBOX.Investing/91 {90964}          copied to Investing/84         0.77 msgs/s  0.990 MiB/s 36.114 MiB copied ETA: Tuesday 31 October 2023-10-31 20:29:59 -0700 MST  3775 s  2899/3615 msgs left
+msg INBOX.Investing/92 {11128}          copied to Investing/85         0.79 msgs/s  0.984 MiB/s 36.124 MiB copied ETA: Tuesday 31 October 2023-10-31 20:28:11 -0700 MST  3667 s  2898/3615 msgs left
+msg INBOX.Investing/93 {21665}          copied to Investing/86         0.81 msgs/s  0.979 MiB/s 36.145 MiB copied ETA: Tuesday 31 October 2023-10-31 20:26:29 -0700 MST  3565 s  2897/3615 msgs left
+msg INBOX.Investing/94 {12222}          copied to Investing/87         0.83 msgs/s  996.367 KiB/s 36.157 MiB copied ETA: Tuesday 31 October 2023-10-31 20:24:56 -0700 MST  3471 s  2896/3615 msgs left
+msg INBOX.Investing/95 {6854}           copied to Investing/88         0.86 msgs/s  989.692 KiB/s 36.163 MiB copied ETA: Tuesday 31 October 2023-10-31 20:23:29 -0700 MST  3385 s  2895/3615 msgs left
+msg INBOX.Investing/96 {111077}         copied to Investing/89         0.88 msgs/s  986.065 KiB/s 36.269 MiB copied ETA: Tuesday 31 October 2023-10-31 20:22:08 -0700 MST  3303 s  2894/3615 msgs left
+msg INBOX.Investing/97 {6953}           copied to Investing/90         0.90 msgs/s  980.433 KiB/s 36.276 MiB copied ETA: Tuesday 31 October 2023-10-31 20:20:49 -0700 MST  3224 s  2893/3615 msgs left
+msg INBOX.Investing/99 {85338}          copied to Investing/91         0.92 msgs/s  976.325 KiB/s 36.357 MiB copied ETA: Tuesday 31 October 2023-10-31 20:19:36 -0700 MST  3151 s  2892/3615 msgs left
+msg INBOX.Investing/100 {10235}         copied to Investing/92         0.94 msgs/s  970.463 KiB/s 36.367 MiB copied ETA: Tuesday 31 October 2023-10-31 20:18:27 -0700 MST  3082 s  2891/3615 msgs left
+msg INBOX.Investing/102 {4460}          copied to Investing/93         0.96 msgs/s  963.966 KiB/s 36.371 MiB copied ETA: Tuesday 31 October 2023-10-31 20:17:23 -0700 MST  3018 s  2890/3615 msgs left
+msg INBOX.Investing/103 {123703}        copied to Investing/94         0.98 msgs/s  960.827 KiB/s 36.489 MiB copied ETA: Tuesday 31 October 2023-10-31 20:16:22 -0700 MST  2957 s  2889/3615 msgs left
+msg INBOX.Investing/104 {5704}          copied to Investing/95         1.00 msgs/s  955.447 KiB/s 36.495 MiB copied ETA: Tuesday 31 October 2023-10-31 20:15:23 -0700 MST  2896 s  2888/3615 msgs left
+msg INBOX.Investing/105 {46839}         copied to Investing/96         1.02 msgs/s  950.935 KiB/s 36.539 MiB copied ETA: Tuesday 31 October 2023-10-31 20:14:26 -0700 MST  2840 s  2887/3615 msgs left
+msg INBOX.Investing/106 {81273}         copied to Investing/97         1.04 msgs/s  946.805 KiB/s 36.617 MiB copied ETA: Tuesday 31 October 2023-10-31 20:13:34 -0700 MST  2788 s  2886/3615 msgs left
+msg INBOX.Investing/107 {6734}          copied to Investing/98         1.05 msgs/s  941.505 KiB/s 36.623 MiB copied ETA: Tuesday 31 October 2023-10-31 20:12:43 -0700 MST  2736 s  2885/3615 msgs left
+msg INBOX.Investing/108 {4205}          copied to Investing/99         1.07 msgs/s  935.860 KiB/s 36.627 MiB copied ETA: Tuesday 31 October 2023-10-31 20:11:55 -0700 MST  2688 s  2884/3615 msgs left
+msg INBOX.Investing/109 {46061}         copied to Investing/100        1.09 msgs/s  931.582 KiB/s 36.671 MiB copied ETA: Tuesday 31 October 2023-10-31 20:11:08 -0700 MST  2641 s  2883/3615 msgs left
+msg INBOX.Investing/110 {73617}         copied to Investing/101        1.11 msgs/s  927.790 KiB/s 36.741 MiB copied ETA: Tuesday 31 October 2023-10-31 20:10:25 -0700 MST  2597 s  2882/3615 msgs left
+msg INBOX.Investing/111 {2193909}       copied to Investing/102        1.11 msgs/s  960.878 KiB/s 38.834 MiB copied ETA: Tuesday 31 October 2023-10-31 20:10:20 -0700 MST  2592 s  2881/3615 msgs left
+msg INBOX.Investing/112 {112848}        copied to Investing/103        1.13 msgs/s  957.777 KiB/s 38.941 MiB copied ETA: Tuesday 31 October 2023-10-31 20:09:40 -0700 MST  2551 s  2880/3615 msgs left
+msg INBOX.Investing/113 {9414}          copied to Investing/104        1.15 msgs/s  952.385 KiB/s 38.950 MiB copied ETA: Tuesday 31 October 2023-10-31 20:09:01 -0700 MST  2512 s  2879/3615 msgs left
+msg INBOX.Investing/114 {4256095}       copied to Investing/105        1.12 msgs/s  0.987 MiB/s 43.009 MiB copied ETA: Tuesday 31 October 2023-10-31 20:09:51 -0700 MST  2560 s  2878/3615 msgs left
+msg INBOX.Investing/115 {5689265}       copied to Investing/106        1.09 msgs/s  1.054 MiB/s 48.435 MiB copied ETA: Tuesday 31 October 2023-10-31 20:11:18 -0700 MST  2645 s  2877/3615 msgs left
+msg INBOX.Investing/116 {231715}        copied to Investing/107        1.10 msgs/s  1.052 MiB/s 48.656 MiB copied ETA: Tuesday 31 October 2023-10-31 20:10:41 -0700 MST  2608 s  2876/3615 msgs left
+msg INBOX.Investing/117 {34136}         copied to Investing/108        1.12 msgs/s  1.046 MiB/s 48.688 MiB copied ETA: Tuesday 31 October 2023-10-31 20:10:08 -0700 MST  2575 s  2875/3615 msgs left
+msg INBOX.Investing/118 {12887}         copied to Investing/109        1.13 msgs/s  1.041 MiB/s 48.701 MiB copied ETA: Tuesday 31 October 2023-10-31 20:09:31 -0700 MST  2538 s  2874/3615 msgs left
+msg INBOX.Investing/119 {20809}         copied to Investing/110        1.15 msgs/s  1.036 MiB/s 48.721 MiB copied ETA: Tuesday 31 October 2023-10-31 20:08:56 -0700 MST  2502 s  2873/3615 msgs left
+msg INBOX.Investing/127 {8540}          copied to Investing/111        1.16 msgs/s  1.031 MiB/s 48.729 MiB copied ETA: Tuesday 31 October 2023-10-31 20:08:22 -0700 MST  2467 s  2872/3615 msgs left
+msg INBOX.Investing/128 {73881}         copied to Investing/112        1.18 msgs/s  1.028 MiB/s 48.799 MiB copied ETA: Tuesday 31 October 2023-10-31 20:07:49 -0700 MST  2434 s  2871/3615 msgs left
+msg INBOX.Investing/131 {769542}        copied to Investing/113        1.19 msgs/s  1.033 MiB/s 49.533 MiB copied ETA: Tuesday 31 October 2023-10-31 20:07:29 -0700 MST  2414 s  2870/3615 msgs left
+msg INBOX.Investing/132 {6012}          copied to Investing/114        1.20 msgs/s  1.028 MiB/s 49.539 MiB copied ETA: Tuesday 31 October 2023-10-31 20:06:58 -0700 MST  2383 s  2869/3615 msgs left
+msg INBOX.Investing/140 {27824}         copied to Investing/115        1.22 msgs/s  1.024 MiB/s 49.565 MiB copied ETA: Tuesday 31 October 2023-10-31 20:06:28 -0700 MST  2353 s  2868/3615 msgs left
+msg INBOX.Investing/141 {106289}        copied to Investing/116        1.23 msgs/s  1.021 MiB/s 49.667 MiB copied ETA: Tuesday 31 October 2023-10-31 20:06:01 -0700 MST  2325 s  2867/3615 msgs left
+msg INBOX.Investing/142 {28724}         copied to Investing/117        1.25 msgs/s  1.016 MiB/s 49.694 MiB copied ETA: Tuesday 31 October 2023-10-31 20:05:33 -0700 MST  2298 s  2866/3615 msgs left
+msg INBOX.Investing/143 {5458}          copied to Investing/118        1.26 msgs/s  1.011 MiB/s 49.699 MiB copied ETA: Tuesday 31 October 2023-10-31 20:05:07 -0700 MST  2271 s  2865/3615 msgs left
+msg INBOX.Investing/144 {10153}         copied to Investing/119        1.28 msgs/s  1.006 MiB/s 49.709 MiB copied ETA: Tuesday 31 October 2023-10-31 20:04:42 -0700 MST  2246 s  2864/3615 msgs left
+msg INBOX.Investing/145 {66552}         copied to Investing/120        1.29 msgs/s  1.001 MiB/s 49.772 MiB copied ETA: Tuesday 31 October 2023-10-31 20:04:21 -0700 MST  2224 s  2863/3615 msgs left
+msg INBOX.Investing/146 {14176}         copied to Investing/121        1.30 msgs/s  0.997 MiB/s 49.786 MiB copied ETA: Tuesday 31 October 2023-10-31 20:03:57 -0700 MST  2200 s  2862/3615 msgs left
+msg INBOX.Investing/147 {125192}        copied to Investing/122        1.31 msgs/s  0.994 MiB/s 49.905 MiB copied ETA: Tuesday 31 October 2023-10-31 20:03:34 -0700 MST  2176 s  2861/3615 msgs left
+msg INBOX.Investing/148 {12362}         copied to Investing/123        1.33 msgs/s  0.989 MiB/s 49.917 MiB copied ETA: Tuesday 31 October 2023-10-31 20:03:11 -0700 MST  2154 s  2860/3615 msgs left
+msg INBOX.Investing/149 {17857}         copied to Investing/124        1.34 msgs/s  0.985 MiB/s 49.934 MiB copied ETA: Tuesday 31 October 2023-10-31 20:02:49 -0700 MST  2131 s  2859/3615 msgs left
+msg INBOX.Investing/150 {25587}         copied to Investing/125        1.36 msgs/s  0.981 MiB/s 49.959 MiB copied ETA: Tuesday 31 October 2023-10-31 20:02:27 -0700 MST  2109 s  2858/3615 msgs left
+msg INBOX.Investing/151 {10007}         copied to Investing/126        1.37 msgs/s  0.977 MiB/s 49.968 MiB copied ETA: Tuesday 31 October 2023-10-31 20:02:06 -0700 MST  2088 s  2857/3615 msgs left
+msg INBOX.Investing/152 {7695}          copied to Investing/127        1.38 msgs/s  995.993 KiB/s 49.975 MiB copied ETA: Tuesday 31 October 2023-10-31 20:01:45 -0700 MST  2067 s  2856/3615 msgs left
+msg INBOX.Investing/153 {4331}          copied to Investing/128        1.40 msgs/s  991.728 KiB/s 49.980 MiB copied ETA: Tuesday 31 October 2023-10-31 20:01:25 -0700 MST  2046 s  2855/3615 msgs left
+msg INBOX.Investing/155 {109633}        copied to Investing/129        1.41 msgs/s  989.048 KiB/s 50.084 MiB copied ETA: Tuesday 31 October 2023-10-31 20:01:06 -0700 MST  2027 s  2854/3615 msgs left
+msg INBOX.Investing/156 {150239}        copied to Investing/130        1.42 msgs/s  987.184 KiB/s 50.227 MiB copied ETA: Tuesday 31 October 2023-10-31 20:00:48 -0700 MST  2009 s  2853/3615 msgs left
+msg INBOX.Investing/159 {1390840}       copied to Investing/131        1.42 msgs/s  0.977 MiB/s 51.554 MiB copied ETA: Tuesday 31 October 2023-10-31 20:00:46 -0700 MST  2007 s  2852/3615 msgs left
+msg INBOX.Investing/160 {17541}         copied to Investing/132        1.43 msgs/s  994.898 KiB/s 51.571 MiB copied ETA: Tuesday 31 October 2023-10-31 20:00:31 -0700 MST  1991 s  2851/3615 msgs left
+msg INBOX.Investing/201 {385877}        copied to Investing/133        1.44 msgs/s  995.654 KiB/s 51.939 MiB copied ETA: Tuesday 31 October 2023-10-31 20:00:18 -0700 MST  1977 s  2850/3615 msgs left
+msg INBOX.Investing/202 {13145}         copied to Investing/134        1.45 msgs/s  991.700 KiB/s 51.951 MiB copied ETA: Tuesday 31 October 2023-10-31 20:00:00 -0700 MST  1959 s  2849/3615 msgs left
+msg INBOX.Investing/205 {20773}         copied to Investing/135        1.47 msgs/s  987.574 KiB/s 51.971 MiB copied ETA: Tuesday 31 October 2023-10-31 19:59:44 -0700 MST  1943 s  2848/3615 msgs left
+msg INBOX.Investing/206 {18857}         copied to Investing/136        1.48 msgs/s  983.356 KiB/s 51.989 MiB copied ETA: Tuesday 31 October 2023-10-31 19:59:28 -0700 MST  1927 s  2847/3615 msgs left
+msg INBOX.Investing/207 {129413}        copied to Investing/137        1.49 msgs/s  980.711 KiB/s 52.112 MiB copied ETA: Tuesday 31 October 2023-10-31 19:59:13 -0700 MST  1912 s  2846/3615 msgs left
+msg INBOX.Investing/208 {18525}         copied to Investing/138        1.50 msgs/s  976.861 KiB/s 52.130 MiB copied ETA: Tuesday 31 October 2023-10-31 19:58:58 -0700 MST  1896 s  2845/3615 msgs left
+msg INBOX.Investing/209 {30028}         copied to Investing/139        1.51 msgs/s  973.252 KiB/s 52.159 MiB copied ETA: Tuesday 31 October 2023-10-31 19:58:42 -0700 MST  1880 s  2844/3615 msgs left
+msg INBOX.Investing/211 {13339}         copied to Investing/140        1.52 msgs/s  968.889 KiB/s 52.171 MiB copied ETA: Tuesday 31 October 2023-10-31 19:58:28 -0700 MST  1866 s  2843/3615 msgs left
+msg INBOX.Investing/213 {7558}          copied to Investing/141        1.54 msgs/s  964.939 KiB/s 52.179 MiB copied ETA: Tuesday 31 October 2023-10-31 19:58:14 -0700 MST  1851 s  2842/3615 msgs left
+msg INBOX.Investing/215 {16764}         copied to Investing/142        1.54 msgs/s  959.833 KiB/s 52.195 MiB copied ETA: Tuesday 31 October 2023-10-31 19:58:02 -0700 MST  1840 s  2841/3615 msgs left
+msg INBOX.Investing/218 {105540}        copied to Investing/143        1.56 msgs/s  957.346 KiB/s 52.295 MiB copied ETA: Tuesday 31 October 2023-10-31 19:57:49 -0700 MST  1826 s  2840/3615 msgs left
+msg INBOX.Investing/219 {14180}         copied to Investing/144        1.57 msgs/s  953.768 KiB/s 52.309 MiB copied ETA: Tuesday 31 October 2023-10-31 19:57:35 -0700 MST  1812 s  2839/3615 msgs left
+msg INBOX.Investing/221 {5648}          copied to Investing/145        1.58 msgs/s  950.070 KiB/s 52.314 MiB copied ETA: Tuesday 31 October 2023-10-31 19:57:21 -0700 MST  1798 s  2838/3615 msgs left
+msg INBOX.Investing/223 {16279}         copied to Investing/146        1.59 msgs/s  946.429 KiB/s 52.330 MiB copied ETA: Tuesday 31 October 2023-10-31 19:57:08 -0700 MST  1785 s  2837/3615 msgs left
+msg INBOX.Investing/710 {70469}         copied to Investing/147        1.60 msgs/s  943.624 KiB/s 52.397 MiB copied ETA: Tuesday 31 October 2023-10-31 19:56:56 -0700 MST  1772 s  2836/3615 msgs left
+msg INBOX.Investing/711 {57763}         copied to Investing/148        1.61 msgs/s  940.698 KiB/s 52.452 MiB copied ETA: Tuesday 31 October 2023-10-31 19:56:44 -0700 MST  1759 s  2835/3615 msgs left
+msg INBOX.Investing/712 {4155081}       copied to Investing/149        1.59 msgs/s  985.237 KiB/s 56.415 MiB copied ETA: Tuesday 31 October 2023-10-31 19:57:12 -0700 MST  1787 s  2834/3615 msgs left
+msg INBOX.Investing/713 {44770}         copied to Investing/150        1.60 msgs/s  981.906 KiB/s 56.457 MiB copied ETA: Tuesday 31 October 2023-10-31 19:57:00 -0700 MST  1774 s  2833/3615 msgs left
+msg INBOX.Investing/715 {35413}         copied to Investing/151        1.61 msgs/s  978.412 KiB/s 56.491 MiB copied ETA: Tuesday 31 October 2023-10-31 19:56:49 -0700 MST  1763 s  2832/3615 msgs left
+msg INBOX.Investing/717 {96545}         copied to Investing/152        1.62 msgs/s  975.632 KiB/s 56.583 MiB copied ETA: Tuesday 31 October 2023-10-31 19:56:38 -0700 MST  1751 s  2831/3615 msgs left
+msg INBOX.Investing/720 {59347}         copied to Investing/153        1.63 msgs/s  972.576 KiB/s 56.640 MiB copied ETA: Tuesday 31 October 2023-10-31 19:56:26 -0700 MST  1740 s  2830/3615 msgs left
+msg INBOX.Investing/721 {4243}          copied to Investing/154        1.64 msgs/s  968.842 KiB/s 56.644 MiB copied ETA: Tuesday 31 October 2023-10-31 19:56:15 -0700 MST  1728 s  2829/3615 msgs left
+msg INBOX.Investing/722 {10021}         copied to Investing/155        1.65 msgs/s  965.419 KiB/s 56.653 MiB copied ETA: Tuesday 31 October 2023-10-31 19:56:04 -0700 MST  1717 s  2828/3615 msgs left
+msg INBOX.Investing/723 {56430}         copied to Investing/156        1.66 msgs/s  962.560 KiB/s 56.707 MiB copied ETA: Tuesday 31 October 2023-10-31 19:55:53 -0700 MST  1705 s  2827/3615 msgs left
+msg INBOX.Investing/724 {64677}         copied to Investing/157        1.67 msgs/s  959.762 KiB/s 56.769 MiB copied ETA: Tuesday 31 October 2023-10-31 19:55:42 -0700 MST  1695 s  2826/3615 msgs left
+msg INBOX.Investing/725 {46684}         copied to Investing/158        1.68 msgs/s  956.612 KiB/s 56.813 MiB copied ETA: Tuesday 31 October 2023-10-31 19:55:32 -0700 MST  1684 s  2825/3615 msgs left
+msg INBOX.Investing/726 {14332}         copied to Investing/159        1.69 msgs/s  953.047 KiB/s 56.827 MiB copied ETA: Tuesday 31 October 2023-10-31 19:55:22 -0700 MST  1674 s  2824/3615 msgs left
+msg INBOX.Investing/727 {394984}        copied to Investing/160        1.70 msgs/s  954.855 KiB/s 57.204 MiB copied ETA: Tuesday 31 October 2023-10-31 19:55:14 -0700 MST  1665 s  2823/3615 msgs left
+msg INBOX.Investing/728 {14448}         copied to Investing/161        1.70 msgs/s  951.371 KiB/s 57.217 MiB copied ETA: Tuesday 31 October 2023-10-31 19:55:04 -0700 MST  1655 s  2822/3615 msgs left
+msg INBOX.Investing/729 {10013}         copied to Investing/162        1.71 msgs/s  948.073 KiB/s 57.227 MiB copied ETA: Tuesday 31 October 2023-10-31 19:54:54 -0700 MST  1645 s  2821/3615 msgs left
+msg INBOX.Investing/730 {48677}         copied to Investing/163        1.72 msgs/s  945.165 KiB/s 57.273 MiB copied ETA: Tuesday 31 October 2023-10-31 19:54:44 -0700 MST  1635 s  2820/3615 msgs left
+msg INBOX.Investing/731 {55416}         copied to Investing/164        1.73 msgs/s  942.518 KiB/s 57.326 MiB copied ETA: Tuesday 31 October 2023-10-31 19:54:35 -0700 MST  1626 s  2819/3615 msgs left
+msg INBOX.Investing/732 {6212}          copied to Investing/165        1.74 msgs/s  938.867 KiB/s 57.332 MiB copied ETA: Tuesday 31 October 2023-10-31 19:54:26 -0700 MST  1617 s  2818/3615 msgs left
+msg INBOX.Investing/733 {23231}         copied to Investing/166        1.75 msgs/s  935.853 KiB/s 57.354 MiB copied ETA: Tuesday 31 October 2023-10-31 19:54:17 -0700 MST  1607 s  2817/3615 msgs left
+msg INBOX.Investing/734 {19133}         copied to Investing/167        1.76 msgs/s  932.687 KiB/s 57.373 MiB copied ETA: Tuesday 31 October 2023-10-31 19:54:08 -0700 MST  1598 s  2816/3615 msgs left
+msg INBOX.Investing/736 {317990}        copied to Investing/168        1.77 msgs/s  933.549 KiB/s 57.676 MiB copied ETA: Tuesday 31 October 2023-10-31 19:54:00 -0700 MST  1590 s  2815/3615 msgs left
+msg INBOX.Investing/740 {19550}         copied to Investing/169        1.78 msgs/s  930.518 KiB/s 57.694 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:52 -0700 MST  1581 s  2814/3615 msgs left
+msg INBOX.Investing/741 {9990}          copied to Investing/170        1.79 msgs/s  927.409 KiB/s 57.704 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:43 -0700 MST  1572 s  2813/3615 msgs left
+msg INBOX.Investing/742 {68465}         copied to Investing/171        1.80 msgs/s  924.870 KiB/s 57.769 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:35 -0700 MST  1564 s  2812/3615 msgs left
+msg INBOX.Investing/743 {36557}         copied to Investing/172        1.81 msgs/s  922.035 KiB/s 57.804 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:27 -0700 MST  1556 s  2811/3615 msgs left
+msg INBOX.Investing/745 {25305}         copied to Investing/173        1.82 msgs/s  918.631 KiB/s 57.828 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:20 -0700 MST  1548 s  2810/3615 msgs left
+msg INBOX.Investing/746 {1132155}       copied to Investing/174        1.81 msgs/s  927.766 KiB/s 58.908 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:20 -0700 MST  1548 s  2809/3615 msgs left
+msg INBOX.Investing/748 {1114886}       copied to Investing/175        1.82 msgs/s  937.146 KiB/s 59.971 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:19 -0700 MST  1546 s  2808/3615 msgs left
+msg INBOX.Investing/749 {8914}          copied to Investing/176        1.82 msgs/s  934.042 KiB/s 59.980 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:11 -0700 MST  1538 s  2807/3615 msgs left
+msg INBOX.Investing/750 {128690}        copied to Investing/177        1.83 msgs/s  932.437 KiB/s 60.102 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:04 -0700 MST  1531 s  2806/3615 msgs left
+msg INBOX.Investing/754 {53233}         copied to Investing/178        1.84 msgs/s  929.959 KiB/s 60.153 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:56 -0700 MST  1523 s  2805/3615 msgs left
+msg INBOX.Investing/755 {12144}         copied to Investing/179        1.85 msgs/s  927.007 KiB/s 60.165 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:49 -0700 MST  1515 s  2804/3615 msgs left
+msg INBOX.Investing/756 {55743}         copied to Investing/180        1.86 msgs/s  924.586 KiB/s 60.218 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:41 -0700 MST  1508 s  2803/3615 msgs left
+msg INBOX.Investing/757 {56178}         copied to Investing/181        1.87 msgs/s  922.159 KiB/s 60.272 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:34 -0700 MST  1500 s  2802/3615 msgs left
+msg INBOX.Investing/759 {224617}        copied to Investing/182        1.88 msgs/s  921.737 KiB/s 60.486 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:28 -0700 MST  1494 s  2801/3615 msgs left
+msg INBOX.Investing/761 {29934}         copied to Investing/183        1.88 msgs/s  918.885 KiB/s 60.514 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:21 -0700 MST  1487 s  2800/3615 msgs left
+msg INBOX.Investing/763 {27949}         copied to Investing/184        1.89 msgs/s  916.124 KiB/s 60.541 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:14 -0700 MST  1480 s  2799/3615 msgs left
+msg INBOX.Investing/764 {19658}         copied to Investing/185        1.90 msgs/s  913.219 KiB/s 60.560 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:08 -0700 MST  1473 s  2798/3615 msgs left
+msg INBOX.Investing/765 {36692}         copied to Investing/186        1.91 msgs/s  910.661 KiB/s 60.595 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:01 -0700 MST  1466 s  2797/3615 msgs left
+msg INBOX.Investing/766 {30627}         copied to Investing/187        1.92 msgs/s  907.984 KiB/s 60.624 MiB copied ETA: Tuesday 31 October 2023-10-31 19:51:55 -0700 MST  1459 s  2796/3615 msgs left
+msg INBOX.Investing/767 {6520823}       copied to Investing/188        1.86 msgs/s  963.314 KiB/s 66.843 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:43 -0700 MST  1505 s  2795/3615 msgs left
+msg INBOX.Investing/768 {60763}         copied to Investing/189        1.87 msgs/s  960.950 KiB/s 66.901 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:36 -0700 MST  1498 s  2794/3615 msgs left
+msg INBOX.Investing/769 {6522669}       copied to Investing/190        1.80 msgs/s  0.985 MiB/s 73.121 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:29 -0700 MST  1548 s  2793/3615 msgs left
+msg INBOX.Investing/770 {4047}          copied to Investing/191        1.81 msgs/s  0.982 MiB/s 73.125 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:22 -0700 MST  1541 s  2792/3615 msgs left
+msg INBOX.Investing/771 {40760}         copied to Investing/192        1.82 msgs/s  0.979 MiB/s 73.164 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:16 -0700 MST  1534 s  2791/3615 msgs left
+msg INBOX.Investing/772 {3949}          copied to Investing/193        1.83 msgs/s  999.271 KiB/s 73.168 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:09 -0700 MST  1527 s  2790/3615 msgs left
+msg INBOX.Investing/776 {14218}         copied to Investing/194        1.84 msgs/s  996.471 KiB/s 73.181 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:02 -0700 MST  1520 s  2789/3615 msgs left
+msg INBOX.Investing/777 {64065}         copied to Investing/195        1.84 msgs/s  994.163 KiB/s 73.242 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:56 -0700 MST  1513 s  2788/3615 msgs left
+msg INBOX.Investing/778 {67235}         copied to Investing/196        1.85 msgs/s  991.910 KiB/s 73.306 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:49 -0700 MST  1507 s  2787/3615 msgs left
+msg INBOX.Investing/779 {70403}         copied to Investing/197        1.86 msgs/s  989.633 KiB/s 73.374 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:43 -0700 MST  1500 s  2786/3615 msgs left
+msg INBOX.Investing/780 {33711}         copied to Investing/198        1.86 msgs/s  986.056 KiB/s 73.406 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:38 -0700 MST  1495 s  2785/3615 msgs left
+msg INBOX.Investing/782 {49162}         copied to Investing/199        1.87 msgs/s  982.605 KiB/s 73.453 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:34 -0700 MST  1490 s  2784/3615 msgs left
+msg INBOX.Investing/784 {4106}          copied to Investing/200        1.88 msgs/s  979.804 KiB/s 73.456 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:27 -0700 MST  1484 s  2783/3615 msgs left
+msg INBOX.Investing/787 {53053}         copied to Investing/201        1.88 msgs/s  977.573 KiB/s 73.507 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:21 -0700 MST  1477 s  2782/3615 msgs left
+msg INBOX.Investing/789 {45564}         copied to Investing/202        1.89 msgs/s  975.225 KiB/s 73.551 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:15 -0700 MST  1471 s  2781/3615 msgs left
+msg INBOX.Investing/790 {95260}         copied to Investing/203        1.90 msgs/s  973.403 KiB/s 73.641 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:10 -0700 MST  1465 s  2780/3615 msgs left
+msg INBOX.Investing/791 {62483}         copied to Investing/204        1.90 msgs/s  971.196 KiB/s 73.701 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:04 -0700 MST  1459 s  2779/3615 msgs left
+msg INBOX.Investing/792 {40830}         copied to Investing/205        1.91 msgs/s  968.790 KiB/s 73.740 MiB copied ETA: Tuesday 31 October 2023-10-31 19:51:58 -0700 MST  1453 s  2778/3615 msgs left
+msg INBOX.Investing/793 {124734}        copied to Investing/206        1.92 msgs/s  966.759 KiB/s 73.859 MiB copied ETA: Tuesday 31 October 2023-10-31 19:51:54 -0700 MST  1448 s  2777/3615 msgs left
+msg INBOX.Investing/794 {13843}         copied to Investing/207        1.92 msgs/s  964.171 KiB/s 73.872 MiB copied ETA: Tuesday 31 October 2023-10-31 19:51:48 -0700 MST  1442 s  2776/3615 msgs left
+msg INBOX.Investing/795 {4325}          copied to Investing/208        1.93 msgs/s  961.540 KiB/s 73.876 MiB copied ETA: Tuesday 31 October 2023-10-31 19:51:42 -0700 MST  1436 s  2775/3615 msgs left
+msg INBOX.Investing/797 {8559}          copied to Investing/209        1.94 msgs/s  958.951 KiB/s 73.884 MiB copied ETA: Tuesday 31 October 2023-10-31 19:51:36 -0700 MST  1430 s  2774/3615 msgs left
+msg INBOX.Investing/798 {8775}          copied to Investing/210        1.95 msgs/s  956.215 KiB/s 73.893 MiB copied ETA: Tuesday 31 October 2023-10-31 19:51:31 -0700 MST  1425 s  2773/3615 msgs left
+msg INBOX.Investing/800 {12467}         copied to Investing/211        1.95 msgs/s  953.417 KiB/s 73.905 MiB copied ETA: Tuesday 31 October 2023-10-31 19:51:26 -0700 MST  1420 s  2772/3615 msgs left
+msg INBOX.Investing/801 {40221}         copied to Investing/212        1.96 msgs/s  950.912 KiB/s 73.943 MiB copied ETA: Tuesday 31 October 2023-10-31 19:51:21 -0700 MST  1414 s  2771/3615 msgs left
+msg INBOX.Investing/803 {253788}        copied to Investing/213        1.97 msgs/s  950.873 KiB/s 74.185 MiB copied ETA: Tuesday 31 October 2023-10-31 19:51:16 -0700 MST  1410 s  2770/3615 msgs left
+msg INBOX.Investing/805 {8597}          copied to Investing/214        1.97 msgs/s  948.340 KiB/s 74.193 MiB copied ETA: Tuesday 31 October 2023-10-31 19:51:11 -0700 MST  1404 s  2769/3615 msgs left
+msg INBOX.Investing/806 {8863}          copied to Investing/215        1.98 msgs/s  945.768 KiB/s 74.202 MiB copied ETA: Tuesday 31 October 2023-10-31 19:51:06 -0700 MST  1399 s  2768/3615 msgs left
+msg INBOX.Investing/807 {669734}        copied to Investing/216        1.98 msgs/s  948.772 KiB/s 74.840 MiB copied ETA: Tuesday 31 October 2023-10-31 19:51:05 -0700 MST  1397 s  2767/3615 msgs left
+msg INBOX.Investing/808 {29989}         copied to Investing/217        1.99 msgs/s  946.348 KiB/s 74.869 MiB copied ETA: Tuesday 31 October 2023-10-31 19:51:00 -0700 MST  1392 s  2766/3615 msgs left
+msg INBOX.Investing/809 {222115}        copied to Investing/218        1.99 msgs/s  945.675 KiB/s 75.081 MiB copied ETA: Tuesday 31 October 2023-10-31 19:50:56 -0700 MST  1388 s  2765/3615 msgs left
+msg INBOX.Investing/814 {301754}        copied to Investing/219        2.00 msgs/s  946.015 KiB/s 75.369 MiB copied ETA: Tuesday 31 October 2023-10-31 19:50:52 -0700 MST  1383 s  2764/3615 msgs left
+msg INBOX.Investing/815 {9935}          copied to Investing/220        2.00 msgs/s  943.430 KiB/s 75.378 MiB copied ETA: Tuesday 31 October 2023-10-31 19:50:47 -0700 MST  1378 s  2763/3615 msgs left
+msg INBOX.Investing/817 {221196}        copied to Investing/221        2.01 msgs/s  942.993 KiB/s 75.589 MiB copied ETA: Tuesday 31 October 2023-10-31 19:50:43 -0700 MST  1374 s  2762/3615 msgs left
+msg INBOX.Investing/818 {46073}         copied to Investing/222        2.02 msgs/s  940.838 KiB/s 75.633 MiB copied ETA: Tuesday 31 October 2023-10-31 19:50:38 -0700 MST  1369 s  2761/3615 msgs left
+msg INBOX.Investing/819 {23919}         copied to Investing/223        2.02 msgs/s  938.495 KiB/s 75.656 MiB copied ETA: Tuesday 31 October 2023-10-31 19:50:34 -0700 MST  1364 s  2760/3615 msgs left
+msg INBOX.Investing/820 {15333}         copied to Investing/224        2.03 msgs/s  936.134 KiB/s 75.670 MiB copied ETA: Tuesday 31 October 2023-10-31 19:50:29 -0700 MST  1359 s  2759/3615 msgs left
+msg INBOX.Investing/822 {1841628}       copied to Investing/225        2.02 msgs/s  948.408 KiB/s 77.427 MiB copied ETA: Tuesday 31 October 2023-10-31 19:50:35 -0700 MST  1364 s  2758/3615 msgs left
+msg INBOX.Investing/824 {27962}         copied to Investing/226        2.03 msgs/s  946.209 KiB/s 77.453 MiB copied ETA: Tuesday 31 October 2023-10-31 19:50:30 -0700 MST  1359 s  2757/3615 msgs left
+msg INBOX.Investing/825 {3460987}       copied to Investing/227        2.00 msgs/s  968.241 KiB/s 80.754 MiB copied ETA: Tuesday 31 October 2023-10-31 19:50:49 -0700 MST  1376 s  2756/3615 msgs left
+msg INBOX.Investing/826 {47067}         copied to Investing/228        2.01 msgs/s  966.174 KiB/s 80.799 MiB copied ETA: Tuesday 31 October 2023-10-31 19:50:44 -0700 MST  1372 s  2755/3615 msgs left
+msg INBOX.Investing/827 {29745}         copied to Investing/229        2.01 msgs/s  963.755 KiB/s 80.827 MiB copied ETA: Tuesday 31 October 2023-10-31 19:50:40 -0700 MST  1367 s  2754/3615 msgs left
+msg INBOX.Investing/829 {1844868}       copied to Investing/230        2.01 msgs/s  975.338 KiB/s 82.587 MiB copied ETA: Tuesday 31 October 2023-10-31 19:50:46 -0700 MST  1372 s  2753/3615 msgs left
+msg INBOX.Investing/831 {8790}          copied to Investing/231        2.01 msgs/s  972.900 KiB/s 82.595 MiB copied ETA: Tuesday 31 October 2023-10-31 19:50:41 -0700 MST  1367 s  2752/3615 msgs left
+msg INBOX.Investing/832 {45901}         copied to Investing/232        2.02 msgs/s  970.772 KiB/s 82.639 MiB copied ETA: Tuesday 31 October 2023-10-31 19:50:37 -0700 MST  1363 s  2751/3615 msgs left
+msg INBOX.Investing/833 {29233}         copied to Investing/233        2.03 msgs/s  968.585 KiB/s 82.667 MiB copied ETA: Tuesday 31 October 2023-10-31 19:50:32 -0700 MST  1358 s  2750/3615 msgs left
+msg INBOX.Investing/834 {8030}          copied to Investing/234        2.03 msgs/s  966.177 KiB/s 82.674 MiB copied ETA: Tuesday 31 October 2023-10-31 19:50:28 -0700 MST  1353 s  2749/3615 msgs left
+msg INBOX.Investing/838 {8805}          copied to Investing/235        2.04 msgs/s  963.861 KiB/s 82.683 MiB copied ETA: Tuesday 31 October 2023-10-31 19:50:23 -0700 MST  1349 s  2748/3615 msgs left
+msg INBOX.Investing/839 {4151}          copied to Investing/236        2.04 msgs/s  961.415 KiB/s 82.687 MiB copied ETA: Tuesday 31 October 2023-10-31 19:50:19 -0700 MST  1344 s  2747/3615 msgs left
+msg INBOX.Investing/840 {43873}         copied to Investing/237        2.05 msgs/s  959.289 KiB/s 82.729 MiB copied ETA: Tuesday 31 October 2023-10-31 19:50:15 -0700 MST  1340 s  2746/3615 msgs left
+msg INBOX.Investing/841 {32016}         copied to Investing/238        2.06 msgs/s  957.122 KiB/s 82.759 MiB copied ETA: Tuesday 31 October 2023-10-31 19:50:11 -0700 MST  1335 s  2745/3615 msgs left
+msg INBOX.Investing/842 {9919}          copied to Investing/239        2.06 msgs/s  954.801 KiB/s 82.768 MiB copied ETA: Tuesday 31 October 2023-10-31 19:50:07 -0700 MST  1331 s  2744/3615 msgs left
+msg INBOX.Investing/845 {45932}         copied to Investing/240        2.07 msgs/s  952.788 KiB/s 82.812 MiB copied ETA: Tuesday 31 October 2023-10-31 19:50:03 -0700 MST  1327 s  2743/3615 msgs left
+msg INBOX.Investing/846 {33228}         copied to Investing/241        2.07 msgs/s  949.838 KiB/s 82.844 MiB copied ETA: Tuesday 31 October 2023-10-31 19:50:00 -0700 MST  1324 s  2742/3615 msgs left
+msg INBOX.Investing/847 {141874}        copied to Investing/242        2.08 msgs/s  948.556 KiB/s 82.979 MiB copied ETA: Tuesday 31 October 2023-10-31 19:49:57 -0700 MST  1320 s  2741/3615 msgs left
+msg INBOX.Investing/848 {47434}         copied to Investing/243        2.08 msgs/s  946.507 KiB/s 83.025 MiB copied ETA: Tuesday 31 October 2023-10-31 19:49:53 -0700 MST  1316 s  2740/3615 msgs left
+msg INBOX.Investing/850 {4152}          copied to Investing/244        2.09 msgs/s  944.157 KiB/s 83.028 MiB copied ETA: Tuesday 31 October 2023-10-31 19:49:49 -0700 MST  1312 s  2739/3615 msgs left
+msg INBOX.Investing/851 {16084}         copied to Investing/245        2.09 msgs/s  941.942 KiB/s 83.044 MiB copied ETA: Tuesday 31 October 2023-10-31 19:49:45 -0700 MST  1308 s  2738/3615 msgs left
+msg INBOX.Investing/852 {19688}         copied to Investing/246        2.10 msgs/s  939.707 KiB/s 83.063 MiB copied ETA: Tuesday 31 October 2023-10-31 19:49:41 -0700 MST  1304 s  2737/3615 msgs left
+msg INBOX.Investing/853 {11772}         copied to Investing/247        2.10 msgs/s  937.476 KiB/s 83.074 MiB copied ETA: Tuesday 31 October 2023-10-31 19:49:38 -0700 MST  1300 s  2736/3615 msgs left
+msg INBOX.Investing/855 {3017}          copied to Investing/248        2.11 msgs/s  935.116 KiB/s 83.077 MiB copied ETA: Tuesday 31 October 2023-10-31 19:49:34 -0700 MST  1296 s  2735/3615 msgs left
+msg INBOX.Investing/856 {67753}         copied to Investing/249        2.12 msgs/s  933.433 KiB/s 83.141 MiB copied ETA: Tuesday 31 October 2023-10-31 19:49:30 -0700 MST  1292 s  2734/3615 msgs left
+msg INBOX.Investing/857 {31729}         copied to Investing/250        2.12 msgs/s  931.121 KiB/s 83.172 MiB copied ETA: Tuesday 31 October 2023-10-31 19:49:27 -0700 MST  1289 s  2733/3615 msgs left
+msg INBOX.Investing/858 {47703}         copied to Investing/251        2.13 msgs/s  929.307 KiB/s 83.217 MiB copied ETA: Tuesday 31 October 2023-10-31 19:49:23 -0700 MST  1285 s  2732/3615 msgs left
+msg INBOX.Investing/859 {52507}         copied to Investing/252        2.13 msgs/s  927.393 KiB/s 83.267 MiB copied ETA: Tuesday 31 October 2023-10-31 19:49:20 -0700 MST  1281 s  2731/3615 msgs left
+msg INBOX.Investing/860 {62941}         copied to Investing/253        2.14 msgs/s  925.618 KiB/s 83.327 MiB copied ETA: Tuesday 31 October 2023-10-31 19:49:17 -0700 MST  1277 s  2730/3615 msgs left
+msg INBOX.Investing/861 {76102}         copied to Investing/254        2.14 msgs/s  924.004 KiB/s 83.400 MiB copied ETA: Tuesday 31 October 2023-10-31 19:49:13 -0700 MST  1274 s  2729/3615 msgs left
+msg INBOX.Investing/862 {7317}          copied to Investing/255        2.15 msgs/s  921.785 KiB/s 83.407 MiB copied ETA: Tuesday 31 October 2023-10-31 19:49:10 -0700 MST  1270 s  2728/3615 msgs left
+msg INBOX.Investing/863 {4728999}       copied to Investing/256        2.11 msgs/s  951.005 KiB/s 87.917 MiB copied ETA: Tuesday 31 October 2023-10-31 19:49:32 -0700 MST  1291 s  2727/3615 msgs left
+msg INBOX.Investing/864 {109803}        copied to Investing/257        2.12 msgs/s  949.388 KiB/s 88.021 MiB copied ETA: Tuesday 31 October 2023-10-31 19:49:30 -0700 MST  1288 s  2726/3615 msgs left
+msg INBOX.Investing/865 {102937}        copied to Investing/258        2.12 msgs/s  948.093 KiB/s 88.120 MiB copied ETA: Tuesday 31 October 2023-10-31 19:49:26 -0700 MST  1284 s  2725/3615 msgs left
+msg INBOX.Investing/866 {92575}         copied to Investing/259        2.13 msgs/s  946.592 KiB/s 88.208 MiB copied ETA: Tuesday 31 October 2023-10-31 19:49:23 -0700 MST  1280 s  2724/3615 msgs left
+msg INBOX.Investing/867 {14311}         copied to Investing/260        2.13 msgs/s  944.502 KiB/s 88.221 MiB copied ETA: Tuesday 31 October 2023-10-31 19:49:19 -0700 MST  1277 s  2723/3615 msgs left
+msg INBOX.Investing/868 {15037}         copied to Investing/261        2.14 msgs/s  942.295 KiB/s 88.236 MiB copied ETA: Tuesday 31 October 2023-10-31 19:49:16 -0700 MST  1273 s  2722/3615 msgs left
+msg INBOX.Investing/869 {16389}         copied to Investing/262        2.14 msgs/s  939.443 KiB/s 88.251 MiB copied ETA: Tuesday 31 October 2023-10-31 19:49:14 -0700 MST  1271 s  2721/3615 msgs left
+msg INBOX.Investing/870 {29071}         copied to Investing/263        2.15 msgs/s  937.471 KiB/s 88.279 MiB copied ETA: Tuesday 31 October 2023-10-31 19:49:10 -0700 MST  1267 s  2720/3615 msgs left
+msg INBOX.Investing/871 {4847}          copied to Investing/264        2.15 msgs/s  935.284 KiB/s 88.284 MiB copied ETA: Tuesday 31 October 2023-10-31 19:49:07 -0700 MST  1264 s  2719/3615 msgs left
+msg INBOX.Investing/872 {13367}         copied to Investing/265        2.16 msgs/s  933.110 KiB/s 88.297 MiB copied ETA: Tuesday 31 October 2023-10-31 19:49:04 -0700 MST  1260 s  2718/3615 msgs left
+msg INBOX.Investing/873 {1073987}       copied to Investing/266        2.15 msgs/s  938.093 KiB/s 89.321 MiB copied ETA: Tuesday 31 October 2023-10-31 19:49:06 -0700 MST  1261 s  2717/3615 msgs left
+msg INBOX.Investing/874 {42860}         copied to Investing/267        2.16 msgs/s  936.198 KiB/s 89.362 MiB copied ETA: Tuesday 31 October 2023-10-31 19:49:03 -0700 MST  1258 s  2716/3615 msgs left
+msg INBOX.Investing/875 {52817}         copied to Investing/268        2.16 msgs/s  934.511 KiB/s 89.412 MiB copied ETA: Tuesday 31 October 2023-10-31 19:49:00 -0700 MST  1255 s  2715/3615 msgs left
+msg INBOX.Investing/876 {76573}         copied to Investing/269        2.17 msgs/s  933.012 KiB/s 89.485 MiB copied ETA: Tuesday 31 October 2023-10-31 19:48:57 -0700 MST  1251 s  2714/3615 msgs left
+msg INBOX.Investing/877 {9788}          copied to Investing/270        2.17 msgs/s  930.955 KiB/s 89.494 MiB copied ETA: Tuesday 31 October 2023-10-31 19:48:53 -0700 MST  1248 s  2713/3615 msgs left
+msg INBOX.Investing/878 {2044674}       copied to Investing/271        2.16 msgs/s  942.715 KiB/s 91.444 MiB copied ETA: Tuesday 31 October 2023-10-31 19:48:59 -0700 MST  1253 s  2712/3615 msgs left
+msg INBOX.Investing/879 {19580}         copied to Investing/272        2.17 msgs/s  940.716 KiB/s 91.463 MiB copied ETA: Tuesday 31 October 2023-10-31 19:48:56 -0700 MST  1250 s  2711/3615 msgs left
+msg INBOX.Investing/880 {6768}          copied to Investing/273        2.17 msgs/s  938.592 KiB/s 91.469 MiB copied ETA: Tuesday 31 October 2023-10-31 19:48:53 -0700 MST  1246 s  2710/3615 msgs left
+msg INBOX.Investing/881 {1542985}       copied to Investing/274        2.17 msgs/s  946.646 KiB/s 92.941 MiB copied ETA: Tuesday 31 October 2023-10-31 19:48:57 -0700 MST  1249 s  2709/3615 msgs left
+msg INBOX.Investing/882 {104087}        copied to Investing/275        2.17 msgs/s  945.275 KiB/s 93.040 MiB copied ETA: Tuesday 31 October 2023-10-31 19:48:54 -0700 MST  1246 s  2708/3615 msgs left
+msg INBOX.Investing/883 {10252}         copied to Investing/276        2.18 msgs/s  943.223 KiB/s 93.050 MiB copied ETA: Tuesday 31 October 2023-10-31 19:48:51 -0700 MST  1243 s  2707/3615 msgs left
+msg INBOX.Investing/884 {21330}         copied to Investing/277        2.18 msgs/s  941.285 KiB/s 93.070 MiB copied ETA: Tuesday 31 October 2023-10-31 19:48:48 -0700 MST  1240 s  2706/3615 msgs left
+msg INBOX.Investing/885 {29142}         copied to Investing/278        2.19 msgs/s  939.458 KiB/s 93.098 MiB copied ETA: Tuesday 31 October 2023-10-31 19:48:45 -0700 MST  1236 s  2705/3615 msgs left
+msg INBOX.Investing/886 {15403}         copied to Investing/279        2.19 msgs/s  937.475 KiB/s 93.113 MiB copied ETA: Tuesday 31 October 2023-10-31 19:48:42 -0700 MST  1233 s  2704/3615 msgs left
+msg INBOX.Investing/887 {35999}         copied to Investing/280        2.20 msgs/s  935.648 KiB/s 93.147 MiB copied ETA: Tuesday 31 October 2023-10-31 19:48:39 -0700 MST  1230 s  2703/3615 msgs left
+msg INBOX.Investing/888 {8550}          copied to Investing/281        2.20 msgs/s  933.591 KiB/s 93.155 MiB copied ETA: Tuesday 31 October 2023-10-31 19:48:36 -0700 MST  1227 s  2702/3615 msgs left
+msg INBOX.Investing/889 {35570}         copied to Investing/282        2.21 msgs/s  931.846 KiB/s 93.189 MiB copied ETA: Tuesday 31 October 2023-10-31 19:48:33 -0700 MST  1224 s  2701/3615 msgs left
+msg INBOX.Investing/890 {52004}         copied to Investing/283        2.21 msgs/s  930.231 KiB/s 93.239 MiB copied ETA: Tuesday 31 October 2023-10-31 19:48:30 -0700 MST  1221 s  2700/3615 msgs left
+msg INBOX.Investing/891 {2871049}       copied to Investing/284        2.19 msgs/s  944.437 KiB/s 95.977 MiB copied ETA: Tuesday 31 October 2023-10-31 19:48:43 -0700 MST  1232 s  2699/3615 msgs left
+msg INBOX.Investing/892 {64998}         copied to Investing/285        2.19 msgs/s  942.543 KiB/s 96.039 MiB copied ETA: Tuesday 31 October 2023-10-31 19:48:41 -0700 MST  1229 s  2698/3615 msgs left
+msg INBOX.Investing/893 {1226720}       copied to Investing/286        2.19 msgs/s  946.581 KiB/s 97.209 MiB copied ETA: Tuesday 31 October 2023-10-31 19:48:45 -0700 MST  1233 s  2697/3615 msgs left
+msg INBOX.Investing/894 {103162}        copied to Investing/287        2.19 msgs/s  945.207 KiB/s 97.307 MiB copied ETA: Tuesday 31 October 2023-10-31 19:48:43 -0700 MST  1230 s  2696/3615 msgs left
+msg INBOX.Investing/895 {4881}          copied to Investing/288        2.20 msgs/s  943.131 KiB/s 97.312 MiB copied ETA: Tuesday 31 October 2023-10-31 19:48:40 -0700 MST  1227 s  2695/3615 msgs left
+msg INBOX.Investing/896 {13841}         copied to Investing/289        2.20 msgs/s  941.190 KiB/s 97.325 MiB copied ETA: Tuesday 31 October 2023-10-31 19:48:37 -0700 MST  1224 s  2694/3615 msgs left
+msg INBOX.Investing/897 {17254}         copied to Investing/290        2.20 msgs/s  938.631 KiB/s 97.341 MiB copied ETA: Tuesday 31 October 2023-10-31 19:48:35 -0700 MST  1222 s  2693/3615 msgs left
+msg INBOX.Investing/898 {34677}         copied to Investing/291        2.21 msgs/s  936.893 KiB/s 97.375 MiB copied ETA: Tuesday 31 October 2023-10-31 19:48:33 -0700 MST  1219 s  2692/3615 msgs left
+msg INBOX.Investing/899 {17366}         copied to Investing/292        2.21 msgs/s  934.231 KiB/s 97.391 MiB copied ETA: Tuesday 31 October 2023-10-31 19:48:31 -0700 MST  1217 s  2691/3615 msgs left
+msg INBOX.Investing/900 {36078}         copied to Investing/293        2.22 msgs/s  932.519 KiB/s 97.425 MiB copied ETA: Tuesday 31 October 2023-10-31 19:48:28 -0700 MST  1214 s  2690/3615 msgs left
+msg INBOX.Investing/901 {68319}         copied to Investing/294        2.22 msgs/s  930.993 KiB/s 97.491 MiB copied ETA: Tuesday 31 October 2023-10-31 19:48:26 -0700 MST  1212 s  2689/3615 msgs left
+msg INBOX.Investing/902 {47898}         copied to Investing/295        2.22 msgs/s  929.375 KiB/s 97.536 MiB copied ETA: Tuesday 31 October 2023-10-31 19:48:23 -0700 MST  1209 s  2688/3615 msgs left
+msg INBOX.Investing/903 {57881}         copied to Investing/296        2.23 msgs/s  927.818 KiB/s 97.592 MiB copied ETA: Tuesday 31 October 2023-10-31 19:48:21 -0700 MST  1206 s  2687/3615 msgs left
+msg INBOX.Investing/904 {57080}         copied to Investing/297        2.23 msgs/s  926.253 KiB/s 97.646 MiB copied ETA: Tuesday 31 October 2023-10-31 19:48:18 -0700 MST  1203 s  2686/3615 msgs left
+msg INBOX.Investing/905 {74369}         copied to Investing/298        2.24 msgs/s  924.721 KiB/s 97.717 MiB copied ETA: Tuesday 31 October 2023-10-31 19:48:16 -0700 MST  1201 s  2685/3615 msgs left
+msg INBOX.Investing/906 {109350}        copied to Investing/299        2.24 msgs/s  923.535 KiB/s 97.821 MiB copied ETA: Tuesday 31 October 2023-10-31 19:48:13 -0700 MST  1198 s  2684/3615 msgs left
+msg INBOX.Investing/907 {147989}        copied to Investing/300        2.24 msgs/s  922.089 KiB/s 97.962 MiB copied ETA: Tuesday 31 October 2023-10-31 19:48:12 -0700 MST  1196 s  2683/3615 msgs left
+msg INBOX.Investing/908 {98135}         copied to Investing/301        2.25 msgs/s  920.846 KiB/s 98.056 MiB copied ETA: Tuesday 31 October 2023-10-31 19:48:10 -0700 MST  1194 s  2682/3615 msgs left
+msg INBOX.Investing/909 {502932}        copied to Investing/302        2.25 msgs/s  922.117 KiB/s 98.536 MiB copied ETA: Tuesday 31 October 2023-10-31 19:48:09 -0700 MST  1193 s  2681/3615 msgs left
+msg INBOX.Investing/910 {7173}          copied to Investing/303        2.25 msgs/s  919.916 KiB/s 98.542 MiB copied ETA: Tuesday 31 October 2023-10-31 19:48:07 -0700 MST  1190 s  2680/3615 msgs left
+msg INBOX.Investing/911 {14436}         copied to Investing/304        2.26 msgs/s  918.018 KiB/s 98.556 MiB copied ETA: Tuesday 31 October 2023-10-31 19:48:04 -0700 MST  1188 s  2679/3615 msgs left
+msg INBOX.Investing/912 {6634}          copied to Investing/305        2.26 msgs/s  916.193 KiB/s 98.562 MiB copied ETA: Tuesday 31 October 2023-10-31 19:48:02 -0700 MST  1185 s  2678/3615 msgs left
+msg INBOX.Investing/913 {4151}          copied to Investing/306        2.26 msgs/s  914.308 KiB/s 98.566 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:59 -0700 MST  1182 s  2677/3615 msgs left
+msg INBOX.Investing/914 {11214}         copied to Investing/307        2.27 msgs/s  912.444 KiB/s 98.577 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:57 -0700 MST  1179 s  2676/3615 msgs left
+msg INBOX.Investing/915 {47429}         copied to Investing/308        2.27 msgs/s  910.940 KiB/s 98.622 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:55 -0700 MST  1177 s  2675/3615 msgs left
+msg INBOX.Investing/916 {6228}          copied to Investing/309        2.28 msgs/s  909.112 KiB/s 98.628 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:52 -0700 MST  1174 s  2674/3615 msgs left
+msg INBOX.Investing/917 {56915}         copied to Investing/310        2.28 msgs/s  907.702 KiB/s 98.683 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:50 -0700 MST  1172 s  2673/3615 msgs left
+msg INBOX.Investing/918 {72774}         copied to Investing/311        2.29 msgs/s  906.379 KiB/s 98.752 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:48 -0700 MST  1169 s  2672/3615 msgs left
+msg INBOX.Investing/919 {11475}         copied to Investing/312        2.29 msgs/s  904.653 KiB/s 98.763 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:45 -0700 MST  1166 s  2671/3615 msgs left
+msg INBOX.Investing/920 {20971}         copied to Investing/313        2.29 msgs/s  902.945 KiB/s 98.783 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:43 -0700 MST  1164 s  2670/3615 msgs left
+msg INBOX.Investing/921 {6515}          copied to Investing/314        2.30 msgs/s  901.044 KiB/s 98.789 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:41 -0700 MST  1161 s  2669/3615 msgs left
+msg INBOX.Investing/922 {26603}         copied to Investing/315        2.30 msgs/s  899.425 KiB/s 98.814 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:38 -0700 MST  1159 s  2668/3615 msgs left
+msg INBOX.Investing/923 {4157686}       copied to Investing/316        2.27 msgs/s  920.616 KiB/s 102.780 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:54 -0700 MST  1173 s  2667/3615 msgs left
+msg INBOX.Investing/924 {13063}         copied to Investing/317        2.28 msgs/s  918.711 KiB/s 102.792 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:52 -0700 MST  1170 s  2666/3615 msgs left
+msg INBOX.Investing/925 {10788}         copied to Investing/318        2.28 msgs/s  916.951 KiB/s 102.802 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:50 -0700 MST  1168 s  2665/3615 msgs left
+msg INBOX.Investing/926 {14137}         copied to Investing/319        2.29 msgs/s  915.201 KiB/s 102.816 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:47 -0700 MST  1165 s  2664/3615 msgs left
+msg INBOX.Investing/927 {30155}         copied to Investing/320        2.29 msgs/s  913.582 KiB/s 102.845 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:45 -0700 MST  1163 s  2663/3615 msgs left
+msg INBOX.Investing/928 {17300}         copied to Investing/321        2.29 msgs/s  911.127 KiB/s 102.861 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:44 -0700 MST  1161 s  2662/3615 msgs left
+msg INBOX.Investing/929 {39369}         copied to Investing/322        2.30 msgs/s  909.578 KiB/s 102.899 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:42 -0700 MST  1159 s  2661/3615 msgs left
+msg INBOX.Investing/930 {9569}          copied to Investing/323        2.30 msgs/s  907.828 KiB/s 102.908 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:39 -0700 MST  1156 s  2660/3615 msgs left
+msg INBOX.Investing/931 {63209}         copied to Investing/324        2.30 msgs/s  906.423 KiB/s 102.968 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:37 -0700 MST  1154 s  2659/3615 msgs left
+msg INBOX.Investing/932 {15791}         copied to Investing/325        2.31 msgs/s  904.603 KiB/s 102.983 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:35 -0700 MST  1152 s  2658/3615 msgs left
+msg INBOX.Investing/933 {48970}         copied to Investing/326        2.31 msgs/s  903.168 KiB/s 103.030 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:33 -0700 MST  1150 s  2657/3615 msgs left
+msg INBOX.Investing/934 {72674}         copied to Investing/327        2.32 msgs/s  901.887 KiB/s 103.099 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:31 -0700 MST  1147 s  2656/3615 msgs left
+msg INBOX.Investing/935 {8119}          copied to Investing/328        2.32 msgs/s  900.168 KiB/s 103.107 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:29 -0700 MST  1145 s  2655/3615 msgs left
+msg INBOX.Investing/936 {1334394}       copied to Investing/329        2.31 msgs/s  906.353 KiB/s 104.379 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:31 -0700 MST  1146 s  2654/3615 msgs left
+msg INBOX.Investing/937 {11878}         copied to Investing/330        2.32 msgs/s  904.690 KiB/s 104.391 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:29 -0700 MST  1144 s  2653/3615 msgs left
+msg INBOX.Investing/938 {11880}         copied to Investing/331        2.32 msgs/s  903.037 KiB/s 104.402 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:27 -0700 MST  1142 s  2652/3615 msgs left
+msg INBOX.Investing/939 {11890}         copied to Investing/332        2.33 msgs/s  901.407 KiB/s 104.413 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:25 -0700 MST  1139 s  2651/3615 msgs left
+msg INBOX.Investing/940 {19460}         copied to Investing/333        2.33 msgs/s  899.834 KiB/s 104.432 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:23 -0700 MST  1137 s  2650/3615 msgs left
+msg INBOX.Investing/941 {37838}         copied to Investing/334        2.33 msgs/s  898.224 KiB/s 104.468 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:21 -0700 MST  1135 s  2649/3615 msgs left
+msg INBOX.Investing/942 {13605}         copied to Investing/335        2.34 msgs/s  896.659 KiB/s 104.481 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:19 -0700 MST  1132 s  2648/3615 msgs left
+msg INBOX.Investing/943 {34163}         copied to Investing/336        2.34 msgs/s  894.502 KiB/s 104.514 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:18 -0700 MST  1131 s  2647/3615 msgs left
+msg INBOX.Investing/944 {6238}          copied to Investing/337        2.34 msgs/s  892.871 KiB/s 104.520 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:16 -0700 MST  1129 s  2646/3615 msgs left
+msg INBOX.Investing/945 {347178}        copied to Investing/338        2.35 msgs/s  893.590 KiB/s 104.851 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:14 -0700 MST  1127 s  2645/3615 msgs left
+msg INBOX.Investing/946 {45656}         copied to Investing/339        2.35 msgs/s  892.207 KiB/s 104.894 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:12 -0700 MST  1125 s  2644/3615 msgs left
+msg INBOX.Investing/947 {57980}         copied to Investing/340        2.35 msgs/s  890.880 KiB/s 104.949 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:10 -0700 MST  1123 s  2643/3615 msgs left
+msg INBOX.Investing/948 {72762}         copied to Investing/341        2.36 msgs/s  889.659 KiB/s 105.019 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:08 -0700 MST  1121 s  2642/3615 msgs left
+msg INBOX.Investing/949 {13754}         copied to Investing/342        2.36 msgs/s  888.105 KiB/s 105.032 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:06 -0700 MST  1118 s  2641/3615 msgs left
+msg INBOX.Investing/950 {13809}         copied to Investing/343        2.37 msgs/s  886.547 KiB/s 105.045 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:04 -0700 MST  1116 s  2640/3615 msgs left
+msg INBOX.Investing/951 {25468}         copied to Investing/344        2.37 msgs/s  885.122 KiB/s 105.069 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:02 -0700 MST  1114 s  2639/3615 msgs left
+msg INBOX.Investing/952 {130321}        copied to Investing/345        2.37 msgs/s  884.366 KiB/s 105.194 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:01 -0700 MST  1112 s  2638/3615 msgs left
+msg INBOX.Investing/953 {16177}         copied to Investing/346        2.38 msgs/s  882.884 KiB/s 105.209 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:59 -0700 MST  1110 s  2637/3615 msgs left
+msg INBOX.Investing/954 {11213}         copied to Investing/347        2.38 msgs/s  881.136 KiB/s 105.220 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:57 -0700 MST  1108 s  2636/3615 msgs left
+msg INBOX.Investing/955 {31882}         copied to Investing/348        2.38 msgs/s  879.690 KiB/s 105.250 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:55 -0700 MST  1106 s  2635/3615 msgs left
+msg INBOX.Investing/956 {11645}         copied to Investing/349        2.39 msgs/s  878.163 KiB/s 105.261 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:53 -0700 MST  1103 s  2634/3615 msgs left
+msg INBOX.Investing/957 {36021}         copied to Investing/350        2.39 msgs/s  876.758 KiB/s 105.296 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:51 -0700 MST  1101 s  2633/3615 msgs left
+msg INBOX.Investing/958 {9268}          copied to Investing/351        2.39 msgs/s  875.229 KiB/s 105.305 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:49 -0700 MST  1099 s  2632/3615 msgs left
+msg INBOX.Investing/959 {30620}         copied to Investing/352        2.40 msgs/s  873.857 KiB/s 105.334 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:48 -0700 MST  1097 s  2631/3615 msgs left
+msg INBOX.Investing/960 {11395}         copied to Investing/353        2.40 msgs/s  872.314 KiB/s 105.345 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:46 -0700 MST  1095 s  2630/3615 msgs left
+msg INBOX.Investing/961 {11078}         copied to Investing/354        2.41 msgs/s  870.822 KiB/s 105.355 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:44 -0700 MST  1093 s  2629/3615 msgs left
+msg INBOX.Investing/962 {11393}         copied to Investing/355        2.41 msgs/s  869.316 KiB/s 105.366 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:42 -0700 MST  1091 s  2628/3615 msgs left
+msg INBOX.Investing/963 {36985}         copied to Investing/356        2.41 msgs/s  867.976 KiB/s 105.401 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:40 -0700 MST  1089 s  2627/3615 msgs left
+msg INBOX.Investing/964 {19162}         copied to Investing/357        2.42 msgs/s  866.464 KiB/s 105.420 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:38 -0700 MST  1087 s  2626/3615 msgs left
+msg INBOX.Investing/965 {18621}         copied to Investing/358        2.42 msgs/s  865.038 KiB/s 105.437 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:37 -0700 MST  1085 s  2625/3615 msgs left
+ETA: Tuesday 31 October 2023-10-31 19:46:37 -0700 MST  1085 s  2625/3615 msgs left
+Folder   14/45 [INBOX.Investors Choice - Cahokia]  -> [Investors Choice - Cahokia]       
+Host1: folder [INBOX.Investors Choice - Cahokia] has 12 messages in total (mentioned by SELECT)
+Creating folder [Investors Choice - Cahokia] on host2
+Created folder [Investors Choice - Cahokia] on host2
+Host2: folder [Investors Choice - Cahokia] has 0 messages in total (mentioned by SELECT)
+Host2: folder [Investors Choice - Cahokia] permanentflags: 
+Host2: Subscribing to folder Investors Choice - Cahokia
+Host1: folder [INBOX.Investors Choice - Cahokia] considering 12 messages
+Host2: folder [Investors Choice - Cahokia] considering 0 messages
+Host1: folder [INBOX.Investors Choice - Cahokia] selected 12 messages, duplicates 0
+Host2: folder [Investors Choice - Cahokia] selected 0 messages, duplicates 0
+msg INBOX.Investors Choice - Cahokia/1 {6450}            copied to Investors Choice - Cahokia/1          2.41 msgs/s  858.381 KiB/s 105.443 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:42 -0700 MST  1089 s  2624/3615 msgs left
+msg INBOX.Investors Choice - Cahokia/2 {6450}            copied to Investors Choice - Cahokia/2          2.41 msgs/s  856.889 KiB/s 105.450 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:40 -0700 MST  1087 s  2623/3615 msgs left
+msg INBOX.Investors Choice - Cahokia/3 {6447}            copied to Investors Choice - Cahokia/3          2.42 msgs/s  855.359 KiB/s 105.456 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:39 -0700 MST  1085 s  2622/3615 msgs left
+msg INBOX.Investors Choice - Cahokia/4 {6444}            copied to Investors Choice - Cahokia/4          2.42 msgs/s  853.876 KiB/s 105.462 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:37 -0700 MST  1083 s  2621/3615 msgs left
+msg INBOX.Investors Choice - Cahokia/5 {21297}           copied to Investors Choice - Cahokia/5          2.42 msgs/s  852.467 KiB/s 105.482 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:35 -0700 MST  1081 s  2620/3615 msgs left
+msg INBOX.Investors Choice - Cahokia/6 {122225}          copied to Investors Choice - Cahokia/6          2.43 msgs/s  851.703 KiB/s 105.599 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:34 -0700 MST  1080 s  2619/3615 msgs left
+msg INBOX.Investors Choice - Cahokia/7 {97855}           copied to Investors Choice - Cahokia/7          2.43 msgs/s  850.834 KiB/s 105.692 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:32 -0700 MST  1078 s  2618/3615 msgs left
+msg INBOX.Investors Choice - Cahokia/8 {21311}           copied to Investors Choice - Cahokia/8          2.43 msgs/s  849.496 KiB/s 105.712 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:30 -0700 MST  1076 s  2617/3615 msgs left
+msg INBOX.Investors Choice - Cahokia/9 {12425}           copied to Investors Choice - Cahokia/9          2.44 msgs/s  848.057 KiB/s 105.724 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:28 -0700 MST  1074 s  2616/3615 msgs left
+msg INBOX.Investors Choice - Cahokia/10 {12427}          copied to Investors Choice - Cahokia/10         2.44 msgs/s  846.635 KiB/s 105.736 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:27 -0700 MST  1072 s  2615/3615 msgs left
+msg INBOX.Investors Choice - Cahokia/14 {5037}           copied to Investors Choice - Cahokia/11         2.44 msgs/s  845.158 KiB/s 105.741 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:25 -0700 MST  1070 s  2614/3615 msgs left
+msg INBOX.Investors Choice - Cahokia/15 {108180}         copied to Investors Choice - Cahokia/12         2.45 msgs/s  844.286 KiB/s 105.844 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:24 -0700 MST  1068 s  2613/3615 msgs left
+ETA: Tuesday 31 October 2023-10-31 19:46:24 -0700 MST  1068 s  2613/3615 msgs left
+Folder   15/45 [INBOX.Junk]                        -> [Junk]                             
+Host1: folder [INBOX.Junk] has 0 messages in total (mentioned by SELECT)
+Host2: folder [Junk] has 0 messages in total (mentioned by SELECT)
+Host2: folder [Junk] permanentflags: 
+Host1: folder [INBOX.Junk] considering 0 messages
+Host2: folder [Junk] considering 0 messages
+Host1: folder [INBOX.Junk] selected 0 messages, duplicates 0
+Host2: folder [Junk] selected 0 messages, duplicates 0
+ETA: Tuesday 31 October 2023-10-31 19:46:27 -0700 MST  1071 s  2613/3615 msgs left
+Folder   16/45 [INBOX.Martello_Mariconi - Cahokia] -> [Martello_Mariconi - Cahokia]      
+Host1: folder [INBOX.Martello_Mariconi - Cahokia] has 281 messages in total (mentioned by SELECT)
+Creating folder [Martello_Mariconi - Cahokia] on host2
+Created folder [Martello_Mariconi - Cahokia] on host2
+Host2: folder [Martello_Mariconi - Cahokia] has 0 messages in total (mentioned by SELECT)
+Host2: folder [Martello_Mariconi - Cahokia] permanentflags: 
+Host1: folder [INBOX.Martello_Mariconi - Cahokia] considering 281 messages
+Host2: folder [Martello_Mariconi - Cahokia] considering 0 messages
+Host1: folder [INBOX.Martello_Mariconi - Cahokia] selected 281 messages, duplicates 9
+Host2: folder [Martello_Mariconi - Cahokia] selected 0 messages, duplicates 0
+msg INBOX.Martello_Mariconi - Cahokia/1 {13240}           copied to Martello_Mariconi - Cahokia/1          2.43 msgs/s  834.497 KiB/s 105.857 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:30 -0700 MST  1073 s  2603/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/2 {13958}           copied to Martello_Mariconi - Cahokia/2          2.43 msgs/s  833.139 KiB/s 105.870 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:29 -0700 MST  1071 s  2602/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/3 {25874}           copied to Martello_Mariconi - Cahokia/3          2.43 msgs/s  831.883 KiB/s 105.895 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:27 -0700 MST  1070 s  2601/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/4 {21128}           copied to Martello_Mariconi - Cahokia/4          2.44 msgs/s  830.511 KiB/s 105.915 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:25 -0700 MST  1068 s  2600/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/5 {21406}           copied to Martello_Mariconi - Cahokia/5          2.44 msgs/s  829.118 KiB/s 105.935 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:24 -0700 MST  1066 s  2599/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/6 {21417}           copied to Martello_Mariconi - Cahokia/6          2.44 msgs/s  827.828 KiB/s 105.956 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:22 -0700 MST  1064 s  2598/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/8 {462024}          copied to Martello_Mariconi - Cahokia/7          2.44 msgs/s  829.144 KiB/s 106.396 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:21 -0700 MST  1063 s  2597/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/9 {409910}          copied to Martello_Mariconi - Cahokia/8          2.44 msgs/s  830.150 KiB/s 106.787 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:21 -0700 MST  1062 s  2596/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/10 {14814}          copied to Martello_Mariconi - Cahokia/9          2.45 msgs/s  828.833 KiB/s 106.801 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:19 -0700 MST  1060 s  2595/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/11 {15333}          copied to Martello_Mariconi - Cahokia/10         2.45 msgs/s  827.475 KiB/s 106.816 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:17 -0700 MST  1058 s  2594/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/12 {410589}         copied to Martello_Mariconi - Cahokia/11         2.45 msgs/s  828.463 KiB/s 107.208 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:17 -0700 MST  1057 s  2593/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/14 {462699}         copied to Martello_Mariconi - Cahokia/12         2.45 msgs/s  829.818 KiB/s 107.649 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:16 -0700 MST  1056 s  2592/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/15 {15899}          copied to Martello_Mariconi - Cahokia/13         2.46 msgs/s  828.438 KiB/s 107.664 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:15 -0700 MST  1054 s  2591/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/16 {3987}           copied to Martello_Mariconi - Cahokia/14         2.46 msgs/s  827.048 KiB/s 107.668 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:13 -0700 MST  1053 s  2590/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/17 {6419}           copied to Martello_Mariconi - Cahokia/15         2.46 msgs/s  825.681 KiB/s 107.674 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:11 -0700 MST  1051 s  2589/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/18 {9518}           copied to Martello_Mariconi - Cahokia/16         2.47 msgs/s  824.354 KiB/s 107.683 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:10 -0700 MST  1049 s  2588/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/19 {95380}          copied to Martello_Mariconi - Cahokia/17         2.47 msgs/s  823.490 KiB/s 107.774 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:08 -0700 MST  1047 s  2587/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/20 {5920}           copied to Martello_Mariconi - Cahokia/18         2.47 msgs/s  822.160 KiB/s 107.780 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:07 -0700 MST  1046 s  2586/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/21 {21424}          copied to Martello_Mariconi - Cahokia/19         2.48 msgs/s  820.903 KiB/s 107.800 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:05 -0700 MST  1044 s  2585/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/22 {21419}          copied to Martello_Mariconi - Cahokia/20         2.48 msgs/s  819.637 KiB/s 107.820 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:04 -0700 MST  1042 s  2584/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/23 {18679}          copied to Martello_Mariconi - Cahokia/21         2.48 msgs/s  818.358 KiB/s 107.838 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:02 -0700 MST  1040 s  2583/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/25 {3364}           copied to Martello_Mariconi - Cahokia/22         2.49 msgs/s  816.946 KiB/s 107.842 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:01 -0700 MST  1039 s  2582/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/27 {15169}          copied to Martello_Mariconi - Cahokia/23         2.49 msgs/s  815.655 KiB/s 107.856 MiB copied ETA: Tuesday 31 October 2023-10-31 19:45:59 -0700 MST  1037 s  2581/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/28 {6005}           copied to Martello_Mariconi - Cahokia/24         2.49 msgs/s  814.336 KiB/s 107.862 MiB copied ETA: Tuesday 31 October 2023-10-31 19:45:58 -0700 MST  1035 s  2580/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/29 {409316}         copied to Martello_Mariconi - Cahokia/25         2.49 msgs/s  815.474 KiB/s 108.252 MiB copied ETA: Tuesday 31 October 2023-10-31 19:45:57 -0700 MST  1034 s  2579/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/30 {7406}           copied to Martello_Mariconi - Cahokia/26         2.50 msgs/s  814.160 KiB/s 108.259 MiB copied ETA: Tuesday 31 October 2023-10-31 19:45:56 -0700 MST  1032 s  2578/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/31 {19913}          copied to Martello_Mariconi - Cahokia/27         2.50 msgs/s  812.922 KiB/s 108.278 MiB copied ETA: Tuesday 31 October 2023-10-31 19:45:54 -0700 MST  1031 s  2577/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/32 {13933}          copied to Martello_Mariconi - Cahokia/28         2.50 msgs/s  811.616 KiB/s 108.291 MiB copied ETA: Tuesday 31 October 2023-10-31 19:45:53 -0700 MST  1029 s  2576/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/33 {13907}          copied to Martello_Mariconi - Cahokia/29         2.51 msgs/s  810.357 KiB/s 108.305 MiB copied ETA: Tuesday 31 October 2023-10-31 19:45:51 -0700 MST  1027 s  2575/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/34 {22701}          copied to Martello_Mariconi - Cahokia/30         2.51 msgs/s  809.194 KiB/s 108.326 MiB copied ETA: Tuesday 31 October 2023-10-31 19:45:50 -0700 MST  1026 s  2574/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/35 {5398349}        copied to Martello_Mariconi - Cahokia/31         2.44 msgs/s  823.316 KiB/s 113.475 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:21 -0700 MST  1053 s  2573/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/40 {5058}           copied to Martello_Mariconi - Cahokia/32         2.44 msgs/s  819.785 KiB/s 113.479 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:22 -0700 MST  1054 s  2572/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/41 {6106}           copied to Martello_Mariconi - Cahokia/33         2.44 msgs/s  818.478 KiB/s 113.485 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:21 -0700 MST  1052 s  2571/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/42 {2036}           copied to Martello_Mariconi - Cahokia/34         2.45 msgs/s  817.210 KiB/s 113.487 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:19 -0700 MST  1050 s  2570/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/43 {21406}          copied to Martello_Mariconi - Cahokia/35         2.45 msgs/s  815.930 KiB/s 113.508 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:18 -0700 MST  1049 s  2569/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/44 {10168}          copied to Martello_Mariconi - Cahokia/36         2.45 msgs/s  814.704 KiB/s 113.517 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:17 -0700 MST  1047 s  2568/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/45 {10429}          copied to Martello_Mariconi - Cahokia/37         2.46 msgs/s  813.494 KiB/s 113.527 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:15 -0700 MST  1045 s  2567/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/46 {10359}          copied to Martello_Mariconi - Cahokia/38         2.46 msgs/s  812.275 KiB/s 113.537 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:14 -0700 MST  1043 s  2566/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/47 {601748}         copied to Martello_Mariconi - Cahokia/39         2.46 msgs/s  812.699 KiB/s 114.111 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:16 -0700 MST  1045 s  2565/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/48 {1131335}        copied to Martello_Mariconi - Cahokia/40         2.45 msgs/s  815.083 KiB/s 115.190 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:20 -0700 MST  1048 s  2564/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/49 {10041}          copied to Martello_Mariconi - Cahokia/41         2.45 msgs/s  813.726 KiB/s 115.199 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:19 -0700 MST  1047 s  2563/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/50 {10970}          copied to Martello_Mariconi - Cahokia/42         2.45 msgs/s  812.502 KiB/s 115.210 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:17 -0700 MST  1045 s  2562/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/51 {10025}          copied to Martello_Mariconi - Cahokia/43         2.45 msgs/s  811.341 KiB/s 115.219 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:16 -0700 MST  1043 s  2561/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/52 {9936}           copied to Martello_Mariconi - Cahokia/44         2.46 msgs/s  810.072 KiB/s 115.229 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:14 -0700 MST  1042 s  2560/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/53 {9980}           copied to Martello_Mariconi - Cahokia/45         2.46 msgs/s  808.865 KiB/s 115.238 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:13 -0700 MST  1040 s  2559/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/54 {334885}         copied to Martello_Mariconi - Cahokia/46         2.46 msgs/s  809.166 KiB/s 115.558 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:12 -0700 MST  1039 s  2558/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/55 {10487}          copied to Martello_Mariconi - Cahokia/47         2.46 msgs/s  808.023 KiB/s 115.568 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:11 -0700 MST  1037 s  2557/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/56 {10158}          copied to Martello_Mariconi - Cahokia/48         2.47 msgs/s  806.844 KiB/s 115.578 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:09 -0700 MST  1036 s  2556/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/57 {1125108}        copied to Martello_Mariconi - Cahokia/49         2.46 msgs/s  809.798 KiB/s 116.651 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:13 -0700 MST  1038 s  2555/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/58 {9966}           copied to Martello_Mariconi - Cahokia/50         2.46 msgs/s  808.673 KiB/s 116.660 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:11 -0700 MST  1037 s  2554/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/59 {9948}           copied to Martello_Mariconi - Cahokia/51         2.47 msgs/s  807.371 KiB/s 116.670 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:10 -0700 MST  1035 s  2553/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/60 {571710}         copied to Martello_Mariconi - Cahokia/52         2.47 msgs/s  808.482 KiB/s 117.215 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:11 -0700 MST  1035 s  2552/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/61 {1031336}        copied to Martello_Mariconi - Cahokia/53         2.46 msgs/s  811.474 KiB/s 118.198 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:13 -0700 MST  1037 s  2551/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/62 {10256}          copied to Martello_Mariconi - Cahokia/54         2.46 msgs/s  810.221 KiB/s 118.208 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:12 -0700 MST  1035 s  2550/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/63 {10040}          copied to Martello_Mariconi - Cahokia/55         2.47 msgs/s  809.021 KiB/s 118.218 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:10 -0700 MST  1034 s  2549/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/64 {10187}          copied to Martello_Mariconi - Cahokia/56         2.47 msgs/s  807.851 KiB/s 118.227 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:09 -0700 MST  1032 s  2548/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/65 {9968}           copied to Martello_Mariconi - Cahokia/57         2.47 msgs/s  806.707 KiB/s 118.237 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:07 -0700 MST  1030 s  2547/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/66 {10291}          copied to Martello_Mariconi - Cahokia/58         2.47 msgs/s  805.554 KiB/s 118.247 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:06 -0700 MST  1029 s  2546/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/67 {10016}          copied to Martello_Mariconi - Cahokia/59         2.48 msgs/s  804.414 KiB/s 118.256 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:05 -0700 MST  1027 s  2545/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/68 {10109}          copied to Martello_Mariconi - Cahokia/60         2.48 msgs/s  803.278 KiB/s 118.266 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:03 -0700 MST  1026 s  2544/3615 msgs left
+DEBUG: .../IO/Socket/SSL.pm:1177: global error: Undefined SSL object
+msg INBOX.Martello_Mariconi - Cahokia/69 {535526}         copied to Martello_Mariconi - Cahokia/61         2.46 msgs/s  798.732 KiB/s 118.777 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:12 -0700 MST  1033 s  2543/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/70 {57541}          copied to Martello_Mariconi - Cahokia/62         2.47 msgs/s  797.771 KiB/s 118.831 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:11 -0700 MST  1031 s  2542/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/71 {6367}           copied to Martello_Mariconi - Cahokia/63         2.47 msgs/s  796.669 KiB/s 118.838 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:09 -0700 MST  1030 s  2541/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/72 {8788}           copied to Martello_Mariconi - Cahokia/64         2.47 msgs/s  795.549 KiB/s 118.846 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:08 -0700 MST  1028 s  2540/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/73 {10682}          copied to Martello_Mariconi - Cahokia/65         2.47 msgs/s  794.466 KiB/s 118.856 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:06 -0700 MST  1026 s  2539/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/74 {40982}          copied to Martello_Mariconi - Cahokia/66         2.48 msgs/s  793.504 KiB/s 118.895 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:05 -0700 MST  1025 s  2538/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/75 {16164}          copied to Martello_Mariconi - Cahokia/67         2.48 msgs/s  792.391 KiB/s 118.911 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:04 -0700 MST  1023 s  2537/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/76 {21515769}       copied to Martello_Mariconi - Cahokia/68         2.29 msgs/s  857.014 KiB/s 139.430 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:40 -0700 MST  1106 s  2536/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/77 {74681}          copied to Martello_Mariconi - Cahokia/69         2.30 msgs/s  856.199 KiB/s 139.501 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:38 -0700 MST  1104 s  2535/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/78 {27754}          copied to Martello_Mariconi - Cahokia/70         2.30 msgs/s  855.157 KiB/s 139.527 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:37 -0700 MST  1103 s  2534/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/79 {21380}          copied to Martello_Mariconi - Cahokia/71         2.30 msgs/s  854.053 KiB/s 139.548 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:35 -0700 MST  1101 s  2533/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/80 {1215}           copied to Martello_Mariconi - Cahokia/72         2.30 msgs/s  852.781 KiB/s 139.549 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:34 -0700 MST  1099 s  2532/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/81 {3078}           copied to Martello_Mariconi - Cahokia/73         2.31 msgs/s  851.659 KiB/s 139.552 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:32 -0700 MST  1097 s  2531/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/82 {972}            copied to Martello_Mariconi - Cahokia/74         2.31 msgs/s  850.535 KiB/s 139.553 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:31 -0700 MST  1096 s  2530/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/83 {8046}           copied to Martello_Mariconi - Cahokia/75         2.31 msgs/s  849.421 KiB/s 139.560 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:29 -0700 MST  1094 s  2529/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/84 {10968}          copied to Martello_Mariconi - Cahokia/76         2.31 msgs/s  848.292 KiB/s 139.571 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:28 -0700 MST  1092 s  2528/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/85 {12168}          copied to Martello_Mariconi - Cahokia/77         2.32 msgs/s  847.191 KiB/s 139.582 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:26 -0700 MST  1090 s  2527/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/86 {12569}          copied to Martello_Mariconi - Cahokia/78         2.32 msgs/s  846.076 KiB/s 139.594 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:25 -0700 MST  1089 s  2526/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/88 {20438}          copied to Martello_Mariconi - Cahokia/79         2.32 msgs/s  845.042 KiB/s 139.614 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:23 -0700 MST  1087 s  2525/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/89 {36624}          copied to Martello_Mariconi - Cahokia/80         2.33 msgs/s  844.070 KiB/s 139.649 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:22 -0700 MST  1085 s  2524/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/90 {220197}         copied to Martello_Mariconi - Cahokia/81         2.33 msgs/s  844.001 KiB/s 139.859 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:21 -0700 MST  1084 s  2523/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/91 {34908}          copied to Martello_Mariconi - Cahokia/82         2.33 msgs/s  843.046 KiB/s 139.892 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:19 -0700 MST  1082 s  2522/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/92 {13907}          copied to Martello_Mariconi - Cahokia/83         2.33 msgs/s  841.986 KiB/s 139.905 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:18 -0700 MST  1080 s  2521/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/93 {13972}          copied to Martello_Mariconi - Cahokia/84         2.34 msgs/s  840.795 KiB/s 139.919 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:16 -0700 MST  1079 s  2520/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/94 {13978}          copied to Martello_Mariconi - Cahokia/85         2.34 msgs/s  839.708 KiB/s 139.932 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:15 -0700 MST  1077 s  2519/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/95 {19960}          copied to Martello_Mariconi - Cahokia/86         2.34 msgs/s  838.668 KiB/s 139.951 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:14 -0700 MST  1076 s  2518/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/96 {43138}          copied to Martello_Mariconi - Cahokia/87         2.34 msgs/s  837.774 KiB/s 139.992 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:12 -0700 MST  1074 s  2517/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/97 {33387}          copied to Martello_Mariconi - Cahokia/88         2.34 msgs/s  836.400 KiB/s 140.024 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:11 -0700 MST  1073 s  2516/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/98 {50139}          copied to Martello_Mariconi - Cahokia/89         2.35 msgs/s  835.115 KiB/s 140.072 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:11 -0700 MST  1072 s  2515/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/99 {61115}          copied to Martello_Mariconi - Cahokia/90         2.35 msgs/s  834.259 KiB/s 140.130 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:09 -0700 MST  1070 s  2514/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/100 {51547}         copied to Martello_Mariconi - Cahokia/91         2.35 msgs/s  833.301 KiB/s 140.179 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:08 -0700 MST  1069 s  2513/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/102 {13963}         copied to Martello_Mariconi - Cahokia/92         2.35 msgs/s  832.284 KiB/s 140.193 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:07 -0700 MST  1067 s  2512/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/103 {13958}         copied to Martello_Mariconi - Cahokia/93         2.36 msgs/s  831.193 KiB/s 140.206 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:05 -0700 MST  1066 s  2511/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/104 {14190}         copied to Martello_Mariconi - Cahokia/94         2.36 msgs/s  830.160 KiB/s 140.220 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:04 -0700 MST  1064 s  2510/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/105 {13960}         copied to Martello_Mariconi - Cahokia/95         2.36 msgs/s  829.167 KiB/s 140.233 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:03 -0700 MST  1062 s  2509/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/106 {13969}         copied to Martello_Mariconi - Cahokia/96         2.36 msgs/s  828.162 KiB/s 140.246 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:01 -0700 MST  1061 s  2508/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/107 {21437}         copied to Martello_Mariconi - Cahokia/97         2.37 msgs/s  827.166 KiB/s 140.267 MiB copied ETA: Tuesday 31 October 2023-10-31 19:47:00 -0700 MST  1059 s  2507/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/108 {13961}         copied to Martello_Mariconi - Cahokia/98         2.37 msgs/s  826.169 KiB/s 140.280 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:58 -0700 MST  1058 s  2506/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/109 {13935}         copied to Martello_Mariconi - Cahokia/99         2.37 msgs/s  825.184 KiB/s 140.293 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:57 -0700 MST  1056 s  2505/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/110 {10541}         copied to Martello_Mariconi - Cahokia/100        2.37 msgs/s  824.122 KiB/s 140.303 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:56 -0700 MST  1054 s  2504/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/111 {10244}         copied to Martello_Mariconi - Cahokia/101        2.38 msgs/s  823.064 KiB/s 140.313 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:54 -0700 MST  1053 s  2503/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/112 {13890}         copied to Martello_Mariconi - Cahokia/102        2.38 msgs/s  822.082 KiB/s 140.326 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:53 -0700 MST  1051 s  2502/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/113 {13906}         copied to Martello_Mariconi - Cahokia/103        2.38 msgs/s  821.069 KiB/s 140.340 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:52 -0700 MST  1050 s  2501/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/114 {14013}         copied to Martello_Mariconi - Cahokia/104        2.39 msgs/s  820.106 KiB/s 140.353 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:50 -0700 MST  1048 s  2500/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/115 {9225}          copied to Martello_Mariconi - Cahokia/105        2.39 msgs/s  819.090 KiB/s 140.362 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:49 -0700 MST  1047 s  2499/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/116 {8216}          copied to Martello_Mariconi - Cahokia/106        2.39 msgs/s  818.081 KiB/s 140.370 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:48 -0700 MST  1045 s  2498/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/117 {14567}         copied to Martello_Mariconi - Cahokia/107        2.39 msgs/s  817.061 KiB/s 140.383 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:46 -0700 MST  1044 s  2497/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/118 {14334}         copied to Martello_Mariconi - Cahokia/108        2.40 msgs/s  816.069 KiB/s 140.397 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:45 -0700 MST  1042 s  2496/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/119 {14146}         copied to Martello_Mariconi - Cahokia/109        2.40 msgs/s  815.058 KiB/s 140.411 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:44 -0700 MST  1041 s  2495/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/120 {18518}         copied to Martello_Mariconi - Cahokia/110        2.40 msgs/s  814.108 KiB/s 140.428 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:43 -0700 MST  1039 s  2494/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/121 {13211}         copied to Martello_Mariconi - Cahokia/111        2.40 msgs/s  813.138 KiB/s 140.441 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:41 -0700 MST  1037 s  2493/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/122 {11721}         copied to Martello_Mariconi - Cahokia/112        2.41 msgs/s  812.164 KiB/s 140.452 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:40 -0700 MST  1036 s  2492/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/123 {11721}         copied to Martello_Mariconi - Cahokia/113        2.41 msgs/s  811.198 KiB/s 140.463 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:39 -0700 MST  1034 s  2491/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/124 {10664}         copied to Martello_Mariconi - Cahokia/114        2.41 msgs/s  810.205 KiB/s 140.473 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:37 -0700 MST  1033 s  2490/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/125 {9985}          copied to Martello_Mariconi - Cahokia/115        2.41 msgs/s  809.213 KiB/s 140.483 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:36 -0700 MST  1031 s  2489/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/126 {10085}         copied to Martello_Mariconi - Cahokia/116        2.42 msgs/s  808.233 KiB/s 140.493 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:35 -0700 MST  1030 s  2488/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/127 {10273}         copied to Martello_Mariconi - Cahokia/117        2.42 msgs/s  807.257 KiB/s 140.502 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:34 -0700 MST  1028 s  2487/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/128 {10968}         copied to Martello_Mariconi - Cahokia/118        2.42 msgs/s  806.276 KiB/s 140.513 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:32 -0700 MST  1027 s  2486/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/129 {10020}         copied to Martello_Mariconi - Cahokia/119        2.42 msgs/s  805.315 KiB/s 140.522 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:31 -0700 MST  1025 s  2485/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/130 {10173}         copied to Martello_Mariconi - Cahokia/120        2.43 msgs/s  804.358 KiB/s 140.532 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:30 -0700 MST  1024 s  2484/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/131 {10162}         copied to Martello_Mariconi - Cahokia/121        2.43 msgs/s  803.385 KiB/s 140.542 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:29 -0700 MST  1023 s  2483/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/132 {10062}         copied to Martello_Mariconi - Cahokia/122        2.43 msgs/s  802.378 KiB/s 140.551 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:27 -0700 MST  1021 s  2482/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/133 {9934}          copied to Martello_Mariconi - Cahokia/123        2.43 msgs/s  801.373 KiB/s 140.561 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:26 -0700 MST  1020 s  2481/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/134 {9924}          copied to Martello_Mariconi - Cahokia/124        2.44 msgs/s  800.389 KiB/s 140.570 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:25 -0700 MST  1018 s  2480/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/135 {10009}         copied to Martello_Mariconi - Cahokia/125        2.44 msgs/s  799.440 KiB/s 140.580 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:24 -0700 MST  1017 s  2479/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/136 {10295}         copied to Martello_Mariconi - Cahokia/126        2.44 msgs/s  798.463 KiB/s 140.590 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:23 -0700 MST  1015 s  2478/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/137 {10653}         copied to Martello_Mariconi - Cahokia/127        2.44 msgs/s  797.470 KiB/s 140.600 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:22 -0700 MST  1014 s  2477/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/138 {10460}         copied to Martello_Mariconi - Cahokia/128        2.45 msgs/s  796.523 KiB/s 140.610 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:20 -0700 MST  1013 s  2476/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/139 {10068}         copied to Martello_Mariconi - Cahokia/129        2.45 msgs/s  795.447 KiB/s 140.619 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:19 -0700 MST  1011 s  2475/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/140 {10038}         copied to Martello_Mariconi - Cahokia/130        2.45 msgs/s  794.464 KiB/s 140.629 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:18 -0700 MST  1010 s  2474/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/141 {10181}         copied to Martello_Mariconi - Cahokia/131        2.45 msgs/s  793.496 KiB/s 140.639 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:17 -0700 MST  1009 s  2473/3615 msgs left
+msg INBOX.Martello_Mariconi - Cahokia/142 {705434}        copied to Martello_Mariconi - Cahokia/132        2.45 msgs/s  795.179 KiB/s 141.311 MiB copied ETA: Tuesday 31 October 2023-10-31 19:46:18 -0700 MST  1009 s  2472/3615 msgs left

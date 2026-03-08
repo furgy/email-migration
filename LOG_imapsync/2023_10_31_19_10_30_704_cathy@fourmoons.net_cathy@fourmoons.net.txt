@@ -1,0 +1,386 @@
+Here is imapsync 2.229 on host Shawns-MacBook-Pro-2.local, a darwin system with 0.2/16.0 free GiB of RAM, 46.03% used by processes.
+with Perl 5.30.3 and Mail::IMAPClient 3.43
+Transfer started at Tuesday 31 October 2023-10-31 19:10:30 -0700 MST
+PID is 40716 my PPID is 30935
+Log file is LOG_imapsync/2023_10_31_19_10_30_704_cathy@fourmoons.net_cathy@fourmoons.net.txt ( to change it, use --logfile path ; or use --nolog to turn off logging )
+Load is 4.38 3.88 3.86 on 10 cores
+Current directory is /Users/shawn/Code/email/email-migration
+Real user id is shawn (uid 501)
+Effective user id is shawn (euid 501)
+$RCSfile: imapsync,v $ $Revision: 2.229 $ $Date: 2022/09/14 18:08:24 $ 
+Command line used, run by perl:
+/usr/local/bin/imapsync --host1 mail.fourmoons.net --host2 redbull.mxrouting.net --user1 cathy@fourmoons.net --password1 MASKED --user2 cathy@fourmoons.net --password2 MASKED --nosslcheck
+Temp directory is /var/folders/lj/pt22s9q55t1925h7_g57tt5h0000gn/T ( to change it use --tmpdir dirpath )
+kill -QUIT 40716 # special behavior: call to sub catch_exit
+kill -TERM 40716 # special behavior: call to sub catch_exit
+kill -INT 40716 # special behavior: call to sub catch_reconnect
+kill -HUP 40716 # special behavior: call to sub catch_print
+kill -USR1 40716 # special behavior: call to sub toggle_sleep
+Removing old /var/folders/lj/pt22s9q55t1925h7_g57tt5h0000gn/T/imapsync.pid since its PID 40666 is not running anymore (oo-killed?)
+Removed old /var/folders/lj/pt22s9q55t1925h7_g57tt5h0000gn/T/imapsync.pid
+PID file is /var/folders/lj/pt22s9q55t1925h7_g57tt5h0000gn/T/imapsync.pid ( to change it, use --pidfile filepath ; to avoid it use --pidfile "" )
+Writing my PID 40716 in /var/folders/lj/pt22s9q55t1925h7_g57tt5h0000gn/T/imapsync.pid
+Writing also my logfile name in /var/folders/lj/pt22s9q55t1925h7_g57tt5h0000gn/T/imapsync.pid : LOG_imapsync/2023_10_31_19_10_30_704_cathy@fourmoons.net_cathy@fourmoons.net.txt
+Modules version list ( use --no-modulesversion to turn off printing this Perl modules list ):
+Authen::NTLM         1.09
+CGI                  4.48
+Compress::Zlib       2.084
+Crypt::OpenSSL::RSA  0.31
+Data::Uniqid         0.12
+Digest::HMAC_MD5     1.01
+Digest::HMAC_SHA1    1.03
+Digest::MD5          2.55
+Encode               3.01
+Encode::IMAPUTF7     1.05
+File::Copy::Recursive 0.45
+File::Spec           3.78
+Getopt::Long         2.5
+HTML::Entities       3.69
+IO::Socket           1.40
+IO::Socket::INET     1.40
+IO::Socket::INET6    2.72
+IO::Socket::IP       0.39
+IO::Socket::SSL      2.068
+IO::Tee              0.65
+JSON                 4.02
+JSON::WebToken       0.05
+LWP                  6.44
+MIME::Base64         3.15
+Mail::IMAPClient     3.43
+Net::Ping            2.71
+Net::SSLeay          1.88
+Term::ReadKey        2.38
+Test::MockObject     1.20200122
+Time::HiRes          1.976
+URI::Escape          3.31
+Unicode::String      2.10
+
+Info: will resync flags for already transferred messages. Use --noresyncflags to not resync flags.
+Info: turned ON syncinternaldates, will set the internal dates (arrival dates) on host2 same as host1.
+Host1: will try to use LOGIN authentication on host1
+Host2: will try to use LOGIN authentication on host2
+Host1: imap connection timeout is 120 seconds
+Host2: imap connection timeout is 120 seconds
+Host1: imap connection keepalive is on on host1. Use --nokeepalive1 to disable it.
+Host2: imap connection keepalive is on on host2. Use --nokeepalive2 to disable it.
+Host1: IMAP server [mail.fourmoons.net] port [143] user [cathy@fourmoons.net]
+Host2: IMAP server [redbull.mxrouting.net] port [143] user [cathy@fourmoons.net]
+Host1: connecting and login on host1 [mail.fourmoons.net] port [143] with user [cathy@fourmoons.net]
+Host1 IP address: 108.167.140.95 Local IP address: 192.168.1.34
+Host1 banner: * OK [CAPABILITY IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE NAMESPACE LITERAL+ STARTTLS AUTH=PLAIN AUTH=LOGIN] Dovecot ready.
+Host1 capability before authentication: IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE NAMESPACE LITERAL+ STARTTLS AUTH=PLAIN AUTH=LOGIN AUTH
+Host1: going to ssl because STARTTLS is in CAPABILITY. Use --notls1 or --notls2 to avoid that behavior
+DEBUG: .../IO/Socket/SSL.pm:1177: global error: Undefined SSL object
+Host1: Socket successfully converted to SSL
+Host1: mail.fourmoons.net says it has CAPABILITY for AUTHENTICATE LOGIN
+Host1: success login on [mail.fourmoons.net] with user [cathy@fourmoons.net] auth [LOGIN] or [LOGIN]
+Host2: connecting and login on host2 [redbull.mxrouting.net] port [143] with user [cathy@fourmoons.net]
+Host2 IP address: 45.43.208.33 Local IP address: 192.168.1.34
+Host2 banner: * OK [CAPABILITY IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE LITERAL+ STARTTLS AUTH=PLAIN] Dovecot DA ready.
+Host2 capability before authentication: IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE LITERAL+ STARTTLS AUTH=PLAIN AUTH
+Host2: going to ssl because STARTTLS is in CAPABILITY. Use --notls1 or --notls2 to avoid that behavior
+DEBUG: .../IO/Socket/SSL.pm:1177: global error: Undefined SSL object
+Host2: Socket successfully converted to SSL
+Host2: success login on [redbull.mxrouting.net] with user [cathy@fourmoons.net] auth [LOGIN] or [LOGIN]
+Host1: state Authenticated
+Host2: state Authenticated
+Host1 capability once authenticated: IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE SORT SORT=DISPLAY THREAD=REFERENCES THREAD=REFS THREAD=ORDEREDSUBJECT MULTIAPPEND URL-PARTIAL CATENATE UNSELECT CHILDREN NAMESPACE UIDPLUS LIST-EXTENDED I18NLEVEL=1 CONDSTORE QRESYNC ESEARCH ESORT SEARCHRES WITHIN CONTEXT=SEARCH LIST-STATUS BINARY MOVE SNIPPET=FUZZY PREVIEW=FUZZY PREVIEW STATUS=SIZE SAVEDATE NAMESPACE LITERAL+ NOTIFY SPECIAL-USE COMPRESS=DEFLATE QUOTA THREAD I18NLEVEL CONTEXT SNIPPET PREVIEW STATUS COMPRESS
+Host2 capability once authenticated: IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE SORT SORT=DISPLAY THREAD=REFERENCES THREAD=REFS THREAD=ORDEREDSUBJECT MULTIAPPEND URL-PARTIAL CATENATE UNSELECT CHILDREN NAMESPACE UIDPLUS LIST-EXTENDED I18NLEVEL=1 CONDSTORE QRESYNC ESEARCH ESORT SEARCHRES WITHIN CONTEXT=SEARCH LIST-STATUS BINARY MOVE SNIPPET=FUZZY PREVIEW=FUZZY PREVIEW STATUS=SIZE SAVEDATE LITERAL+ NOTIFY SPECIAL-USE XAPPLEPUSHSERVICE QUOTA THREAD I18NLEVEL CONTEXT SNIPPET PREVIEW STATUS
+Host1: found ID capability. Sending/receiving ID, presented in raw IMAP for now.
+In order to avoid sending/receiving ID, use option --noid
+Sending: 6 ID ("name" "imapsync" "version" "2.229" "os" "darwin" "vendor" "Gilles LAMIRAL" "support-url" "https://imapsync.lamiral.info/" "date" "14-Sep-2022 18:08:24 +0000" "side" "host1")
+Sent 182 bytes
+Read: 	* ID ("name" "Dovecot")
+  	6 OK ID completed (0.001 + 0.000 secs).
+Host2: found ID capability. Sending/receiving ID, presented in raw IMAP for now.
+In order to avoid sending/receiving ID, use option --noid
+Sending: 6 ID ("name" "imapsync" "version" "2.229" "os" "darwin" "vendor" "Gilles LAMIRAL" "support-url" "https://imapsync.lamiral.info/" "date" "14-Sep-2022 18:08:24 +0000" "side" "host2")
+Sent 182 bytes
+Read: 	* ID ("name" "Dovecot")
+  	6 OK ID completed (0.001 + 0.000 secs).
+
+Host2: QUOTA capability found, presented in raw IMAP on next lines
+Sending: 7 GETQUOTAROOT INBOX
+Sent 22 bytes
+Read: 	7 OK No quota (0.001 + 0.000 secs).
+
+Host2: Quota current storage is 0 bytes. Limit is 0 bytes. So 0 % full
+Host1: Compression is off. Use --compress1 to allow compression on host1
+Host2: Compression is off. Use --compress2 to allow compression on host2
+Host1: found 7 folders.
+Host2: found 7 folders.
+Host1: guessing separator from folder listing: [.]
+Host1: separator given by NAMESPACE: [.]
+Host2: guessing separator from folder listing: [.]
+Host2: separator given by NAMESPACE: [.]
+Host1: guessing prefix from folder listing: [INBOX.]
+Host1: prefix given by NAMESPACE: [INBOX.]
+Host2: guessing prefix from folder listing: []
+Host2: prefix given by NAMESPACE: []
+Host1: separator and prefix: [.][INBOX.]
+Host2: separator and prefix: [.][]
+Including all folders found by default. Use --subscribed or --folder or --folderrec or --include to select specific folders. Use --exclude to unselect specific folders.
+Host1: Checking wanted folders exist. Use --nocheckfoldersexist to avoid this check (shared of public namespace targeted).
+Host1: Checking wanted folders are selectable. Use --nocheckselectable to avoid this check.
+Turned off automapping folders ( use --automap to turn on automapping )
+
+++++ Listing folders
+All foldernames are presented between brackets like [X] where X is the foldername.
+When a foldername contains non-ASCII characters it is presented in the form
+[X] = [Y] where
+X is the imap foldername you have to use in command line options and
+Y is the utf8 output just printed for convenience, to recognize it.
+
+Host1: folders list (first the raw imap format then the [X] = [Y]):
+* LIST (\HasChildren) "." INBOX
+* LIST (\HasNoChildren \UnMarked \Junk) "." INBOX.spam
+* LIST (\HasNoChildren \UnMarked \Archive) "." INBOX.Archive
+* LIST (\HasNoChildren \UnMarked \Drafts) "." INBOX.Drafts
+* LIST (\HasNoChildren \Sent) "." INBOX.Sent
+* LIST (\HasNoChildren \UnMarked) "." INBOX.Junk
+* LIST (\HasNoChildren \UnMarked \Trash) "." INBOX.Trash
+18 OK List completed (0.001 + 0.000 secs).
+
+[INBOX]
+[INBOX.Archive]
+[INBOX.Drafts]
+[INBOX.Junk]
+[INBOX.Sent]
+[INBOX.Trash]
+[INBOX.spam]
+
+Host2: folders list (first the raw imap format then the [X] = [Y]):
+* LIST (\HasNoChildren \Archive) "." Archive
+* LIST (\HasNoChildren \Trash) "." Trash
+* LIST (\HasNoChildren \Sent) "." Sent
+* LIST (\HasNoChildren \Junk) "." Junk
+* LIST (\HasNoChildren \Drafts) "." Drafts
+* LIST (\HasNoChildren) "." INBOX.spam
+* LIST (\HasChildren) "." INBOX
+12 OK List completed (0.001 + 0.000 secs).
+
+[Archive]
+[Drafts]
+[INBOX]
+[INBOX.spam]
+[Junk]
+[Sent]
+[Trash]
+
+Checking SEARCH ALL works on both accounts. To avoid that check, use --nochecknoabletosearch
+Host1: checking if SEARCH ALL works on INBOX
+Host1: folder [INBOX] has 86 messages mentioned by SELECT
+Host1: folder [INBOX] has 86 messages found by SEARCH ALL
+Host1: folder [INBOX] has the same messages count (86) by SELECT and SEARCH ALL
+Host2: checking if SEARCH ALL works on INBOX
+Host2: folder [INBOX] has 86 messages mentioned by SELECT
+Host2: folder [INBOX] has 86 messages found by SEARCH ALL
+Host2: folder [INBOX] has the same messages count (86) by SELECT and SEARCH ALL
+Good! SEARCH ALL works on both accounts.
+
+Folders sizes before the synchronization. It can take some time. Be patient.
+You can remove foldersizes listings by using "--nofoldersizes" and "--nofoldersizesatend"
+but then you will also lose the ETA (Estimation Time of Arrival) given after each message copy.
+Host1 folder     1/7 [INBOX]                             Size:  19234237 Messages:    86 Biggest:  14014562
+Host2 folder     1/7 [INBOX]                             Size:  19234237 Messages:    86 Biggest:  14014562
+Host2-Host1                                                            0               0                  0
+
+Host1 folder     2/7 [INBOX.Archive]                     Size:         0 Messages:     0 Biggest:         0
+Host2 folder     2/7 [Archive]                           Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder     3/7 [INBOX.Drafts]                      Size:         0 Messages:     0 Biggest:         0
+Host2 folder     3/7 [Drafts]                            Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder     4/7 [INBOX.Junk]                        Size:         0 Messages:     0 Biggest:         0
+Host2 folder     4/7 [Junk]                              Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder     5/7 [INBOX.Sent]                        Size:  18571906 Messages:     9 Biggest:  18297956
+Host2 folder     5/7 [Sent]                              Size:       414 Messages:     1 Biggest:       414
+Host2-Host1                                                    -18571492              -8          -18297542
+
+Host1 folder     6/7 [INBOX.Trash]                       Size:    142028 Messages:     3 Biggest:     48409
+Host2 folder     6/7 [Trash]                             Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                      -142028              -3             -48409
+
+Host1 folder     7/7 [INBOX.spam]                        Size:         0 Messages:     0 Biggest:         0
+Host2 folder     7/7 [spam]                               does not exist yet
+Host2-Host1                                                            0               0                  0
+
+Host1 Nb folders:                     7 folders
+Host2 Nb folders:                     7 folders
+
+Host1 Nb messages:                   98 messages
+Host2 Nb messages:                   87 messages
+
+Host1 Total size:              37948171 bytes (36.190 MiB)
+Host2 Total size:              19234651 bytes (18.344 MiB)
+
+Host1 Biggest message:         18297956 bytes (17.450 MiB)
+Host2 Biggest message:         14014562 bytes (13.365 MiB)
+
+Time spent on sizing:         5.1 seconds
+++++ Looping on each one of 7 folders to sync
+ETA: Tuesday 31 October 2023-10-31 19:10:35 -0700 MST  0 s  98/98 msgs left
+Folder     1/7 [INBOX]                             -> [INBOX]                            
+Host1: folder [INBOX] has 86 messages in total (mentioned by SELECT)
+Host2: folder [INBOX] has 86 messages in total (mentioned by SELECT)
+Host2: folder [INBOX] permanentflags: 
+Host1: folder [INBOX] considering 86 messages
+Host2: folder [INBOX] considering 86 messages
+Host1: folder [INBOX] selected 86 messages, duplicates 0
+Host2: folder [INBOX] selected 86 messages, duplicates 0
+ETA: Tuesday 31 October 2023-10-31 19:10:47 -0700 MST  11 s  12/98 msgs left
+Folder     2/7 [INBOX.Archive]                     -> [Archive]                          
+Host1: folder [INBOX.Archive] has 0 messages in total (mentioned by SELECT)
+Host2: folder [Archive] has 0 messages in total (mentioned by SELECT)
+Host2: folder [Archive] permanentflags: 
+Host1: folder [INBOX.Archive] considering 0 messages
+Host2: folder [Archive] considering 0 messages
+Host1: folder [INBOX.Archive] selected 0 messages, duplicates 0
+Host2: folder [Archive] selected 0 messages, duplicates 0
+ETA: Tuesday 31 October 2023-10-31 19:10:52 -0700 MST  16 s  12/98 msgs left
+Folder     3/7 [INBOX.Drafts]                      -> [Drafts]                           
+Host1: folder [INBOX.Drafts] has 0 messages in total (mentioned by SELECT)
+Host2: folder [Drafts] has 0 messages in total (mentioned by SELECT)
+Host2: folder [Drafts] permanentflags: 
+Host1: folder [INBOX.Drafts] considering 0 messages
+Host2: folder [Drafts] considering 0 messages
+Host1: folder [INBOX.Drafts] selected 0 messages, duplicates 0
+Host2: folder [Drafts] selected 0 messages, duplicates 0
+ETA: Tuesday 31 October 2023-10-31 19:10:57 -0700 MST  20 s  12/98 msgs left
+Folder     4/7 [INBOX.Junk]                        -> [Junk]                             
+Host1: folder [INBOX.Junk] has 0 messages in total (mentioned by SELECT)
+Host2: folder [Junk] has 0 messages in total (mentioned by SELECT)
+Host2: folder [Junk] permanentflags: 
+Host1: folder [INBOX.Junk] considering 0 messages
+Host2: folder [Junk] considering 0 messages
+Host1: folder [INBOX.Junk] selected 0 messages, duplicates 0
+Host2: folder [Junk] selected 0 messages, duplicates 0
+ETA: Tuesday 31 October 2023-10-31 19:11:01 -0700 MST  24 s  12/98 msgs left
+Folder     5/7 [INBOX.Sent]                        -> [Sent]                             
+Host1: folder [INBOX.Sent] has 9 messages in total (mentioned by SELECT)
+Host2: folder [Sent] has 1 messages in total (mentioned by SELECT)
+Host2: folder [Sent] permanentflags: 
+Host1: folder [INBOX.Sent] considering 9 messages
+Host2: folder [Sent] considering 1 messages
+Host1: folder [INBOX.Sent] selected 9 messages, duplicates 0
+Host2: folder [Sent] selected 1 messages, duplicates 0
+msg INBOX.Sent/2 {18297956}        copied to Sent/2          0.06 msgs/s  1.062 MiB/s 17.450 MiB copied ETA: Tuesday 31 October 2023-10-31 19:13:36 -0700 MST  164 s  10/98 msgs left
+msg INBOX.Sent/3 {6962}            copied to Sent/3          0.12 msgs/s  1.048 MiB/s 17.457 MiB copied ETA: Tuesday 31 October 2023-10-31 19:12:07 -0700 MST  75 s  9/98 msgs left
+msg INBOX.Sent/4 {10648}           copied to Sent/4          0.18 msgs/s  1.035 MiB/s 17.467 MiB copied ETA: Tuesday 31 October 2023-10-31 19:11:37 -0700 MST  45 s  8/98 msgs left
+msg INBOX.Sent/5 {2212}            copied to Sent/5          0.23 msgs/s  1.022 MiB/s 17.469 MiB copied ETA: Tuesday 31 October 2023-10-31 19:11:22 -0700 MST  30 s  7/98 msgs left
+msg INBOX.Sent/6 {952}             copied to Sent/6          0.29 msgs/s  1.008 MiB/s 17.470 MiB copied ETA: Tuesday 31 October 2023-10-31 19:11:13 -0700 MST  21 s  6/98 msgs left
+msg INBOX.Sent/7 {430}             copied to Sent/7          0.34 msgs/s  0.996 MiB/s 17.471 MiB copied ETA: Tuesday 31 October 2023-10-31 19:11:07 -0700 MST  15 s  5/98 msgs left
+msg INBOX.Sent/8 {8033}            copied to Sent/8          0.39 msgs/s  0.984 MiB/s 17.478 MiB copied ETA: Tuesday 31 October 2023-10-31 19:11:03 -0700 MST  10 s  4/98 msgs left
+msg INBOX.Sent/9 {244299}          copied to Sent/9          0.44 msgs/s  0.983 MiB/s 17.711 MiB copied ETA: Tuesday 31 October 2023-10-31 19:11:00 -0700 MST  7 s  3/98 msgs left
+ETA: Tuesday 31 October 2023-10-31 19:11:00 -0700 MST  7 s  3/98 msgs left
+Folder     6/7 [INBOX.Trash]                       -> [Trash]                            
+Host1: folder [INBOX.Trash] has 3 messages in total (mentioned by SELECT)
+Host2: folder [Trash] has 0 messages in total (mentioned by SELECT)
+Host2: folder [Trash] permanentflags: 
+Host1: folder [INBOX.Trash] considering 3 messages
+Host2: folder [Trash] considering 0 messages
+Host1: folder [INBOX.Trash] selected 3 messages, duplicates 0
+Host2: folder [Trash] selected 0 messages, duplicates 0
+msg INBOX.Trash/17 {48398}          copied to Trash/1          0.48 msgs/s  971.518 KiB/s 17.757 MiB copied ETA: Tuesday 31 October 2023-10-31 19:10:58 -0700 MST  4 s  2/98 msgs left
+msg INBOX.Trash/18 {45221}          copied to Trash/2          0.53 msgs/s  962.441 KiB/s 17.800 MiB copied ETA: Tuesday 31 October 2023-10-31 19:10:56 -0700 MST  2 s  1/98 msgs left
+msg INBOX.Trash/19 {48409}          copied to Trash/3          0.57 msgs/s  953.306 KiB/s 17.847 MiB copied ETA: Tuesday 31 October 2023-10-31 19:10:55 -0700 MST  0 s  0/98 msgs left
+ETA: Tuesday 31 October 2023-10-31 19:10:55 -0700 MST  0 s  0/98 msgs left
+Folder     7/7 [INBOX.spam]                        -> [spam]                             
+Host1: folder [INBOX.spam] has 0 messages in total (mentioned by SELECT)
+Creating folder [spam] on host2
+Created folder [spam] on host2
+Host2: folder [spam] has 0 messages in total (mentioned by SELECT)
+Host2: folder [spam] permanentflags: 
+Host2: Subscribing to folder spam
+Host1: folder [INBOX.spam] considering 0 messages
+Host2: folder [spam] considering 0 messages
+Host1: folder [INBOX.spam] selected 0 messages, duplicates 0
+Host2: folder [spam] selected 0 messages, duplicates 0
+ETA: Tuesday 31 October 2023-10-31 19:10:55 -0700 MST  0 s  0/98 msgs left
+++++ End looping on each folder
+
+Folders sizes after the synchronization.
+You can remove this foldersizes listing by using  "--nofoldersizesatend"
+Host1 folder     1/7 [INBOX]                             Size:  19234237 Messages:    86 Biggest:  14014562
+Host2 folder     1/7 [INBOX]                             Size:  19234237 Messages:    86 Biggest:  14014562
+Host2-Host1                                                            0               0                  0
+
+Host1 folder     2/7 [INBOX.Archive]                     Size:         0 Messages:     0 Biggest:         0
+Host2 folder     2/7 [Archive]                           Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder     3/7 [INBOX.Drafts]                      Size:         0 Messages:     0 Biggest:         0
+Host2 folder     3/7 [Drafts]                            Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder     4/7 [INBOX.Junk]                        Size:         0 Messages:     0 Biggest:         0
+Host2 folder     4/7 [Junk]                              Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder     5/7 [INBOX.Sent]                        Size:  18571906 Messages:     9 Biggest:  18297956
+Host2 folder     5/7 [Sent]                              Size:  18571906 Messages:     9 Biggest:  18297956
+Host2-Host1                                                            0               0                  0
+
+Host1 folder     6/7 [INBOX.Trash]                       Size:    142028 Messages:     3 Biggest:     48409
+Host2 folder     6/7 [Trash]                             Size:    142028 Messages:     3 Biggest:     48409
+Host2-Host1                                                            0               0                  0
+
+Host1 folder     7/7 [INBOX.spam]                        Size:         0 Messages:     0 Biggest:         0
+Host2 folder     7/7 [spam]                              Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 Nb folders:                     7 folders
+Host2 Nb folders:                     7 folders
+
+Host1 Nb messages:                   98 messages
+Host2 Nb messages:                   98 messages
+
+Host1 Total size:              37948171 bytes (36.190 MiB)
+Host2 Total size:              37948171 bytes (36.190 MiB)
+
+Host1 Biggest message:         18297956 bytes (17.450 MiB)
+Host2 Biggest message:         18297956 bytes (17.450 MiB)
+
+Time spent on sizing:         2.4 seconds
+++++ Statistics
+Transfer started on                     : Tuesday 31 October 2023-10-31 19:10:30 -0700 MST
+Transfer ended on                       : Tuesday 31 October 2023-10-31 19:10:57 -0700 MST
+Transfer time                           : 27.3 sec
+Folders synced                          : 7/7 synced
+Messages transferred                    : 11 
+Messages skipped                        : 87
+Messages found duplicate on host1       : 0
+Messages found duplicate on host2       : 0
+Messages found crossduplicate on host2  : 0
+Messages void (noheader) on host1       : 0  
+Messages void (noheader) on host2       : 0
+Messages found in host1 not in host2    : 0 messages
+Messages found in host2 not in host1    : 0 messages
+Messages deleted on host1               : 0
+Messages deleted on host2               : 0
+Total bytes transferred                 : 18713520 (17.847 MiB)
+Total bytes skipped                     : 19234651 (18.344 MiB)
+Message rate                            : 0.4 messages/s
+Average bandwidth rate                  : 670.3 KiB/s
+Reconnections to host1                  : 0
+Reconnections to host2                  : 0
+Memory consumption at the end           : 2560.3 MiB (*time 19.4 MiB*h) (started with 184.1 MiB)
+Load end is                             : 3.76 3.78 3.82 on 10 cores
+CPU time and %cpu                       : 13.01 sec 47.7 %cpu 4.8 %allcpus
+Biggest message transferred             : 18297956 bytes (17.450 MiB)
+Memory/biggest message ratio            : 146.7
+Start difference host2 - host1          : -11 messages, -18713520 bytes (-17.847 MiB)
+Final difference host2 - host1          : 0 messages, 0 bytes (0.000 KiB)
+The sync looks good, all 98 identified messages in host1 are on host2.
+There is no unidentified message on host1.
+The sync is strict, all 98 identified messages in host2 are on host1.
+Detected 0 errors
+Check if a new imapsync release is available by adding --releasecheck
+Homepage: https://imapsync.lamiral.info/
+Exiting with return value 0 (EX_OK: successful termination) 0/50 nb_errors/max_errors PID 40716
+Removing pidfile /var/folders/lj/pt22s9q55t1925h7_g57tt5h0000gn/T/imapsync.pid
+Log file is LOG_imapsync/2023_10_31_19_10_30_704_cathy@fourmoons.net_cathy@fourmoons.net.txt ( to change it, use --logfile filepath ; or use --nolog to turn off logging )

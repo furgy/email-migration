@@ -1,0 +1,1262 @@
+Here is imapsync 2.229 on host Shawns-MacBook-Pro-2.local, a darwin system with 1.9/16.0 free GiB of RAM, 51.52% used by processes.
+with Perl 5.30.3 and Mail::IMAPClient 3.43
+Transfer started at Tuesday 31 October 2023-10-31 20:16:10 -0700 MST
+PID is 42241 my PPID is 30935
+Log file is LOG_imapsync/2023_10_31_20_16_10_390_ops@fourmoons.net_ops@fourmoons.net.txt ( to change it, use --logfile path ; or use --nolog to turn off logging )
+Load is 3.47 2.85 2.79 on 10 cores
+Current directory is /Users/shawn/Code/email/email-migration
+Real user id is shawn (uid 501)
+Effective user id is shawn (euid 501)
+$RCSfile: imapsync,v $ $Revision: 2.229 $ $Date: 2022/09/14 18:08:24 $ 
+Command line used, run by perl:
+/usr/local/bin/imapsync --host1 mail.fourmoons.net --host2 redbull.mxrouting.net --user1 ops@fourmoons.net --password1 MASKED --user2 ops@fourmoons.net --password2 MASKED --nosslcheck --delete2duplicates --expunge1
+Temp directory is /var/folders/lj/pt22s9q55t1925h7_g57tt5h0000gn/T ( to change it use --tmpdir dirpath )
+kill -QUIT 42241 # special behavior: call to sub catch_exit
+kill -TERM 42241 # special behavior: call to sub catch_exit
+kill -INT 42241 # special behavior: call to sub catch_reconnect
+kill -HUP 42241 # special behavior: call to sub catch_print
+kill -USR1 42241 # special behavior: call to sub toggle_sleep
+File /var/folders/lj/pt22s9q55t1925h7_g57tt5h0000gn/T/imapsync.pid does not exist
+PID file is /var/folders/lj/pt22s9q55t1925h7_g57tt5h0000gn/T/imapsync.pid ( to change it, use --pidfile filepath ; to avoid it use --pidfile "" )
+Writing my PID 42241 in /var/folders/lj/pt22s9q55t1925h7_g57tt5h0000gn/T/imapsync.pid
+Writing also my logfile name in /var/folders/lj/pt22s9q55t1925h7_g57tt5h0000gn/T/imapsync.pid : LOG_imapsync/2023_10_31_20_16_10_390_ops@fourmoons.net_ops@fourmoons.net.txt
+Modules version list ( use --no-modulesversion to turn off printing this Perl modules list ):
+Authen::NTLM         1.09
+CGI                  4.48
+Compress::Zlib       2.084
+Crypt::OpenSSL::RSA  0.31
+Data::Uniqid         0.12
+Digest::HMAC_MD5     1.01
+Digest::HMAC_SHA1    1.03
+Digest::MD5          2.55
+Encode               3.01
+Encode::IMAPUTF7     1.05
+File::Copy::Recursive 0.45
+File::Spec           3.78
+Getopt::Long         2.5
+HTML::Entities       3.69
+IO::Socket           1.40
+IO::Socket::INET     1.40
+IO::Socket::INET6    2.72
+IO::Socket::IP       0.39
+IO::Socket::SSL      2.068
+IO::Tee              0.65
+JSON                 4.02
+JSON::WebToken       0.05
+LWP                  6.44
+MIME::Base64         3.15
+Mail::IMAPClient     3.43
+Net::Ping            2.71
+Net::SSLeay          1.88
+Term::ReadKey        2.38
+Test::MockObject     1.20200122
+Time::HiRes          1.976
+URI::Escape          3.31
+Unicode::String      2.10
+
+Info: will resync flags for already transferred messages. Use --noresyncflags to not resync flags.
+Info: will act as --uidexpunge2
+Info: turned ON syncinternaldates, will set the internal dates (arrival dates) on host2 same as host1.
+Host1: will try to use LOGIN authentication on host1
+Host2: will try to use LOGIN authentication on host2
+Host1: imap connection timeout is 120 seconds
+Host2: imap connection timeout is 120 seconds
+Host1: imap connection keepalive is on on host1. Use --nokeepalive1 to disable it.
+Host2: imap connection keepalive is on on host2. Use --nokeepalive2 to disable it.
+Host1: IMAP server [mail.fourmoons.net] port [143] user [ops@fourmoons.net]
+Host2: IMAP server [redbull.mxrouting.net] port [143] user [ops@fourmoons.net]
+Host1: connecting and login on host1 [mail.fourmoons.net] port [143] with user [ops@fourmoons.net]
+Host1 IP address: 108.167.140.95 Local IP address: 192.168.1.34
+Host1 banner: * OK [CAPABILITY IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE NAMESPACE LITERAL+ STARTTLS AUTH=PLAIN AUTH=LOGIN] Dovecot ready.
+Host1 capability before authentication: IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE NAMESPACE LITERAL+ STARTTLS AUTH=PLAIN AUTH=LOGIN AUTH
+Host1: going to ssl because STARTTLS is in CAPABILITY. Use --notls1 or --notls2 to avoid that behavior
+DEBUG: .../IO/Socket/SSL.pm:1177: global error: Undefined SSL object
+Host1: Socket successfully converted to SSL
+Host1: mail.fourmoons.net says it has CAPABILITY for AUTHENTICATE LOGIN
+Host1: success login on [mail.fourmoons.net] with user [ops@fourmoons.net] auth [LOGIN] or [LOGIN]
+Host2: connecting and login on host2 [redbull.mxrouting.net] port [143] with user [ops@fourmoons.net]
+Host2 IP address: 45.43.208.33 Local IP address: 192.168.1.34
+Host2 banner: * OK [CAPABILITY IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE LITERAL+ STARTTLS AUTH=PLAIN] Dovecot DA ready.
+Host2 capability before authentication: IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE LITERAL+ STARTTLS AUTH=PLAIN AUTH
+Host2: going to ssl because STARTTLS is in CAPABILITY. Use --notls1 or --notls2 to avoid that behavior
+DEBUG: .../IO/Socket/SSL.pm:1177: global error: Undefined SSL object
+Host2: Socket successfully converted to SSL
+Host2: success login on [redbull.mxrouting.net] with user [ops@fourmoons.net] auth [LOGIN] or [LOGIN]
+Host1: state Authenticated
+Host2: state Authenticated
+Host1 capability once authenticated: IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE SORT SORT=DISPLAY THREAD=REFERENCES THREAD=REFS THREAD=ORDEREDSUBJECT MULTIAPPEND URL-PARTIAL CATENATE UNSELECT CHILDREN NAMESPACE UIDPLUS LIST-EXTENDED I18NLEVEL=1 CONDSTORE QRESYNC ESEARCH ESORT SEARCHRES WITHIN CONTEXT=SEARCH LIST-STATUS BINARY MOVE SNIPPET=FUZZY PREVIEW=FUZZY PREVIEW STATUS=SIZE SAVEDATE NAMESPACE LITERAL+ NOTIFY SPECIAL-USE COMPRESS=DEFLATE QUOTA THREAD I18NLEVEL CONTEXT SNIPPET PREVIEW STATUS COMPRESS
+Host2 capability once authenticated: IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE SORT SORT=DISPLAY THREAD=REFERENCES THREAD=REFS THREAD=ORDEREDSUBJECT MULTIAPPEND URL-PARTIAL CATENATE UNSELECT CHILDREN NAMESPACE UIDPLUS LIST-EXTENDED I18NLEVEL=1 CONDSTORE QRESYNC ESEARCH ESORT SEARCHRES WITHIN CONTEXT=SEARCH LIST-STATUS BINARY MOVE SNIPPET=FUZZY PREVIEW=FUZZY PREVIEW STATUS=SIZE SAVEDATE LITERAL+ NOTIFY SPECIAL-USE XAPPLEPUSHSERVICE QUOTA THREAD I18NLEVEL CONTEXT SNIPPET PREVIEW STATUS
+Host1: found ID capability. Sending/receiving ID, presented in raw IMAP for now.
+In order to avoid sending/receiving ID, use option --noid
+Sending: 6 ID ("name" "imapsync" "version" "2.229" "os" "darwin" "vendor" "Gilles LAMIRAL" "support-url" "https://imapsync.lamiral.info/" "date" "14-Sep-2022 18:08:24 +0000" "side" "host1")
+Sent 182 bytes
+Read: 	* ID ("name" "Dovecot")
+  	6 OK ID completed (0.001 + 0.000 secs).
+Host2: found ID capability. Sending/receiving ID, presented in raw IMAP for now.
+In order to avoid sending/receiving ID, use option --noid
+Sending: 6 ID ("name" "imapsync" "version" "2.229" "os" "darwin" "vendor" "Gilles LAMIRAL" "support-url" "https://imapsync.lamiral.info/" "date" "14-Sep-2022 18:08:24 +0000" "side" "host2")
+Sent 182 bytes
+Read: 	* ID ("name" "Dovecot")
+  	6 OK ID completed (0.001 + 0.000 secs).
+
+Host2: QUOTA capability found, presented in raw IMAP on next lines
+Sending: 7 GETQUOTAROOT INBOX
+Sent 22 bytes
+Read: 	7 OK No quota (0.001 + 0.000 secs).
+
+Host2: Quota current storage is 0 bytes. Limit is 0 bytes. So 0 % full
+Host1: Compression is off. Use --compress1 to allow compression on host1
+Host2: Compression is off. Use --compress2 to allow compression on host2
+Host1: found 45 folders.
+Host2: found 46 folders.
+Host1: guessing separator from folder listing: [.]
+Host1: separator given by NAMESPACE: [.]
+Host2: guessing separator from folder listing: [.]
+Host2: separator given by NAMESPACE: [.]
+Host1: guessing prefix from folder listing: [INBOX.]
+Host1: prefix given by NAMESPACE: [INBOX.]
+Host2: guessing prefix from folder listing: []
+Host2: prefix given by NAMESPACE: []
+Host1: separator and prefix: [.][INBOX.]
+Host2: separator and prefix: [.][]
+Including all folders found by default. Use --subscribed or --folder or --folderrec or --include to select specific folders. Use --exclude to unselect specific folders.
+Host1: Checking wanted folders exist. Use --nocheckfoldersexist to avoid this check (shared of public namespace targeted).
+Host1: Checking wanted folders are selectable. Use --nocheckselectable to avoid this check.
+Turned off automapping folders ( use --automap to turn on automapping )
+
+++++ Listing folders
+All foldernames are presented between brackets like [X] where X is the foldername.
+When a foldername contains non-ASCII characters it is presented in the form
+[X] = [Y] where
+X is the imap foldername you have to use in command line options and
+Y is the utf8 output just printed for convenience, to recognize it.
+
+Host1: folders list (first the raw imap format then the [X] = [Y]):
+* LIST (\HasChildren) "." INBOX
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.Martello_Mariconi - Cahokia"
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.ROI Turnkey"
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.Investors Choice - Cahokia"
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.Apartments (Generic)"
+* LIST (\HasNoChildren \UnMarked \Junk) "." INBOX.spam
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.To Be Filed"
+* LIST (\HasNoChildren \UnMarked) "." INBOX.Action
+* LIST (\HasChildren \UnMarked) "." "INBOX.Properties - Indiana"
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.Properties - Indiana.554 Kentucky"
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.Properties - Arizona"
+* LIST (\HasChildren \UnMarked) "." "INBOX.Properties - Florida"
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.Properties - Florida.Ocala"
+* LIST (\HasNoChildren \UnMarked) "." INBOX.Starred
+* LIST (\HasChildren \UnMarked) "." INBOX.[Airmail]
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.[Airmail].Send Later"
+* LIST (\HasNoChildren \UnMarked) "." INBOX.[Airmail].Snooze
+* LIST (\HasNoChildren \UnMarked) "." INBOX.[Airmail].Done
+* LIST (\HasNoChildren \UnMarked) "." INBOX.[Airmail].Memo
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.[Airmail].To Do"
+* LIST (\HasNoChildren \UnMarked) "." INBOX.Anderson
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.SM - Flamingo"
+* LIST (\HasNoChildren \UnMarked) "." INBOX.Hawk
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.SM - Hawk"
+* LIST (\HasNoChildren \UnMarked) "." INBOX.Investing
+* LIST (\HasNoChildren \UnMarked) "." INBOX.RREI
+* LIST (\HasNoChildren \UnMarked) "." INBOX.Cozy
+* LIST (\HasNoChildren \UnMarked) "." INBOX.Stessa
+* LIST (\HasNoChildren \UnMarked) "." INBOX.Housefolios
+* LIST (\HasNoChildren \UnMarked) "." INBOX.BiggerPockets
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.Chuck Baer"
+* LIST (\HasNoChildren \UnMarked) "." INBOX.PMI
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.Real Wealth Network"
+* LIST (\HasNoChildren \UnMarked) "." INBOX.Roofstock
+* LIST (\HasNoChildren \UnMarked) "." INBOX.Renshaw
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.Realty Medics"
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.Realty Doctors"
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.Property Boss"
+* LIST (\HasNoChildren \UnMarked) "." INBOX.Olmstead
+* LIST (\HasNoChildren \UnMarked) "." INBOX.Allstar
+* LIST (\HasNoChildren \UnMarked \Archive) "." INBOX.Archive
+* LIST (\HasNoChildren \UnMarked \Drafts) "." INBOX.Drafts
+* LIST (\HasNoChildren \UnMarked \Sent) "." INBOX.Sent
+* LIST (\HasNoChildren \UnMarked) "." INBOX.Junk
+* LIST (\HasNoChildren \UnMarked \Trash) "." INBOX.Trash
+56 OK List completed (0.001 + 0.000 secs).
+
+[INBOX]
+[INBOX.Action]
+[INBOX.Allstar]
+[INBOX.Anderson]
+[INBOX.Apartments (Generic)]
+[INBOX.Archive]
+[INBOX.BiggerPockets]
+[INBOX.Chuck Baer]
+[INBOX.Cozy]
+[INBOX.Drafts]
+[INBOX.Hawk]
+[INBOX.Housefolios]
+[INBOX.Investing]
+[INBOX.Investors Choice - Cahokia]
+[INBOX.Junk]
+[INBOX.Martello_Mariconi - Cahokia]
+[INBOX.Olmstead]
+[INBOX.PMI]
+[INBOX.Properties - Arizona]
+[INBOX.Properties - Florida]
+[INBOX.Properties - Florida.Ocala]
+[INBOX.Properties - Indiana]
+[INBOX.Properties - Indiana.554 Kentucky]
+[INBOX.Property Boss]
+[INBOX.ROI Turnkey]
+[INBOX.RREI]
+[INBOX.Real Wealth Network]
+[INBOX.Realty Doctors]
+[INBOX.Realty Medics]
+[INBOX.Renshaw]
+[INBOX.Roofstock]
+[INBOX.SM - Flamingo]
+[INBOX.SM - Hawk]
+[INBOX.Sent]
+[INBOX.Starred]
+[INBOX.Stessa]
+[INBOX.To Be Filed]
+[INBOX.Trash]
+[INBOX.[Airmail]]
+[INBOX.[Airmail].Done]
+[INBOX.[Airmail].Memo]
+[INBOX.[Airmail].Send Later]
+[INBOX.[Airmail].Snooze]
+[INBOX.[Airmail].To Do]
+[INBOX.spam]
+
+Host2: folders list (first the raw imap format then the [X] = [Y]):
+* LIST (\HasNoChildren) "." spam
+* LIST (\HasChildren \UnMarked) "." [Airmail]
+* LIST (\HasNoChildren) "." "[Airmail].To Do"
+* LIST (\HasNoChildren) "." [Airmail].Snooze
+* LIST (\HasNoChildren) "." "[Airmail].Send Later"
+* LIST (\HasNoChildren) "." [Airmail].Memo
+* LIST (\HasNoChildren) "." [Airmail].Done
+* LIST (\HasNoChildren) "." "To Be Filed"
+* LIST (\HasNoChildren) "." Stessa
+* LIST (\HasNoChildren) "." Starred
+* LIST (\HasNoChildren) "." "SM - Hawk"
+* LIST (\HasNoChildren) "." "SM - Flamingo"
+* LIST (\HasNoChildren) "." Roofstock
+* LIST (\HasNoChildren) "." Renshaw
+* LIST (\HasNoChildren) "." "Realty Medics"
+* LIST (\HasNoChildren) "." "Realty Doctors"
+* LIST (\HasNoChildren) "." "Real Wealth Network"
+* LIST (\HasNoChildren) "." RREI
+* LIST (\HasNoChildren) "." "ROI Turnkey"
+* LIST (\HasNoChildren) "." "Property Boss"
+* LIST (\HasChildren) "." "Properties - Indiana"
+* LIST (\HasNoChildren) "." "Properties - Indiana.554 Kentucky"
+* LIST (\HasChildren) "." "Properties - Florida"
+* LIST (\HasNoChildren) "." "Properties - Florida.Ocala"
+* LIST (\HasNoChildren) "." "Properties - Arizona"
+* LIST (\HasNoChildren) "." PMI
+* LIST (\HasNoChildren) "." Olmstead
+* LIST (\HasNoChildren) "." "Martello_Mariconi - Cahokia"
+* LIST (\HasNoChildren) "." "Investors Choice - Cahokia"
+* LIST (\HasNoChildren) "." Investing
+* LIST (\HasNoChildren) "." Housefolios
+* LIST (\HasNoChildren \UnMarked) "." Hawk
+* LIST (\HasNoChildren) "." Cozy
+* LIST (\HasNoChildren) "." "Chuck Baer"
+* LIST (\HasNoChildren) "." BiggerPockets
+* LIST (\HasNoChildren \Archive) "." Archive
+* LIST (\HasNoChildren) "." "Apartments (Generic)"
+* LIST (\HasNoChildren) "." Anderson
+* LIST (\HasNoChildren) "." Allstar
+* LIST (\HasNoChildren \UnMarked) "." Action
+* LIST (\HasNoChildren \Trash) "." Trash
+* LIST (\HasNoChildren \Sent) "." Sent
+* LIST (\HasNoChildren \UnMarked \Junk) "." Junk
+* LIST (\HasNoChildren \Drafts) "." Drafts
+* LIST (\HasNoChildren \UnMarked) "." INBOX.spam
+* LIST (\HasChildren) "." INBOX
+12 OK List completed (0.002 + 0.000 + 0.001 secs).
+
+[Action]
+[Allstar]
+[Anderson]
+[Apartments (Generic)]
+[Archive]
+[BiggerPockets]
+[Chuck Baer]
+[Cozy]
+[Drafts]
+[Hawk]
+[Housefolios]
+[INBOX]
+[INBOX.spam]
+[Investing]
+[Investors Choice - Cahokia]
+[Junk]
+[Martello_Mariconi - Cahokia]
+[Olmstead]
+[PMI]
+[Properties - Arizona]
+[Properties - Florida]
+[Properties - Florida.Ocala]
+[Properties - Indiana]
+[Properties - Indiana.554 Kentucky]
+[Property Boss]
+[ROI Turnkey]
+[RREI]
+[Real Wealth Network]
+[Realty Doctors]
+[Realty Medics]
+[Renshaw]
+[Roofstock]
+[SM - Flamingo]
+[SM - Hawk]
+[Sent]
+[Starred]
+[Stessa]
+[To Be Filed]
+[Trash]
+[[Airmail]]
+[[Airmail].Done]
+[[Airmail].Memo]
+[[Airmail].Send Later]
+[[Airmail].Snooze]
+[[Airmail].To Do]
+[spam]
+
+Checking SEARCH ALL works on both accounts. To avoid that check, use --nochecknoabletosearch
+Host1: checking if SEARCH ALL works on INBOX
+Host1: folder [INBOX] has 59 messages mentioned by SELECT
+Host1: folder [INBOX] has 59 messages found by SEARCH ALL
+Host1: folder [INBOX] has the same messages count (59) by SELECT and SEARCH ALL
+Host2: checking if SEARCH ALL works on INBOX
+Host2: folder [INBOX] has 59 messages mentioned by SELECT
+Host2: folder [INBOX] has 59 messages found by SEARCH ALL
+Host2: folder [INBOX] has the same messages count (59) by SELECT and SEARCH ALL
+Good! SEARCH ALL works on both accounts.
+
+Folders sizes before the synchronization. It can take some time. Be patient.
+You can remove foldersizes listings by using "--nofoldersizes" and "--nofoldersizesatend"
+but then you will also lose the ETA (Estimation Time of Arrival) given after each message copy.
+Host1 folder    1/45 [INBOX]                             Size:  12658867 Messages:    59 Biggest:   5737115
+Host2 folder    1/45 [INBOX]                             Size:  12658867 Messages:    59 Biggest:   5737115
+Host2-Host1                                                            0               0                  0
+
+Host1 folder    2/45 [INBOX.Action]                      Size:         0 Messages:     0 Biggest:         0
+Host2 folder    2/45 [Action]                            Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder    3/45 [INBOX.Allstar]                     Size:  52398649 Messages:   332 Biggest:  16219876
+Host2 folder    3/45 [Allstar]                           Size:  52398649 Messages:   332 Biggest:  16219876
+Host2-Host1                                                            0               0                  0
+
+Host1 folder    4/45 [INBOX.Anderson]                    Size:    158131 Messages:     3 Biggest:     72381
+Host2 folder    4/45 [Anderson]                          Size:    158131 Messages:     3 Biggest:     72381
+Host2-Host1                                                            0               0                  0
+
+Host1 folder    5/45 [INBOX.Apartments (Generic)]        Size:   1840667 Messages:    46 Biggest:     57465
+Host2 folder    5/45 [Apartments (Generic)]              Size:   1840667 Messages:    46 Biggest:     57465
+Host2-Host1                                                            0               0                  0
+
+Host1 folder    6/45 [INBOX.Archive]                     Size:     36970 Messages:     1 Biggest:     36970
+Host2 folder    6/45 [Archive]                           Size:     36970 Messages:     1 Biggest:     36970
+Host2-Host1                                                            0               0                  0
+
+Host1 folder    7/45 [INBOX.BiggerPockets]               Size:    303804 Messages:     2 Biggest:    152403
+Host2 folder    7/45 [BiggerPockets]                     Size:    303804 Messages:     2 Biggest:    152403
+Host2-Host1                                                            0               0                  0
+
+Host1 folder    8/45 [INBOX.Chuck Baer]                  Size:  47722257 Messages:   142 Biggest:   7878438
+Host2 folder    8/45 [Chuck Baer]                        Size:  47722257 Messages:   142 Biggest:   7878438
+Host2-Host1                                                            0               0                  0
+
+Host1 folder    9/45 [INBOX.Cozy]                        Size:    587364 Messages:    16 Biggest:     40823
+Host2 folder    9/45 [Cozy]                              Size:    587364 Messages:    16 Biggest:     40823
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   10/45 [INBOX.Drafts]                      Size:     28207 Messages:     1 Biggest:     28207
+Host2 folder   10/45 [Drafts]                            Size:     28207 Messages:     1 Biggest:     28207
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   11/45 [INBOX.Hawk]                        Size:         0 Messages:     0 Biggest:         0
+Host2 folder   11/45 [Hawk]                              Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   12/45 [INBOX.Housefolios]                 Size:   2129882 Messages:    30 Biggest:    131602
+Host2 folder   12/45 [Housefolios]                       Size:   1981479 Messages:    28 Biggest:    131602
+Host2-Host1                                                      -148403              -2                  0
+
+Host1 folder   13/45 [INBOX.Investing]                   Size: 147417604 Messages:   358 Biggest:  17252863
+Host2 folder   13/45 [Investing]                         Size: 147417604 Messages:   358 Biggest:  17252863
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   14/45 [INBOX.Investors Choice - Cahokia]  Size:    426548 Messages:    12 Biggest:    122225
+Host2 folder   14/45 [Investors Choice - Cahokia]        Size:    426548 Messages:    12 Biggest:    122225
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   15/45 [INBOX.Junk]                        Size:         0 Messages:     0 Biggest:         0
+Host2 folder   15/45 [Junk]                              Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   16/45 [INBOX.Martello_Mariconi - Cahokia] Size: 109036521 Messages:   281 Biggest:  21515769
+Host2 folder   16/45 [Martello_Mariconi - Cahokia]       Size: 107221439 Messages:   272 Biggest:  21515769
+Host2-Host1                                                     -1815082              -9                  0
+
+Host1 folder   17/45 [INBOX.Olmstead]                    Size:   7482311 Messages:    28 Biggest:   1485452
+Host2 folder   17/45 [Olmstead]                          Size:   7482311 Messages:    28 Biggest:   1485452
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   18/45 [INBOX.PMI]                         Size:  29487595 Messages:   257 Biggest:   7675140
+Host2 folder   18/45 [PMI]                               Size:  29452018 Messages:   255 Biggest:   7675140
+Host2-Host1                                                       -35577              -2                  0
+
+Host1 folder   19/45 [INBOX.Properties - Arizona]        Size:    270520 Messages:    14 Biggest:     41425
+Host2 folder   19/45 [Properties - Arizona]              Size:    270520 Messages:    14 Biggest:     41425
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   20/45 [INBOX.Properties - Florida]        Size:  18323133 Messages:   131 Biggest:   1900289
+Host2 folder   20/45 [Properties - Florida]              Size:  18323133 Messages:   131 Biggest:   1900289
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   21/45 [INBOX.Properties - Florida.Ocala]  Size:  14337520 Messages:    65 Biggest:   2208138
+Host2 folder   21/45 [Properties - Florida.Ocala]        Size:  14337520 Messages:    65 Biggest:   2208138
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   22/45 [INBOX.Properties - Indiana]        Size:  12034666 Messages:    21 Biggest:   5495521
+Host2 folder   22/45 [Properties - Indiana]              Size:  12034666 Messages:    21 Biggest:   5495521
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   23/45 [INBOX.Properties - Indiana.554 Kentucky] Size:   5525606 Messages:     7 Biggest:   5492083
+Host2 folder   23/45 [Properties - Indiana.554 Kentucky] Size:   5525606 Messages:     7 Biggest:   5492083
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   24/45 [INBOX.Property Boss]               Size:  14968592 Messages:    20 Biggest:   8653099
+Host2 folder   24/45 [Property Boss]                     Size:  14968592 Messages:    20 Biggest:   8653099
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   25/45 [INBOX.ROI Turnkey]                 Size:     75411 Messages:     1 Biggest:     75411
+Host2 folder   25/45 [ROI Turnkey]                       Size:     75411 Messages:     1 Biggest:     75411
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   26/45 [INBOX.RREI]                        Size:    992117 Messages:     3 Biggest:    927117
+Host2 folder   26/45 [RREI]                              Size:    992117 Messages:     3 Biggest:    927117
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   27/45 [INBOX.Real Wealth Network]         Size:   9491628 Messages:   187 Biggest:    126984
+Host2 folder   27/45 [Real Wealth Network]               Size:   9491628 Messages:   187 Biggest:    126984
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   28/45 [INBOX.Realty Doctors]              Size:   9844116 Messages:    69 Biggest:   3831712
+Host2 folder   28/45 [Realty Doctors]                    Size:   9844116 Messages:    69 Biggest:   3831712
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   29/45 [INBOX.Realty Medics]               Size:  49614094 Messages:   390 Biggest:  14749970
+Host2 folder   29/45 [Realty Medics]                     Size:  49614094 Messages:   390 Biggest:  14749970
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   30/45 [INBOX.Renshaw]                     Size:  30603433 Messages:   171 Biggest:  16219150
+Host2 folder   30/45 [Renshaw]                           Size:  30603433 Messages:   171 Biggest:  16219150
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   31/45 [INBOX.Roofstock]                   Size:  87913159 Messages:   340 Biggest:  10471236
+Host2 folder   31/45 [Roofstock]                         Size:  87913159 Messages:   340 Biggest:  10471236
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   32/45 [INBOX.SM - Flamingo]               Size: 117843049 Messages:   145 Biggest:  46448088
+Host2 folder   32/45 [SM - Flamingo]                     Size: 117843049 Messages:   145 Biggest:  46448088
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   33/45 [INBOX.SM - Hawk]                   Size:  25895258 Messages:    89 Biggest:  10708442
+Host2 folder   33/45 [SM - Hawk]                         Size:  25433624 Messages:    83 Biggest:  10708442
+Host2-Host1                                                      -461634              -6                  0
+
+Host1 folder   34/45 [INBOX.Sent]                        Size:  99337841 Messages:   249 Biggest:  45021484
+Host2 folder   34/45 [Sent]                              Size:  99299867 Messages:   245 Biggest:  45021484
+Host2-Host1                                                       -37974              -4                  0
+
+Host1 folder   35/45 [INBOX.Starred]                     Size:     13557 Messages:     2 Biggest:      8730
+Host2 folder   35/45 [Starred]                           Size:     13557 Messages:     2 Biggest:      8730
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   36/45 [INBOX.Stessa]                      Size:   5399898 Messages:    53 Biggest:    143151
+Host2 folder   36/45 [Stessa]                            Size:   5399898 Messages:    53 Biggest:    143151
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   37/45 [INBOX.To Be Filed]                 Size:  35100502 Messages:    40 Biggest:  10377166
+Host2 folder   37/45 [To Be Filed]                       Size:  35100502 Messages:    40 Biggest:  10377166
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   38/45 [INBOX.Trash]                       Size:   3656462 Messages:    50 Biggest:    213143
+Host2 folder   38/45 [Trash]                             Size:   3656462 Messages:    50 Biggest:    213143
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   39/45 [INBOX.[Airmail]]                   Size:         0 Messages:     0 Biggest:         0
+Host2 folder   39/45 [[Airmail]]                         Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   40/45 [INBOX.[Airmail].Done]              Size:         0 Messages:     0 Biggest:         0
+Host2 folder   40/45 [[Airmail].Done]                    Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   41/45 [INBOX.[Airmail].Memo]              Size:         0 Messages:     0 Biggest:         0
+Host2 folder   41/45 [[Airmail].Memo]                    Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   42/45 [INBOX.[Airmail].Send Later]        Size:         0 Messages:     0 Biggest:         0
+Host2 folder   42/45 [[Airmail].Send Later]              Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   43/45 [INBOX.[Airmail].Snooze]            Size:         0 Messages:     0 Biggest:         0
+Host2 folder   43/45 [[Airmail].Snooze]                  Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   44/45 [INBOX.[Airmail].To Do]             Size:         0 Messages:     0 Biggest:         0
+Host2 folder   44/45 [[Airmail].To Do]                   Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   45/45 [INBOX.spam]                        Size:         0 Messages:     0 Biggest:         0
+Host2 folder   45/45 [spam]                              Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 Nb folders:                    45 folders
+Host2 Nb folders:                    45 folders
+
+Host1 Nb messages:                 3615 messages
+Host2 Nb messages:                 3592 messages
+
+Host1 Total size:             952955939 bytes (908.810 MiB)
+Host2 Total size:             950457269 bytes (906.427 MiB)
+
+Host1 Biggest message:         46448088 bytes (44.296 MiB)
+Host2 Biggest message:         46448088 bytes (44.296 MiB)
+
+Time spent on sizing:        22.5 seconds
+++++ Looping on each one of 45 folders to sync
+ETA: Tuesday 31 October 2023-10-31 20:16:32 -0700 MST  0 s  3615/3615 msgs left
+Folder    1/45 [INBOX]                             -> [INBOX]                            
+Host1: folder [INBOX] has 59 messages in total (mentioned by SELECT)
+Host2: folder [INBOX] has 59 messages in total (mentioned by SELECT)
+Host2: folder [INBOX] permanentflags: 
+Host1: Expunging INBOX 
+Host1: folder [INBOX] considering 59 messages
+Host2: folder [INBOX] considering 59 messages
+Host1: folder [INBOX] selected 59 messages, duplicates 0
+Host2: folder [INBOX] selected 59 messages, duplicates 0
+Host1: Expunging folder INBOX 
+ETA: Tuesday 31 October 2023-10-31 21:08:45 -0700 MST  3132 s  3556/3615 msgs left
+Folder    2/45 [INBOX.Action]                      -> [Action]                           
+Host1: folder [INBOX.Action] has 0 messages in total (mentioned by SELECT)
+Host2: folder [Action] has 0 messages in total (mentioned by SELECT)
+Host2: folder [Action] permanentflags: 
+Host1: Expunging INBOX.Action 
+Host1: folder [INBOX.Action] considering 0 messages
+Host2: folder [Action] considering 0 messages
+Host1: folder [INBOX.Action] selected 0 messages, duplicates 0
+Host2: folder [Action] selected 0 messages, duplicates 0
+Host1: Expunging folder INBOX.Action 
+ETA: Tuesday 31 October 2023-10-31 21:35:37 -0700 MST  4743 s  3556/3615 msgs left
+Folder    3/45 [INBOX.Allstar]                     -> [Allstar]                          
+Host1: folder [INBOX.Allstar] has 332 messages in total (mentioned by SELECT)
+Host2: folder [Allstar] has 332 messages in total (mentioned by SELECT)
+Host2: folder [Allstar] permanentflags: 
+Host1: Expunging INBOX.Allstar 
+Host1: folder [INBOX.Allstar] considering 332 messages
+Host2: folder [Allstar] considering 332 messages
+Host1: folder [INBOX.Allstar] selected 332 messages, duplicates 0
+Host2: folder [Allstar] selected 332 messages, duplicates 0
+Host1: Expunging folder INBOX.Allstar 
+ETA: Tuesday 31 October 2023-10-31 22:33:39 -0700 MST  8224 s  3224/3615 msgs left
+Folder    4/45 [INBOX.Anderson]                    -> [Anderson]                         
+Host1: folder [INBOX.Anderson] has 3 messages in total (mentioned by SELECT)
+Host2: folder [Anderson] has 3 messages in total (mentioned by SELECT)
+Host2: folder [Anderson] permanentflags: 
+Host1: Expunging INBOX.Anderson 
+Host1: folder [INBOX.Anderson] considering 3 messages
+Host2: folder [Anderson] considering 3 messages
+Host1: folder [INBOX.Anderson] selected 3 messages, duplicates 0
+Host2: folder [Anderson] selected 3 messages, duplicates 0
+Host1: Expunging folder INBOX.Anderson 
+ETA: Tuesday 31 October 2023-10-31 23:12:19 -0700 MST  10544 s  3221/3615 msgs left
+Folder    5/45 [INBOX.Apartments (Generic)]        -> [Apartments (Generic)]             
+Host1: folder [INBOX.Apartments (Generic)] has 46 messages in total (mentioned by SELECT)
+Host2: folder [Apartments (Generic)] has 46 messages in total (mentioned by SELECT)
+Host2: folder [Apartments (Generic)] permanentflags: 
+Host1: Expunging INBOX.Apartments (Generic) 
+Host1: folder [INBOX.Apartments (Generic)] considering 46 messages
+Host2: folder [Apartments (Generic)] considering 46 messages
+Host1: folder [INBOX.Apartments (Generic)] selected 46 messages, duplicates 0
+Host2: folder [Apartments (Generic)] selected 46 messages, duplicates 0
+Host1: Expunging folder INBOX.Apartments (Generic) 
+ETA: Tuesday 31 October 2023-10-31 23:52:26 -0700 MST  12949 s  3175/3615 msgs left
+Folder    6/45 [INBOX.Archive]                     -> [Archive]                          
+Host1: folder [INBOX.Archive] has 1 messages in total (mentioned by SELECT)
+Host2: folder [Archive] has 1 messages in total (mentioned by SELECT)
+Host2: folder [Archive] permanentflags: 
+Host1: Expunging INBOX.Archive 
+Host1: folder [INBOX.Archive] considering 1 messages
+Host2: folder [Archive] considering 1 messages
+Host1: folder [INBOX.Archive] selected 1 messages, duplicates 0
+Host2: folder [Archive] selected 1 messages, duplicates 0
+Host1: Expunging folder INBOX.Archive 
+ETA: Wednesday 01 November 2023-11-01 00:36:03 -0700 MST  15566 s  3174/3615 msgs left
+Folder    7/45 [INBOX.BiggerPockets]               -> [BiggerPockets]                    
+Host1: folder [INBOX.BiggerPockets] has 2 messages in total (mentioned by SELECT)
+Host2: folder [BiggerPockets] has 2 messages in total (mentioned by SELECT)
+Host2: folder [BiggerPockets] permanentflags: 
+Host1: Expunging INBOX.BiggerPockets 
+Host1: folder [INBOX.BiggerPockets] considering 2 messages
+Host2: folder [BiggerPockets] considering 2 messages
+Host1: folder [INBOX.BiggerPockets] selected 2 messages, duplicates 0
+Host2: folder [BiggerPockets] selected 2 messages, duplicates 0
+Host1: Expunging folder INBOX.BiggerPockets 
+ETA: Wednesday 01 November 2023-11-01 01:14:16 -0700 MST  17858 s  3172/3615 msgs left
+Folder    8/45 [INBOX.Chuck Baer]                  -> [Chuck Baer]                       
+Host1: folder [INBOX.Chuck Baer] has 142 messages in total (mentioned by SELECT)
+Host2: folder [Chuck Baer] has 142 messages in total (mentioned by SELECT)
+Host2: folder [Chuck Baer] permanentflags: 
+Host1: Expunging INBOX.Chuck Baer 
+Host1: folder [INBOX.Chuck Baer] considering 142 messages
+Host2: folder [Chuck Baer] considering 142 messages
+Host1: folder [INBOX.Chuck Baer] selected 142 messages, duplicates 0
+Host2: folder [Chuck Baer] selected 142 messages, duplicates 0
+Host1: Expunging folder INBOX.Chuck Baer 
+ETA: Wednesday 01 November 2023-11-01 01:40:42 -0700 MST  19443 s  3030/3615 msgs left
+Folder    9/45 [INBOX.Cozy]                        -> [Cozy]                             
+Host1: folder [INBOX.Cozy] has 16 messages in total (mentioned by SELECT)
+Host2: folder [Cozy] has 16 messages in total (mentioned by SELECT)
+Host2: folder [Cozy] permanentflags: 
+Host1: Expunging INBOX.Cozy 
+Host1: folder [INBOX.Cozy] considering 16 messages
+Host2: folder [Cozy] considering 16 messages
+Host1: folder [INBOX.Cozy] selected 16 messages, duplicates 0
+Host2: folder [Cozy] selected 16 messages, duplicates 0
+Host1: Expunging folder INBOX.Cozy 
+ETA: Wednesday 01 November 2023-11-01 02:15:48 -0700 MST  21549 s  3014/3615 msgs left
+Folder   10/45 [INBOX.Drafts]                      -> [Drafts]                           
+Host1: folder [INBOX.Drafts] has 1 messages in total (mentioned by SELECT)
+Host2: folder [Drafts] has 1 messages in total (mentioned by SELECT)
+Host2: folder [Drafts] permanentflags: 
+Host1: Expunging INBOX.Drafts 
+Host1: folder [INBOX.Drafts] considering 1 messages
+Host2: folder [Drafts] considering 1 messages
+Host1: folder [INBOX.Drafts] selected 1 messages, duplicates 0
+Host2: folder [Drafts] selected 1 messages, duplicates 0
+Host1: Expunging folder INBOX.Drafts 
+ETA: Wednesday 01 November 2023-11-01 02:51:24 -0700 MST  23684 s  3013/3615 msgs left
+Folder   11/45 [INBOX.Hawk]                        -> [Hawk]                             
+Host1: folder [INBOX.Hawk] has 0 messages in total (mentioned by SELECT)
+Host2: folder [Hawk] has 0 messages in total (mentioned by SELECT)
+Host2: folder [Hawk] permanentflags: 
+Host1: Expunging INBOX.Hawk 
+Host1: folder [INBOX.Hawk] considering 0 messages
+Host2: folder [Hawk] considering 0 messages
+Host1: folder [INBOX.Hawk] selected 0 messages, duplicates 0
+Host2: folder [Hawk] selected 0 messages, duplicates 0
+Host1: Expunging folder INBOX.Hawk 
+ETA: Wednesday 01 November 2023-11-01 03:13:47 -0700 MST  25027 s  3013/3615 msgs left
+Folder   12/45 [INBOX.Housefolios]                 -> [Housefolios]                      
+Host1: folder [INBOX.Housefolios] has 30 messages in total (mentioned by SELECT)
+Host2: folder [Housefolios] has 28 messages in total (mentioned by SELECT)
+Host2: folder [Housefolios] permanentflags: 
+Host1: Expunging INBOX.Housefolios 
+Host1: folder [INBOX.Housefolios] considering 30 messages
+Host2: folder [Housefolios] considering 28 messages
+Host1: folder [INBOX.Housefolios] selected 30 messages, duplicates 2
+Host2: folder [Housefolios] selected 28 messages, duplicates 0
+Host1: Expunging folder INBOX.Housefolios 
+ETA: Wednesday 01 November 2023-11-01 03:47:53 -0700 MST  27072 s  2983/3615 msgs left
+Folder   13/45 [INBOX.Investing]                   -> [Investing]                        
+Host1: folder [INBOX.Investing] has 358 messages in total (mentioned by SELECT)
+Host2: folder [Investing] has 358 messages in total (mentioned by SELECT)
+Host2: folder [Investing] permanentflags: 
+Host1: Expunging INBOX.Investing 
+Host1: folder [INBOX.Investing] considering 358 messages
+Host2: folder [Investing] considering 358 messages
+Host1: folder [INBOX.Investing] selected 358 messages, duplicates 0
+Host2: folder [Investing] selected 358 messages, duplicates 0
+Host1: Expunging folder INBOX.Investing 
+ETA: Wednesday 01 November 2023-11-01 03:35:47 -0700 MST  26345 s  2625/3615 msgs left
+Folder   14/45 [INBOX.Investors Choice - Cahokia]  -> [Investors Choice - Cahokia]       
+Host1: folder [INBOX.Investors Choice - Cahokia] has 12 messages in total (mentioned by SELECT)
+Host2: folder [Investors Choice - Cahokia] has 12 messages in total (mentioned by SELECT)
+Host2: folder [Investors Choice - Cahokia] permanentflags: 
+Host1: Expunging INBOX.Investors Choice - Cahokia 
+Host1: folder [INBOX.Investors Choice - Cahokia] considering 12 messages
+Host2: folder [Investors Choice - Cahokia] considering 12 messages
+Host1: folder [INBOX.Investors Choice - Cahokia] selected 12 messages, duplicates 0
+Host2: folder [Investors Choice - Cahokia] selected 12 messages, duplicates 0
+Host1: Expunging folder INBOX.Investors Choice - Cahokia 
+ETA: Wednesday 01 November 2023-11-01 04:05:46 -0700 MST  28143 s  2613/3615 msgs left
+Folder   15/45 [INBOX.Junk]                        -> [Junk]                             
+Host1: folder [INBOX.Junk] has 0 messages in total (mentioned by SELECT)
+Host2: folder [Junk] has 0 messages in total (mentioned by SELECT)
+Host2: folder [Junk] permanentflags: 
+Host1: Expunging INBOX.Junk 
+Host1: folder [INBOX.Junk] considering 0 messages
+Host2: folder [Junk] considering 0 messages
+Host1: folder [INBOX.Junk] selected 0 messages, duplicates 0
+Host2: folder [Junk] selected 0 messages, duplicates 0
+Host1: Expunging folder INBOX.Junk 
+ETA: Wednesday 01 November 2023-11-01 04:25:35 -0700 MST  29332 s  2613/3615 msgs left
+Folder   16/45 [INBOX.Martello_Mariconi - Cahokia] -> [Martello_Mariconi - Cahokia]      
+Host1: folder [INBOX.Martello_Mariconi - Cahokia] has 281 messages in total (mentioned by SELECT)
+Host2: folder [Martello_Mariconi - Cahokia] has 272 messages in total (mentioned by SELECT)
+Host2: folder [Martello_Mariconi - Cahokia] permanentflags: 
+Host1: Expunging INBOX.Martello_Mariconi - Cahokia 
+Host1: folder [INBOX.Martello_Mariconi - Cahokia] considering 281 messages
+Host2: folder [Martello_Mariconi - Cahokia] considering 272 messages
+Host1: folder [INBOX.Martello_Mariconi - Cahokia] selected 281 messages, duplicates 9
+Host2: folder [Martello_Mariconi - Cahokia] selected 272 messages, duplicates 0
+Host1: Expunging folder INBOX.Martello_Mariconi - Cahokia 
+ETA: Wednesday 01 November 2023-11-01 04:04:54 -0700 MST  28090 s  2332/3615 msgs left
+Folder   17/45 [INBOX.Olmstead]                    -> [Olmstead]                         
+Host1: folder [INBOX.Olmstead] has 28 messages in total (mentioned by SELECT)
+Host2: folder [Olmstead] has 28 messages in total (mentioned by SELECT)
+Host2: folder [Olmstead] permanentflags: 
+Host1: Expunging INBOX.Olmstead 
+Host1: folder [INBOX.Olmstead] considering 28 messages
+Host2: folder [Olmstead] considering 28 messages
+Host1: folder [INBOX.Olmstead] selected 28 messages, duplicates 0
+Host2: folder [Olmstead] selected 28 messages, duplicates 0
+Host1: Expunging folder INBOX.Olmstead 
+ETA: Wednesday 01 November 2023-11-01 04:27:37 -0700 MST  29452 s  2304/3615 msgs left
+Folder   18/45 [INBOX.PMI]                         -> [PMI]                              
+Host1: folder [INBOX.PMI] has 257 messages in total (mentioned by SELECT)
+Host2: folder [PMI] has 255 messages in total (mentioned by SELECT)
+Host2: folder [PMI] permanentflags: 
+Host1: Expunging INBOX.PMI 
+Host1: folder [INBOX.PMI] considering 257 messages
+Host2: folder [PMI] considering 255 messages
+Host1: folder [INBOX.PMI] selected 257 messages, duplicates 2
+Host2: folder [PMI] selected 255 messages, duplicates 0
+Host1: Expunging folder INBOX.PMI 
+ETA: Wednesday 01 November 2023-11-01 04:01:35 -0700 MST  27889 s  2047/3615 msgs left
+Folder   19/45 [INBOX.Properties - Arizona]        -> [Properties - Arizona]             
+Host1: folder [INBOX.Properties - Arizona] has 14 messages in total (mentioned by SELECT)
+Host2: folder [Properties - Arizona] has 14 messages in total (mentioned by SELECT)
+Host2: folder [Properties - Arizona] permanentflags: 
+Host1: Expunging INBOX.Properties - Arizona 
+Host1: folder [INBOX.Properties - Arizona] considering 14 messages
+Host2: folder [Properties - Arizona] considering 14 messages
+Host1: folder [INBOX.Properties - Arizona] selected 14 messages, duplicates 0
+Host2: folder [Properties - Arizona] selected 14 messages, duplicates 0
+Host1: Expunging folder INBOX.Properties - Arizona 
+ETA: Wednesday 01 November 2023-11-01 04:24:06 -0700 MST  29239 s  2033/3615 msgs left
+Folder   20/45 [INBOX.Properties - Florida]        -> [Properties - Florida]             
+Host1: folder [INBOX.Properties - Florida] has 131 messages in total (mentioned by SELECT)
+Host2: folder [Properties - Florida] has 131 messages in total (mentioned by SELECT)
+Host2: folder [Properties - Florida] permanentflags: 
+Host1: Expunging INBOX.Properties - Florida 
+Host1: folder [INBOX.Properties - Florida] considering 131 messages
+Host2: folder [Properties - Florida] considering 131 messages
+Host1: folder [INBOX.Properties - Florida] selected 131 messages, duplicates 0
+Host2: folder [Properties - Florida] selected 131 messages, duplicates 0
+Host1: Expunging folder INBOX.Properties - Florida 
+ETA: Wednesday 01 November 2023-11-01 04:18:13 -0700 MST  28886 s  1902/3615 msgs left
+Folder   21/45 [INBOX.Properties - Florida.Ocala]  -> [Properties - Florida.Ocala]       
+Host1: folder [INBOX.Properties - Florida.Ocala] has 65 messages in total (mentioned by SELECT)
+Host2: folder [Properties - Florida.Ocala] has 65 messages in total (mentioned by SELECT)
+Host2: folder [Properties - Florida.Ocala] permanentflags: 
+Host1: Expunging INBOX.Properties - Florida.Ocala 
+Host1: folder [INBOX.Properties - Florida.Ocala] considering 65 messages
+Host2: folder [Properties - Florida.Ocala] considering 65 messages
+Host1: folder [INBOX.Properties - Florida.Ocala] selected 65 messages, duplicates 0
+Host2: folder [Properties - Florida.Ocala] selected 65 messages, duplicates 0
+Host1: Expunging folder INBOX.Properties - Florida.Ocala 
+ETA: Wednesday 01 November 2023-11-01 04:25:12 -0700 MST  29304 s  1837/3615 msgs left
+Folder   22/45 [INBOX.Properties - Indiana]        -> [Properties - Indiana]             
+Host1: folder [INBOX.Properties - Indiana] has 21 messages in total (mentioned by SELECT)
+Host2: folder [Properties - Indiana] has 21 messages in total (mentioned by SELECT)
+Host2: folder [Properties - Indiana] permanentflags: 
+Host1: Expunging INBOX.Properties - Indiana 
+Host1: folder [INBOX.Properties - Indiana] considering 21 messages
+Host2: folder [Properties - Indiana] considering 21 messages
+Host1: folder [INBOX.Properties - Indiana] selected 21 messages, duplicates 0
+Host2: folder [Properties - Indiana] selected 21 messages, duplicates 0
+Host1: Expunging folder INBOX.Properties - Indiana 
+ETA: Wednesday 01 November 2023-11-01 04:42:20 -0700 MST  30331 s  1816/3615 msgs left
+Folder   23/45 [INBOX.Properties - Indiana.554 Kentucky] -> [Properties - Indiana.554 Kentucky]
+Host1: folder [INBOX.Properties - Indiana.554 Kentucky] has 7 messages in total (mentioned by SELECT)
+Host2: folder [Properties - Indiana.554 Kentucky] has 7 messages in total (mentioned by SELECT)
+Host2: folder [Properties - Indiana.554 Kentucky] permanentflags: 
+Host1: Expunging INBOX.Properties - Indiana.554 Kentucky 
+Host1: folder [INBOX.Properties - Indiana.554 Kentucky] considering 7 messages
+Host2: folder [Properties - Indiana.554 Kentucky] considering 7 messages
+Host1: folder [INBOX.Properties - Indiana.554 Kentucky] selected 7 messages, duplicates 0
+Host2: folder [Properties - Indiana.554 Kentucky] selected 7 messages, duplicates 0
+Host1: Expunging folder INBOX.Properties - Indiana.554 Kentucky 
+ETA: Wednesday 01 November 2023-11-01 05:02:26 -0700 MST  31536 s  1809/3615 msgs left
+Folder   24/45 [INBOX.Property Boss]               -> [Property Boss]                    
+Host1: folder [INBOX.Property Boss] has 20 messages in total (mentioned by SELECT)
+Host2: folder [Property Boss] has 20 messages in total (mentioned by SELECT)
+Host2: folder [Property Boss] permanentflags: 
+Host1: Expunging INBOX.Property Boss 
+Host1: folder [INBOX.Property Boss] considering 20 messages
+Host2: folder [Property Boss] considering 20 messages
+Host1: folder [INBOX.Property Boss] selected 20 messages, duplicates 0
+Host2: folder [Property Boss] selected 20 messages, duplicates 0
+Host1: Expunging folder INBOX.Property Boss 
+ETA: Wednesday 01 November 2023-11-01 05:18:34 -0700 MST  32503 s  1789/3615 msgs left
+Folder   25/45 [INBOX.ROI Turnkey]                 -> [ROI Turnkey]                      
+Host1: folder [INBOX.ROI Turnkey] has 1 messages in total (mentioned by SELECT)
+Host2: folder [ROI Turnkey] has 1 messages in total (mentioned by SELECT)
+Host2: folder [ROI Turnkey] permanentflags: 
+Host1: Expunging INBOX.ROI Turnkey 
+Host1: folder [INBOX.ROI Turnkey] considering 1 messages
+Host2: folder [ROI Turnkey] considering 1 messages
+Host1: folder [INBOX.ROI Turnkey] selected 1 messages, duplicates 0
+Host2: folder [ROI Turnkey] selected 1 messages, duplicates 0
+Host1: Expunging folder INBOX.ROI Turnkey 
+ETA: Wednesday 01 November 2023-11-01 05:41:07 -0700 MST  33855 s  1788/3615 msgs left
+Folder   26/45 [INBOX.RREI]                        -> [RREI]                             
+Host1: folder [INBOX.RREI] has 3 messages in total (mentioned by SELECT)
+Host2: folder [RREI] has 3 messages in total (mentioned by SELECT)
+Host2: folder [RREI] permanentflags: 
+Host1: Expunging INBOX.RREI 
+Host1: folder [INBOX.RREI] considering 3 messages
+Host2: folder [RREI] considering 3 messages
+Host1: folder [INBOX.RREI] selected 3 messages, duplicates 0
+Host2: folder [RREI] selected 3 messages, duplicates 0
+Host1: Expunging folder INBOX.RREI 
+ETA: Wednesday 01 November 2023-11-01 06:04:12 -0700 MST  35239 s  1785/3615 msgs left
+Folder   27/45 [INBOX.Real Wealth Network]         -> [Real Wealth Network]              
+Host1: folder [INBOX.Real Wealth Network] has 187 messages in total (mentioned by SELECT)
+Host2: folder [Real Wealth Network] has 187 messages in total (mentioned by SELECT)
+Host2: folder [Real Wealth Network] permanentflags: 
+Host1: Expunging INBOX.Real Wealth Network 
+Host1: folder [INBOX.Real Wealth Network] considering 187 messages
+Host2: folder [Real Wealth Network] considering 187 messages
+Host1: folder [INBOX.Real Wealth Network] selected 187 messages, duplicates 0
+Host2: folder [Real Wealth Network] selected 187 messages, duplicates 0
+Host1: Expunging folder INBOX.Real Wealth Network 
+ETA: Wednesday 01 November 2023-11-01 05:24:24 -0700 MST  32852 s  1598/3615 msgs left
+Folder   28/45 [INBOX.Realty Doctors]              -> [Realty Doctors]                   
+Host1: folder [INBOX.Realty Doctors] has 69 messages in total (mentioned by SELECT)
+Host2: folder [Realty Doctors] has 69 messages in total (mentioned by SELECT)
+Host2: folder [Realty Doctors] permanentflags: 
+Host1: Expunging INBOX.Realty Doctors 
+Host1: folder [INBOX.Realty Doctors] considering 69 messages
+Host2: folder [Realty Doctors] considering 69 messages
+Host1: folder [INBOX.Realty Doctors] selected 69 messages, duplicates 0
+Host2: folder [Realty Doctors] selected 69 messages, duplicates 0
+Host1: Expunging folder INBOX.Realty Doctors 
+ETA: Wednesday 01 November 2023-11-01 05:20:28 -0700 MST  32615 s  1529/3615 msgs left
+Folder   29/45 [INBOX.Realty Medics]               -> [Realty Medics]                    
+Host1: folder [INBOX.Realty Medics] has 390 messages in total (mentioned by SELECT)
+Host2: folder [Realty Medics] has 390 messages in total (mentioned by SELECT)
+Host2: folder [Realty Medics] permanentflags: 
+Host1: Expunging INBOX.Realty Medics 
+Host1: folder [INBOX.Realty Medics] considering 390 messages
+Host2: folder [Realty Medics] considering 390 messages
+Host1: folder [INBOX.Realty Medics] selected 390 messages, duplicates 0
+Host2: folder [Realty Medics] selected 390 messages, duplicates 0
+Host1: Expunging folder INBOX.Realty Medics 
+ETA: Wednesday 01 November 2023-11-01 03:18:07 -0700 MST  25272 s  1139/3615 msgs left
+Folder   30/45 [INBOX.Renshaw]                     -> [Renshaw]                          
+Host1: folder [INBOX.Renshaw] has 171 messages in total (mentioned by SELECT)
+Host2: folder [Renshaw] has 171 messages in total (mentioned by SELECT)
+Host2: folder [Renshaw] permanentflags: 
+Host1: Expunging INBOX.Renshaw 
+Host1: folder [INBOX.Renshaw] considering 171 messages
+Host2: folder [Renshaw] considering 171 messages
+Host1: folder [INBOX.Renshaw] selected 171 messages, duplicates 0
+Host2: folder [Renshaw] selected 171 messages, duplicates 0
+Host1: Expunging folder INBOX.Renshaw 
+ETA: Wednesday 01 November 2023-11-01 02:27:41 -0700 MST  22246 s  968/3615 msgs left
+Folder   31/45 [INBOX.Roofstock]                   -> [Roofstock]                        
+Host1: folder [INBOX.Roofstock] has 340 messages in total (mentioned by SELECT)
+Host2: folder [Roofstock] has 340 messages in total (mentioned by SELECT)
+Host2: folder [Roofstock] permanentflags: 
+Host1: Expunging INBOX.Roofstock 
+Host1: folder [INBOX.Roofstock] considering 340 messages
+Host2: folder [Roofstock] considering 340 messages
+Host1: folder [INBOX.Roofstock] selected 340 messages, duplicates 0
+Host2: folder [Roofstock] selected 340 messages, duplicates 0
+Host1: Expunging folder INBOX.Roofstock 
+ETA: Wednesday 01 November 2023-11-01 00:26:32 -0700 MST  14976 s  628/3615 msgs left
+Folder   32/45 [INBOX.SM - Flamingo]               -> [SM - Flamingo]                    
+Host1: folder [INBOX.SM - Flamingo] has 145 messages in total (mentioned by SELECT)
+Host2: folder [SM - Flamingo] has 145 messages in total (mentioned by SELECT)
+Host2: folder [SM - Flamingo] permanentflags: 
+Host1: Expunging INBOX.SM - Flamingo 
+Host1: folder [INBOX.SM - Flamingo] considering 145 messages
+Host2: folder [SM - Flamingo] considering 145 messages
+Host1: folder [INBOX.SM - Flamingo] selected 145 messages, duplicates 0
+Host2: folder [SM - Flamingo] selected 145 messages, duplicates 0
+Host1: Expunging folder INBOX.SM - Flamingo 
+ETA: Tuesday 31 October 2023-10-31 23:36:22 -0700 MST  11965 s  483/3615 msgs left
+Folder   33/45 [INBOX.SM - Hawk]                   -> [SM - Hawk]                        
+Host1: folder [INBOX.SM - Hawk] has 89 messages in total (mentioned by SELECT)
+Host2: folder [SM - Hawk] has 83 messages in total (mentioned by SELECT)
+Host2: folder [SM - Hawk] permanentflags: 
+Host1: Expunging INBOX.SM - Hawk 
+Host1: folder [INBOX.SM - Hawk] considering 89 messages
+Host2: folder [SM - Hawk] considering 83 messages
+Host1: folder [INBOX.SM - Hawk] selected 89 messages, duplicates 6
+Host2: folder [SM - Hawk] selected 83 messages, duplicates 0
+Host1: Expunging folder INBOX.SM - Hawk 
+ETA: Tuesday 31 October 2023-10-31 23:04:43 -0700 MST  10065 s  394/3615 msgs left
+Folder   34/45 [INBOX.Sent]                        -> [Sent]                             
+Host1: folder [INBOX.Sent] has 249 messages in total (mentioned by SELECT)
+Host2: folder [Sent] has 245 messages in total (mentioned by SELECT)
+Host2: folder [Sent] permanentflags: 
+Host1: Expunging INBOX.Sent 
+Host1: folder [INBOX.Sent] considering 249 messages
+Host2: folder [Sent] considering 245 messages
+Host1: folder [INBOX.Sent] selected 249 messages, duplicates 4
+Host2: folder [Sent] selected 245 messages, duplicates 0
+Host1: Expunging folder INBOX.Sent 
+ETA: Tuesday 31 October 2023-10-31 21:20:35 -0700 MST  3817 s  145/3615 msgs left
+Folder   35/45 [INBOX.Starred]                     -> [Starred]                          
+Host1: folder [INBOX.Starred] has 2 messages in total (mentioned by SELECT)
+Host2: folder [Starred] has 2 messages in total (mentioned by SELECT)
+Host2: folder [Starred] permanentflags: 
+Host1: Expunging INBOX.Starred 
+Host1: folder [INBOX.Starred] considering 2 messages
+Host2: folder [Starred] considering 2 messages
+Host1: folder [INBOX.Starred] selected 2 messages, duplicates 0
+Host2: folder [Starred] selected 2 messages, duplicates 0
+Host1: Expunging folder INBOX.Starred 
+ETA: Tuesday 31 October 2023-10-31 21:21:25 -0700 MST  3866 s  143/3615 msgs left
+Folder   36/45 [INBOX.Stessa]                      -> [Stessa]                           
+Host1: folder [INBOX.Stessa] has 53 messages in total (mentioned by SELECT)
+Host2: folder [Stessa] has 53 messages in total (mentioned by SELECT)
+Host2: folder [Stessa] permanentflags: 
+Host1: Expunging INBOX.Stessa 
+Host1: folder [INBOX.Stessa] considering 53 messages
+Host2: folder [Stessa] considering 53 messages
+Host1: folder [INBOX.Stessa] selected 53 messages, duplicates 0
+Host2: folder [Stessa] selected 53 messages, duplicates 0
+Host1: Expunging folder INBOX.Stessa 
+ETA: Tuesday 31 October 2023-10-31 20:58:41 -0700 MST  2501 s  90/3615 msgs left
+Folder   37/45 [INBOX.To Be Filed]                 -> [To Be Filed]                      
+Host1: folder [INBOX.To Be Filed] has 40 messages in total (mentioned by SELECT)
+Host2: folder [To Be Filed] has 40 messages in total (mentioned by SELECT)
+Host2: folder [To Be Filed] permanentflags: 
+Host1: Expunging INBOX.To Be Filed 
+Host1: folder [INBOX.To Be Filed] considering 40 messages
+Host2: folder [To Be Filed] considering 40 messages
+Host1: folder [INBOX.To Be Filed] selected 40 messages, duplicates 0
+Host2: folder [To Be Filed] selected 40 messages, duplicates 0
+Host1: Expunging folder INBOX.To Be Filed 
+ETA: Tuesday 31 October 2023-10-31 20:40:48 -0700 MST  1427 s  50/3615 msgs left
+Folder   38/45 [INBOX.Trash]                       -> [Trash]                            
+Host1: folder [INBOX.Trash] has 50 messages in total (mentioned by SELECT)
+Host2: folder [Trash] has 50 messages in total (mentioned by SELECT)
+Host2: folder [Trash] permanentflags: 
+Host1: Expunging INBOX.Trash 
+Host1: folder [INBOX.Trash] considering 50 messages
+Host2: folder [Trash] considering 50 messages
+Host1: folder [INBOX.Trash] selected 50 messages, duplicates 0
+Host2: folder [Trash] selected 50 messages, duplicates 0
+Host1: Expunging folder INBOX.Trash 
+ETA: Tuesday 31 October 2023-10-31 20:17:02 -0700 MST  0 s  0/3615 msgs left
+Folder   39/45 [INBOX.[Airmail]]                   -> [[Airmail]]                        
+Host1: folder [INBOX.[Airmail]] has 0 messages in total (mentioned by SELECT)
+Host2: folder [[Airmail]] has 0 messages in total (mentioned by SELECT)
+Host2: folder [[Airmail]] permanentflags: 
+Host1: Expunging INBOX.[Airmail] 
+Host1: folder [INBOX.[Airmail]] considering 0 messages
+Host2: folder [[Airmail]] considering 0 messages
+Host1: folder [INBOX.[Airmail]] selected 0 messages, duplicates 0
+Host2: folder [[Airmail]] selected 0 messages, duplicates 0
+Host1: Expunging folder INBOX.[Airmail] 
+ETA: Tuesday 31 October 2023-10-31 20:17:02 -0700 MST  0 s  0/3615 msgs left
+Folder   40/45 [INBOX.[Airmail].Done]              -> [[Airmail].Done]                   
+Host1: folder [INBOX.[Airmail].Done] has 0 messages in total (mentioned by SELECT)
+Host2: folder [[Airmail].Done] has 0 messages in total (mentioned by SELECT)
+Host2: folder [[Airmail].Done] permanentflags: 
+Host1: Expunging INBOX.[Airmail].Done 
+Host1: folder [INBOX.[Airmail].Done] considering 0 messages
+Host2: folder [[Airmail].Done] considering 0 messages
+Host1: folder [INBOX.[Airmail].Done] selected 0 messages, duplicates 0
+Host2: folder [[Airmail].Done] selected 0 messages, duplicates 0
+Host1: Expunging folder INBOX.[Airmail].Done 
+ETA: Tuesday 31 October 2023-10-31 20:17:03 -0700 MST  0 s  0/3615 msgs left
+Folder   41/45 [INBOX.[Airmail].Memo]              -> [[Airmail].Memo]                   
+Host1: folder [INBOX.[Airmail].Memo] has 0 messages in total (mentioned by SELECT)
+Host2: folder [[Airmail].Memo] has 0 messages in total (mentioned by SELECT)
+Host2: folder [[Airmail].Memo] permanentflags: 
+Host1: Expunging INBOX.[Airmail].Memo 
+Host1: folder [INBOX.[Airmail].Memo] considering 0 messages
+Host2: folder [[Airmail].Memo] considering 0 messages
+Host1: folder [INBOX.[Airmail].Memo] selected 0 messages, duplicates 0
+Host2: folder [[Airmail].Memo] selected 0 messages, duplicates 0
+Host1: Expunging folder INBOX.[Airmail].Memo 
+ETA: Tuesday 31 October 2023-10-31 20:17:03 -0700 MST  0 s  0/3615 msgs left
+Folder   42/45 [INBOX.[Airmail].Send Later]        -> [[Airmail].Send Later]             
+Host1: folder [INBOX.[Airmail].Send Later] has 0 messages in total (mentioned by SELECT)
+Host2: folder [[Airmail].Send Later] has 0 messages in total (mentioned by SELECT)
+Host2: folder [[Airmail].Send Later] permanentflags: 
+Host1: Expunging INBOX.[Airmail].Send Later 
+Host1: folder [INBOX.[Airmail].Send Later] considering 0 messages
+Host2: folder [[Airmail].Send Later] considering 0 messages
+Host1: folder [INBOX.[Airmail].Send Later] selected 0 messages, duplicates 0
+Host2: folder [[Airmail].Send Later] selected 0 messages, duplicates 0
+Host1: Expunging folder INBOX.[Airmail].Send Later 
+ETA: Tuesday 31 October 2023-10-31 20:17:03 -0700 MST  0 s  0/3615 msgs left
+Folder   43/45 [INBOX.[Airmail].Snooze]            -> [[Airmail].Snooze]                 
+Host1: folder [INBOX.[Airmail].Snooze] has 0 messages in total (mentioned by SELECT)
+Host2: folder [[Airmail].Snooze] has 0 messages in total (mentioned by SELECT)
+Host2: folder [[Airmail].Snooze] permanentflags: 
+Host1: Expunging INBOX.[Airmail].Snooze 
+Host1: folder [INBOX.[Airmail].Snooze] considering 0 messages
+Host2: folder [[Airmail].Snooze] considering 0 messages
+Host1: folder [INBOX.[Airmail].Snooze] selected 0 messages, duplicates 0
+Host2: folder [[Airmail].Snooze] selected 0 messages, duplicates 0
+Host1: Expunging folder INBOX.[Airmail].Snooze 
+ETA: Tuesday 31 October 2023-10-31 20:17:04 -0700 MST  0 s  0/3615 msgs left
+Folder   44/45 [INBOX.[Airmail].To Do]             -> [[Airmail].To Do]                  
+Host1: folder [INBOX.[Airmail].To Do] has 0 messages in total (mentioned by SELECT)
+Host2: folder [[Airmail].To Do] has 0 messages in total (mentioned by SELECT)
+Host2: folder [[Airmail].To Do] permanentflags: 
+Host1: Expunging INBOX.[Airmail].To Do 
+Host1: folder [INBOX.[Airmail].To Do] considering 0 messages
+Host2: folder [[Airmail].To Do] considering 0 messages
+Host1: folder [INBOX.[Airmail].To Do] selected 0 messages, duplicates 0
+Host2: folder [[Airmail].To Do] selected 0 messages, duplicates 0
+Host1: Expunging folder INBOX.[Airmail].To Do 
+ETA: Tuesday 31 October 2023-10-31 20:17:04 -0700 MST  0 s  0/3615 msgs left
+Folder   45/45 [INBOX.spam]                        -> [spam]                             
+Host1: folder [INBOX.spam] has 0 messages in total (mentioned by SELECT)
+Host2: folder [spam] has 0 messages in total (mentioned by SELECT)
+Host2: folder [spam] permanentflags: 
+Host1: Expunging INBOX.spam 
+Host1: folder [INBOX.spam] considering 0 messages
+Host2: folder [spam] considering 0 messages
+Host1: folder [INBOX.spam] selected 0 messages, duplicates 0
+Host2: folder [spam] selected 0 messages, duplicates 0
+Host1: Expunging folder INBOX.spam 
+ETA: Tuesday 31 October 2023-10-31 20:17:05 -0700 MST  0 s  0/3615 msgs left
+++++ End looping on each folder
+
+Folders sizes after the synchronization.
+You can remove this foldersizes listing by using  "--nofoldersizesatend"
+Host1 folder    1/45 [INBOX]                             Size:  12658867 Messages:    59 Biggest:   5737115
+Host2 folder    1/45 [INBOX]                             Size:  12658867 Messages:    59 Biggest:   5737115
+Host2-Host1                                                            0               0                  0
+
+Host1 folder    2/45 [INBOX.Action]                      Size:         0 Messages:     0 Biggest:         0
+Host2 folder    2/45 [Action]                            Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder    3/45 [INBOX.Allstar]                     Size:  52398649 Messages:   332 Biggest:  16219876
+Host2 folder    3/45 [Allstar]                           Size:  52398649 Messages:   332 Biggest:  16219876
+Host2-Host1                                                            0               0                  0
+
+Host1 folder    4/45 [INBOX.Anderson]                    Size:    158131 Messages:     3 Biggest:     72381
+Host2 folder    4/45 [Anderson]                          Size:    158131 Messages:     3 Biggest:     72381
+Host2-Host1                                                            0               0                  0
+
+Host1 folder    5/45 [INBOX.Apartments (Generic)]        Size:   1840667 Messages:    46 Biggest:     57465
+Host2 folder    5/45 [Apartments (Generic)]              Size:   1840667 Messages:    46 Biggest:     57465
+Host2-Host1                                                            0               0                  0
+
+Host1 folder    6/45 [INBOX.Archive]                     Size:     36970 Messages:     1 Biggest:     36970
+Host2 folder    6/45 [Archive]                           Size:     36970 Messages:     1 Biggest:     36970
+Host2-Host1                                                            0               0                  0
+
+Host1 folder    7/45 [INBOX.BiggerPockets]               Size:    303804 Messages:     2 Biggest:    152403
+Host2 folder    7/45 [BiggerPockets]                     Size:    303804 Messages:     2 Biggest:    152403
+Host2-Host1                                                            0               0                  0
+
+Host1 folder    8/45 [INBOX.Chuck Baer]                  Size:  47722257 Messages:   142 Biggest:   7878438
+Host2 folder    8/45 [Chuck Baer]                        Size:  47722257 Messages:   142 Biggest:   7878438
+Host2-Host1                                                            0               0                  0
+
+Host1 folder    9/45 [INBOX.Cozy]                        Size:    587364 Messages:    16 Biggest:     40823
+Host2 folder    9/45 [Cozy]                              Size:    587364 Messages:    16 Biggest:     40823
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   10/45 [INBOX.Drafts]                      Size:     28207 Messages:     1 Biggest:     28207
+Host2 folder   10/45 [Drafts]                            Size:     28207 Messages:     1 Biggest:     28207
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   11/45 [INBOX.Hawk]                        Size:         0 Messages:     0 Biggest:         0
+Host2 folder   11/45 [Hawk]                              Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   12/45 [INBOX.Housefolios]                 Size:   2129882 Messages:    30 Biggest:    131602
+Host2 folder   12/45 [Housefolios]                       Size:   1981479 Messages:    28 Biggest:    131602
+Host2-Host1                                                      -148403              -2                  0
+
+Host1 folder   13/45 [INBOX.Investing]                   Size: 147417604 Messages:   358 Biggest:  17252863
+Host2 folder   13/45 [Investing]                         Size: 147417604 Messages:   358 Biggest:  17252863
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   14/45 [INBOX.Investors Choice - Cahokia]  Size:    426548 Messages:    12 Biggest:    122225
+Host2 folder   14/45 [Investors Choice - Cahokia]        Size:    426548 Messages:    12 Biggest:    122225
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   15/45 [INBOX.Junk]                        Size:         0 Messages:     0 Biggest:         0
+Host2 folder   15/45 [Junk]                              Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   16/45 [INBOX.Martello_Mariconi - Cahokia] Size: 109036521 Messages:   281 Biggest:  21515769
+Host2 folder   16/45 [Martello_Mariconi - Cahokia]       Size: 107221439 Messages:   272 Biggest:  21515769
+Host2-Host1                                                     -1815082              -9                  0
+
+Host1 folder   17/45 [INBOX.Olmstead]                    Size:   7482311 Messages:    28 Biggest:   1485452
+Host2 folder   17/45 [Olmstead]                          Size:   7482311 Messages:    28 Biggest:   1485452
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   18/45 [INBOX.PMI]                         Size:  29487595 Messages:   257 Biggest:   7675140
+Host2 folder   18/45 [PMI]                               Size:  29452018 Messages:   255 Biggest:   7675140
+Host2-Host1                                                       -35577              -2                  0
+
+Host1 folder   19/45 [INBOX.Properties - Arizona]        Size:    270520 Messages:    14 Biggest:     41425
+Host2 folder   19/45 [Properties - Arizona]              Size:    270520 Messages:    14 Biggest:     41425
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   20/45 [INBOX.Properties - Florida]        Size:  18323133 Messages:   131 Biggest:   1900289
+Host2 folder   20/45 [Properties - Florida]              Size:  18323133 Messages:   131 Biggest:   1900289
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   21/45 [INBOX.Properties - Florida.Ocala]  Size:  14337520 Messages:    65 Biggest:   2208138
+Host2 folder   21/45 [Properties - Florida.Ocala]        Size:  14337520 Messages:    65 Biggest:   2208138
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   22/45 [INBOX.Properties - Indiana]        Size:  12034666 Messages:    21 Biggest:   5495521
+Host2 folder   22/45 [Properties - Indiana]              Size:  12034666 Messages:    21 Biggest:   5495521
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   23/45 [INBOX.Properties - Indiana.554 Kentucky] Size:   5525606 Messages:     7 Biggest:   5492083
+Host2 folder   23/45 [Properties - Indiana.554 Kentucky] Size:   5525606 Messages:     7 Biggest:   5492083
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   24/45 [INBOX.Property Boss]               Size:  14968592 Messages:    20 Biggest:   8653099
+Host2 folder   24/45 [Property Boss]                     Size:  14968592 Messages:    20 Biggest:   8653099
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   25/45 [INBOX.ROI Turnkey]                 Size:     75411 Messages:     1 Biggest:     75411
+Host2 folder   25/45 [ROI Turnkey]                       Size:     75411 Messages:     1 Biggest:     75411
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   26/45 [INBOX.RREI]                        Size:    992117 Messages:     3 Biggest:    927117
+Host2 folder   26/45 [RREI]                              Size:    992117 Messages:     3 Biggest:    927117
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   27/45 [INBOX.Real Wealth Network]         Size:   9491628 Messages:   187 Biggest:    126984
+Host2 folder   27/45 [Real Wealth Network]               Size:   9491628 Messages:   187 Biggest:    126984
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   28/45 [INBOX.Realty Doctors]              Size:   9844116 Messages:    69 Biggest:   3831712
+Host2 folder   28/45 [Realty Doctors]                    Size:   9844116 Messages:    69 Biggest:   3831712
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   29/45 [INBOX.Realty Medics]               Size:  49614094 Messages:   390 Biggest:  14749970
+Host2 folder   29/45 [Realty Medics]                     Size:  49614094 Messages:   390 Biggest:  14749970
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   30/45 [INBOX.Renshaw]                     Size:  30603433 Messages:   171 Biggest:  16219150
+Host2 folder   30/45 [Renshaw]                           Size:  30603433 Messages:   171 Biggest:  16219150
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   31/45 [INBOX.Roofstock]                   Size:  87913159 Messages:   340 Biggest:  10471236
+Host2 folder   31/45 [Roofstock]                         Size:  87913159 Messages:   340 Biggest:  10471236
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   32/45 [INBOX.SM - Flamingo]               Size: 117843049 Messages:   145 Biggest:  46448088
+Host2 folder   32/45 [SM - Flamingo]                     Size: 117843049 Messages:   145 Biggest:  46448088
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   33/45 [INBOX.SM - Hawk]                   Size:  25895258 Messages:    89 Biggest:  10708442
+Host2 folder   33/45 [SM - Hawk]                         Size:  25433624 Messages:    83 Biggest:  10708442
+Host2-Host1                                                      -461634              -6                  0
+
+Host1 folder   34/45 [INBOX.Sent]                        Size:  99337841 Messages:   249 Biggest:  45021484
+Host2 folder   34/45 [Sent]                              Size:  99299867 Messages:   245 Biggest:  45021484
+Host2-Host1                                                       -37974              -4                  0
+
+Host1 folder   35/45 [INBOX.Starred]                     Size:     13557 Messages:     2 Biggest:      8730
+Host2 folder   35/45 [Starred]                           Size:     13557 Messages:     2 Biggest:      8730
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   36/45 [INBOX.Stessa]                      Size:   5399898 Messages:    53 Biggest:    143151
+Host2 folder   36/45 [Stessa]                            Size:   5399898 Messages:    53 Biggest:    143151
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   37/45 [INBOX.To Be Filed]                 Size:  35100502 Messages:    40 Biggest:  10377166
+Host2 folder   37/45 [To Be Filed]                       Size:  35100502 Messages:    40 Biggest:  10377166
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   38/45 [INBOX.Trash]                       Size:   3656462 Messages:    50 Biggest:    213143
+Host2 folder   38/45 [Trash]                             Size:   3656462 Messages:    50 Biggest:    213143
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   39/45 [INBOX.[Airmail]]                   Size:         0 Messages:     0 Biggest:         0
+Host2 folder   39/45 [[Airmail]]                         Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   40/45 [INBOX.[Airmail].Done]              Size:         0 Messages:     0 Biggest:         0
+Host2 folder   40/45 [[Airmail].Done]                    Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   41/45 [INBOX.[Airmail].Memo]              Size:         0 Messages:     0 Biggest:         0
+Host2 folder   41/45 [[Airmail].Memo]                    Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   42/45 [INBOX.[Airmail].Send Later]        Size:         0 Messages:     0 Biggest:         0
+Host2 folder   42/45 [[Airmail].Send Later]              Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   43/45 [INBOX.[Airmail].Snooze]            Size:         0 Messages:     0 Biggest:         0
+Host2 folder   43/45 [[Airmail].Snooze]                  Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   44/45 [INBOX.[Airmail].To Do]             Size:         0 Messages:     0 Biggest:         0
+Host2 folder   44/45 [[Airmail].To Do]                   Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   45/45 [INBOX.spam]                        Size:         0 Messages:     0 Biggest:         0
+Host2 folder   45/45 [spam]                              Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 Nb folders:                    45 folders
+Host2 Nb folders:                    45 folders
+
+Host1 Nb messages:                 3615 messages
+Host2 Nb messages:                 3592 messages
+
+Host1 Total size:             952955939 bytes (908.810 MiB)
+Host2 Total size:             950457269 bytes (906.427 MiB)
+
+Host1 Biggest message:         46448088 bytes (44.296 MiB)
+Host2 Biggest message:         46448088 bytes (44.296 MiB)
+
+Time spent on sizing:        17.7 seconds
+++++ Statistics
+Transfer started on                     : Tuesday 31 October 2023-10-31 20:16:10 -0700 MST
+Transfer ended on                       : Tuesday 31 October 2023-10-31 20:17:23 -0700 MST
+Transfer time                           : 72.6 sec
+Folders synced                          : 45/45 synced
+Messages transferred                    : 0 
+Messages skipped                        : 3615
+Messages found duplicate on host1       : 23
+Messages found duplicate on host2       : 0
+Messages found crossduplicate on host2  : 0
+Messages void (noheader) on host1       : 0  
+Messages void (noheader) on host2       : 0
+Messages found in host1 not in host2    : 0 messages
+Messages found in host2 not in host1    : 0 messages
+Messages deleted on host1               : 0
+Messages deleted on host2               : 0
+Total bytes transferred                 : 0 (0.000 KiB)
+Total bytes skipped                     : 950457269 (906.427 MiB)
+Message rate                            : 0.0 messages/s
+Average bandwidth rate                  : 0.0 KiB/s
+Reconnections to host1                  : 0
+Reconnections to host2                  : 0
+Memory consumption at the end           : 210.1 MiB (*time 4.2 MiB*h) (started with 185.0 MiB)
+Load end is                             : 3.61 2.96 2.83 on 10 cores
+CPU time and %cpu                       : 4.81 sec 6.6 %cpu 0.7 %allcpus
+Biggest message transferred             : 0 bytes (0.000 KiB)
+Memory/biggest message ratio            : NA
+Start difference host2 - host1          : -23 messages, -2498670 bytes (-2.383 MiB)
+Final difference host2 - host1          : -23 messages, -2498670 bytes (-2.383 MiB)
+The sync looks good, all 3589 identified messages in host1 are on host2.
+There is no unidentified message on host1.
+The sync is strict, all 3589 identified messages in host2 are on host1.
+Detected 0 errors
+Check if a new imapsync release is available by adding --releasecheck
+Homepage: https://imapsync.lamiral.info/
+Exiting with return value 0 (EX_OK: successful termination) 0/50 nb_errors/max_errors PID 42241
+Removing pidfile /var/folders/lj/pt22s9q55t1925h7_g57tt5h0000gn/T/imapsync.pid
+Log file is LOG_imapsync/2023_10_31_20_16_10_390_ops@fourmoons.net_ops@fourmoons.net.txt ( to change it, use --logfile filepath ; or use --nolog to turn off logging )

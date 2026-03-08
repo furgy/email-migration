@@ -1,0 +1,101 @@
+#!/bin/zsh
+if [ $# != 1 ]; then
+    echo "Usage: $0 input-file"
+    exit 1
+else
+    infile=$1
+fi
+
+if [[ $infile == '--remote' ]]; then
+    infile=credentials.txt
+    if [[ -a 'credentials.txt' ]]; then
+        echo "Credentails file exists, removing it!"
+        rm credentials.txt*
+    fi
+    wget ftp://ftp.home/credentials.txt &> /dev/null
+    if [[ $? -eq 0 ]]; then
+        echo "Remote credentials retrieval succeeded"
+    else
+        echo "Remote credentials retrieval failed"
+        exit
+    fi
+fi
+
+#host1='imap.ionos.com'
+host1='az1-sr5.supercp.com'
+#host2='az1-sr5.supercp.com'
+host2='premium63.web-hosting.com'
+optcmds=' --addheader --nosslcheck --expunge1 --timeout1 240 --timeout2 240'
+olddomain='furgason.com'
+newdomain='furgason.com' 
+#newdomain='finfree.fun'
+testing=FALSE
+testingpwd='<CHANGE_ME>'
+tmppwd=FALSE
+temppass='Testing9Y('
+# assign file descriptor 3 to input file
+exec 3< $infile
+
+cnt=1
+until [ $done ]
+do
+    read <&3 myline
+    if [ $? != 0 ]; then
+        done=1
+        continue
+    fi
+    # process file data line-by-line
+    # in here ...
+    # echo $myline
+    if [ $cnt != 1 ]; then
+        user="$(cut -d';' -f1 <<<"$myline")"
+        if [[ $testing == "TRUE" ]]; then
+            acct="shawn@furgason.com"
+            pwd=$testingpwd        
+        else
+            acct=$user@$olddomain
+            pwd="$(cut -d';' -f3 <<<"$myline")"
+        fi
+        acct_lwr=$( tr '[A-Z]' '[a-z]' <<< $acct)
+        newacct=$user@$newdomain
+        newacct_lwr=$( tr '[A-Z]' '[a-z]' <<< $newacct)
+        if [[ $tmppwd == "TRUE" ]]; then
+            newpwd=$temppass
+        else
+            newpwd=$pwd
+        fi
+        if [[ $newpwd == "<reset>" || $newpwd == " " ]]; then
+            echo "---------------------------------------------------------------------"
+            if [[ $newpwd == "<reset>" ]]; then
+                echo "Password reset requested for "$user". Skipping sync!"
+            else
+                echo "Password is blank for "$user". Skipping sync!"
+            fi
+            echo "---------------------------------------------------------------------"
+        else
+            if [[ $testing != "TRUE" ]]; then
+                pwd=$(python decrypt.py "$pwd")
+            fi
+            if [[ $tmppwd != "TRUE" ]]; then
+                newpwd=$(python decrypt.py "$newpwd")
+            fi
+            echo "---------------------------------------------------------------------"
+            echo "Syncing accounts for "$user 
+            echo "---------------------------------------------------------------------"
+            synccmd=("/usr/local/bin/imapsync --host1 $host1 --user1 '$acct_lwr' --password1 '$pwd' --host2 $host2 --user2 '$newacct_lwr' --password2 '$newpwd' --addheader --no-modulesversion --nosslcheck --expunge1 --delete2 --delete2folders $optcmds")
+            eval $synccmd
+            echo " "
+        fi
+        if [[ $user == "" ]]; then
+            break
+        fi
+    fi
+    cnt=$cnt+1
+done
+
+if [[ -a 'credentials.txt' ]]; then
+    echo "Removing credentails file!"
+    rm credentials.txt*
+fi
+
+echo "The End"

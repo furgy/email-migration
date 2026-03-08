@@ -1,0 +1,356 @@
+Here is imapsync 2.229 on host Shawns-MacBook-Pro-2.local, a darwin system with 0.1/16.0 free GiB of RAM, 51.47% used by processes.
+with Perl 5.30.3 and Mail::IMAPClient 3.43
+Transfer started at Tuesday 31 October 2023-10-31 19:09:07 -0700 MST
+PID is 40666 my PPID is 30935
+Log file is LOG_imapsync/2023_10_31_19_09_07_974_cathy@fourmoons.net_cathy@fourmoons.net.txt ( to change it, use --logfile path ; or use --nolog to turn off logging )
+Load is 3.51 3.60 3.77 on 10 cores
+Current directory is /Users/shawn/Code/email/email-migration
+Real user id is shawn (uid 501)
+Effective user id is shawn (euid 501)
+$RCSfile: imapsync,v $ $Revision: 2.229 $ $Date: 2022/09/14 18:08:24 $ 
+Command line used, run by perl:
+/usr/local/bin/imapsync --host1 mail.fourmoons.net --host2 redbull.mxrouting.net --user1 cathy@fourmoons.net --password1 MASKED --user2 cathy@fourmoons.net --password2 MASKED --nosslcheck
+Temp directory is /var/folders/lj/pt22s9q55t1925h7_g57tt5h0000gn/T ( to change it use --tmpdir dirpath )
+kill -QUIT 40666 # special behavior: call to sub catch_exit
+kill -TERM 40666 # special behavior: call to sub catch_exit
+kill -INT 40666 # special behavior: call to sub catch_reconnect
+kill -HUP 40666 # special behavior: call to sub catch_print
+kill -USR1 40666 # special behavior: call to sub toggle_sleep
+File /var/folders/lj/pt22s9q55t1925h7_g57tt5h0000gn/T/imapsync.pid does not exist
+PID file is /var/folders/lj/pt22s9q55t1925h7_g57tt5h0000gn/T/imapsync.pid ( to change it, use --pidfile filepath ; to avoid it use --pidfile "" )
+Writing my PID 40666 in /var/folders/lj/pt22s9q55t1925h7_g57tt5h0000gn/T/imapsync.pid
+Writing also my logfile name in /var/folders/lj/pt22s9q55t1925h7_g57tt5h0000gn/T/imapsync.pid : LOG_imapsync/2023_10_31_19_09_07_974_cathy@fourmoons.net_cathy@fourmoons.net.txt
+Modules version list ( use --no-modulesversion to turn off printing this Perl modules list ):
+Authen::NTLM         1.09
+CGI                  4.48
+Compress::Zlib       2.084
+Crypt::OpenSSL::RSA  0.31
+Data::Uniqid         0.12
+Digest::HMAC_MD5     1.01
+Digest::HMAC_SHA1    1.03
+Digest::MD5          2.55
+Encode               3.01
+Encode::IMAPUTF7     1.05
+File::Copy::Recursive 0.45
+File::Spec           3.78
+Getopt::Long         2.5
+HTML::Entities       3.69
+IO::Socket           1.40
+IO::Socket::INET     1.40
+IO::Socket::INET6    2.72
+IO::Socket::IP       0.39
+IO::Socket::SSL      2.068
+IO::Tee              0.65
+JSON                 4.02
+JSON::WebToken       0.05
+LWP                  6.44
+MIME::Base64         3.15
+Mail::IMAPClient     3.43
+Net::Ping            2.71
+Net::SSLeay          1.88
+Term::ReadKey        2.38
+Test::MockObject     1.20200122
+Time::HiRes          1.976
+URI::Escape          3.31
+Unicode::String      2.10
+
+Info: will resync flags for already transferred messages. Use --noresyncflags to not resync flags.
+Info: turned ON syncinternaldates, will set the internal dates (arrival dates) on host2 same as host1.
+Host1: will try to use LOGIN authentication on host1
+Host2: will try to use LOGIN authentication on host2
+Host1: imap connection timeout is 120 seconds
+Host2: imap connection timeout is 120 seconds
+Host1: imap connection keepalive is on on host1. Use --nokeepalive1 to disable it.
+Host2: imap connection keepalive is on on host2. Use --nokeepalive2 to disable it.
+Host1: IMAP server [mail.fourmoons.net] port [143] user [cathy@fourmoons.net]
+Host2: IMAP server [redbull.mxrouting.net] port [143] user [cathy@fourmoons.net]
+Host1: connecting and login on host1 [mail.fourmoons.net] port [143] with user [cathy@fourmoons.net]
+Host1 IP address: 108.167.140.95 Local IP address: 192.168.1.34
+Host1 banner: * OK [CAPABILITY IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE NAMESPACE LITERAL+ STARTTLS AUTH=PLAIN AUTH=LOGIN] Dovecot ready.
+Host1 capability before authentication: IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE NAMESPACE LITERAL+ STARTTLS AUTH=PLAIN AUTH=LOGIN AUTH
+Host1: going to ssl because STARTTLS is in CAPABILITY. Use --notls1 or --notls2 to avoid that behavior
+DEBUG: .../IO/Socket/SSL.pm:1177: global error: Undefined SSL object
+Host1: Socket successfully converted to SSL
+Host1: mail.fourmoons.net says it has CAPABILITY for AUTHENTICATE LOGIN
+Host1: success login on [mail.fourmoons.net] with user [cathy@fourmoons.net] auth [LOGIN] or [LOGIN]
+Host2: connecting and login on host2 [redbull.mxrouting.net] port [143] with user [cathy@fourmoons.net]
+Host2 IP address: 45.43.208.33 Local IP address: 192.168.1.34
+Host2 banner: * OK [CAPABILITY IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE LITERAL+ STARTTLS AUTH=PLAIN] Dovecot DA ready.
+Host2 capability before authentication: IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE LITERAL+ STARTTLS AUTH=PLAIN AUTH
+Host2: going to ssl because STARTTLS is in CAPABILITY. Use --notls1 or --notls2 to avoid that behavior
+DEBUG: .../IO/Socket/SSL.pm:1177: global error: Undefined SSL object
+Host2: Socket successfully converted to SSL
+Host2: success login on [redbull.mxrouting.net] with user [cathy@fourmoons.net] auth [LOGIN] or [LOGIN]
+Host1: state Authenticated
+Host2: state Authenticated
+Host1 capability once authenticated: IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE SORT SORT=DISPLAY THREAD=REFERENCES THREAD=REFS THREAD=ORDEREDSUBJECT MULTIAPPEND URL-PARTIAL CATENATE UNSELECT CHILDREN NAMESPACE UIDPLUS LIST-EXTENDED I18NLEVEL=1 CONDSTORE QRESYNC ESEARCH ESORT SEARCHRES WITHIN CONTEXT=SEARCH LIST-STATUS BINARY MOVE SNIPPET=FUZZY PREVIEW=FUZZY PREVIEW STATUS=SIZE SAVEDATE NAMESPACE LITERAL+ NOTIFY SPECIAL-USE COMPRESS=DEFLATE QUOTA THREAD I18NLEVEL CONTEXT SNIPPET PREVIEW STATUS COMPRESS
+Host2 capability once authenticated: IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE SORT SORT=DISPLAY THREAD=REFERENCES THREAD=REFS THREAD=ORDEREDSUBJECT MULTIAPPEND URL-PARTIAL CATENATE UNSELECT CHILDREN NAMESPACE UIDPLUS LIST-EXTENDED I18NLEVEL=1 CONDSTORE QRESYNC ESEARCH ESORT SEARCHRES WITHIN CONTEXT=SEARCH LIST-STATUS BINARY MOVE SNIPPET=FUZZY PREVIEW=FUZZY PREVIEW STATUS=SIZE SAVEDATE LITERAL+ NOTIFY SPECIAL-USE XAPPLEPUSHSERVICE QUOTA THREAD I18NLEVEL CONTEXT SNIPPET PREVIEW STATUS
+Host1: found ID capability. Sending/receiving ID, presented in raw IMAP for now.
+In order to avoid sending/receiving ID, use option --noid
+Sending: 6 ID ("name" "imapsync" "version" "2.229" "os" "darwin" "vendor" "Gilles LAMIRAL" "support-url" "https://imapsync.lamiral.info/" "date" "14-Sep-2022 18:08:24 +0000" "side" "host1")
+Sent 182 bytes
+Read: 	* ID ("name" "Dovecot")
+  	6 OK ID completed (0.001 + 0.000 secs).
+Host2: found ID capability. Sending/receiving ID, presented in raw IMAP for now.
+In order to avoid sending/receiving ID, use option --noid
+Sending: 6 ID ("name" "imapsync" "version" "2.229" "os" "darwin" "vendor" "Gilles LAMIRAL" "support-url" "https://imapsync.lamiral.info/" "date" "14-Sep-2022 18:08:24 +0000" "side" "host2")
+Sent 182 bytes
+Read: 	* ID ("name" "Dovecot")
+  	6 OK ID completed (0.001 + 0.000 secs).
+
+Host2: QUOTA capability found, presented in raw IMAP on next lines
+Sending: 7 GETQUOTAROOT INBOX
+Sent 22 bytes
+Read: 	7 OK No quota (0.008 + 0.000 + 0.007 secs).
+
+Host2: Quota current storage is 0 bytes. Limit is 0 bytes. So 0 % full
+Host1: Compression is off. Use --compress1 to allow compression on host1
+Host2: Compression is off. Use --compress2 to allow compression on host2
+Host1: found 7 folders.
+Host2: found 6 folders.
+Host1: guessing separator from folder listing: [.]
+Host1: separator given by NAMESPACE: [.]
+Host2: guessing separator from folder listing: [.]
+Host2: separator given by NAMESPACE: [.]
+Host1: guessing prefix from folder listing: [INBOX.]
+Host1: prefix given by NAMESPACE: [INBOX.]
+Host2: guessing prefix from folder listing: []
+Host2: prefix given by NAMESPACE: []
+Host1: separator and prefix: [.][INBOX.]
+Host2: separator and prefix: [.][]
+Including all folders found by default. Use --subscribed or --folder or --folderrec or --include to select specific folders. Use --exclude to unselect specific folders.
+Host1: Checking wanted folders exist. Use --nocheckfoldersexist to avoid this check (shared of public namespace targeted).
+Host1: Checking wanted folders are selectable. Use --nocheckselectable to avoid this check.
+Turned off automapping folders ( use --automap to turn on automapping )
+
+++++ Listing folders
+All foldernames are presented between brackets like [X] where X is the foldername.
+When a foldername contains non-ASCII characters it is presented in the form
+[X] = [Y] where
+X is the imap foldername you have to use in command line options and
+Y is the utf8 output just printed for convenience, to recognize it.
+
+Host1: folders list (first the raw imap format then the [X] = [Y]):
+* LIST (\HasChildren) "." INBOX
+* LIST (\HasNoChildren \UnMarked \Junk) "." INBOX.spam
+* LIST (\HasNoChildren \UnMarked \Archive) "." INBOX.Archive
+* LIST (\HasNoChildren \UnMarked \Drafts) "." INBOX.Drafts
+* LIST (\HasNoChildren \UnMarked \Sent) "." INBOX.Sent
+* LIST (\HasNoChildren \UnMarked) "." INBOX.Junk
+* LIST (\HasNoChildren \UnMarked \Trash) "." INBOX.Trash
+18 OK List completed (0.001 + 0.000 secs).
+
+[INBOX]
+[INBOX.Archive]
+[INBOX.Drafts]
+[INBOX.Junk]
+[INBOX.Sent]
+[INBOX.Trash]
+[INBOX.spam]
+
+Host2: folders list (first the raw imap format then the [X] = [Y]):
+* LIST (\HasNoChildren) "." INBOX.spam
+* LIST (\HasNoChildren \Drafts) "." Drafts
+* LIST (\HasNoChildren \Junk) "." Junk
+* LIST (\HasNoChildren \Trash) "." Trash
+* LIST (\HasNoChildren \Sent) "." Sent
+* LIST (\HasChildren) "." INBOX
+12 OK List completed (0.001 + 0.000 secs).
+
+[Drafts]
+[INBOX]
+[INBOX.spam]
+[Junk]
+[Sent]
+[Trash]
+
+Checking SEARCH ALL works on both accounts. To avoid that check, use --nochecknoabletosearch
+Host1: checking if SEARCH ALL works on INBOX
+Host1: folder [INBOX] has 86 messages mentioned by SELECT
+Host1: folder [INBOX] has 86 messages found by SEARCH ALL
+Host1: folder [INBOX] has the same messages count (86) by SELECT and SEARCH ALL
+Host2: checking if SEARCH ALL works on INBOX
+Host2: folder [INBOX] has 0 messages mentioned by SELECT
+Host2: folder [INBOX] has 0 messages found by SEARCH ALL
+Host2: folder [INBOX] has the same messages count (0) by SELECT and SEARCH ALL
+Good! SEARCH ALL works on both accounts.
+
+Folders sizes before the synchronization. It can take some time. Be patient.
+You can remove foldersizes listings by using "--nofoldersizes" and "--nofoldersizesatend"
+but then you will also lose the ETA (Estimation Time of Arrival) given after each message copy.
+Host1 folder     1/7 [INBOX]                             Size:  19234237 Messages:    86 Biggest:  14014562
+Host2 folder     1/7 [INBOX]                             Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                    -19234237             -86          -14014562
+
+Host1 folder     2/7 [INBOX.Archive]                     Size:         0 Messages:     0 Biggest:         0
+Host2 folder     2/7 [Archive]                            does not exist yet
+Host2-Host1                                                            0               0                  0
+
+Host1 folder     3/7 [INBOX.Drafts]                      Size:         0 Messages:     0 Biggest:         0
+Host2 folder     3/7 [Drafts]                            Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder     4/7 [INBOX.Junk]                        Size:         0 Messages:     0 Biggest:         0
+Host2 folder     4/7 [Junk]                              Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder     5/7 [INBOX.Sent]                        Size:  18571906 Messages:     9 Biggest:  18297956
+Host2 folder     5/7 [Sent]                              Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                    -18571906              -9          -18297956
+
+Host1 folder     6/7 [INBOX.Trash]                       Size:    142028 Messages:     3 Biggest:     48409
+Host2 folder     6/7 [Trash]                             Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                      -142028              -3             -48409
+
+Host1 folder     7/7 [INBOX.spam]                        Size:         0 Messages:     0 Biggest:         0
+Host2 folder     7/7 [spam]                               does not exist yet
+Host2-Host1                                                            0               0                  0
+
+Host1 Nb folders:                     7 folders
+Host2 Nb folders:                     7 folders
+
+Host1 Nb messages:                   98 messages
+Host2 Nb messages:                    0 messages
+
+Host1 Total size:              37948171 bytes (36.190 MiB)
+Host2 Total size:                     0 bytes (0.000 KiB)
+
+Host1 Biggest message:         18297956 bytes (17.450 MiB)
+Host2 Biggest message:                0 bytes (0.000 KiB)
+
+Time spent on sizing:         4.6 seconds
+++++ Looping on each one of 7 folders to sync
+ETA: Tuesday 31 October 2023-10-31 19:09:12 -0700 MST  0 s  98/98 msgs left
+Folder     1/7 [INBOX]                             -> [INBOX]                            
+Host1: folder [INBOX] has 86 messages in total (mentioned by SELECT)
+Host2: folder [INBOX] has 0 messages in total (mentioned by SELECT)
+Host2: folder [INBOX] permanentflags: 
+Host1: folder [INBOX] considering 86 messages
+Host2: folder [INBOX] considering 0 messages
+Host1: folder [INBOX] selected 86 messages, duplicates 0
+Host2: folder [INBOX] selected 0 messages, duplicates 0
+msg INBOX/2 {3085}            copied to INBOX/1          1.25 msgs/s  3.762 KiB/s 3.013 KiB copied ETA: Tuesday 31 October 2023-10-31 19:10:31 -0700 MST  78 s  97/98 msgs left
+msg INBOX/3 {45237}           copied to INBOX/2          1.69 msgs/s  39.894 KiB/s 47.189 KiB copied ETA: Tuesday 31 October 2023-10-31 19:10:10 -0700 MST  57 s  96/98 msgs left
+msg INBOX/4 {13651}           copied to INBOX/3          2.13 msgs/s  42.921 KiB/s 60.521 KiB copied ETA: Tuesday 31 October 2023-10-31 19:09:58 -0700 MST  45 s  95/98 msgs left
+msg INBOX/5 {58664}           copied to INBOX/4          2.21 msgs/s  65.192 KiB/s 117.810 KiB copied ETA: Tuesday 31 October 2023-10-31 19:09:56 -0700 MST  42 s  94/98 msgs left
+msg INBOX/6 {15100}           copied to INBOX/5          2.46 msgs/s  65.272 KiB/s 132.556 KiB copied ETA: Tuesday 31 October 2023-10-31 19:09:52 -0700 MST  38 s  93/98 msgs left
+msg INBOX/8 {8176}            copied to INBOX/6          2.66 msgs/s  62.308 KiB/s 140.540 KiB copied ETA: Tuesday 31 October 2023-10-31 19:09:49 -0700 MST  35 s  92/98 msgs left
+msg INBOX/9 {5179}            copied to INBOX/7          2.46 msgs/s  51.092 KiB/s 145.598 KiB copied ETA: Tuesday 31 October 2023-10-31 19:09:52 -0700 MST  37 s  91/98 msgs left
+msg INBOX/10 {8393}           copied to INBOX/8          2.47 msgs/s  47.520 KiB/s 153.794 KiB copied ETA: Tuesday 31 October 2023-10-31 19:09:52 -0700 MST  36 s  90/98 msgs left
+msg INBOX/11 {4792}           copied to INBOX/9          2.60 msgs/s  45.743 KiB/s 158.474 KiB copied ETA: Tuesday 31 October 2023-10-31 19:09:50 -0700 MST  34 s  89/98 msgs left
+msg INBOX/12 {9639}           copied to INBOX/10         2.71 msgs/s  45.498 KiB/s 167.887 KiB copied ETA: Tuesday 31 October 2023-10-31 19:09:48 -0700 MST  32 s  88/98 msgs left
+msg INBOX/15 {3375}           copied to INBOX/11         2.79 msgs/s  43.345 KiB/s 171.183 KiB copied ETA: Tuesday 31 October 2023-10-31 19:09:47 -0700 MST  31 s  87/98 msgs left
+msg INBOX/16 {2335}           copied to INBOX/12         2.88 msgs/s  41.582 KiB/s 173.463 KiB copied ETA: Tuesday 31 October 2023-10-31 19:09:46 -0700 MST  30 s  86/98 msgs left
+msg INBOX/19 {20573}          copied to INBOX/13         2.94 msgs/s  43.817 KiB/s 193.554 KiB copied ETA: Tuesday 31 October 2023-10-31 19:09:45 -0700 MST  29 s  85/98 msgs left
+msg INBOX/20 {3165}           copied to INBOX/14         3.02 msgs/s  42.363 KiB/s 196.645 KiB copied ETA: Tuesday 31 October 2023-10-31 19:09:45 -0700 MST  28 s  84/98 msgs left
+msg INBOX/21 {6195}           copied to INBOX/15         3.08 msgs/s  41.592 KiB/s 202.694 KiB copied ETA: Tuesday 31 October 2023-10-31 19:09:44 -0700 MST  27 s  83/98 msgs left
+msg INBOX/23 {5786}           copied to INBOX/16         3.13 msgs/s  40.822 KiB/s 208.345 KiB copied ETA: Tuesday 31 October 2023-10-31 19:09:43 -0700 MST  26 s  82/98 msgs left
+msg INBOX/25 {1680}           copied to INBOX/17         3.19 msgs/s  39.411 KiB/s 209.985 KiB copied ETA: Tuesday 31 October 2023-10-31 19:09:43 -0700 MST  25 s  81/98 msgs left
+msg INBOX/28 {8249}           copied to INBOX/18         3.24 msgs/s  39.293 KiB/s 218.041 KiB copied ETA: Tuesday 31 October 2023-10-31 19:09:42 -0700 MST  25 s  80/98 msgs left
+msg INBOX/30 {2726}           copied to INBOX/19         3.29 msgs/s  38.240 KiB/s 220.703 KiB copied ETA: Tuesday 31 October 2023-10-31 19:09:42 -0700 MST  24 s  79/98 msgs left
+msg INBOX/31 {5379}           copied to INBOX/20         3.34 msgs/s  37.681 KiB/s 225.956 KiB copied ETA: Tuesday 31 October 2023-10-31 19:09:42 -0700 MST  23 s  78/98 msgs left
+msg INBOX/32 {20236}          copied to INBOX/21         3.38 msgs/s  39.515 KiB/s 245.718 KiB copied ETA: Tuesday 31 October 2023-10-31 19:09:41 -0700 MST  23 s  77/98 msgs left
+msg INBOX/37 {4826}           copied to INBOX/22         3.41 msgs/s  38.862 KiB/s 250.431 KiB copied ETA: Tuesday 31 October 2023-10-31 19:09:41 -0700 MST  22 s  76/98 msgs left
+msg INBOX/38 {11800}          copied to INBOX/23         3.45 msgs/s  39.291 KiB/s 261.954 KiB copied ETA: Tuesday 31 October 2023-10-31 19:09:41 -0700 MST  22 s  75/98 msgs left
+msg INBOX/39 {3509}           copied to INBOX/24         3.48 msgs/s  38.529 KiB/s 265.381 KiB copied ETA: Tuesday 31 October 2023-10-31 19:09:40 -0700 MST  21 s  74/98 msgs left
+msg INBOX/40 {12762}          copied to INBOX/25         3.51 msgs/s  39.036 KiB/s 277.844 KiB copied ETA: Tuesday 31 October 2023-10-31 19:09:40 -0700 MST  21 s  73/98 msgs left
+msg INBOX/41 {16574}          copied to INBOX/26         3.50 msgs/s  39.634 KiB/s 294.029 KiB copied ETA: Tuesday 31 October 2023-10-31 19:09:40 -0700 MST  21 s  72/98 msgs left
+msg INBOX/43 {10045}          copied to INBOX/27         3.53 msgs/s  39.755 KiB/s 303.839 KiB copied ETA: Tuesday 31 October 2023-10-31 19:09:40 -0700 MST  20 s  71/98 msgs left
+msg INBOX/44 {8947}           copied to INBOX/28         3.56 msgs/s  39.749 KiB/s 312.576 KiB copied ETA: Tuesday 31 October 2023-10-31 19:09:40 -0700 MST  20 s  70/98 msgs left
+msg INBOX/45 {4079}           copied to INBOX/29         3.59 msgs/s  39.164 KiB/s 316.560 KiB copied ETA: Tuesday 31 October 2023-10-31 19:09:39 -0700 MST  19 s  69/98 msgs left
+msg INBOX/46 {7406}           copied to INBOX/30         3.61 msgs/s  38.989 KiB/s 323.792 KiB copied ETA: Tuesday 31 October 2023-10-31 19:09:39 -0700 MST  19 s  68/98 msgs left
+msg INBOX/47 {6726}           copied to INBOX/31         3.63 msgs/s  38.730 KiB/s 330.360 KiB copied ETA: Tuesday 31 October 2023-10-31 19:09:39 -0700 MST  18 s  67/98 msgs left
+msg INBOX/48 {409316}         copied to INBOX/32         3.32 msgs/s  75.824 KiB/s 730.083 KiB copied ETA: Tuesday 31 October 2023-10-31 19:09:42 -0700 MST  20 s  66/98 msgs left
+msg INBOX/49 {24308}          copied to INBOX/33         3.35 msgs/s  76.481 KiB/s 753.821 KiB copied ETA: Tuesday 31 October 2023-10-31 19:09:41 -0700 MST  19 s  65/98 msgs left
+msg INBOX/50 {410589}         copied to INBOX/34         3.17 msgs/s  107.597 KiB/s 1.128 MiB copied ETA: Tuesday 31 October 2023-10-31 19:09:43 -0700 MST  20 s  64/98 msgs left
+msg INBOX/51 {14814}          copied to INBOX/35         3.19 msgs/s  106.727 KiB/s 1.142 MiB copied ETA: Tuesday 31 October 2023-10-31 19:09:43 -0700 MST  20 s  63/98 msgs left
+msg INBOX/52 {462699}         copied to INBOX/36         3.05 msgs/s  137.367 KiB/s 1.583 MiB copied ETA: Tuesday 31 October 2023-10-31 19:09:44 -0700 MST  20 s  62/98 msgs left
+msg INBOX/53 {14015}          copied to INBOX/37         3.08 msgs/s  135.942 KiB/s 1.596 MiB copied ETA: Tuesday 31 October 2023-10-31 19:09:44 -0700 MST  20 s  61/98 msgs left
+msg INBOX/54 {2739}           copied to INBOX/38         3.10 msgs/s  133.677 KiB/s 1.599 MiB copied ETA: Tuesday 31 October 2023-10-31 19:09:44 -0700 MST  19 s  60/98 msgs left
+msg INBOX/55 {6106}           copied to INBOX/39         3.13 msgs/s  131.696 KiB/s 1.605 MiB copied ETA: Tuesday 31 October 2023-10-31 19:09:43 -0700 MST  19 s  59/98 msgs left
+msg INBOX/56 {5754}           copied to INBOX/40         3.15 msgs/s  129.764 KiB/s 1.610 MiB copied ETA: Tuesday 31 October 2023-10-31 19:09:43 -0700 MST  18 s  58/98 msgs left
+msg INBOX/57 {79884}          copied to INBOX/41         3.15 msgs/s  132.555 KiB/s 1.687 MiB copied ETA: Tuesday 31 October 2023-10-31 19:09:43 -0700 MST  18 s  57/98 msgs left
+msg INBOX/58 {8921}           copied to INBOX/42         3.17 msgs/s  130.913 KiB/s 1.695 MiB copied ETA: Tuesday 31 October 2023-10-31 19:09:43 -0700 MST  18 s  56/98 msgs left
+msg INBOX/59 {8729}           copied to INBOX/43         3.19 msgs/s  129.346 KiB/s 1.703 MiB copied ETA: Tuesday 31 October 2023-10-31 19:09:43 -0700 MST  17 s  55/98 msgs left
+msg INBOX/60 {11651}          copied to INBOX/44         3.21 msgs/s  127.909 KiB/s 1.715 MiB copied ETA: Tuesday 31 October 2023-10-31 19:09:43 -0700 MST  17 s  54/98 msgs left
+msg INBOX/61 {12851}          copied to INBOX/45         3.23 msgs/s  126.733 KiB/s 1.727 MiB copied ETA: Tuesday 31 October 2023-10-31 19:09:42 -0700 MST  16 s  53/98 msgs left
+msg INBOX/62 {599490}         copied to INBOX/46         3.04 msgs/s  155.293 KiB/s 2.299 MiB copied ETA: Tuesday 31 October 2023-10-31 19:09:44 -0700 MST  17 s  52/98 msgs left
+msg INBOX/64 {50139}          copied to INBOX/47         3.04 msgs/s  155.269 KiB/s 2.346 MiB copied ETA: Tuesday 31 October 2023-10-31 19:09:44 -0700 MST  17 s  51/98 msgs left
+msg INBOX/65 {43836}          copied to INBOX/48         3.06 msgs/s  155.715 KiB/s 2.388 MiB copied ETA: Tuesday 31 October 2023-10-31 19:09:44 -0700 MST  16 s  50/98 msgs left
+msg INBOX/66 {61115}          copied to INBOX/49         3.07 msgs/s  157.190 KiB/s 2.446 MiB copied ETA: Tuesday 31 October 2023-10-31 19:09:44 -0700 MST  16 s  49/98 msgs left
+msg INBOX/67 {51547}          copied to INBOX/50         3.09 msgs/s  157.964 KiB/s 2.496 MiB copied ETA: Tuesday 31 October 2023-10-31 19:09:44 -0700 MST  16 s  48/98 msgs left
+msg INBOX/68 {21070}          copied to INBOX/51         3.11 msgs/s  157.022 KiB/s 2.516 MiB copied ETA: Tuesday 31 October 2023-10-31 19:09:44 -0700 MST  15 s  47/98 msgs left
+msg INBOX/69 {2576}           copied to INBOX/52         3.13 msgs/s  155.088 KiB/s 2.518 MiB copied ETA: Tuesday 31 October 2023-10-31 19:09:43 -0700 MST  15 s  46/98 msgs left
+msg INBOX/70 {34087}          copied to INBOX/53         3.13 msgs/s  154.244 KiB/s 2.551 MiB copied ETA: Tuesday 31 October 2023-10-31 19:09:43 -0700 MST  14 s  45/98 msgs left
+msg INBOX/71 {3247}           copied to INBOX/54         3.15 msgs/s  152.426 KiB/s 2.554 MiB copied ETA: Tuesday 31 October 2023-10-31 19:09:43 -0700 MST  14 s  44/98 msgs left
+msg INBOX/72 {2507}           copied to INBOX/55         3.16 msgs/s  150.381 KiB/s 2.556 MiB copied ETA: Tuesday 31 October 2023-10-31 19:09:43 -0700 MST  14 s  43/98 msgs left
+msg INBOX/73 {535244}         copied to INBOX/56         3.08 msgs/s  172.595 KiB/s 3.067 MiB copied ETA: Tuesday 31 October 2023-10-31 19:09:44 -0700 MST  14 s  42/98 msgs left
+msg INBOX/74 {6696}           copied to INBOX/57         3.09 msgs/s  170.856 KiB/s 3.073 MiB copied ETA: Tuesday 31 October 2023-10-31 19:09:44 -0700 MST  13 s  41/98 msgs left
+msg INBOX/75 {6688}           copied to INBOX/58         3.11 msgs/s  169.133 KiB/s 3.079 MiB copied ETA: Tuesday 31 October 2023-10-31 19:09:44 -0700 MST  13 s  40/98 msgs left
+msg INBOX/76 {35929}          copied to INBOX/59         3.13 msgs/s  168.982 KiB/s 3.114 MiB copied ETA: Tuesday 31 October 2023-10-31 19:09:43 -0700 MST  12 s  39/98 msgs left
+msg INBOX/77 {30463}          copied to INBOX/60         3.13 msgs/s  167.714 KiB/s 3.143 MiB copied ETA: Tuesday 31 October 2023-10-31 19:09:43 -0700 MST  12 s  38/98 msgs left
+msg INBOX/78 {8487}           copied to INBOX/61         3.13 msgs/s  165.441 KiB/s 3.151 MiB copied ETA: Tuesday 31 October 2023-10-31 19:09:43 -0700 MST  12 s  37/98 msgs left
+msg INBOX/79 {6048}           copied to INBOX/62         3.14 msgs/s  163.871 KiB/s 3.157 MiB copied ETA: Tuesday 31 October 2023-10-31 19:09:43 -0700 MST  11 s  36/98 msgs left
+msg INBOX/80 {5410}           copied to INBOX/63         3.16 msgs/s  162.295 KiB/s 3.162 MiB copied ETA: Tuesday 31 October 2023-10-31 19:09:43 -0700 MST  11 s  35/98 msgs left
+msg INBOX/81 {10802}          copied to INBOX/64         3.17 msgs/s  161.036 KiB/s 3.172 MiB copied ETA: Tuesday 31 October 2023-10-31 19:09:43 -0700 MST  11 s  34/98 msgs left
+msg INBOX/82 {33267}          copied to INBOX/65         3.17 msgs/s  160.028 KiB/s 3.204 MiB copied ETA: Tuesday 31 October 2023-10-31 19:09:43 -0700 MST  10 s  33/98 msgs left
+msg INBOX/83 {11772}          copied to INBOX/66         3.19 msgs/s  158.888 KiB/s 3.215 MiB copied ETA: Tuesday 31 October 2023-10-31 19:09:43 -0700 MST  10 s  32/98 msgs left
+msg INBOX/84 {15812}          copied to INBOX/67         3.20 msgs/s  157.937 KiB/s 3.230 MiB copied ETA: Tuesday 31 October 2023-10-31 19:09:43 -0700 MST  10 s  31/98 msgs left
+msg INBOX/85 {17830}          copied to INBOX/68         3.21 msgs/s  157.076 KiB/s 3.247 MiB copied ETA: Tuesday 31 October 2023-10-31 19:09:43 -0700 MST  9 s  30/98 msgs left
+msg INBOX/86 {14014562}       copied to INBOX/69         1.61 msgs/s  396.800 KiB/s 16.612 MiB copied ETA: Tuesday 31 October 2023-10-31 19:10:13 -0700 MST  18 s  29/98 msgs left
+msg INBOX/87 {4828}           copied to INBOX/70         1.62 msgs/s  394.875 KiB/s 16.617 MiB copied ETA: Tuesday 31 October 2023-10-31 19:10:12 -0700 MST  17 s  28/98 msgs left
+msg INBOX/88 {7742}           copied to INBOX/71         1.64 msgs/s  393.025 KiB/s 16.624 MiB copied ETA: Tuesday 31 October 2023-10-31 19:10:12 -0700 MST  16 s  27/98 msgs left
+msg INBOX/89 {10437}          copied to INBOX/72         1.65 msgs/s  390.401 KiB/s 16.634 MiB copied ETA: Tuesday 31 October 2023-10-31 19:10:11 -0700 MST  16 s  26/98 msgs left
+msg INBOX/90 {13984}          copied to INBOX/73         1.64 msgs/s  384.041 KiB/s 16.648 MiB copied ETA: Tuesday 31 October 2023-10-31 19:10:12 -0700 MST  15 s  25/98 msgs left
+msg INBOX/92 {20053}          copied to INBOX/74         1.66 msgs/s  381.847 KiB/s 16.667 MiB copied ETA: Tuesday 31 October 2023-10-31 19:10:11 -0700 MST  14 s  24/98 msgs left
+msg INBOX/93 {6161}           copied to INBOX/75         1.67 msgs/s  379.841 KiB/s 16.673 MiB copied ETA: Tuesday 31 October 2023-10-31 19:10:11 -0700 MST  14 s  23/98 msgs left
+msg INBOX/94 {1572399}        copied to INBOX/76         1.58 msgs/s  386.236 KiB/s 18.172 MiB copied ETA: Tuesday 31 October 2023-10-31 19:10:14 -0700 MST  14 s  22/98 msgs left
+msg INBOX/95 {5846}           copied to INBOX/77         1.59 msgs/s  383.928 KiB/s 18.178 MiB copied ETA: Tuesday 31 October 2023-10-31 19:10:14 -0700 MST  13 s  21/98 msgs left
+msg INBOX/96 {8098}           copied to INBOX/78         1.60 msgs/s  382.369 KiB/s 18.185 MiB copied ETA: Tuesday 31 October 2023-10-31 19:10:13 -0700 MST  12 s  20/98 msgs left
+msg INBOX/97 {5814}           copied to INBOX/79         1.61 msgs/s  380.784 KiB/s 18.191 MiB copied ETA: Tuesday 31 October 2023-10-31 19:10:13 -0700 MST  12 s  19/98 msgs left
+msg INBOX/98 {10450}          copied to INBOX/80         1.63 msgs/s  379.224 KiB/s 18.201 MiB copied ETA: Tuesday 31 October 2023-10-31 19:10:12 -0700 MST  11 s  18/98 msgs left
+msg INBOX/99 {10348}          copied to INBOX/81         1.64 msgs/s  377.753 KiB/s 18.211 MiB copied ETA: Tuesday 31 October 2023-10-31 19:10:12 -0700 MST  10 s  17/98 msgs left
+msg INBOX/100 {13442}         copied to INBOX/82         1.65 msgs/s  376.269 KiB/s 18.224 MiB copied ETA: Tuesday 31 October 2023-10-31 19:10:11 -0700 MST  10 s  16/98 msgs left
+msg INBOX/101 {3964}          copied to INBOX/83         1.67 msgs/s  374.627 KiB/s 18.227 MiB copied ETA: Tuesday 31 October 2023-10-31 19:10:11 -0700 MST  9 s  15/98 msgs left
+msg INBOX/102 {6871}          copied to INBOX/84         1.68 msgs/s  373.109 KiB/s 18.234 MiB copied ETA: Tuesday 31 October 2023-10-31 19:10:10 -0700 MST  8 s  14/98 msgs left
+msg INBOX/103 {63802}         copied to INBOX/85         1.69 msgs/s  372.018 KiB/s 18.295 MiB copied ETA: Tuesday 31 October 2023-10-31 19:10:10 -0700 MST  8 s  13/98 msgs left
+msg INBOX/104 {50709}         copied to INBOX/86         1.70 msgs/s  370.719 KiB/s 18.343 MiB copied ETA: Tuesday 31 October 2023-10-31 19:10:10 -0700 MST  7 s  12/98 msgs left
+ETA: Tuesday 31 October 2023-10-31 19:10:10 -0700 MST  7 s  12/98 msgs left
+Folder     2/7 [INBOX.Archive]                     -> [Archive]                          
+Host1: folder [INBOX.Archive] has 0 messages in total (mentioned by SELECT)
+Creating folder [Archive] on host2
+Created folder [Archive] on host2
+Host2: folder [Archive] has 0 messages in total (mentioned by SELECT)
+Host2: folder [Archive] permanentflags: 
+Host1: folder [INBOX.Archive] considering 0 messages
+Host2: folder [Archive] considering 0 messages
+Host1: folder [INBOX.Archive] selected 0 messages, duplicates 0
+Host2: folder [Archive] selected 0 messages, duplicates 0
+ETA: Tuesday 31 October 2023-10-31 19:10:10 -0700 MST  7 s  12/98 msgs left
+Folder     3/7 [INBOX.Drafts]                      -> [Drafts]                           
+Host1: folder [INBOX.Drafts] has 0 messages in total (mentioned by SELECT)
+Host2: folder [Drafts] has 0 messages in total (mentioned by SELECT)
+Host2: folder [Drafts] permanentflags: 
+Host1: folder [INBOX.Drafts] considering 0 messages
+Host2: folder [Drafts] considering 0 messages
+Host1: folder [INBOX.Drafts] selected 0 messages, duplicates 0
+Host2: folder [Drafts] selected 0 messages, duplicates 0
+ETA: Tuesday 31 October 2023-10-31 19:10:11 -0700 MST  7 s  12/98 msgs left
+Folder     4/7 [INBOX.Junk]                        -> [Junk]                             
+Host1: folder [INBOX.Junk] has 0 messages in total (mentioned by SELECT)
+Host2: folder [Junk] has 0 messages in total (mentioned by SELECT)
+Host2: folder [Junk] permanentflags: 
+Host1: folder [INBOX.Junk] considering 0 messages
+Host2: folder [Junk] considering 0 messages
+Host1: folder [INBOX.Junk] selected 0 messages, duplicates 0
+Host2: folder [Junk] selected 0 messages, duplicates 0
+ETA: Tuesday 31 October 2023-10-31 19:10:11 -0700 MST  7 s  12/98 msgs left
+Folder     5/7 [INBOX.Sent]                        -> [Sent]                             
+Host1: folder [INBOX.Sent] has 9 messages in total (mentioned by SELECT)
+Host2: folder [Sent] has 0 messages in total (mentioned by SELECT)
+Host2: folder [Sent] permanentflags: 
+Host1: folder [INBOX.Sent] considering 9 messages
+Host2: folder [Sent] considering 0 messages
+Host1: folder [INBOX.Sent] selected 9 messages, duplicates 0
+Host2: folder [Sent] selected 0 messages, duplicates 0
+msg INBOX.Sent/1 {414}             copied to Sent/1          1.65 msgs/s  355.929 KiB/s 18.344 MiB copied ETA: Tuesday 31 October 2023-10-31 19:10:12 -0700 MST  7 s  11/98 msgs left

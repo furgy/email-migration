@@ -1,0 +1,2157 @@
+Here is imapsync 1.977 on host Shawns-MacBook-Pro.local, a darwin system with 0.1/2.3 free GiB of RAM
+with Perl 5.28.2 and Mail::IMAPClient 3.42
+Transfer started at Mon Dec 28 15:47:45 2020
+PID is 85384 my PPID is 85376
+Log file is LOG_imapsync/2020_12_28_15_47_45_402_shawn@furgason.com_shawn@furgason.com.txt ( to change it, use --logfile path ; or use --nolog to turn off logging )
+Load is 5.33 9.97 9.82 on 4 cores
+Current directory is /Users/shawn/Documents/code/email-migration
+Real user id is shawn (uid 501)
+Effective user id is shawn (euid 501)
+$RCSfile: imapsync,v $ $Revision: 1.977 $ $Date: 2019/12/23 20:18:02 $ 
+Command line used, run by /usr/bin/perl:
+/usr/local/Cellar/imapsync/1.977/libexec/bin/imapsync --host1 az1-sr5.supercp.com --user1 shawn@furgason.com --password1 MASKED --host2 premium63.web-hosting.com --user2 shawn@furgason.com --password2 MASKED --addheader --no-modulesversion --nosslcheck --expunge1 --delete2 --delete2folders --addheader --nosslcheck --expunge1 --timeout1 240 --timeout2 240
+Temp directory is /var/folders/lj/pt22s9q55t1925h7_g57tt5h0000gn/T ( to change it use --tmpdir dirpath )
+kill -QUIT 85384 # special behavior: call to sub catch_exit
+kill -TERM 85384 # special behavior: call to sub catch_exit
+kill -INT 85384 # special behavior: call to sub catch_reconnect
+kill -HUP 85384 # special behavior: call to sub catch_print
+kill -USR1 85384 # special behavior: call to sub toggle_sleep
+File /var/folders/lj/pt22s9q55t1925h7_g57tt5h0000gn/T/imapsync.pid does not exist
+PID file is /var/folders/lj/pt22s9q55t1925h7_g57tt5h0000gn/T/imapsync.pid ( to change it, use --pidfile filepath ; to avoid it use --pidfile "" )
+Writing my PID 85384 in /var/folders/lj/pt22s9q55t1925h7_g57tt5h0000gn/T/imapsync.pid
+Writing also my logfile name in /var/folders/lj/pt22s9q55t1925h7_g57tt5h0000gn/T/imapsync.pid : LOG_imapsync/2020_12_28_15_47_45_402_shawn@furgason.com_shawn@furgason.com.txt
+Info: will resync flags for already transferred messages. Use --noresyncflags to not resync flags.
+Info: will act as --uidexpunge2
+Info: turned ON syncinternaldates, will set the internal dates (arrival dates) on host2 same as host1.
+Host1: will try to use LOGIN authentication on host1
+Host2: will try to use LOGIN authentication on host2
+Host1: imap connection timeout is 240 seconds
+Host2: imap connection timeout is 240 seconds
+Host1: IMAP server [az1-sr5.supercp.com] port [143] user [shawn@furgason.com]
+Host2: IMAP server [premium63.web-hosting.com] port [143] user [shawn@furgason.com]
+Host1: connecting and login on host1 [az1-sr5.supercp.com] port [143] with user [shawn@furgason.com]
+Host1 IP address: 68.66.226.70
+Host1 banner: * OK [CAPABILITY IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE NAMESPACE LITERAL+ STARTTLS AUTH=PLAIN AUTH=LOGIN] Dovecot ready.
+Host1 capability before authentication: IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE NAMESPACE LITERAL+ STARTTLS AUTH=PLAIN AUTH=LOGIN AUTH
+Host1: going to ssl because STARTTLS is in CAPABILITY. Use --notls1 or --notls2 to avoid that behavior
+DEBUG: .../IO/Socket/SSL.pm:1177: global error: Undefined SSL object
+Host1: Socket successfuly converted to SSL
+Host1: az1-sr5.supercp.com says it has CAPABILITY for AUTHENTICATE LOGIN
+Host1: success login on [az1-sr5.supercp.com] with user [shawn@furgason.com] auth [LOGIN]
+Host2: connecting and login on host2 [premium63.web-hosting.com] port [143] with user [shawn@furgason.com]
+Host2 IP address: 198.54.125.196
+Host2 banner: * OK [CAPABILITY IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE NAMESPACE LITERAL+ STARTTLS AUTH=PLAIN AUTH=LOGIN] Dovecot ready.
+Host2 capability before authentication: IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE NAMESPACE LITERAL+ STARTTLS AUTH=PLAIN AUTH=LOGIN AUTH
+Host2: going to ssl because STARTTLS is in CAPABILITY. Use --notls1 or --notls2 to avoid that behavior
+DEBUG: .../IO/Socket/SSL.pm:1177: global error: Undefined SSL object
+Host2: Socket successfuly converted to SSL
+Host2: premium63.web-hosting.com says it has CAPABILITY for AUTHENTICATE LOGIN
+Host2: success login on [premium63.web-hosting.com] with user [shawn@furgason.com] auth [LOGIN]
+Host1: state Authenticated
+Host2: state Authenticated
+Host1 capability once authenticated: IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE SORT SORT=DISPLAY THREAD=REFERENCES THREAD=REFS THREAD=ORDEREDSUBJECT MULTIAPPEND URL-PARTIAL CATENATE UNSELECT CHILDREN NAMESPACE UIDPLUS LIST-EXTENDED I18NLEVEL=1 CONDSTORE QRESYNC ESEARCH ESORT SEARCHRES WITHIN CONTEXT=SEARCH LIST-STATUS BINARY MOVE SNIPPET=FUZZY PREVIEW=FUZZY STATUS=SIZE NAMESPACE LITERAL+ NOTIFY SPECIAL-USE COMPRESS=DEFLATE QUOTA THREAD I18NLEVEL CONTEXT SNIPPET PREVIEW STATUS COMPRESS
+Host2 capability once authenticated: IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE SORT SORT=DISPLAY THREAD=REFERENCES THREAD=REFS THREAD=ORDEREDSUBJECT MULTIAPPEND URL-PARTIAL CATENATE UNSELECT CHILDREN NAMESPACE UIDPLUS LIST-EXTENDED I18NLEVEL=1 CONDSTORE QRESYNC ESEARCH ESORT SEARCHRES WITHIN CONTEXT=SEARCH LIST-STATUS BINARY MOVE SNIPPET=FUZZY PREVIEW=FUZZY STATUS=SIZE NAMESPACE LITERAL+ NOTIFY SPECIAL-USE COMPRESS=DEFLATE QUOTA THREAD I18NLEVEL CONTEXT SNIPPET PREVIEW STATUS COMPRESS
+
+Host1: found ID capability. Sending/receiving ID, presented in raw IMAP for now.
+In order to avoid sending/receiving ID, use option --noid
+Sending: 6 ID ("name" "imapsync" "version" "1.977" "os" "darwin" "vendor" "Gilles LAMIRAL" "support-url" "https://imapsync.lamiral.info/" "date" "23-Dec-2019 20:18:02 +0000" "side" "host1")
+Sent 182 bytes
+Read: 	* ID ("name" "Dovecot")
+  	6 OK ID completed (0.001 + 0.000 secs).
+
+
+Host2: found ID capability. Sending/receiving ID, presented in raw IMAP for now.
+In order to avoid sending/receiving ID, use option --noid
+Sending: 6 ID ("name" "imapsync" "version" "1.977" "os" "darwin" "vendor" "Gilles LAMIRAL" "support-url" "https://imapsync.lamiral.info/" "date" "23-Dec-2019 20:18:02 +0000" "side" "host2")
+Sent 182 bytes
+Read: 	* ID ("name" "Dovecot")
+  	6 OK ID completed (0.001 + 0.000 secs).
+
+
+Host2: found quota, presented in raw IMAP
+Sending: 7 GETQUOTAROOT INBOX
+Sent 22 bytes
+Read: 	* QUOTAROOT INBOX Mailbox
+  	* QUOTA Mailbox (MESSAGE 7813 2147483647)
+  	7 OK Getquotaroot completed (0.001 + 0.000 secs).
+
+Host2: Quota current storage is 0 bytes. Limit is 0 bytes. So 0 % full
+Host1: found 75 folders.
+Host2: found 76 folders.
+Host1: guessing separator from folder listing: [.]
+Host1: separator given by NAMESPACE: [.]
+Host2: guessing separator from folder listing: [.]
+Host2: separator given by NAMESPACE: [.]
+Host1: guessing prefix from folder listing: [INBOX.]
+Host1: prefix given by NAMESPACE: [INBOX.]
+Host2: guessing prefix from folder listing: [INBOX.]
+Host2: prefix given by NAMESPACE: [INBOX.]
+Host1: separator and prefix: [.][INBOX.]
+Host2: separator and prefix: [.][INBOX.]
+Including all folders found by default. Use --subscribed or --folder or --folderrec or --include to select specific folders. Use --exclude to unselect specific folders.
+Host1: Checking wanted folders exist. Use --nocheckfoldersexist to avoid this check (shared of public namespace targeted).
+Host1: Checking wanted folders are selectable. Use --nocheckselectable to avoid this check.
+Turned off automapping folders ( use --automap to turn on automapping )
+
+++++ Listing folders
+All foldernames are presented between brackets like [X] where X is the foldername.
+When a foldername contains non-ASCII characters it is presented in the form
+[X] = [Y] where
+X is the imap foldername you have to use in command line options and
+Y is the utf8 output just printed for convenience, to recognize it.
+
+Host1: folders list (first the raw imap format then the [X] = [Y]):
+* LIST (\HasChildren) "." INBOX
+* LIST (\HasNoChildren \Marked \Junk) "." INBOX.spam
+* LIST (\HasChildren \UnMarked) "." INBOX.[Airmail]
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.[Airmail].To Do"
+* LIST (\HasNoChildren \UnMarked) "." INBOX.[Airmail].Snooze
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.[Airmail].Send Later"
+* LIST (\HasNoChildren \UnMarked) "." INBOX.[Airmail].Memo
+* LIST (\HasNoChildren \UnMarked) "." INBOX.[Airmail].Done
+* LIST (\HasNoChildren \UnMarked) "." INBOX.Starred
+* LIST (\HasNoChildren \UnMarked) "." INBOX.Spam
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.Sent Items"
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.Realty Medics (PM)"
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.@Waiting For"
+* LIST (\HasChildren \UnMarked) "." INBOX.@Review
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.@Review.For Work"
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.@Review.For Entertainment"
+* LIST (\HasChildren \UnMarked) "." INBOX.@Reference
+* LIST (\HasChildren \UnMarked) "." INBOX.@Reference.Work
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.@Reference.Work.Process Excellence"
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.@Reference.Work.Leadership Development"
+* LIST (\HasNoChildren \UnMarked) "." INBOX.@Reference.Travel
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.@Reference.Self Development"
+* LIST (\HasNoChildren \UnMarked) "." INBOX.@Reference.Purchases
+* LIST (\HasNoChildren \UnMarked) "." INBOX.@Reference.Productivity
+* LIST (\HasNoChildren \UnMarked) "." INBOX.@Reference.Lifestyle
+* LIST (\HasNoChildren \UnMarked) "." INBOX.@Reference.Legal
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.@Reference.Items I'm Selling"
+* LIST (\HasChildren \UnMarked) "." "INBOX.@Reference.Internet Services"
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.@Reference.Internet Services.Support Tickets"
+* LIST (\HasChildren \UnMarked) "." INBOX.@Reference.Home
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.@Reference.Home.Work From Home"
+* LIST (\HasNoChildren \UnMarked) "." INBOX.@Reference.Home.Solar
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.@Reference.Home.Retirement Home"
+* LIST (\HasNoChildren \UnMarked) "." INBOX.@Reference.Home.Landscaping
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.@Reference.Home.Charlotte Home"
+* LIST (\HasChildren \UnMarked) "." INBOX.@Reference.Hobby
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.@Reference.Hobby.Work From Home"
+* LIST (\HasNoChildren \UnMarked) "." INBOX.@Reference.Health
+* LIST (\HasNoChildren \UnMarked) "." INBOX.@Reference.Friends
+* LIST (\HasNoChildren \UnMarked) "." INBOX.@Reference.Food
+* LIST (\HasChildren \UnMarked) "." INBOX.@Reference.Finance
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.@Reference.Finance.TCF Bank"
+* LIST (\HasNoChildren \UnMarked) "." INBOX.@Reference.Finance.Taxes
+* LIST (\HasChildren \UnMarked) "." "INBOX.@Reference.Finance.Real Estate"
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.@Reference.Finance.Real Estate.Stessa"
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.@Reference.Finance.Real Estate.Roofstock"
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.@Reference.Finance.Real Estate.Renshaw"
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.@Reference.Finance.Real Estate.Realty Doctors"
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.@Reference.Finance.Real Estate.RealWealth"
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.@Reference.Finance.Real Estate.RREI"
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.@Reference.Finance.Real Estate.Property Boss"
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.@Reference.Finance.Real Estate.PMI"
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.@Reference.Finance.Real Estate.Olmstead"
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.@Reference.Finance.Real Estate.Investing"
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.@Reference.Finance.Real Estate.Housefolios"
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.@Reference.Finance.Real Estate.Cozy"
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.@Reference.Finance.Real Estate.Chuck Baer"
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.@Reference.Finance.Real Estate.Bigger Pockets"
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.@Reference.Finance.Real Estate.Allstar"
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.@Reference.Finance.Domain Registration"
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.@Reference.Finance.Business Expenses"
+* LIST (\HasChildren \UnMarked) "." INBOX.@Reference.Family
+* LIST (\HasNoChildren \UnMarked) "." INBOX.@Reference.Family.Pets
+* LIST (\HasNoChildren \UnMarked) "." INBOX.@Reference.Family.Expenses
+* LIST (\HasNoChildren \UnMarked) "." INBOX.@Reference.Education
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.@Reference.Business Contacts"
+* LIST (\HasNoChildren \UnMarked) "." INBOX.@Reference.Bills
+* LIST (\HasNoChildren \UnMarked) "." INBOX.@Reference.Backpacking
+* LIST (\HasNoChildren \UnMarked) "." INBOX.@Reference.Auto
+* LIST (\HasChildren \UnMarked) "." INBOX.@Action
+* LIST (\HasNoChildren \UnMarked) "." INBOX.@Action.Offers
+* LIST (\HasNoChildren \UnMarked \Archive) "." INBOX.Archive
+* LIST (\HasNoChildren \Marked \Trash) "." INBOX.Trash
+* LIST (\HasNoChildren \UnMarked \Sent) "." INBOX.Sent
+* LIST (\HasNoChildren \UnMarked \Drafts) "." INBOX.Drafts
+86 OK List completed (0.003 + 0.000 + 0.002 secs).
+
+[INBOX]
+[INBOX.@Action]
+[INBOX.@Action.Offers]
+[INBOX.@Reference]
+[INBOX.@Reference.Auto]
+[INBOX.@Reference.Backpacking]
+[INBOX.@Reference.Bills]
+[INBOX.@Reference.Business Contacts]
+[INBOX.@Reference.Education]
+[INBOX.@Reference.Family]
+[INBOX.@Reference.Family.Expenses]
+[INBOX.@Reference.Family.Pets]
+[INBOX.@Reference.Finance]
+[INBOX.@Reference.Finance.Business Expenses]
+[INBOX.@Reference.Finance.Domain Registration]
+[INBOX.@Reference.Finance.Real Estate]
+[INBOX.@Reference.Finance.Real Estate.Allstar]
+[INBOX.@Reference.Finance.Real Estate.Bigger Pockets]
+[INBOX.@Reference.Finance.Real Estate.Chuck Baer]
+[INBOX.@Reference.Finance.Real Estate.Cozy]
+[INBOX.@Reference.Finance.Real Estate.Housefolios]
+[INBOX.@Reference.Finance.Real Estate.Investing]
+[INBOX.@Reference.Finance.Real Estate.Olmstead]
+[INBOX.@Reference.Finance.Real Estate.PMI]
+[INBOX.@Reference.Finance.Real Estate.Property Boss]
+[INBOX.@Reference.Finance.Real Estate.RREI]
+[INBOX.@Reference.Finance.Real Estate.RealWealth]
+[INBOX.@Reference.Finance.Real Estate.Realty Doctors]
+[INBOX.@Reference.Finance.Real Estate.Renshaw]
+[INBOX.@Reference.Finance.Real Estate.Roofstock]
+[INBOX.@Reference.Finance.Real Estate.Stessa]
+[INBOX.@Reference.Finance.TCF Bank]
+[INBOX.@Reference.Finance.Taxes]
+[INBOX.@Reference.Food]
+[INBOX.@Reference.Friends]
+[INBOX.@Reference.Health]
+[INBOX.@Reference.Hobby]
+[INBOX.@Reference.Hobby.Work From Home]
+[INBOX.@Reference.Home]
+[INBOX.@Reference.Home.Charlotte Home]
+[INBOX.@Reference.Home.Landscaping]
+[INBOX.@Reference.Home.Retirement Home]
+[INBOX.@Reference.Home.Solar]
+[INBOX.@Reference.Home.Work From Home]
+[INBOX.@Reference.Internet Services]
+[INBOX.@Reference.Internet Services.Support Tickets]
+[INBOX.@Reference.Items I'm Selling]
+[INBOX.@Reference.Legal]
+[INBOX.@Reference.Lifestyle]
+[INBOX.@Reference.Productivity]
+[INBOX.@Reference.Purchases]
+[INBOX.@Reference.Self Development]
+[INBOX.@Reference.Travel]
+[INBOX.@Reference.Work]
+[INBOX.@Reference.Work.Leadership Development]
+[INBOX.@Reference.Work.Process Excellence]
+[INBOX.@Review]
+[INBOX.@Review.For Entertainment]
+[INBOX.@Review.For Work]
+[INBOX.@Waiting For]
+[INBOX.Archive]
+[INBOX.Drafts]
+[INBOX.Realty Medics (PM)]
+[INBOX.Sent]
+[INBOX.Sent Items]
+[INBOX.Spam]
+[INBOX.Starred]
+[INBOX.Trash]
+[INBOX.[Airmail]]
+[INBOX.[Airmail].Done]
+[INBOX.[Airmail].Memo]
+[INBOX.[Airmail].Send Later]
+[INBOX.[Airmail].Snooze]
+[INBOX.[Airmail].To Do]
+[INBOX.spam]
+
+Host2: folders list (first the raw imap format then the [X] = [Y]):
+* LIST (\HasChildren) "." INBOX
+* LIST (\HasNoChildren) "." INBOX.Insurance
+* LIST (\HasNoChildren \Junk) "." INBOX.spam
+* LIST (\HasChildren \UnMarked) "." INBOX.[Airmail]
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.[Airmail].To Do"
+* LIST (\HasNoChildren \UnMarked) "." INBOX.[Airmail].Snooze
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.[Airmail].Send Later"
+* LIST (\HasNoChildren \UnMarked) "." INBOX.[Airmail].Memo
+* LIST (\HasNoChildren \UnMarked) "." INBOX.[Airmail].Done
+* LIST (\HasNoChildren \UnMarked) "." INBOX.Starred
+* LIST (\HasNoChildren \UnMarked) "." INBOX.Spam
+* LIST (\HasNoChildren) "." "INBOX.Sent Items"
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.Realty Medics (PM)"
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.@Waiting For"
+* LIST (\HasChildren \UnMarked) "." INBOX.@Review
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.@Review.For Work"
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.@Review.For Entertainment"
+* LIST (\HasChildren \UnMarked) "." INBOX.@Reference
+* LIST (\HasChildren) "." INBOX.@Reference.Work
+* LIST (\HasNoChildren) "." "INBOX.@Reference.Work.Process Excellence"
+* LIST (\HasNoChildren) "." "INBOX.@Reference.Work.Leadership Development"
+* LIST (\HasNoChildren) "." INBOX.@Reference.Travel
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.@Reference.Self Development"
+* LIST (\HasNoChildren) "." INBOX.@Reference.Purchases
+* LIST (\HasNoChildren \UnMarked) "." INBOX.@Reference.Productivity
+* LIST (\HasNoChildren \UnMarked) "." INBOX.@Reference.Lifestyle
+* LIST (\HasNoChildren) "." INBOX.@Reference.Legal
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.@Reference.Items I'm Selling"
+* LIST (\HasChildren \UnMarked) "." "INBOX.@Reference.Internet Services"
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.@Reference.Internet Services.Support Tickets"
+* LIST (\HasChildren \UnMarked) "." INBOX.@Reference.Home
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.@Reference.Home.Work From Home"
+* LIST (\HasNoChildren \UnMarked) "." INBOX.@Reference.Home.Solar
+* LIST (\HasNoChildren) "." "INBOX.@Reference.Home.Retirement Home"
+* LIST (\HasNoChildren \UnMarked) "." INBOX.@Reference.Home.Landscaping
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.@Reference.Home.Charlotte Home"
+* LIST (\HasChildren \UnMarked) "." INBOX.@Reference.Hobby
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.@Reference.Hobby.Work From Home"
+* LIST (\HasNoChildren \UnMarked) "." INBOX.@Reference.Health
+* LIST (\HasNoChildren) "." INBOX.@Reference.Friends
+* LIST (\HasNoChildren) "." INBOX.@Reference.Food
+* LIST (\HasChildren) "." INBOX.@Reference.Finance
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.@Reference.Finance.TCF Bank"
+* LIST (\HasNoChildren) "." INBOX.@Reference.Finance.Taxes
+* LIST (\HasChildren) "." "INBOX.@Reference.Finance.Real Estate"
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.@Reference.Finance.Real Estate.Stessa"
+* LIST (\HasNoChildren) "." "INBOX.@Reference.Finance.Real Estate.Roofstock"
+* LIST (\HasNoChildren) "." "INBOX.@Reference.Finance.Real Estate.Renshaw"
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.@Reference.Finance.Real Estate.Realty Doctors"
+* LIST (\HasNoChildren) "." "INBOX.@Reference.Finance.Real Estate.RealWealth"
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.@Reference.Finance.Real Estate.RREI"
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.@Reference.Finance.Real Estate.Property Boss"
+* LIST (\HasNoChildren) "." "INBOX.@Reference.Finance.Real Estate.PMI"
+* LIST (\HasNoChildren) "." "INBOX.@Reference.Finance.Real Estate.Olmstead"
+* LIST (\HasNoChildren) "." "INBOX.@Reference.Finance.Real Estate.Investing"
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.@Reference.Finance.Real Estate.Housefolios"
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.@Reference.Finance.Real Estate.Cozy"
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.@Reference.Finance.Real Estate.Chuck Baer"
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.@Reference.Finance.Real Estate.Bigger Pockets"
+* LIST (\HasNoChildren) "." "INBOX.@Reference.Finance.Real Estate.Allstar"
+* LIST (\HasNoChildren) "." "INBOX.@Reference.Finance.Domain Registration"
+* LIST (\HasNoChildren) "." "INBOX.@Reference.Finance.Business Expenses"
+* LIST (\HasChildren) "." INBOX.@Reference.Family
+* LIST (\HasNoChildren) "." INBOX.@Reference.Family.Pets
+* LIST (\HasNoChildren) "." INBOX.@Reference.Family.Expenses
+* LIST (\HasNoChildren \UnMarked) "." INBOX.@Reference.Education
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.@Reference.Business Contacts"
+* LIST (\HasNoChildren \UnMarked) "." INBOX.@Reference.Bills
+* LIST (\HasNoChildren) "." INBOX.@Reference.Backpacking
+* LIST (\HasNoChildren \UnMarked) "." INBOX.@Reference.Auto
+* LIST (\HasChildren \UnMarked) "." INBOX.@Action
+* LIST (\HasNoChildren) "." INBOX.@Action.Offers
+* LIST (\HasNoChildren \Archive) "." INBOX.Archive
+* LIST (\HasNoChildren \UnMarked \Sent) "." INBOX.Sent
+* LIST (\HasNoChildren \Trash) "." INBOX.Trash
+* LIST (\HasNoChildren \UnMarked \Drafts) "." INBOX.Drafts
+12 OK List completed (0.004 + 0.000 + 0.003 secs).
+
+[INBOX]
+[INBOX.@Action]
+[INBOX.@Action.Offers]
+[INBOX.@Reference]
+[INBOX.@Reference.Auto]
+[INBOX.@Reference.Backpacking]
+[INBOX.@Reference.Bills]
+[INBOX.@Reference.Business Contacts]
+[INBOX.@Reference.Education]
+[INBOX.@Reference.Family]
+[INBOX.@Reference.Family.Expenses]
+[INBOX.@Reference.Family.Pets]
+[INBOX.@Reference.Finance]
+[INBOX.@Reference.Finance.Business Expenses]
+[INBOX.@Reference.Finance.Domain Registration]
+[INBOX.@Reference.Finance.Real Estate]
+[INBOX.@Reference.Finance.Real Estate.Allstar]
+[INBOX.@Reference.Finance.Real Estate.Bigger Pockets]
+[INBOX.@Reference.Finance.Real Estate.Chuck Baer]
+[INBOX.@Reference.Finance.Real Estate.Cozy]
+[INBOX.@Reference.Finance.Real Estate.Housefolios]
+[INBOX.@Reference.Finance.Real Estate.Investing]
+[INBOX.@Reference.Finance.Real Estate.Olmstead]
+[INBOX.@Reference.Finance.Real Estate.PMI]
+[INBOX.@Reference.Finance.Real Estate.Property Boss]
+[INBOX.@Reference.Finance.Real Estate.RREI]
+[INBOX.@Reference.Finance.Real Estate.RealWealth]
+[INBOX.@Reference.Finance.Real Estate.Realty Doctors]
+[INBOX.@Reference.Finance.Real Estate.Renshaw]
+[INBOX.@Reference.Finance.Real Estate.Roofstock]
+[INBOX.@Reference.Finance.Real Estate.Stessa]
+[INBOX.@Reference.Finance.TCF Bank]
+[INBOX.@Reference.Finance.Taxes]
+[INBOX.@Reference.Food]
+[INBOX.@Reference.Friends]
+[INBOX.@Reference.Health]
+[INBOX.@Reference.Hobby]
+[INBOX.@Reference.Hobby.Work From Home]
+[INBOX.@Reference.Home]
+[INBOX.@Reference.Home.Charlotte Home]
+[INBOX.@Reference.Home.Landscaping]
+[INBOX.@Reference.Home.Retirement Home]
+[INBOX.@Reference.Home.Solar]
+[INBOX.@Reference.Home.Work From Home]
+[INBOX.@Reference.Internet Services]
+[INBOX.@Reference.Internet Services.Support Tickets]
+[INBOX.@Reference.Items I'm Selling]
+[INBOX.@Reference.Legal]
+[INBOX.@Reference.Lifestyle]
+[INBOX.@Reference.Productivity]
+[INBOX.@Reference.Purchases]
+[INBOX.@Reference.Self Development]
+[INBOX.@Reference.Travel]
+[INBOX.@Reference.Work]
+[INBOX.@Reference.Work.Leadership Development]
+[INBOX.@Reference.Work.Process Excellence]
+[INBOX.@Review]
+[INBOX.@Review.For Entertainment]
+[INBOX.@Review.For Work]
+[INBOX.@Waiting For]
+[INBOX.Archive]
+[INBOX.Drafts]
+[INBOX.Insurance]
+[INBOX.Realty Medics (PM)]
+[INBOX.Sent]
+[INBOX.Sent Items]
+[INBOX.Spam]
+[INBOX.Starred]
+[INBOX.Trash]
+[INBOX.[Airmail]]
+[INBOX.[Airmail].Done]
+[INBOX.[Airmail].Memo]
+[INBOX.[Airmail].Send Later]
+[INBOX.[Airmail].Snooze]
+[INBOX.[Airmail].To Do]
+[INBOX.spam]
+
+Folders in host2 not in host1:
+[INBOX.Insurance]
+
+
+Folders sizes before the synchronization.
+You can remove foldersizes listings by using "--nofoldersizes" and "--nofoldersizesatend"
+but then you will also lose the ETA (Estimation Time of Arrival) given after each message copy.
+Host1 folder    1/75 [INBOX]                             Size:  11390870 Messages:   123 Biggest:   4242742
+Host2 folder    1/75 [INBOX]                             Size:   8001522 Messages:    54 Biggest:   4242742
+Host2-Host1                                                     -3389348             -69                  0
+
+Host1 folder    2/75 [INBOX.@Action]                     Size:    364779 Messages:     7 Biggest:     91948
+Host2 folder    2/75 [INBOX.@Action]                     Size:    364779 Messages:     7 Biggest:     91948
+Host2-Host1                                                            0               0                  0
+
+Host1 folder    3/75 [INBOX.@Action.Offers]              Size:   3188264 Messages:    64 Biggest:    129933
+Host2 folder    3/75 [INBOX.@Action.Offers]              Size:    519356 Messages:    14 Biggest:     67668
+Host2-Host1                                                     -2668908             -50             -62265
+
+Host1 folder    4/75 [INBOX.@Reference]                  Size:         0 Messages:     0 Biggest:         0
+Host2 folder    4/75 [INBOX.@Reference]                  Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder    5/75 [INBOX.@Reference.Auto]             Size:   1258626 Messages:    12 Biggest:    810993
+Host2 folder    5/75 [INBOX.@Reference.Auto]             Size:   1258626 Messages:    12 Biggest:    810993
+Host2-Host1                                                            0               0                  0
+
+Host1 folder    6/75 [INBOX.@Reference.Backpacking]      Size:         0 Messages:     0 Biggest:         0
+Host2 folder    6/75 [INBOX.@Reference.Backpacking]      Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder    7/75 [INBOX.@Reference.Bills]            Size:  13397701 Messages:   193 Biggest:   3000665
+Host2 folder    7/75 [INBOX.@Reference.Bills]            Size:  13397701 Messages:   193 Biggest:   3000665
+Host2-Host1                                                            0               0                  0
+
+Host1 folder    8/75 [INBOX.@Reference.Business Contacts] Size:    198086 Messages:    11 Biggest:     36259
+Host2 folder    8/75 [INBOX.@Reference.Business Contacts] Size:    198086 Messages:    11 Biggest:     36259
+Host2-Host1                                                            0               0                  0
+
+Host1 folder    9/75 [INBOX.@Reference.Education]        Size:   1132658 Messages:    31 Biggest:    126015
+Host2 folder    9/75 [INBOX.@Reference.Education]        Size:   1132658 Messages:    31 Biggest:    126015
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   10/75 [INBOX.@Reference.Family]           Size:  35113159 Messages:   385 Biggest:   5772968
+Host2 folder   10/75 [INBOX.@Reference.Family]           Size:  35113159 Messages:   385 Biggest:   5772968
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   11/75 [INBOX.@Reference.Family.Expenses]  Size:         0 Messages:     0 Biggest:         0
+Host2 folder   11/75 [INBOX.@Reference.Family.Expenses]  Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   12/75 [INBOX.@Reference.Family.Pets]      Size:   1707015 Messages:     2 Biggest:   1672620
+Host2 folder   12/75 [INBOX.@Reference.Family.Pets]      Size:   1707015 Messages:     2 Biggest:   1672620
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   13/75 [INBOX.@Reference.Finance]          Size:  33391521 Messages:   561 Biggest:   5605619
+Host2 folder   13/75 [INBOX.@Reference.Finance]          Size:  33391521 Messages:   561 Biggest:   5605619
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   14/75 [INBOX.@Reference.Finance.Business Expenses] Size:   8780411 Messages:   101 Biggest:    419045
+Host2 folder   14/75 [INBOX.@Reference.Finance.Business Expenses] Size:   8780411 Messages:   101 Biggest:    419045
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   15/75 [INBOX.@Reference.Finance.Domain Registration] Size:    171791 Messages:    10 Biggest:     26366
+Host2 folder   15/75 [INBOX.@Reference.Finance.Domain Registration] Size:    171791 Messages:    10 Biggest:     26366
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   16/75 [INBOX.@Reference.Finance.Real Estate] Size:  85216520 Messages:   372 Biggest:  14195141
+Host2 folder   16/75 [INBOX.@Reference.Finance.Real Estate] Size:  85216520 Messages:   372 Biggest:  14195141
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   17/75 [INBOX.@Reference.Finance.Real Estate.Allstar] Size:  49295251 Messages:   268 Biggest:  16219876
+Host2 folder   17/75 [INBOX.@Reference.Finance.Real Estate.Allstar] Size:  49295251 Messages:   268 Biggest:  16219876
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   18/75 [INBOX.@Reference.Finance.Real Estate.Bigger Pockets] Size:   5104823 Messages:    48 Biggest:    139612
+Host2 folder   18/75 [INBOX.@Reference.Finance.Real Estate.Bigger Pockets] Size:   5104823 Messages:    48 Biggest:    139612
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   19/75 [INBOX.@Reference.Finance.Real Estate.Chuck Baer] Size:  44575351 Messages:   130 Biggest:   7878438
+Host2 folder   19/75 [INBOX.@Reference.Finance.Real Estate.Chuck Baer] Size:  44575351 Messages:   130 Biggest:   7878438
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   20/75 [INBOX.@Reference.Finance.Real Estate.Cozy] Size:    522487 Messages:    14 Biggest:     40823
+Host2 folder   20/75 [INBOX.@Reference.Finance.Real Estate.Cozy] Size:    522487 Messages:    14 Biggest:     40823
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   21/75 [INBOX.@Reference.Finance.Real Estate.Housefolios] Size:    972053 Messages:    13 Biggest:    130734
+Host2 folder   21/75 [INBOX.@Reference.Finance.Real Estate.Housefolios] Size:    972053 Messages:    13 Biggest:    130734
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   22/75 [INBOX.@Reference.Finance.Real Estate.Investing] Size: 231776376 Messages:   624 Biggest:  17252863
+Host2 folder   22/75 [INBOX.@Reference.Finance.Real Estate.Investing] Size: 231776376 Messages:   624 Biggest:  17252863
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   23/75 [INBOX.@Reference.Finance.Real Estate.Olmstead] Size:  40402830 Messages:   249 Biggest:   4212788
+Host2 folder   23/75 [INBOX.@Reference.Finance.Real Estate.Olmstead] Size:  40402830 Messages:   249 Biggest:   4212788
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   24/75 [INBOX.@Reference.Finance.Real Estate.PMI] Size:  28393219 Messages:   183 Biggest:   7675140
+Host2 folder   24/75 [INBOX.@Reference.Finance.Real Estate.PMI] Size:  28393219 Messages:   183 Biggest:   7675140
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   25/75 [INBOX.@Reference.Finance.Real Estate.Property Boss] Size:  10845915 Messages:     3 Biggest:  10790957
+Host2 folder   25/75 [INBOX.@Reference.Finance.Real Estate.Property Boss] Size:  10961053 Messages:     4 Biggest:  10790957
+Host2-Host1                                                       115138               1                  0
+
+Host1 folder   26/75 [INBOX.@Reference.Finance.Real Estate.RREI] Size:     65000 Messages:     2 Biggest:     44750
+Host2 folder   26/75 [INBOX.@Reference.Finance.Real Estate.RREI] Size:     65000 Messages:     2 Biggest:     44750
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   27/75 [INBOX.@Reference.Finance.Real Estate.RealWealth] Size:  10244774 Messages:   202 Biggest:    126984
+Host2 folder   27/75 [INBOX.@Reference.Finance.Real Estate.RealWealth] Size:  10244774 Messages:   202 Biggest:    126984
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   28/75 [INBOX.@Reference.Finance.Real Estate.Realty Doctors] Size:  17658595 Messages:   142 Biggest:   3831712
+Host2 folder   28/75 [INBOX.@Reference.Finance.Real Estate.Realty Doctors] Size:  17658595 Messages:   142 Biggest:   3831712
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   29/75 [INBOX.@Reference.Finance.Real Estate.Renshaw] Size:  30569836 Messages:   169 Biggest:  16219150
+Host2 folder   29/75 [INBOX.@Reference.Finance.Real Estate.Renshaw] Size:  30569836 Messages:   169 Biggest:  16219150
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   30/75 [INBOX.@Reference.Finance.Real Estate.Roofstock] Size:  88055958 Messages:   342 Biggest:  10471236
+Host2 folder   30/75 [INBOX.@Reference.Finance.Real Estate.Roofstock] Size:  88055958 Messages:   342 Biggest:  10471236
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   31/75 [INBOX.@Reference.Finance.Real Estate.Stessa] Size:   5147589 Messages:    49 Biggest:    143151
+Host2 folder   31/75 [INBOX.@Reference.Finance.Real Estate.Stessa] Size:   5147589 Messages:    49 Biggest:    143151
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   32/75 [INBOX.@Reference.Finance.TCF Bank] Size:    424230 Messages:     7 Biggest:    203741
+Host2 folder   32/75 [INBOX.@Reference.Finance.TCF Bank] Size:    424230 Messages:     7 Biggest:    203741
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   33/75 [INBOX.@Reference.Finance.Taxes]    Size:   6638813 Messages:   156 Biggest:   1685506
+Host2 folder   33/75 [INBOX.@Reference.Finance.Taxes]    Size:   6638813 Messages:   156 Biggest:   1685506
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   34/75 [INBOX.@Reference.Food]             Size:    191538 Messages:     2 Biggest:    152957
+Host2 folder   34/75 [INBOX.@Reference.Food]             Size:    191538 Messages:     2 Biggest:    152957
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   35/75 [INBOX.@Reference.Friends]          Size:  52786555 Messages:   317 Biggest:  16802125
+Host2 folder   35/75 [INBOX.@Reference.Friends]          Size:  52888494 Messages:   318 Biggest:  16802125
+Host2-Host1                                                       101939               1                  0
+
+Host1 folder   36/75 [INBOX.@Reference.Health]           Size:   1427933 Messages:    38 Biggest:    158110
+Host2 folder   36/75 [INBOX.@Reference.Health]           Size:   1427933 Messages:    38 Biggest:    158110
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   37/75 [INBOX.@Reference.Hobby]            Size:    473321 Messages:    10 Biggest:    113102
+Host2 folder   37/75 [INBOX.@Reference.Hobby]            Size:    473321 Messages:    10 Biggest:    113102
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   38/75 [INBOX.@Reference.Hobby.Work From Home] Size:     50483 Messages:     1 Biggest:     50483
+Host2 folder   38/75 [INBOX.@Reference.Hobby.Work From Home] Size:     50483 Messages:     1 Biggest:     50483
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   39/75 [INBOX.@Reference.Home]             Size:    745327 Messages:     9 Biggest:    340368
+Host2 folder   39/75 [INBOX.@Reference.Home]             Size:    745327 Messages:     9 Biggest:    340368
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   40/75 [INBOX.@Reference.Home.Charlotte Home] Size:   4506827 Messages:    21 Biggest:   1959716
+Host2 folder   40/75 [INBOX.@Reference.Home.Charlotte Home] Size:   4506827 Messages:    21 Biggest:   1959716
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   41/75 [INBOX.@Reference.Home.Landscaping] Size:  11811361 Messages:   109 Biggest:   5982281
+Host2 folder   41/75 [INBOX.@Reference.Home.Landscaping] Size:  11811361 Messages:   109 Biggest:   5982281
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   42/75 [INBOX.@Reference.Home.Retirement Home] Size:  13524925 Messages:   362 Biggest:     83642
+Host2 folder   42/75 [INBOX.@Reference.Home.Retirement Home] Size:  13524925 Messages:   362 Biggest:     83642
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   43/75 [INBOX.@Reference.Home.Solar]       Size:   6200334 Messages:    18 Biggest:   3023591
+Host2 folder   43/75 [INBOX.@Reference.Home.Solar]       Size:   6200334 Messages:    18 Biggest:   3023591
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   44/75 [INBOX.@Reference.Home.Work From Home] Size:     17958 Messages:     1 Biggest:     17958
+Host2 folder   44/75 [INBOX.@Reference.Home.Work From Home] Size:     17958 Messages:     1 Biggest:     17958
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   45/75 [INBOX.@Reference.Internet Services] Size:   4703881 Messages:   133 Biggest:    899643
+Host2 folder   45/75 [INBOX.@Reference.Internet Services] Size:   4698730 Messages:   132 Biggest:    899643
+Host2-Host1                                                        -5151              -1                  0
+
+Host1 folder   46/75 [INBOX.@Reference.Internet Services.Support Tickets] Size:     25738 Messages:     3 Biggest:     12057
+Host2 folder   46/75 [INBOX.@Reference.Internet Services.Support Tickets] Size:     25738 Messages:     3 Biggest:     12057
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   47/75 [INBOX.@Reference.Items I'm Selling] Size:   1104272 Messages:    32 Biggest:     67948
+Host2 folder   47/75 [INBOX.@Reference.Items I'm Selling] Size:   1104272 Messages:    32 Biggest:     67948
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   48/75 [INBOX.@Reference.Legal]            Size:     87850 Messages:     4 Biggest:     32775
+Host2 folder   48/75 [INBOX.@Reference.Legal]            Size:     87850 Messages:     4 Biggest:     32775
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   49/75 [INBOX.@Reference.Lifestyle]        Size:   5565401 Messages:    78 Biggest:    118715
+Host2 folder   49/75 [INBOX.@Reference.Lifestyle]        Size:   5565401 Messages:    78 Biggest:    118715
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   50/75 [INBOX.@Reference.Productivity]     Size:     16674 Messages:     1 Biggest:     16674
+Host2 folder   50/75 [INBOX.@Reference.Productivity]     Size:     16674 Messages:     1 Biggest:     16674
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   51/75 [INBOX.@Reference.Purchases]        Size:  61916497 Messages:   909 Biggest:   7016973
+Host2 folder   51/75 [INBOX.@Reference.Purchases]        Size:  61989520 Messages:   913 Biggest:   7016973
+Host2-Host1                                                        73023               4                  0
+
+Host1 folder   52/75 [INBOX.@Reference.Self Development] Size:     30642 Messages:     1 Biggest:     30642
+Host2 folder   52/75 [INBOX.@Reference.Self Development] Size:     30642 Messages:     1 Biggest:     30642
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   53/75 [INBOX.@Reference.Travel]           Size:  62690847 Messages:   296 Biggest:  11136820
+Host2 folder   53/75 [INBOX.@Reference.Travel]           Size:  62690847 Messages:   296 Biggest:  11136820
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   54/75 [INBOX.@Reference.Work]             Size:  17041172 Messages:   124 Biggest:   2475799
+Host2 folder   54/75 [INBOX.@Reference.Work]             Size:  17041172 Messages:   124 Biggest:   2475799
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   55/75 [INBOX.@Reference.Work.Leadership Development] Size:         0 Messages:     0 Biggest:         0
+Host2 folder   55/75 [INBOX.@Reference.Work.Leadership Development] Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   56/75 [INBOX.@Reference.Work.Process Excellence] Size:         0 Messages:     0 Biggest:         0
+Host2 folder   56/75 [INBOX.@Reference.Work.Process Excellence] Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   57/75 [INBOX.@Review]                     Size:    126111 Messages:     1 Biggest:    126111
+Host2 folder   57/75 [INBOX.@Review]                     Size:    126111 Messages:     1 Biggest:    126111
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   58/75 [INBOX.@Review.For Entertainment]   Size:         0 Messages:     0 Biggest:         0
+Host2 folder   58/75 [INBOX.@Review.For Entertainment]   Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   59/75 [INBOX.@Review.For Work]            Size:         0 Messages:     0 Biggest:         0
+Host2 folder   59/75 [INBOX.@Review.For Work]            Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   60/75 [INBOX.@Waiting For]                Size:         0 Messages:     0 Biggest:         0
+Host2 folder   60/75 [INBOX.@Waiting For]                Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   61/75 [INBOX.Archive]                     Size:   5644973 Messages:    86 Biggest:   1677031
+Host2 folder   61/75 [INBOX.Archive]                     Size:   5644973 Messages:    86 Biggest:   1677031
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   62/75 [INBOX.Drafts]                      Size:         0 Messages:     0 Biggest:         0
+Host2 folder   62/75 [INBOX.Drafts]                      Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   63/75 [INBOX.Realty Medics (PM)]          Size:   7386438 Messages:    21 Biggest:   2942508
+Host2 folder   63/75 [INBOX.Realty Medics (PM)]          Size:   7386438 Messages:    21 Biggest:   2942508
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   64/75 [INBOX.Sent]                        Size:  53171298 Messages:    49 Biggest:  24592319
+Host2 folder   64/75 [INBOX.Sent]                        Size:  53171298 Messages:    49 Biggest:  24592319
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   65/75 [INBOX.Sent Items]                  Size: 103125914 Messages:   327 Biggest:   8090875
+Host2 folder   65/75 [INBOX.Sent Items]                  Size: 103124987 Messages:   326 Biggest:   8090875
+Host2-Host1                                                         -927              -1                  0
+
+Host1 folder   66/75 [INBOX.Spam]                        Size:         0 Messages:     0 Biggest:         0
+Host2 folder   66/75 [INBOX.Spam]                        Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   67/75 [INBOX.Starred]                     Size:         0 Messages:     0 Biggest:         0
+Host2 folder   67/75 [INBOX.Starred]                     Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   68/75 [INBOX.Trash]                       Size:  25095567 Messages:   423 Biggest:    304347
+Host2 folder   68/75 [INBOX.Trash]                       Size:  29321924 Messages:   502 Biggest:    485230
+Host2-Host1                                                      4226357              79             180883
+
+Host1 folder   69/75 [INBOX.[Airmail]]                   Size:         0 Messages:     0 Biggest:         0
+Host2 folder   69/75 [INBOX.[Airmail]]                   Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   70/75 [INBOX.[Airmail].Done]              Size:         0 Messages:     0 Biggest:         0
+Host2 folder   70/75 [INBOX.[Airmail].Done]              Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   71/75 [INBOX.[Airmail].Memo]              Size:         0 Messages:     0 Biggest:         0
+Host2 folder   71/75 [INBOX.[Airmail].Memo]              Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   72/75 [INBOX.[Airmail].Send Later]        Size:         0 Messages:     0 Biggest:         0
+Host2 folder   72/75 [INBOX.[Airmail].Send Later]        Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   73/75 [INBOX.[Airmail].Snooze]            Size:         0 Messages:     0 Biggest:         0
+Host2 folder   73/75 [INBOX.[Airmail].Snooze]            Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   74/75 [INBOX.[Airmail].To Do]             Size:         0 Messages:     0 Biggest:         0
+Host2 folder   74/75 [INBOX.[Airmail].To Do]             Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   75/75 [INBOX.spam]                        Size:    719029 Messages:     9 Biggest:    129748
+Host2 folder   75/75 [INBOX.spam]                        Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                      -719029              -9            -129748
+
+Host1 Nb folders:                    75 folders
+Host2 Nb folders:                    75 folders
+
+Host1 Nb messages:                 7858 messages
+Host2 Nb messages:                 7813 messages
+
+Host1 Total size:            1206193367 bytes (1.123 GiB)
+Host2 Total size:            1203926461 bytes (1.121 GiB)
+
+Host1 Biggest message:         24592319 bytes (23.453 MiB)
+Host2 Biggest message:         24592319 bytes (23.453 MiB)
+
+Time spent on sizing:        16.2 seconds
+Deleted INBOX.Insurance
+++++ Looping on each one of 75 folders to sync
+ETA: Mon Dec 28 15:48:01 2020  0 s  7858/7858 msgs left
+Folder    1/75 [INBOX]                             -> [INBOX]                            
+Host1: folder [INBOX] has 123 messages in total (mentioned by SELECT)
+Host2: folder [INBOX] has 54 messages in total (mentioned by SELECT)
+Host2: folder [INBOX] permanentflags: 
+Host1: Expunging INBOX 
+Host1: folder [INBOX] considering 123 messages
+Host2: folder [INBOX] considering 54 messages
+Host1: folder [INBOX] selected 123 messages, duplicates 0
+Host2: folder [INBOX] selected 54 messages, duplicates 0
+msg INBOX/2 {13946}           copied to INBOX/115        2.10 msgs/s  28.640 KiB/s 13.619 KiB copied ETA: Mon Dec 28 16:50:20 2020  3738 s  7857/7858 msgs left
+msg INBOX/3 {10267}           copied to INBOX/116        3.59 msgs/s  42.472 KiB/s 23.646 KiB copied ETA: Mon Dec 28 16:24:29 2020  2188 s  7856/7858 msgs left
+msg INBOX/4 {13574}           copied to INBOX/117        4.68 msgs/s  57.536 KiB/s 36.901 KiB copied ETA: Mon Dec 28 16:16:02 2020  1680 s  7855/7858 msgs left
+msg INBOX/7 {39812}           copied to INBOX/118        5.34 msgs/s  101.097 KiB/s 75.780 KiB copied ETA: Mon Dec 28 16:12:34 2020  1472 s  7852/7858 msgs left
+msg INBOX/8 {9852}            copied to INBOX/119        6.05 msgs/s  103.372 KiB/s 85.401 KiB copied ETA: Mon Dec 28 16:09:40 2020  1298 s  7851/7858 msgs left
+msg INBOX/14 {101939}         copied to INBOX/120        6.00 msgs/s  184.917 KiB/s 184.951 KiB copied ETA: Mon Dec 28 16:09:50 2020  1308 s  7845/7858 msgs left
+msg INBOX/17 {26440}          copied to INBOX/121        6.50 msgs/s  195.857 KiB/s 210.771 KiB copied ETA: Mon Dec 28 16:08:08 2020  1206 s  7842/7858 msgs left
+msg INBOX/18 {13277}          copied to INBOX/122        6.91 msgs/s  193.312 KiB/s 223.737 KiB copied ETA: Mon Dec 28 16:06:57 2020  1135 s  7841/7858 msgs left
+msg INBOX/19 {26052}          copied to INBOX/123        7.27 msgs/s  201.404 KiB/s 249.179 KiB copied ETA: Mon Dec 28 16:06:00 2020  1078 s  7840/7858 msgs left
+msg INBOX/20 {14000}          copied to INBOX/124        7.61 msgs/s  200.037 KiB/s 262.851 KiB copied ETA: Mon Dec 28 16:05:13 2020  1030 s  7839/7858 msgs left
+msg INBOX/21 {18780}          copied to INBOX/125        7.88 msgs/s  201.504 KiB/s 281.190 KiB copied ETA: Mon Dec 28 16:04:37 2020  995 s  7838/7858 msgs left
+msg INBOX/22 {11036}          copied to INBOX/126        8.11 msgs/s  197.379 KiB/s 291.968 KiB copied ETA: Mon Dec 28 16:04:09 2020  966 s  7837/7858 msgs left
+msg INBOX/23 {15975}          copied to INBOX/127        8.23 msgs/s  194.625 KiB/s 307.568 KiB copied ETA: Mon Dec 28 16:03:56 2020  953 s  7836/7858 msgs left
+msg INBOX/25 {65783}          copied to INBOX/128        6.74 msgs/s  179.075 KiB/s 371.810 KiB copied ETA: Mon Dec 28 16:07:25 2020  1162 s  7834/7858 msgs left
+msg INBOX/26 {34710}          copied to INBOX/129        6.78 msgs/s  183.341 KiB/s 405.706 KiB copied ETA: Mon Dec 28 16:07:19 2020  1156 s  7833/7858 msgs left
+msg INBOX/27 {23837}          copied to INBOX/130        6.65 msgs/s  178.412 KiB/s 428.984 KiB copied ETA: Mon Dec 28 16:07:41 2020  1177 s  7832/7858 msgs left
+msg INBOX/28 {50413}          copied to INBOX/131        6.12 msgs/s  172.057 KiB/s 478.216 KiB copied ETA: Mon Dec 28 16:09:24 2020  1280 s  7831/7858 msgs left
+msg INBOX/29 {72732}          copied to INBOX/132        5.92 msgs/s  180.722 KiB/s 549.243 KiB copied ETA: Mon Dec 28 16:10:06 2020  1322 s  7830/7858 msgs left
+msg INBOX/30 {485230}         copied to INBOX/133        4.69 msgs/s  252.492 KiB/s 0.999 MiB copied ETA: Mon Dec 28 16:15:55 2020  1670 s  7829/7858 msgs left
+msg INBOX/32 {115138}         copied to INBOX/134        4.63 msgs/s  262.690 KiB/s 1.109 MiB copied ETA: Mon Dec 28 16:16:17 2020  1692 s  7827/7858 msgs left
+msg INBOX/37 {6856}           copied to INBOX/135        4.72 msgs/s  256.798 KiB/s 1.115 MiB copied ETA: Mon Dec 28 16:15:43 2020  1657 s  7822/7858 msgs left
+msg INBOX/40 {23569}          copied to INBOX/136        4.81 msgs/s  254.938 KiB/s 1.138 MiB copied ETA: Mon Dec 28 16:15:10 2020  1625 s  7819/7858 msgs left
+msg INBOX/41 {37121}          copied to INBOX/137        4.87 msgs/s  254.205 KiB/s 1.173 MiB copied ETA: Mon Dec 28 16:14:53 2020  1607 s  7818/7858 msgs left
+msg INBOX/42 {39187}          copied to INBOX/138        4.94 msgs/s  255.091 KiB/s 1.211 MiB copied ETA: Mon Dec 28 16:14:29 2020  1583 s  7817/7858 msgs left
+msg INBOX/44 {41570}          copied to INBOX/139        5.02 msgs/s  257.035 KiB/s 1.250 MiB copied ETA: Mon Dec 28 16:14:03 2020  1557 s  7815/7858 msgs left
+msg INBOX/47 {136272}         copied to INBOX/140        5.03 msgs/s  273.586 KiB/s 1.380 MiB copied ETA: Mon Dec 28 16:13:59 2020  1552 s  7812/7858 msgs left
+msg INBOX/50 {68528}          copied to INBOX/141        5.09 msgs/s  278.966 KiB/s 1.446 MiB copied ETA: Mon Dec 28 16:13:41 2020  1535 s  7809/7858 msgs left
+msg INBOX/62 {123422}         copied to INBOX/142        5.09 msgs/s  290.991 KiB/s 1.563 MiB copied ETA: Mon Dec 28 16:13:39 2020  1532 s  7797/7858 msgs left
+msg INBOX/65 {32323}          copied to INBOX/143        5.19 msgs/s  292.211 KiB/s 1.594 MiB copied ETA: Mon Dec 28 16:13:08 2020  1502 s  7794/7858 msgs left
+msg INBOX/66 {59405}          copied to INBOX/144        5.27 msgs/s  297.072 KiB/s 1.651 MiB copied ETA: Mon Dec 28 16:12:45 2020  1478 s  7793/7858 msgs left
+msg INBOX/137 {40446}         copied to INBOX/145        5.31 msgs/s  296.148 KiB/s 1.689 MiB copied ETA: Mon Dec 28 16:12:33 2020  1466 s  7781/7858 msgs left
+msg INBOX/143 {48000}         copied to INBOX/146        5.38 msgs/s  298.918 KiB/s 1.735 MiB copied ETA: Mon Dec 28 16:12:12 2020  1445 s  7780/7858 msgs left
+msg INBOX/151 {32462}         copied to INBOX/147        5.48 msgs/s  300.347 KiB/s 1.766 MiB copied ETA: Mon Dec 28 16:11:47 2020  1420 s  7779/7858 msgs left
+msg INBOX/170 {30748}         copied to INBOX/148        5.57 msgs/s  301.225 KiB/s 1.795 MiB copied ETA: Mon Dec 28 16:11:23 2020  1396 s  7776/7858 msgs left
+msg INBOX/171 {33833}         copied to INBOX/149        5.63 msgs/s  300.897 KiB/s 1.828 MiB copied ETA: Mon Dec 28 16:11:09 2020  1382 s  7775/7858 msgs left
+msg INBOX/173 {35341}         copied to INBOX/150        5.70 msgs/s  301.969 KiB/s 1.861 MiB copied ETA: Mon Dec 28 16:10:51 2020  1363 s  7773/7858 msgs left
+msg INBOX/174 {51504}         copied to INBOX/151        5.77 msgs/s  304.948 KiB/s 1.911 MiB copied ETA: Mon Dec 28 16:10:35 2020  1348 s  7772/7858 msgs left
+msg INBOX/187 {33664}         copied to INBOX/152        5.82 msgs/s  304.645 KiB/s 1.943 MiB copied ETA: Mon Dec 28 16:10:23 2020  1335 s  7768/7858 msgs left
+msg INBOX/191 {25186}         copied to INBOX/153        5.90 msgs/s  304.556 KiB/s 1.967 MiB copied ETA: Mon Dec 28 16:10:05 2020  1317 s  7767/7858 msgs left
+msg INBOX/218 {33220}         copied to INBOX/154        5.94 msgs/s  304.075 KiB/s 1.998 MiB copied ETA: Mon Dec 28 16:09:54 2020  1306 s  7765/7858 msgs left
+msg INBOX/312 {49812}         copied to INBOX/155        5.98 msgs/s  305.641 KiB/s 2.046 MiB copied ETA: Mon Dec 28 16:09:46 2020  1298 s  7763/7858 msgs left
+msg INBOX/313 {73418}         copied to INBOX/156        6.02 msgs/s  310.446 KiB/s 2.116 MiB copied ETA: Mon Dec 28 16:09:38 2020  1290 s  7762/7858 msgs left
+msg INBOX/314 {20216}         copied to INBOX/157        6.09 msgs/s  309.607 KiB/s 2.135 MiB copied ETA: Mon Dec 28 16:09:23 2020  1275 s  7761/7858 msgs left
+msg INBOX/315 {20221}         copied to INBOX/158        6.16 msgs/s  308.996 KiB/s 2.154 MiB copied ETA: Mon Dec 28 16:09:08 2020  1259 s  7760/7858 msgs left
+msg INBOX/316 {33905}         copied to INBOX/159        6.21 msgs/s  308.975 KiB/s 2.187 MiB copied ETA: Mon Dec 28 16:08:58 2020  1250 s  7759/7858 msgs left
+msg INBOX/317 {85868}         copied to INBOX/160        6.25 msgs/s  315.784 KiB/s 2.269 MiB copied ETA: Mon Dec 28 16:08:49 2020  1241 s  7758/7858 msgs left
+msg INBOX/318 {15657}         copied to INBOX/161        6.32 msgs/s  314.378 KiB/s 2.284 MiB copied ETA: Mon Dec 28 16:08:36 2020  1228 s  7757/7858 msgs left
+msg INBOX/319 {29590}         copied to INBOX/162        6.39 msgs/s  315.001 KiB/s 2.312 MiB copied ETA: Mon Dec 28 16:08:23 2020  1215 s  7756/7858 msgs left
+msg INBOX/320 {47879}         copied to INBOX/163        6.43 msgs/s  316.884 KiB/s 2.357 MiB copied ETA: Mon Dec 28 16:08:15 2020  1206 s  7755/7858 msgs left
+msg INBOX/321 {49315}         copied to INBOX/164        6.46 msgs/s  317.978 KiB/s 2.405 MiB copied ETA: Mon Dec 28 16:08:10 2020  1201 s  7754/7858 msgs left
+msg INBOX/322 {59149}         copied to INBOX/165        6.49 msgs/s  320.572 KiB/s 2.461 MiB copied ETA: Mon Dec 28 16:08:04 2020  1195 s  7753/7858 msgs left
+msg INBOX/323 {80388}         copied to INBOX/166        6.52 msgs/s  326.023 KiB/s 2.538 MiB copied ETA: Mon Dec 28 16:07:57 2020  1188 s  7752/7858 msgs left
+msg INBOX/324 {46949}         copied to INBOX/167        6.58 msgs/s  328.403 KiB/s 2.582 MiB copied ETA: Mon Dec 28 16:07:47 2020  1178 s  7751/7858 msgs left
+msg INBOX/325 {22514}         copied to INBOX/168        6.63 msgs/s  327.601 KiB/s 2.604 MiB copied ETA: Mon Dec 28 16:07:37 2020  1168 s  7750/7858 msgs left
+msg INBOX/326 {27700}         copied to INBOX/169        6.69 msgs/s  327.462 KiB/s 2.630 MiB copied ETA: Mon Dec 28 16:07:28 2020  1159 s  7749/7858 msgs left
+msg INBOX/327 {31313}         copied to INBOX/170        6.73 msgs/s  327.355 KiB/s 2.660 MiB copied ETA: Mon Dec 28 16:07:21 2020  1151 s  7748/7858 msgs left
+msg INBOX/328 {30156}         copied to INBOX/171        6.79 msgs/s  327.799 KiB/s 2.689 MiB copied ETA: Mon Dec 28 16:07:11 2020  1142 s  7747/7858 msgs left
+msg INBOX/329 {58453}         copied to INBOX/172        6.81 msgs/s  330.133 KiB/s 2.745 MiB copied ETA: Mon Dec 28 16:07:07 2020  1137 s  7746/7858 msgs left
+msg INBOX/330 {33729}         copied to INBOX/173        6.84 msgs/s  329.562 KiB/s 2.777 MiB copied ETA: Mon Dec 28 16:07:02 2020  1133 s  7745/7858 msgs left
+msg INBOX/331 {29659}         copied to INBOX/174        6.89 msgs/s  329.908 KiB/s 2.805 MiB copied ETA: Mon Dec 28 16:06:54 2020  1124 s  7744/7858 msgs left
+msg INBOX/332 {69517}         copied to INBOX/175        6.92 msgs/s  333.546 KiB/s 2.871 MiB copied ETA: Mon Dec 28 16:06:49 2020  1119 s  7743/7858 msgs left
+msg INBOX/333 {91971}         copied to INBOX/176        6.93 msgs/s  338.587 KiB/s 2.959 MiB copied ETA: Mon Dec 28 16:06:48 2020  1118 s  7742/7858 msgs left
+msg INBOX/334 {42656}         copied to INBOX/177        6.91 msgs/s  337.023 KiB/s 3.000 MiB copied ETA: Mon Dec 28 16:06:50 2020  1120 s  7741/7858 msgs left
+msg INBOX/335 {42772}         copied to INBOX/178        6.94 msgs/s  337.762 KiB/s 3.041 MiB copied ETA: Mon Dec 28 16:06:45 2020  1115 s  7740/7858 msgs left
+msg INBOX/336 {9064}          copied to INBOX/179        6.98 msgs/s  335.407 KiB/s 3.049 MiB copied ETA: Mon Dec 28 16:06:39 2020  1108 s  7739/7858 msgs left
+msg INBOX/337 {13643}         copied to INBOX/180        7.01 msgs/s  333.169 KiB/s 3.062 MiB copied ETA: Mon Dec 28 16:06:34 2020  1103 s  7738/7858 msgs left
+msg INBOX/338 {84402}         copied to INBOX/181        7.03 msgs/s  337.527 KiB/s 3.143 MiB copied ETA: Mon Dec 28 16:06:32 2020  1101 s  7737/7858 msgs left
+msg INBOX/339 {78346}         copied to INBOX/182        7.03 msgs/s  340.782 KiB/s 3.217 MiB copied ETA: Mon Dec 28 16:06:31 2020  1100 s  7736/7858 msgs left
+msg INBOX/340 {15636}         copied to INBOX/183        7.05 msgs/s  338.030 KiB/s 3.232 MiB copied ETA: Mon Dec 28 16:06:29 2020  1098 s  7735/7858 msgs left
+Host1: Expunging folder INBOX 
+ETA: Mon Dec 28 16:06:31 2020  1100 s  7735/7858 msgs left
+Folder    2/75 [INBOX.@Action]                     -> [INBOX.@Action]                    
+Host1: folder [INBOX.@Action] has 7 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Action] has 7 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Action] permanentflags: 
+Host1: Expunging INBOX.@Action 
+Host1: folder [INBOX.@Action] considering 7 messages
+Host2: folder [INBOX.@Action] considering 7 messages
+Host1: folder [INBOX.@Action] selected 7 messages, duplicates 0
+Host2: folder [INBOX.@Action] selected 7 messages, duplicates 0
+Host1: Expunging folder INBOX.@Action 
+ETA: Mon Dec 28 16:07:01 2020  1130 s  7728/7858 msgs left
+Folder    3/75 [INBOX.@Action.Offers]              -> [INBOX.@Action.Offers]             
+Host1: folder [INBOX.@Action.Offers] has 64 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Action.Offers] has 14 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Action.Offers] permanentflags: 
+Host1: Expunging INBOX.@Action.Offers 
+Host1: folder [INBOX.@Action.Offers] considering 64 messages
+Host2: folder [INBOX.@Action.Offers] considering 14 messages
+Host1: folder [INBOX.@Action.Offers] selected 64 messages, duplicates 0
+Host2: folder [INBOX.@Action.Offers] selected 14 messages, duplicates 0
+Host2: msg INBOX.@Action.Offers/64 marked \Deleted on host2 [Z5eUOzzvoFjV7YlMgfhwyA] 
+Host2: UidExpunging 1 message(s) in folder INBOX.@Action.Offers 
+msg INBOX.@Action.Offers/5 {60495}           copied to INBOX.@Action.Offers/65         6.62 msgs/s  318.786 KiB/s 3.290 MiB copied ETA: Mon Dec 28 16:07:38 2020  1166 s  7723/7858 msgs left
+msg INBOX.@Action.Offers/6 {27670}           copied to INBOX.@Action.Offers/66         6.66 msgs/s  318.373 KiB/s 3.316 MiB copied ETA: Mon Dec 28 16:07:32 2020  1160 s  7722/7858 msgs left
+msg INBOX.@Action.Offers/7 {37807}           copied to INBOX.@Action.Offers/67         6.64 msgs/s  316.711 KiB/s 3.352 MiB copied ETA: Mon Dec 28 16:07:34 2020  1162 s  7721/7858 msgs left
+msg INBOX.@Action.Offers/8 {94658}           copied to INBOX.@Action.Offers/68         6.60 msgs/s  318.629 KiB/s 3.443 MiB copied ETA: Mon Dec 28 16:07:42 2020  1170 s  7720/7858 msgs left
+msg INBOX.@Action.Offers/9 {56290}           copied to INBOX.@Action.Offers/69         6.61 msgs/s  319.879 KiB/s 3.496 MiB copied ETA: Mon Dec 28 16:07:40 2020  1168 s  7719/7858 msgs left
+msg INBOX.@Action.Offers/10 {51171}          copied to INBOX.@Action.Offers/70         6.63 msgs/s  321.102 KiB/s 3.545 MiB copied ETA: Mon Dec 28 16:07:36 2020  1163 s  7718/7858 msgs left
+msg INBOX.@Action.Offers/11 {41982}          copied to INBOX.@Action.Offers/71         6.67 msgs/s  322.412 KiB/s 3.585 MiB copied ETA: Mon Dec 28 16:07:29 2020  1156 s  7717/7858 msgs left
+msg INBOX.@Action.Offers/12 {43992}          copied to INBOX.@Action.Offers/72         6.71 msgs/s  323.876 KiB/s 3.627 MiB copied ETA: Mon Dec 28 16:07:22 2020  1149 s  7716/7858 msgs left
+msg INBOX.@Action.Offers/13 {129933}         copied to INBOX.@Action.Offers/73         6.72 msgs/s  330.986 KiB/s 3.751 MiB copied ETA: Mon Dec 28 16:07:21 2020  1148 s  7715/7858 msgs left
+msg INBOX.@Action.Offers/14 {47849}          copied to INBOX.@Action.Offers/74         6.76 msgs/s  332.781 KiB/s 3.797 MiB copied ETA: Mon Dec 28 16:07:14 2020  1141 s  7714/7858 msgs left
+msg INBOX.@Action.Offers/15 {40728}          copied to INBOX.@Action.Offers/75         6.80 msgs/s  333.669 KiB/s 3.836 MiB copied ETA: Mon Dec 28 16:07:08 2020  1135 s  7713/7858 msgs left
+msg INBOX.@Action.Offers/16 {35427}          copied to INBOX.@Action.Offers/76         6.80 msgs/s  332.479 KiB/s 3.869 MiB copied ETA: Mon Dec 28 16:07:08 2020  1135 s  7712/7858 msgs left
+msg INBOX.@Action.Offers/17 {72842}          copied to INBOX.@Action.Offers/77         6.78 msgs/s  333.562 KiB/s 3.939 MiB copied ETA: Mon Dec 28 16:07:10 2020  1137 s  7711/7858 msgs left
+msg INBOX.@Action.Offers/18 {46381}          copied to INBOX.@Action.Offers/78         6.74 msgs/s  331.016 KiB/s 3.983 MiB copied ETA: Mon Dec 28 16:07:18 2020  1145 s  7710/7858 msgs left
+msg INBOX.@Action.Offers/19 {98347}          copied to INBOX.@Action.Offers/79         6.69 msgs/s  332.686 KiB/s 4.077 MiB copied ETA: Mon Dec 28 16:07:25 2020  1152 s  7709/7858 msgs left
+msg INBOX.@Action.Offers/20 {19038}          copied to INBOX.@Action.Offers/80         6.71 msgs/s  331.242 KiB/s 4.095 MiB copied ETA: Mon Dec 28 16:07:22 2020  1148 s  7708/7858 msgs left
+msg INBOX.@Action.Offers/21 {24463}          copied to INBOX.@Action.Offers/81         6.74 msgs/s  330.328 KiB/s 4.118 MiB copied ETA: Mon Dec 28 16:07:18 2020  1144 s  7707/7858 msgs left
+msg INBOX.@Action.Offers/22 {49704}          copied to INBOX.@Action.Offers/82         6.75 msgs/s  330.857 KiB/s 4.166 MiB copied ETA: Mon Dec 28 16:07:16 2020  1142 s  7706/7858 msgs left
+msg INBOX.@Action.Offers/23 {40910}          copied to INBOX.@Action.Offers/83         6.78 msgs/s  331.753 KiB/s 4.205 MiB copied ETA: Mon Dec 28 16:07:11 2020  1136 s  7705/7858 msgs left
+msg INBOX.@Action.Offers/24 {24442}          copied to INBOX.@Action.Offers/84         6.81 msgs/s  331.073 KiB/s 4.228 MiB copied ETA: Mon Dec 28 16:07:06 2020  1132 s  7704/7858 msgs left
+msg INBOX.@Action.Offers/25 {52802}          copied to INBOX.@Action.Offers/85         6.83 msgs/s  332.246 KiB/s 4.278 MiB copied ETA: Mon Dec 28 16:07:03 2020  1129 s  7703/7858 msgs left
+msg INBOX.@Action.Offers/26 {65702}          copied to INBOX.@Action.Offers/86         6.74 msgs/s  329.257 KiB/s 4.341 MiB copied ETA: Mon Dec 28 16:07:17 2020  1143 s  7702/7858 msgs left
+msg INBOX.@Action.Offers/27 {47876}          copied to INBOX.@Action.Offers/87         6.71 msgs/s  327.561 KiB/s 4.387 MiB copied ETA: Mon Dec 28 16:07:23 2020  1148 s  7701/7858 msgs left
+msg INBOX.@Action.Offers/28 {24710}          copied to INBOX.@Action.Offers/88         6.73 msgs/s  327.049 KiB/s 4.410 MiB copied ETA: Mon Dec 28 16:07:18 2020  1143 s  7700/7858 msgs left
+msg INBOX.@Action.Offers/29 {48957}          copied to INBOX.@Action.Offers/89         6.75 msgs/s  327.832 KiB/s 4.457 MiB copied ETA: Mon Dec 28 16:07:15 2020  1140 s  7699/7858 msgs left
+msg INBOX.@Action.Offers/30 {48513}          copied to INBOX.@Action.Offers/90         6.77 msgs/s  328.650 KiB/s 4.503 MiB copied ETA: Mon Dec 28 16:07:12 2020  1137 s  7698/7858 msgs left
+msg INBOX.@Action.Offers/31 {67794}          copied to INBOX.@Action.Offers/91         6.76 msgs/s  329.138 KiB/s 4.568 MiB copied ETA: Mon Dec 28 16:07:15 2020  1139 s  7697/7858 msgs left
+msg INBOX.@Action.Offers/32 {65804}          copied to INBOX.@Action.Offers/92         6.75 msgs/s  329.854 KiB/s 4.631 MiB copied ETA: Mon Dec 28 16:07:16 2020  1141 s  7696/7858 msgs left
+msg INBOX.@Action.Offers/33 {54317}          copied to INBOX.@Action.Offers/93         6.77 msgs/s  331.238 KiB/s 4.682 MiB copied ETA: Mon Dec 28 16:07:12 2020  1137 s  7695/7858 msgs left
+msg INBOX.@Action.Offers/34 {24555}          copied to INBOX.@Action.Offers/94         6.78 msgs/s  330.015 KiB/s 4.706 MiB copied ETA: Mon Dec 28 16:07:11 2020  1135 s  7694/7858 msgs left
+msg INBOX.@Action.Offers/35 {49474}          copied to INBOX.@Action.Offers/95         6.79 msgs/s  330.368 KiB/s 4.753 MiB copied ETA: Mon Dec 28 16:07:09 2020  1133 s  7693/7858 msgs left
+msg INBOX.@Action.Offers/36 {47773}          copied to INBOX.@Action.Offers/96         6.81 msgs/s  331.451 KiB/s 4.799 MiB copied ETA: Mon Dec 28 16:07:05 2020  1129 s  7692/7858 msgs left
+msg INBOX.@Action.Offers/37 {80590}          copied to INBOX.@Action.Offers/97         6.79 msgs/s  332.559 KiB/s 4.876 MiB copied ETA: Mon Dec 28 16:07:08 2020  1132 s  7691/7858 msgs left
+msg INBOX.@Action.Offers/38 {41067}          copied to INBOX.@Action.Offers/98         6.81 msgs/s  332.983 KiB/s 4.915 MiB copied ETA: Mon Dec 28 16:07:05 2020  1128 s  7690/7858 msgs left
+msg INBOX.@Action.Offers/39 {25710}          copied to INBOX.@Action.Offers/99         6.84 msgs/s  332.789 KiB/s 4.939 MiB copied ETA: Mon Dec 28 16:07:00 2020  1124 s  7689/7858 msgs left
+msg INBOX.@Action.Offers/42 {47443}          copied to INBOX.@Action.Offers/100        6.87 msgs/s  333.928 KiB/s 4.984 MiB copied ETA: Mon Dec 28 16:06:55 2020  1119 s  7686/7858 msgs left
+msg INBOX.@Action.Offers/43 {83448}          copied to INBOX.@Action.Offers/101        6.88 msgs/s  336.530 KiB/s 5.064 MiB copied ETA: Mon Dec 28 16:06:54 2020  1117 s  7685/7858 msgs left
+msg INBOX.@Action.Offers/44 {47331}          copied to INBOX.@Action.Offers/102        6.90 msgs/s  337.434 KiB/s 5.109 MiB copied ETA: Mon Dec 28 16:06:50 2020  1113 s  7684/7858 msgs left
+msg INBOX.@Action.Offers/45 {88798}          copied to INBOX.@Action.Offers/103        6.91 msgs/s  340.429 KiB/s 5.194 MiB copied ETA: Mon Dec 28 16:06:48 2020  1111 s  7683/7858 msgs left
+msg INBOX.@Action.Offers/46 {23937}          copied to INBOX.@Action.Offers/104        6.94 msgs/s  340.160 KiB/s 5.217 MiB copied ETA: Mon Dec 28 16:06:44 2020  1107 s  7682/7858 msgs left
+msg INBOX.@Action.Offers/47 {70656}          copied to INBOX.@Action.Offers/105        6.96 msgs/s  342.209 KiB/s 5.284 MiB copied ETA: Mon Dec 28 16:06:41 2020  1104 s  7681/7858 msgs left
+msg INBOX.@Action.Offers/48 {70642}          copied to INBOX.@Action.Offers/106        6.98 msgs/s  344.400 KiB/s 5.351 MiB copied ETA: Mon Dec 28 16:06:38 2020  1101 s  7680/7858 msgs left
+msg INBOX.@Action.Offers/50 {61666}          copied to INBOX.@Action.Offers/107        7.00 msgs/s  346.214 KiB/s 5.410 MiB copied ETA: Mon Dec 28 16:06:34 2020  1097 s  7678/7858 msgs left
+msg INBOX.@Action.Offers/52 {43708}          copied to INBOX.@Action.Offers/108        7.01 msgs/s  346.377 KiB/s 5.452 MiB copied ETA: Mon Dec 28 16:06:32 2020  1095 s  7676/7858 msgs left
+msg INBOX.@Action.Offers/53 {65640}          copied to INBOX.@Action.Offers/109        7.01 msgs/s  347.125 KiB/s 5.515 MiB copied ETA: Mon Dec 28 16:06:33 2020  1095 s  7675/7858 msgs left
+msg INBOX.@Action.Offers/55 {70643}          copied to INBOX.@Action.Offers/110        7.02 msgs/s  349.049 KiB/s 5.582 MiB copied ETA: Mon Dec 28 16:06:30 2020  1093 s  7673/7858 msgs left
+msg INBOX.@Action.Offers/57 {30857}          copied to INBOX.@Action.Offers/111        7.05 msgs/s  349.127 KiB/s 5.611 MiB copied ETA: Mon Dec 28 16:06:26 2020  1088 s  7671/7858 msgs left
+msg INBOX.@Action.Offers/58 {37568}          copied to INBOX.@Action.Offers/112        7.07 msgs/s  349.509 KiB/s 5.647 MiB copied ETA: Mon Dec 28 16:06:22 2020  1085 s  7670/7858 msgs left
+msg INBOX.@Action.Offers/59 {67589}          copied to INBOX.@Action.Offers/113        7.09 msgs/s  351.226 KiB/s 5.712 MiB copied ETA: Mon Dec 28 16:06:20 2020  1082 s  7669/7858 msgs left
+msg INBOX.@Action.Offers/61 {68981}          copied to INBOX.@Action.Offers/114        7.10 msgs/s  352.985 KiB/s 5.777 MiB copied ETA: Mon Dec 28 16:06:18 2020  1080 s  7667/7858 msgs left
+msg INBOX.@Action.Offers/67 {66011}          copied to INBOX.@Action.Offers/115        7.10 msgs/s  354.075 KiB/s 5.840 MiB copied ETA: Mon Dec 28 16:06:17 2020  1079 s  7664/7858 msgs left
+Host1: Expunging folder INBOX.@Action.Offers 
+ETA: Mon Dec 28 16:06:18 2020  1080 s  7664/7858 msgs left
+Folder    4/75 [INBOX.@Reference]                  -> [INBOX.@Reference]                 
+Host1: folder [INBOX.@Reference] has 0 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference] has 0 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference] permanentflags: 
+Host1: Expunging INBOX.@Reference 
+Host1: folder [INBOX.@Reference] considering 0 messages
+Host2: folder [INBOX.@Reference] considering 0 messages
+Host1: folder [INBOX.@Reference] selected 0 messages, duplicates 0
+Host2: folder [INBOX.@Reference] selected 0 messages, duplicates 0
+Host1: Expunging folder INBOX.@Reference 
+ETA: Mon Dec 28 16:06:31 2020  1093 s  7664/7858 msgs left
+Folder    5/75 [INBOX.@Reference.Auto]             -> [INBOX.@Reference.Auto]            
+Host1: folder [INBOX.@Reference.Auto] has 12 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Auto] has 12 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Auto] permanentflags: 
+Host1: Expunging INBOX.@Reference.Auto 
+Host1: folder [INBOX.@Reference.Auto] considering 12 messages
+Host2: folder [INBOX.@Reference.Auto] considering 12 messages
+Host1: folder [INBOX.@Reference.Auto] selected 12 messages, duplicates 0
+Host2: folder [INBOX.@Reference.Auto] selected 12 messages, duplicates 0
+Host1: Expunging folder INBOX.@Reference.Auto 
+ETA: Mon Dec 28 16:06:50 2020  1111 s  7652/7858 msgs left
+Folder    6/75 [INBOX.@Reference.Backpacking]      -> [INBOX.@Reference.Backpacking]     
+Host1: folder [INBOX.@Reference.Backpacking] has 0 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Backpacking] has 0 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Backpacking] permanentflags: 
+Host1: Expunging INBOX.@Reference.Backpacking 
+Host1: folder [INBOX.@Reference.Backpacking] considering 0 messages
+Host2: folder [INBOX.@Reference.Backpacking] considering 0 messages
+Host1: folder [INBOX.@Reference.Backpacking] selected 0 messages, duplicates 0
+Host2: folder [INBOX.@Reference.Backpacking] selected 0 messages, duplicates 0
+Host1: Expunging folder INBOX.@Reference.Backpacking 
+ETA: Mon Dec 28 16:07:05 2020  1127 s  7652/7858 msgs left
+Folder    7/75 [INBOX.@Reference.Bills]            -> [INBOX.@Reference.Bills]           
+Host1: folder [INBOX.@Reference.Bills] has 193 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Bills] has 193 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Bills] permanentflags: 
+Host1: Expunging INBOX.@Reference.Bills 
+Host1: folder [INBOX.@Reference.Bills] considering 193 messages
+Host2: folder [INBOX.@Reference.Bills] considering 193 messages
+Host1: folder [INBOX.@Reference.Bills] selected 193 messages, duplicates 0
+Host2: folder [INBOX.@Reference.Bills] selected 193 messages, duplicates 0
+Host1: Expunging folder INBOX.@Reference.Bills 
+ETA: Mon Dec 28 16:07:22 2020  1142 s  7459/7858 msgs left
+Folder    8/75 [INBOX.@Reference.Business Contacts] -> [INBOX.@Reference.Business Contacts]
+Host1: folder [INBOX.@Reference.Business Contacts] has 11 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Business Contacts] has 11 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Business Contacts] permanentflags: 
+Host1: Expunging INBOX.@Reference.Business Contacts 
+Host1: folder [INBOX.@Reference.Business Contacts] considering 11 messages
+Host2: folder [INBOX.@Reference.Business Contacts] considering 11 messages
+Host1: folder [INBOX.@Reference.Business Contacts] selected 11 messages, duplicates 0
+Host2: folder [INBOX.@Reference.Business Contacts] selected 11 messages, duplicates 0
+Host1: Expunging folder INBOX.@Reference.Business Contacts 
+ETA: Mon Dec 28 16:07:38 2020  1158 s  7448/7858 msgs left
+Folder    9/75 [INBOX.@Reference.Education]        -> [INBOX.@Reference.Education]       
+Host1: folder [INBOX.@Reference.Education] has 31 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Education] has 31 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Education] permanentflags: 
+Host1: Expunging INBOX.@Reference.Education 
+Host1: folder [INBOX.@Reference.Education] considering 31 messages
+Host2: folder [INBOX.@Reference.Education] considering 31 messages
+Host1: folder [INBOX.@Reference.Education] selected 31 messages, duplicates 0
+Host2: folder [INBOX.@Reference.Education] selected 31 messages, duplicates 0
+Host1: Expunging folder INBOX.@Reference.Education 
+ETA: Mon Dec 28 16:07:58 2020  1178 s  7417/7858 msgs left
+Folder   10/75 [INBOX.@Reference.Family]           -> [INBOX.@Reference.Family]          
+Host1: folder [INBOX.@Reference.Family] has 385 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Family] has 385 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Family] permanentflags: 
+Host1: Expunging INBOX.@Reference.Family 
+Host1: folder [INBOX.@Reference.Family] considering 385 messages
+Host2: folder [INBOX.@Reference.Family] considering 385 messages
+Host1: folder [INBOX.@Reference.Family] selected 385 messages, duplicates 0
+Host2: folder [INBOX.@Reference.Family] selected 385 messages, duplicates 0
+Host1: Expunging folder INBOX.@Reference.Family 
+ETA: Mon Dec 28 16:07:51 2020  1170 s  7032/7858 msgs left
+Folder   11/75 [INBOX.@Reference.Family.Expenses]  -> [INBOX.@Reference.Family.Expenses] 
+Host1: folder [INBOX.@Reference.Family.Expenses] has 0 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Family.Expenses] has 0 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Family.Expenses] permanentflags: 
+Host1: Expunging INBOX.@Reference.Family.Expenses 
+Host1: folder [INBOX.@Reference.Family.Expenses] considering 0 messages
+Host2: folder [INBOX.@Reference.Family.Expenses] considering 0 messages
+Host1: folder [INBOX.@Reference.Family.Expenses] selected 0 messages, duplicates 0
+Host2: folder [INBOX.@Reference.Family.Expenses] selected 0 messages, duplicates 0
+Host1: Expunging folder INBOX.@Reference.Family.Expenses 
+ETA: Mon Dec 28 16:08:03 2020  1182 s  7032/7858 msgs left
+Folder   12/75 [INBOX.@Reference.Family.Pets]      -> [INBOX.@Reference.Family.Pets]     
+Host1: folder [INBOX.@Reference.Family.Pets] has 2 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Family.Pets] has 2 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Family.Pets] permanentflags: 
+Host1: Expunging INBOX.@Reference.Family.Pets 
+Host1: folder [INBOX.@Reference.Family.Pets] considering 2 messages
+Host2: folder [INBOX.@Reference.Family.Pets] considering 2 messages
+Host1: folder [INBOX.@Reference.Family.Pets] selected 2 messages, duplicates 0
+Host2: folder [INBOX.@Reference.Family.Pets] selected 2 messages, duplicates 0
+Host1: Expunging folder INBOX.@Reference.Family.Pets 
+ETA: Mon Dec 28 16:08:19 2020  1197 s  7030/7858 msgs left
+Folder   13/75 [INBOX.@Reference.Finance]          -> [INBOX.@Reference.Finance]         
+Host1: folder [INBOX.@Reference.Finance] has 561 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Finance] has 561 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Finance] permanentflags: 
+Host1: Expunging INBOX.@Reference.Finance 
+Host1: folder [INBOX.@Reference.Finance] considering 561 messages
+Host2: folder [INBOX.@Reference.Finance] considering 561 messages
+Host1: folder [INBOX.@Reference.Finance] selected 561 messages, duplicates 0
+Host2: folder [INBOX.@Reference.Finance] selected 561 messages, duplicates 0
+Host1: Expunging folder INBOX.@Reference.Finance 
+ETA: Mon Dec 28 16:07:39 2020  1156 s  6469/7858 msgs left
+Folder   14/75 [INBOX.@Reference.Finance.Business Expenses] -> [INBOX.@Reference.Finance.Business Expenses]
+Host1: folder [INBOX.@Reference.Finance.Business Expenses] has 101 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Finance.Business Expenses] has 101 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Finance.Business Expenses] permanentflags: 
+Host1: Expunging INBOX.@Reference.Finance.Business Expenses 
+Host1: folder [INBOX.@Reference.Finance.Business Expenses] considering 101 messages
+Host2: folder [INBOX.@Reference.Finance.Business Expenses] considering 101 messages
+Host1: folder [INBOX.@Reference.Finance.Business Expenses] selected 101 messages, duplicates 0
+Host2: folder [INBOX.@Reference.Finance.Business Expenses] selected 101 messages, duplicates 0
+Host1: Expunging folder INBOX.@Reference.Finance.Business Expenses 
+ETA: Mon Dec 28 16:07:44 2020  1161 s  6368/7858 msgs left
+Folder   15/75 [INBOX.@Reference.Finance.Domain Registration] -> [INBOX.@Reference.Finance.Domain Registration]
+Host1: folder [INBOX.@Reference.Finance.Domain Registration] has 10 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Finance.Domain Registration] has 10 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Finance.Domain Registration] permanentflags: 
+Host1: Expunging INBOX.@Reference.Finance.Domain Registration 
+Host1: folder [INBOX.@Reference.Finance.Domain Registration] considering 10 messages
+Host2: folder [INBOX.@Reference.Finance.Domain Registration] considering 10 messages
+Host1: folder [INBOX.@Reference.Finance.Domain Registration] selected 10 messages, duplicates 0
+Host2: folder [INBOX.@Reference.Finance.Domain Registration] selected 10 messages, duplicates 0
+Host1: Expunging folder INBOX.@Reference.Finance.Domain Registration 
+ETA: Mon Dec 28 16:07:56 2020  1173 s  6358/7858 msgs left
+Folder   16/75 [INBOX.@Reference.Finance.Real Estate] -> [INBOX.@Reference.Finance.Real Estate]
+Host1: folder [INBOX.@Reference.Finance.Real Estate] has 372 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Finance.Real Estate] has 372 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Finance.Real Estate] permanentflags: 
+Host1: Expunging INBOX.@Reference.Finance.Real Estate 
+Host1: folder [INBOX.@Reference.Finance.Real Estate] considering 372 messages
+Host2: folder [INBOX.@Reference.Finance.Real Estate] considering 372 messages
+Host1: folder [INBOX.@Reference.Finance.Real Estate] selected 372 messages, duplicates 0
+Host2: folder [INBOX.@Reference.Finance.Real Estate] selected 372 messages, duplicates 0
+Host1: Expunging folder INBOX.@Reference.Finance.Real Estate 
+ETA: Mon Dec 28 16:07:27 2020  1143 s  5986/7858 msgs left
+Folder   17/75 [INBOX.@Reference.Finance.Real Estate.Allstar] -> [INBOX.@Reference.Finance.Real Estate.Allstar]
+Host1: folder [INBOX.@Reference.Finance.Real Estate.Allstar] has 268 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Finance.Real Estate.Allstar] has 268 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Finance.Real Estate.Allstar] permanentflags: 
+Host1: Expunging INBOX.@Reference.Finance.Real Estate.Allstar 
+Host1: folder [INBOX.@Reference.Finance.Real Estate.Allstar] considering 268 messages
+Host2: folder [INBOX.@Reference.Finance.Real Estate.Allstar] considering 268 messages
+Host1: folder [INBOX.@Reference.Finance.Real Estate.Allstar] selected 268 messages, duplicates 0
+Host2: folder [INBOX.@Reference.Finance.Real Estate.Allstar] selected 268 messages, duplicates 0
+Host1: Expunging folder INBOX.@Reference.Finance.Real Estate.Allstar 
+ETA: Mon Dec 28 16:07:20 2020  1135 s  5718/7858 msgs left
+Folder   18/75 [INBOX.@Reference.Finance.Real Estate.Bigger Pockets] -> [INBOX.@Reference.Finance.Real Estate.Bigger Pockets]
+Host1: folder [INBOX.@Reference.Finance.Real Estate.Bigger Pockets] has 48 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Finance.Real Estate.Bigger Pockets] has 48 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Finance.Real Estate.Bigger Pockets] permanentflags: 
+Host1: Expunging INBOX.@Reference.Finance.Real Estate.Bigger Pockets 
+Host1: folder [INBOX.@Reference.Finance.Real Estate.Bigger Pockets] considering 48 messages
+Host2: folder [INBOX.@Reference.Finance.Real Estate.Bigger Pockets] considering 48 messages
+Host1: folder [INBOX.@Reference.Finance.Real Estate.Bigger Pockets] selected 48 messages, duplicates 0
+Host2: folder [INBOX.@Reference.Finance.Real Estate.Bigger Pockets] selected 48 messages, duplicates 0
+Host1: Expunging folder INBOX.@Reference.Finance.Real Estate.Bigger Pockets 
+ETA: Mon Dec 28 16:07:33 2020  1147 s  5670/7858 msgs left
+Folder   19/75 [INBOX.@Reference.Finance.Real Estate.Chuck Baer] -> [INBOX.@Reference.Finance.Real Estate.Chuck Baer]
+Host1: folder [INBOX.@Reference.Finance.Real Estate.Chuck Baer] has 130 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Finance.Real Estate.Chuck Baer] has 130 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Finance.Real Estate.Chuck Baer] permanentflags: 
+Host1: Expunging INBOX.@Reference.Finance.Real Estate.Chuck Baer 
+Host1: folder [INBOX.@Reference.Finance.Real Estate.Chuck Baer] considering 130 messages
+Host2: folder [INBOX.@Reference.Finance.Real Estate.Chuck Baer] considering 130 messages
+Host1: folder [INBOX.@Reference.Finance.Real Estate.Chuck Baer] selected 130 messages, duplicates 0
+Host2: folder [INBOX.@Reference.Finance.Real Estate.Chuck Baer] selected 130 messages, duplicates 0
+Host1: Expunging folder INBOX.@Reference.Finance.Real Estate.Chuck Baer 
+ETA: Mon Dec 28 16:07:29 2020  1143 s  5540/7858 msgs left
+Folder   20/75 [INBOX.@Reference.Finance.Real Estate.Cozy] -> [INBOX.@Reference.Finance.Real Estate.Cozy]
+Host1: folder [INBOX.@Reference.Finance.Real Estate.Cozy] has 14 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Finance.Real Estate.Cozy] has 14 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Finance.Real Estate.Cozy] permanentflags: 
+Host1: Expunging INBOX.@Reference.Finance.Real Estate.Cozy 
+Host1: folder [INBOX.@Reference.Finance.Real Estate.Cozy] considering 14 messages
+Host2: folder [INBOX.@Reference.Finance.Real Estate.Cozy] considering 14 messages
+Host1: folder [INBOX.@Reference.Finance.Real Estate.Cozy] selected 14 messages, duplicates 0
+Host2: folder [INBOX.@Reference.Finance.Real Estate.Cozy] selected 14 messages, duplicates 0
+Host1: Expunging folder INBOX.@Reference.Finance.Real Estate.Cozy 
+ETA: Mon Dec 28 16:07:50 2020  1163 s  5526/7858 msgs left
+Folder   21/75 [INBOX.@Reference.Finance.Real Estate.Housefolios] -> [INBOX.@Reference.Finance.Real Estate.Housefolios]
+Host1: folder [INBOX.@Reference.Finance.Real Estate.Housefolios] has 13 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Finance.Real Estate.Housefolios] has 13 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Finance.Real Estate.Housefolios] permanentflags: 
+Host1: Expunging INBOX.@Reference.Finance.Real Estate.Housefolios 
+Host1: folder [INBOX.@Reference.Finance.Real Estate.Housefolios] considering 13 messages
+Host2: folder [INBOX.@Reference.Finance.Real Estate.Housefolios] considering 13 messages
+Host1: folder [INBOX.@Reference.Finance.Real Estate.Housefolios] selected 13 messages, duplicates 0
+Host2: folder [INBOX.@Reference.Finance.Real Estate.Housefolios] selected 13 messages, duplicates 0
+Host1: Expunging folder INBOX.@Reference.Finance.Real Estate.Housefolios 
+ETA: Mon Dec 28 16:08:00 2020  1173 s  5513/7858 msgs left
+Folder   22/75 [INBOX.@Reference.Finance.Real Estate.Investing] -> [INBOX.@Reference.Finance.Real Estate.Investing]
+Host1: folder [INBOX.@Reference.Finance.Real Estate.Investing] has 624 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Finance.Real Estate.Investing] has 624 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Finance.Real Estate.Investing] permanentflags: 
+Host1: Expunging INBOX.@Reference.Finance.Real Estate.Investing 
+Host1: folder [INBOX.@Reference.Finance.Real Estate.Investing] considering 624 messages
+Host2: folder [INBOX.@Reference.Finance.Real Estate.Investing] considering 624 messages
+Host1: folder [INBOX.@Reference.Finance.Real Estate.Investing] selected 624 messages, duplicates 0
+Host2: folder [INBOX.@Reference.Finance.Real Estate.Investing] selected 624 messages, duplicates 0
+Host1: Expunging folder INBOX.@Reference.Finance.Real Estate.Investing 
+ETA: Mon Dec 28 16:06:34 2020  1087 s  4889/7858 msgs left
+Folder   23/75 [INBOX.@Reference.Finance.Real Estate.Olmstead] -> [INBOX.@Reference.Finance.Real Estate.Olmstead]
+Host1: folder [INBOX.@Reference.Finance.Real Estate.Olmstead] has 249 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Finance.Real Estate.Olmstead] has 249 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Finance.Real Estate.Olmstead] permanentflags: 
+Host1: Expunging INBOX.@Reference.Finance.Real Estate.Olmstead 
+Host1: folder [INBOX.@Reference.Finance.Real Estate.Olmstead] considering 249 messages
+Host2: folder [INBOX.@Reference.Finance.Real Estate.Olmstead] considering 249 messages
+Host1: folder [INBOX.@Reference.Finance.Real Estate.Olmstead] selected 249 messages, duplicates 0
+Host2: folder [INBOX.@Reference.Finance.Real Estate.Olmstead] selected 249 messages, duplicates 0
+Host1: Expunging folder INBOX.@Reference.Finance.Real Estate.Olmstead 
+ETA: Mon Dec 28 16:06:05 2020  1056 s  4640/7858 msgs left
+Folder   24/75 [INBOX.@Reference.Finance.Real Estate.PMI] -> [INBOX.@Reference.Finance.Real Estate.PMI]
+Host1: folder [INBOX.@Reference.Finance.Real Estate.PMI] has 183 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Finance.Real Estate.PMI] has 183 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Finance.Real Estate.PMI] permanentflags: 
+Host1: Expunging INBOX.@Reference.Finance.Real Estate.PMI 
+Host1: folder [INBOX.@Reference.Finance.Real Estate.PMI] considering 183 messages
+Host2: folder [INBOX.@Reference.Finance.Real Estate.PMI] considering 183 messages
+Host1: folder [INBOX.@Reference.Finance.Real Estate.PMI] selected 183 messages, duplicates 0
+Host2: folder [INBOX.@Reference.Finance.Real Estate.PMI] selected 183 messages, duplicates 0
+Host1: Expunging folder INBOX.@Reference.Finance.Real Estate.PMI 
+ETA: Mon Dec 28 16:05:45 2020  1036 s  4457/7858 msgs left
+Folder   25/75 [INBOX.@Reference.Finance.Real Estate.Property Boss] -> [INBOX.@Reference.Finance.Real Estate.Property Boss]
+Host1: folder [INBOX.@Reference.Finance.Real Estate.Property Boss] has 3 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Finance.Real Estate.Property Boss] has 4 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Finance.Real Estate.Property Boss] permanentflags: 
+Host1: Expunging INBOX.@Reference.Finance.Real Estate.Property Boss 
+Host1: folder [INBOX.@Reference.Finance.Real Estate.Property Boss] considering 3 messages
+Host2: folder [INBOX.@Reference.Finance.Real Estate.Property Boss] considering 4 messages
+Host1: folder [INBOX.@Reference.Finance.Real Estate.Property Boss] selected 3 messages, duplicates 0
+Host2: folder [INBOX.@Reference.Finance.Real Estate.Property Boss] selected 4 messages, duplicates 0
+Host2: msg INBOX.@Reference.Finance.Real Estate.Property Boss/4 marked \Deleted on host2 [RoKa4lLbeLJou9zcidSq7A] 
+Host2: UidExpunging 1 message(s) in folder INBOX.@Reference.Finance.Real Estate.Property Boss 
+Host1: Expunging folder INBOX.@Reference.Finance.Real Estate.Property Boss 
+ETA: Mon Dec 28 16:06:05 2020  1055 s  4454/7858 msgs left
+Folder   26/75 [INBOX.@Reference.Finance.Real Estate.RREI] -> [INBOX.@Reference.Finance.Real Estate.RREI]
+Host1: folder [INBOX.@Reference.Finance.Real Estate.RREI] has 2 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Finance.Real Estate.RREI] has 2 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Finance.Real Estate.RREI] permanentflags: 
+Host1: Expunging INBOX.@Reference.Finance.Real Estate.RREI 
+Host1: folder [INBOX.@Reference.Finance.Real Estate.RREI] considering 2 messages
+Host2: folder [INBOX.@Reference.Finance.Real Estate.RREI] considering 2 messages
+Host1: folder [INBOX.@Reference.Finance.Real Estate.RREI] selected 2 messages, duplicates 0
+Host2: folder [INBOX.@Reference.Finance.Real Estate.RREI] selected 2 messages, duplicates 0
+Host1: Expunging folder INBOX.@Reference.Finance.Real Estate.RREI 
+ETA: Mon Dec 28 16:06:15 2020  1066 s  4452/7858 msgs left
+Folder   27/75 [INBOX.@Reference.Finance.Real Estate.RealWealth] -> [INBOX.@Reference.Finance.Real Estate.RealWealth]
+Host1: folder [INBOX.@Reference.Finance.Real Estate.RealWealth] has 202 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Finance.Real Estate.RealWealth] has 202 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Finance.Real Estate.RealWealth] permanentflags: 
+Host1: Expunging INBOX.@Reference.Finance.Real Estate.RealWealth 
+Host1: folder [INBOX.@Reference.Finance.Real Estate.RealWealth] considering 202 messages
+Host2: folder [INBOX.@Reference.Finance.Real Estate.RealWealth] considering 202 messages
+Host1: folder [INBOX.@Reference.Finance.Real Estate.RealWealth] selected 202 messages, duplicates 0
+Host2: folder [INBOX.@Reference.Finance.Real Estate.RealWealth] selected 202 messages, duplicates 0
+Host1: Expunging folder INBOX.@Reference.Finance.Real Estate.RealWealth 
+ETA: Mon Dec 28 16:05:47 2020  1037 s  4250/7858 msgs left
+Folder   28/75 [INBOX.@Reference.Finance.Real Estate.Realty Doctors] -> [INBOX.@Reference.Finance.Real Estate.Realty Doctors]
+Host1: folder [INBOX.@Reference.Finance.Real Estate.Realty Doctors] has 142 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Finance.Real Estate.Realty Doctors] has 142 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Finance.Real Estate.Realty Doctors] permanentflags: 
+Host1: Expunging INBOX.@Reference.Finance.Real Estate.Realty Doctors 
+Host1: folder [INBOX.@Reference.Finance.Real Estate.Realty Doctors] considering 142 messages
+Host2: folder [INBOX.@Reference.Finance.Real Estate.Realty Doctors] considering 142 messages
+Host1: folder [INBOX.@Reference.Finance.Real Estate.Realty Doctors] selected 142 messages, duplicates 0
+Host2: folder [INBOX.@Reference.Finance.Real Estate.Realty Doctors] selected 142 messages, duplicates 0
+Host1: Expunging folder INBOX.@Reference.Finance.Real Estate.Realty Doctors 
+ETA: Mon Dec 28 16:05:30 2020  1019 s  4108/7858 msgs left
+Folder   29/75 [INBOX.@Reference.Finance.Real Estate.Renshaw] -> [INBOX.@Reference.Finance.Real Estate.Renshaw]
+Host1: folder [INBOX.@Reference.Finance.Real Estate.Renshaw] has 169 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Finance.Real Estate.Renshaw] has 169 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Finance.Real Estate.Renshaw] permanentflags: 
+Host1: Expunging INBOX.@Reference.Finance.Real Estate.Renshaw 
+Host1: folder [INBOX.@Reference.Finance.Real Estate.Renshaw] considering 169 messages
+Host2: folder [INBOX.@Reference.Finance.Real Estate.Renshaw] considering 169 messages
+Host1: folder [INBOX.@Reference.Finance.Real Estate.Renshaw] selected 169 messages, duplicates 0
+Host2: folder [INBOX.@Reference.Finance.Real Estate.Renshaw] selected 169 messages, duplicates 0
+Host1: Expunging folder INBOX.@Reference.Finance.Real Estate.Renshaw 
+ETA: Mon Dec 28 16:05:04 2020  993 s  3939/7858 msgs left
+Folder   30/75 [INBOX.@Reference.Finance.Real Estate.Roofstock] -> [INBOX.@Reference.Finance.Real Estate.Roofstock]
+Host1: folder [INBOX.@Reference.Finance.Real Estate.Roofstock] has 342 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Finance.Real Estate.Roofstock] has 342 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Finance.Real Estate.Roofstock] permanentflags: 
+Host1: Expunging INBOX.@Reference.Finance.Real Estate.Roofstock 
+Host1: folder [INBOX.@Reference.Finance.Real Estate.Roofstock] considering 342 messages
+Host2: folder [INBOX.@Reference.Finance.Real Estate.Roofstock] considering 342 messages
+Host1: folder [INBOX.@Reference.Finance.Real Estate.Roofstock] selected 342 messages, duplicates 0
+Host2: folder [INBOX.@Reference.Finance.Real Estate.Roofstock] selected 342 messages, duplicates 0
+Host1: Expunging folder INBOX.@Reference.Finance.Real Estate.Roofstock 
+ETA: Mon Dec 28 16:04:04 2020  932 s  3597/7858 msgs left
+Folder   31/75 [INBOX.@Reference.Finance.Real Estate.Stessa] -> [INBOX.@Reference.Finance.Real Estate.Stessa]
+Host1: folder [INBOX.@Reference.Finance.Real Estate.Stessa] has 49 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Finance.Real Estate.Stessa] has 49 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Finance.Real Estate.Stessa] permanentflags: 
+Host1: Expunging INBOX.@Reference.Finance.Real Estate.Stessa 
+Host1: folder [INBOX.@Reference.Finance.Real Estate.Stessa] considering 49 messages
+Host2: folder [INBOX.@Reference.Finance.Real Estate.Stessa] considering 49 messages
+Host1: folder [INBOX.@Reference.Finance.Real Estate.Stessa] selected 49 messages, duplicates 0
+Host2: folder [INBOX.@Reference.Finance.Real Estate.Stessa] selected 49 messages, duplicates 0
+Host1: Expunging folder INBOX.@Reference.Finance.Real Estate.Stessa 
+ETA: Mon Dec 28 16:04:00 2020  928 s  3548/7858 msgs left
+Folder   32/75 [INBOX.@Reference.Finance.TCF Bank] -> [INBOX.@Reference.Finance.TCF Bank]
+Host1: folder [INBOX.@Reference.Finance.TCF Bank] has 7 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Finance.TCF Bank] has 7 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Finance.TCF Bank] permanentflags: 
+Host1: Expunging INBOX.@Reference.Finance.TCF Bank 
+Host1: folder [INBOX.@Reference.Finance.TCF Bank] considering 7 messages
+Host2: folder [INBOX.@Reference.Finance.TCF Bank] considering 7 messages
+Host1: folder [INBOX.@Reference.Finance.TCF Bank] selected 7 messages, duplicates 0
+Host2: folder [INBOX.@Reference.Finance.TCF Bank] selected 7 messages, duplicates 0
+Host1: Expunging folder INBOX.@Reference.Finance.TCF Bank 
+ETA: Mon Dec 28 16:04:07 2020  934 s  3541/7858 msgs left
+Folder   33/75 [INBOX.@Reference.Finance.Taxes]    -> [INBOX.@Reference.Finance.Taxes]   
+Host1: folder [INBOX.@Reference.Finance.Taxes] has 156 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Finance.Taxes] has 156 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Finance.Taxes] permanentflags: 
+Host1: Expunging INBOX.@Reference.Finance.Taxes 
+Host1: folder [INBOX.@Reference.Finance.Taxes] considering 156 messages
+Host2: folder [INBOX.@Reference.Finance.Taxes] considering 156 messages
+Host1: folder [INBOX.@Reference.Finance.Taxes] selected 156 messages, duplicates 0
+Host2: folder [INBOX.@Reference.Finance.Taxes] selected 156 messages, duplicates 0
+Host1: Expunging folder INBOX.@Reference.Finance.Taxes 
+ETA: Mon Dec 28 16:03:39 2020  905 s  3385/7858 msgs left
+Folder   34/75 [INBOX.@Reference.Food]             -> [INBOX.@Reference.Food]            
+Host1: folder [INBOX.@Reference.Food] has 2 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Food] has 2 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Food] permanentflags: 
+Host1: Expunging INBOX.@Reference.Food 
+Host1: folder [INBOX.@Reference.Food] considering 2 messages
+Host2: folder [INBOX.@Reference.Food] considering 2 messages
+Host1: folder [INBOX.@Reference.Food] selected 2 messages, duplicates 0
+Host2: folder [INBOX.@Reference.Food] selected 2 messages, duplicates 0
+Host1: Expunging folder INBOX.@Reference.Food 
+ETA: Mon Dec 28 16:03:46 2020  913 s  3383/7858 msgs left
+Folder   35/75 [INBOX.@Reference.Friends]          -> [INBOX.@Reference.Friends]         
+Host1: folder [INBOX.@Reference.Friends] has 317 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Friends] has 318 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Friends] permanentflags: 
+Host1: Expunging INBOX.@Reference.Friends 
+Host1: folder [INBOX.@Reference.Friends] considering 317 messages
+Host2: folder [INBOX.@Reference.Friends] considering 318 messages
+Host1: folder [INBOX.@Reference.Friends] selected 317 messages, duplicates 0
+Host2: folder [INBOX.@Reference.Friends] selected 318 messages, duplicates 0
+Host2: msg INBOX.@Reference.Friends/318 marked \Deleted on host2 [G+Sz57wQNcZxskLF1lOivg] 
+Host2: UidExpunging 1 message(s) in folder INBOX.@Reference.Friends 
+Host1: Expunging folder INBOX.@Reference.Friends 
+ETA: Mon Dec 28 16:02:37 2020  843 s  3066/7858 msgs left
+Folder   36/75 [INBOX.@Reference.Health]           -> [INBOX.@Reference.Health]          
+Host1: folder [INBOX.@Reference.Health] has 38 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Health] has 38 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Health] permanentflags: 
+Host1: Expunging INBOX.@Reference.Health 
+Host1: folder [INBOX.@Reference.Health] considering 38 messages
+Host2: folder [INBOX.@Reference.Health] considering 38 messages
+Host1: folder [INBOX.@Reference.Health] selected 38 messages, duplicates 0
+Host2: folder [INBOX.@Reference.Health] selected 38 messages, duplicates 0
+Host1: Expunging folder INBOX.@Reference.Health 
+ETA: Mon Dec 28 16:02:35 2020  841 s  3028/7858 msgs left
+Folder   37/75 [INBOX.@Reference.Hobby]            -> [INBOX.@Reference.Hobby]           
+Host1: folder [INBOX.@Reference.Hobby] has 10 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Hobby] has 10 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Hobby] permanentflags: 
+Host1: Expunging INBOX.@Reference.Hobby 
+Host1: folder [INBOX.@Reference.Hobby] considering 10 messages
+Host2: folder [INBOX.@Reference.Hobby] considering 10 messages
+Host1: folder [INBOX.@Reference.Hobby] selected 10 messages, duplicates 0
+Host2: folder [INBOX.@Reference.Hobby] selected 10 messages, duplicates 0
+Host1: Expunging folder INBOX.@Reference.Hobby 
+ETA: Mon Dec 28 16:02:39 2020  845 s  3018/7858 msgs left
+Folder   38/75 [INBOX.@Reference.Hobby.Work From Home] -> [INBOX.@Reference.Hobby.Work From Home]
+Host1: folder [INBOX.@Reference.Hobby.Work From Home] has 1 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Hobby.Work From Home] has 1 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Hobby.Work From Home] permanentflags: 
+Host1: Expunging INBOX.@Reference.Hobby.Work From Home 
+Host1: folder [INBOX.@Reference.Hobby.Work From Home] considering 1 messages
+Host2: folder [INBOX.@Reference.Hobby.Work From Home] considering 1 messages
+Host1: folder [INBOX.@Reference.Hobby.Work From Home] selected 1 messages, duplicates 0
+Host2: folder [INBOX.@Reference.Hobby.Work From Home] selected 1 messages, duplicates 0
+Host1: Expunging folder INBOX.@Reference.Hobby.Work From Home 
+ETA: Mon Dec 28 16:02:46 2020  851 s  3017/7858 msgs left
+Folder   39/75 [INBOX.@Reference.Home]             -> [INBOX.@Reference.Home]            
+Host1: folder [INBOX.@Reference.Home] has 9 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Home] has 9 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Home] permanentflags: 
+Host1: Expunging INBOX.@Reference.Home 
+Host1: folder [INBOX.@Reference.Home] considering 9 messages
+Host2: folder [INBOX.@Reference.Home] considering 9 messages
+Host1: folder [INBOX.@Reference.Home] selected 9 messages, duplicates 0
+Host2: folder [INBOX.@Reference.Home] selected 9 messages, duplicates 0
+Host1: Expunging folder INBOX.@Reference.Home 
+ETA: Mon Dec 28 16:02:50 2020  854 s  3008/7858 msgs left
+Folder   40/75 [INBOX.@Reference.Home.Charlotte Home] -> [INBOX.@Reference.Home.Charlotte Home]
+Host1: folder [INBOX.@Reference.Home.Charlotte Home] has 21 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Home.Charlotte Home] has 21 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Home.Charlotte Home] permanentflags: 
+Host1: Expunging INBOX.@Reference.Home.Charlotte Home 
+Host1: folder [INBOX.@Reference.Home.Charlotte Home] considering 21 messages
+Host2: folder [INBOX.@Reference.Home.Charlotte Home] considering 21 messages
+Host1: folder [INBOX.@Reference.Home.Charlotte Home] selected 21 messages, duplicates 0
+Host2: folder [INBOX.@Reference.Home.Charlotte Home] selected 21 messages, duplicates 0
+Host1: Expunging folder INBOX.@Reference.Home.Charlotte Home 
+ETA: Mon Dec 28 16:02:51 2020  855 s  2987/7858 msgs left
+Folder   41/75 [INBOX.@Reference.Home.Landscaping] -> [INBOX.@Reference.Home.Landscaping]
+Host1: folder [INBOX.@Reference.Home.Landscaping] has 109 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Home.Landscaping] has 109 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Home.Landscaping] permanentflags: 
+Host1: Expunging INBOX.@Reference.Home.Landscaping 
+Host1: folder [INBOX.@Reference.Home.Landscaping] considering 109 messages
+Host2: folder [INBOX.@Reference.Home.Landscaping] considering 109 messages
+Host1: folder [INBOX.@Reference.Home.Landscaping] selected 109 messages, duplicates 0
+Host2: folder [INBOX.@Reference.Home.Landscaping] selected 109 messages, duplicates 0
+Host1: Expunging folder INBOX.@Reference.Home.Landscaping 
+ETA: Mon Dec 28 16:02:29 2020  833 s  2878/7858 msgs left
+Folder   42/75 [INBOX.@Reference.Home.Retirement Home] -> [INBOX.@Reference.Home.Retirement Home]
+Host1: folder [INBOX.@Reference.Home.Retirement Home] has 362 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Home.Retirement Home] has 362 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Home.Retirement Home] permanentflags: 
+Host1: Expunging INBOX.@Reference.Home.Retirement Home 
+Host1: folder [INBOX.@Reference.Home.Retirement Home] considering 362 messages
+Host2: folder [INBOX.@Reference.Home.Retirement Home] considering 362 messages
+Host1: folder [INBOX.@Reference.Home.Retirement Home] selected 362 messages, duplicates 0
+Host2: folder [INBOX.@Reference.Home.Retirement Home] selected 362 messages, duplicates 0
+Host1: Expunging folder INBOX.@Reference.Home.Retirement Home 
+ETA: Mon Dec 28 16:01:01 2020  744 s  2516/7858 msgs left
+Folder   43/75 [INBOX.@Reference.Home.Solar]       -> [INBOX.@Reference.Home.Solar]      
+Host1: folder [INBOX.@Reference.Home.Solar] has 18 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Home.Solar] has 18 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Home.Solar] permanentflags: 
+Host1: Expunging INBOX.@Reference.Home.Solar 
+Host1: folder [INBOX.@Reference.Home.Solar] considering 18 messages
+Host2: folder [INBOX.@Reference.Home.Solar] considering 18 messages
+Host1: folder [INBOX.@Reference.Home.Solar] selected 18 messages, duplicates 0
+Host2: folder [INBOX.@Reference.Home.Solar] selected 18 messages, duplicates 0
+Host1: Expunging folder INBOX.@Reference.Home.Solar 
+ETA: Mon Dec 28 16:01:02 2020  745 s  2498/7858 msgs left
+Folder   44/75 [INBOX.@Reference.Home.Work From Home] -> [INBOX.@Reference.Home.Work From Home]
+Host1: folder [INBOX.@Reference.Home.Work From Home] has 1 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Home.Work From Home] has 1 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Home.Work From Home] permanentflags: 
+Host1: Expunging INBOX.@Reference.Home.Work From Home 
+Host1: folder [INBOX.@Reference.Home.Work From Home] considering 1 messages
+Host2: folder [INBOX.@Reference.Home.Work From Home] considering 1 messages
+Host1: folder [INBOX.@Reference.Home.Work From Home] selected 1 messages, duplicates 0
+Host2: folder [INBOX.@Reference.Home.Work From Home] selected 1 messages, duplicates 0
+Host1: Expunging folder INBOX.@Reference.Home.Work From Home 
+ETA: Mon Dec 28 16:01:08 2020  750 s  2497/7858 msgs left
+Folder   45/75 [INBOX.@Reference.Internet Services] -> [INBOX.@Reference.Internet Services]
+Host1: folder [INBOX.@Reference.Internet Services] has 133 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Internet Services] has 132 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Internet Services] permanentflags: 
+Host1: Expunging INBOX.@Reference.Internet Services 
+Host1: folder [INBOX.@Reference.Internet Services] considering 133 messages
+Host2: folder [INBOX.@Reference.Internet Services] considering 132 messages
+Host1: folder [INBOX.@Reference.Internet Services] selected 133 messages, duplicates 0
+Host2: folder [INBOX.@Reference.Internet Services] selected 132 messages, duplicates 0
+DEBUG: .../IO/Socket/SSL.pm:1199: local error: SSL read error
+- msg INBOX.@Reference.Internet Services/40 {5151} could not append ( Subject:[Thinger.io Beta Access Key], Date:["27-Aug-2016 18:05:05 -0700"], Size:[5151], Flags:[\Seen $NotJunk] ) to folder INBOX.@Reference.Internet Services: error while reading data from server: Operation timed out
+Host1: Expunging folder INBOX.@Reference.Internet Services 
+ETA: Mon Dec 28 16:06:58 2020  1082 s  2364/7858 msgs left
+Folder   46/75 [INBOX.@Reference.Internet Services.Support Tickets] -> [INBOX.@Reference.Internet Services.Support Tickets]
+Host1: folder [INBOX.@Reference.Internet Services.Support Tickets] has 3 messages in total (mentioned by SELECT)
+DEBUG: .../IO/Socket/SSL.pm:1279: local error: SSL write error (5)
+DEBUG: .../IO/Socket/SSL.pm:1177: global error: Undefined SSL object
+Host2: folder [INBOX.@Reference.Internet Services.Support Tickets] has 3 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Internet Services.Support Tickets] permanentflags: 
+Host1: Expunging INBOX.@Reference.Internet Services.Support Tickets 
+Host1: folder [INBOX.@Reference.Internet Services.Support Tickets] considering 3 messages
+Host2: folder [INBOX.@Reference.Internet Services.Support Tickets] considering 3 messages
+Host1: folder [INBOX.@Reference.Internet Services.Support Tickets] selected 3 messages, duplicates 0
+Host2: folder [INBOX.@Reference.Internet Services.Support Tickets] selected 3 messages, duplicates 0
+Host1: Expunging folder INBOX.@Reference.Internet Services.Support Tickets 
+ETA: Mon Dec 28 16:07:07 2020  1091 s  2361/7858 msgs left
+Folder   47/75 [INBOX.@Reference.Items I'm Selling] -> [INBOX.@Reference.Items I'm Selling]
+Host1: folder [INBOX.@Reference.Items I'm Selling] has 32 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Items I'm Selling] has 32 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Items I'm Selling] permanentflags: 
+Host1: Expunging INBOX.@Reference.Items I'm Selling 
+Host1: folder [INBOX.@Reference.Items I'm Selling] considering 32 messages
+Host2: folder [INBOX.@Reference.Items I'm Selling] considering 32 messages
+Host1: folder [INBOX.@Reference.Items I'm Selling] selected 32 messages, duplicates 0
+Host2: folder [INBOX.@Reference.Items I'm Selling] selected 32 messages, duplicates 0
+Host1: Expunging folder INBOX.@Reference.Items I'm Selling 
+ETA: Mon Dec 28 16:06:59 2020  1082 s  2329/7858 msgs left
+Folder   48/75 [INBOX.@Reference.Legal]            -> [INBOX.@Reference.Legal]           
+Host1: folder [INBOX.@Reference.Legal] has 4 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Legal] has 4 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Legal] permanentflags: 
+Host1: Expunging INBOX.@Reference.Legal 
+Host1: folder [INBOX.@Reference.Legal] considering 4 messages
+Host2: folder [INBOX.@Reference.Legal] considering 4 messages
+Host1: folder [INBOX.@Reference.Legal] selected 4 messages, duplicates 0
+Host2: folder [INBOX.@Reference.Legal] selected 4 messages, duplicates 0
+Host1: Expunging folder INBOX.@Reference.Legal 
+ETA: Mon Dec 28 16:07:02 2020  1085 s  2325/7858 msgs left
+Folder   49/75 [INBOX.@Reference.Lifestyle]        -> [INBOX.@Reference.Lifestyle]       
+Host1: folder [INBOX.@Reference.Lifestyle] has 78 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Lifestyle] has 78 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Lifestyle] permanentflags: 
+Host1: Expunging INBOX.@Reference.Lifestyle 
+Host1: folder [INBOX.@Reference.Lifestyle] considering 78 messages
+Host2: folder [INBOX.@Reference.Lifestyle] considering 78 messages
+Host1: folder [INBOX.@Reference.Lifestyle] selected 78 messages, duplicates 0
+Host2: folder [INBOX.@Reference.Lifestyle] selected 78 messages, duplicates 0
+Host1: Expunging folder INBOX.@Reference.Lifestyle 
+ETA: Mon Dec 28 16:06:33 2020  1056 s  2247/7858 msgs left
+Folder   50/75 [INBOX.@Reference.Productivity]     -> [INBOX.@Reference.Productivity]    
+Host1: folder [INBOX.@Reference.Productivity] has 1 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Productivity] has 1 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Productivity] permanentflags: 
+Host1: Expunging INBOX.@Reference.Productivity 
+Host1: folder [INBOX.@Reference.Productivity] considering 1 messages
+Host2: folder [INBOX.@Reference.Productivity] considering 1 messages
+Host1: folder [INBOX.@Reference.Productivity] selected 1 messages, duplicates 0
+Host2: folder [INBOX.@Reference.Productivity] selected 1 messages, duplicates 0
+Host1: Expunging folder INBOX.@Reference.Productivity 
+ETA: Mon Dec 28 16:06:38 2020  1060 s  2246/7858 msgs left
+Folder   51/75 [INBOX.@Reference.Purchases]        -> [INBOX.@Reference.Purchases]       
+Host1: folder [INBOX.@Reference.Purchases] has 909 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Purchases] has 913 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Purchases] permanentflags: 
+Host1: Expunging INBOX.@Reference.Purchases 
+Host1: folder [INBOX.@Reference.Purchases] considering 909 messages
+Host2: folder [INBOX.@Reference.Purchases] considering 913 messages
+Host1: folder [INBOX.@Reference.Purchases] selected 909 messages, duplicates 0
+Host2: folder [INBOX.@Reference.Purchases] selected 913 messages, duplicates 0
+Host2: msg INBOX.@Reference.Purchases/910 marked \Deleted on host2 [owfATBz1Mt2BrJuLciFbQg] 
+Host2: msg INBOX.@Reference.Purchases/911 marked \Deleted on host2 [2XH+vfMZcGuuxevWSuMX7g] 
+Host2: msg INBOX.@Reference.Purchases/912 marked \Deleted on host2 [A8XqhcNs3qq/Fqwn2rDFSw] 
+Host2: msg INBOX.@Reference.Purchases/913 marked \Deleted on host2 [dwv4S3y/Tu69D1Z1z2ah8A] 
+Host2: UidExpunging 4 message(s) in folder INBOX.@Reference.Purchases 
+Host1: Expunging folder INBOX.@Reference.Purchases 
+ETA: Mon Dec 28 15:59:47 2020  648 s  1337/7858 msgs left
+Folder   52/75 [INBOX.@Reference.Self Development] -> [INBOX.@Reference.Self Development]
+Host1: folder [INBOX.@Reference.Self Development] has 1 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Self Development] has 1 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Self Development] permanentflags: 
+Host1: Expunging INBOX.@Reference.Self Development 
+Host1: folder [INBOX.@Reference.Self Development] considering 1 messages
+Host2: folder [INBOX.@Reference.Self Development] considering 1 messages
+Host1: folder [INBOX.@Reference.Self Development] selected 1 messages, duplicates 0
+Host2: folder [INBOX.@Reference.Self Development] selected 1 messages, duplicates 0
+Host1: Expunging folder INBOX.@Reference.Self Development 
+ETA: Mon Dec 28 15:59:50 2020  650 s  1336/7858 msgs left
+Folder   53/75 [INBOX.@Reference.Travel]           -> [INBOX.@Reference.Travel]          
+Host1: folder [INBOX.@Reference.Travel] has 296 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Travel] has 296 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Travel] permanentflags: 
+Host1: Expunging INBOX.@Reference.Travel 
+Host1: folder [INBOX.@Reference.Travel] considering 296 messages
+Host2: folder [INBOX.@Reference.Travel] considering 296 messages
+Host1: folder [INBOX.@Reference.Travel] selected 296 messages, duplicates 0
+Host2: folder [INBOX.@Reference.Travel] selected 296 messages, duplicates 0
+Host1: Expunging folder INBOX.@Reference.Travel 
+ETA: Mon Dec 28 15:57:32 2020  512 s  1040/7858 msgs left
+Folder   54/75 [INBOX.@Reference.Work]             -> [INBOX.@Reference.Work]            
+Host1: folder [INBOX.@Reference.Work] has 124 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Work] has 124 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Work] permanentflags: 
+Host1: Expunging INBOX.@Reference.Work 
+Host1: folder [INBOX.@Reference.Work] considering 124 messages
+Host2: folder [INBOX.@Reference.Work] considering 124 messages
+Host1: folder [INBOX.@Reference.Work] selected 124 messages, duplicates 0
+Host2: folder [INBOX.@Reference.Work] selected 124 messages, duplicates 0
+Host1: Expunging folder INBOX.@Reference.Work 
+ETA: Mon Dec 28 15:56:34 2020  454 s  916/7858 msgs left
+Folder   55/75 [INBOX.@Reference.Work.Leadership Development] -> [INBOX.@Reference.Work.Leadership Development]
+Host1: folder [INBOX.@Reference.Work.Leadership Development] has 0 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Work.Leadership Development] has 0 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Work.Leadership Development] permanentflags: 
+Host1: Expunging INBOX.@Reference.Work.Leadership Development 
+Host1: folder [INBOX.@Reference.Work.Leadership Development] considering 0 messages
+Host2: folder [INBOX.@Reference.Work.Leadership Development] considering 0 messages
+Host1: folder [INBOX.@Reference.Work.Leadership Development] selected 0 messages, duplicates 0
+Host2: folder [INBOX.@Reference.Work.Leadership Development] selected 0 messages, duplicates 0
+Host1: Expunging folder INBOX.@Reference.Work.Leadership Development 
+ETA: Mon Dec 28 15:56:36 2020  455 s  916/7858 msgs left
+Folder   56/75 [INBOX.@Reference.Work.Process Excellence] -> [INBOX.@Reference.Work.Process Excellence]
+Host1: folder [INBOX.@Reference.Work.Process Excellence] has 0 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Work.Process Excellence] has 0 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Reference.Work.Process Excellence] permanentflags: 
+Host1: Expunging INBOX.@Reference.Work.Process Excellence 
+Host1: folder [INBOX.@Reference.Work.Process Excellence] considering 0 messages
+Host2: folder [INBOX.@Reference.Work.Process Excellence] considering 0 messages
+Host1: folder [INBOX.@Reference.Work.Process Excellence] selected 0 messages, duplicates 0
+Host2: folder [INBOX.@Reference.Work.Process Excellence] selected 0 messages, duplicates 0
+Host1: Expunging folder INBOX.@Reference.Work.Process Excellence 
+ETA: Mon Dec 28 15:56:37 2020  456 s  916/7858 msgs left
+Folder   57/75 [INBOX.@Review]                     -> [INBOX.@Review]                    
+Host1: folder [INBOX.@Review] has 1 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Review] has 1 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Review] permanentflags: 
+Host1: Expunging INBOX.@Review 
+Host1: folder [INBOX.@Review] considering 1 messages
+Host2: folder [INBOX.@Review] considering 1 messages
+Host1: folder [INBOX.@Review] selected 1 messages, duplicates 0
+Host2: folder [INBOX.@Review] selected 1 messages, duplicates 0
+Host1: Expunging folder INBOX.@Review 
+ETA: Mon Dec 28 15:56:39 2020  458 s  915/7858 msgs left
+Folder   58/75 [INBOX.@Review.For Entertainment]   -> [INBOX.@Review.For Entertainment]  
+Host1: folder [INBOX.@Review.For Entertainment] has 0 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Review.For Entertainment] has 0 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Review.For Entertainment] permanentflags: 
+Host1: Expunging INBOX.@Review.For Entertainment 
+Host1: folder [INBOX.@Review.For Entertainment] considering 0 messages
+Host2: folder [INBOX.@Review.For Entertainment] considering 0 messages
+Host1: folder [INBOX.@Review.For Entertainment] selected 0 messages, duplicates 0
+Host2: folder [INBOX.@Review.For Entertainment] selected 0 messages, duplicates 0
+Host1: Expunging folder INBOX.@Review.For Entertainment 
+ETA: Mon Dec 28 15:56:41 2020  459 s  915/7858 msgs left
+Folder   59/75 [INBOX.@Review.For Work]            -> [INBOX.@Review.For Work]           
+Host1: folder [INBOX.@Review.For Work] has 0 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Review.For Work] has 0 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Review.For Work] permanentflags: 
+Host1: Expunging INBOX.@Review.For Work 
+Host1: folder [INBOX.@Review.For Work] considering 0 messages
+Host2: folder [INBOX.@Review.For Work] considering 0 messages
+Host1: folder [INBOX.@Review.For Work] selected 0 messages, duplicates 0
+Host2: folder [INBOX.@Review.For Work] selected 0 messages, duplicates 0
+Host1: Expunging folder INBOX.@Review.For Work 
+ETA: Mon Dec 28 15:56:42 2020  461 s  915/7858 msgs left
+Folder   60/75 [INBOX.@Waiting For]                -> [INBOX.@Waiting For]               
+Host1: folder [INBOX.@Waiting For] has 0 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Waiting For] has 0 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.@Waiting For] permanentflags: 
+Host1: Expunging INBOX.@Waiting For 
+Host1: folder [INBOX.@Waiting For] considering 0 messages
+Host2: folder [INBOX.@Waiting For] considering 0 messages
+Host1: folder [INBOX.@Waiting For] selected 0 messages, duplicates 0
+Host2: folder [INBOX.@Waiting For] selected 0 messages, duplicates 0
+Host1: Expunging folder INBOX.@Waiting For 
+ETA: Mon Dec 28 15:56:44 2020  462 s  915/7858 msgs left
+Folder   61/75 [INBOX.Archive]                     -> [INBOX.Archive]                    
+Host1: folder [INBOX.Archive] has 86 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.Archive] has 86 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.Archive] permanentflags: 
+Host1: Expunging INBOX.Archive 
+Host1: folder [INBOX.Archive] considering 86 messages
+Host2: folder [INBOX.Archive] considering 86 messages
+Host1: folder [INBOX.Archive] selected 86 messages, duplicates 0
+Host2: folder [INBOX.Archive] selected 86 messages, duplicates 0
+Host1: Expunging folder INBOX.Archive 
+ETA: Mon Dec 28 15:56:03 2020  421 s  829/7858 msgs left
+Folder   62/75 [INBOX.Drafts]                      -> [INBOX.Drafts]                     
+Host1: folder [INBOX.Drafts] has 0 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.Drafts] has 1 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.Drafts] permanentflags: 
+Host1: Expunging INBOX.Drafts 
+Host1: folder [INBOX.Drafts] considering 0 messages
+Host2: folder [INBOX.Drafts] considering 1 messages
+Host1: folder [INBOX.Drafts] selected 0 messages, duplicates 0
+Host2: folder [INBOX.Drafts] selected 1 messages, duplicates 0
+Host2: msg INBOX.Drafts/1 marked \Deleted on host2 [N6Dw5REHbAZaPK4Dk+XuZw] 
+Host2: UidExpunging 1 message(s) in folder INBOX.Drafts 
+Host1: Expunging folder INBOX.Drafts 
+ETA: Mon Dec 28 15:56:05 2020  423 s  829/7858 msgs left
+Folder   63/75 [INBOX.Realty Medics (PM)]          -> [INBOX.Realty Medics (PM)]         
+Host1: folder [INBOX.Realty Medics (PM)] has 21 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.Realty Medics (PM)] has 21 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.Realty Medics (PM)] permanentflags: 
+Host1: Expunging INBOX.Realty Medics (PM) 
+Host1: folder [INBOX.Realty Medics (PM)] considering 21 messages
+Host2: folder [INBOX.Realty Medics (PM)] considering 21 messages
+Host1: folder [INBOX.Realty Medics (PM)] selected 21 messages, duplicates 0
+Host2: folder [INBOX.Realty Medics (PM)] selected 21 messages, duplicates 0
+Host1: Expunging folder INBOX.Realty Medics (PM) 
+ETA: Mon Dec 28 15:55:56 2020  414 s  808/7858 msgs left
+Folder   64/75 [INBOX.Sent]                        -> [INBOX.Sent]                       
+Host1: folder [INBOX.Sent] has 49 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.Sent] has 49 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.Sent] permanentflags: 
+Host1: Expunging INBOX.Sent 
+Host1: folder [INBOX.Sent] considering 49 messages
+Host2: folder [INBOX.Sent] considering 49 messages
+Host1: folder [INBOX.Sent] selected 49 messages, duplicates 0
+Host2: folder [INBOX.Sent] selected 49 messages, duplicates 0
+Host1: Expunging folder INBOX.Sent 
+ETA: Mon Dec 28 15:55:33 2020  390 s  759/7858 msgs left
+Folder   65/75 [INBOX.Sent Items]                  -> [INBOX.Sent Items]                 
+Host1: folder [INBOX.Sent Items] has 327 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.Sent Items] has 326 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.Sent Items] permanentflags: 
+Host1: Expunging INBOX.Sent Items 
+Host1: folder [INBOX.Sent Items] considering 327 messages
+Host2: folder [INBOX.Sent Items] considering 326 messages
+Host1: folder [INBOX.Sent Items] selected 327 messages, duplicates 0
+Host2: folder [INBOX.Sent Items] selected 326 messages, duplicates 0
+DEBUG: .../IO/Socket/SSL.pm:1199: local error: SSL read error
+- msg INBOX.Sent Items/327 {927} could not append ( Subject:[Testing godaddy domains sneakemail address], Date:["27-Dec-2020 15:53:41 -0700"], Size:[927], Flags:[\Seen] ) to folder INBOX.Sent Items: error while reading data from server: Operation timed out
+Host1: Expunging folder INBOX.Sent Items 
+ETA: Mon Dec 28 15:54:13 2020  291 s  432/7858 msgs left
+Folder   66/75 [INBOX.Spam]                        -> [INBOX.Spam]                       
+Host1: folder [INBOX.Spam] has 0 messages in total (mentioned by SELECT)
+DEBUG: .../IO/Socket/SSL.pm:1279: local error: SSL write error (5)
+DEBUG: .../IO/Socket/SSL.pm:1177: global error: Undefined SSL object
+Host2: folder [INBOX.Spam] has 0 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.Spam] permanentflags: 
+Host1: Expunging INBOX.Spam 
+Host1: folder [INBOX.Spam] considering 0 messages
+Host2: folder [INBOX.Spam] considering 0 messages
+Host1: folder [INBOX.Spam] selected 0 messages, duplicates 0
+Host2: folder [INBOX.Spam] selected 0 messages, duplicates 0
+Host1: Expunging folder INBOX.Spam 
+ETA: Mon Dec 28 15:54:15 2020  292 s  432/7858 msgs left
+Folder   67/75 [INBOX.Starred]                     -> [INBOX.Starred]                    
+Host1: folder [INBOX.Starred] has 0 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.Starred] has 0 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.Starred] permanentflags: 
+Host1: Expunging INBOX.Starred 
+Host1: folder [INBOX.Starred] considering 0 messages
+Host2: folder [INBOX.Starred] considering 0 messages
+Host1: folder [INBOX.Starred] selected 0 messages, duplicates 0
+Host2: folder [INBOX.Starred] selected 0 messages, duplicates 0
+Host1: Expunging folder INBOX.Starred 
+ETA: Mon Dec 28 15:54:16 2020  293 s  432/7858 msgs left
+Folder   68/75 [INBOX.Trash]                       -> [INBOX.Trash]                      
+Host1: folder [INBOX.Trash] has 423 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.Trash] has 502 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.Trash] permanentflags: 
+Host1: Expunging INBOX.Trash 
+Host1: folder [INBOX.Trash] considering 423 messages
+Host2: folder [INBOX.Trash] considering 502 messages
+Host1: folder [INBOX.Trash] selected 423 messages, duplicates 0
+Host2: folder [INBOX.Trash] selected 502 messages, duplicates 0
+Host2: msg INBOX.Trash/829 marked \Deleted on host2 [KQh5ZoIQ/DStHLzE3trsVg] 
+Host2: msg INBOX.Trash/830 marked \Deleted on host2 [UpONPEdHIQtcn9qLGQBgHw] 
+Host2: msg INBOX.Trash/831 marked \Deleted on host2 [W754iJbm+nmVnMrr3klkVg] 
+Host2: msg INBOX.Trash/832 marked \Deleted on host2 [/YVOvb2Hgi26TrGwNATvoQ] 
+Host2: msg INBOX.Trash/833 marked \Deleted on host2 [5/pE65sAFSrv+mBXLX5Vgg] 
+Host2: msg INBOX.Trash/834 marked \Deleted on host2 [E5bnFwqipPj1M5ec52knTA] 
+Host2: msg INBOX.Trash/835 marked \Deleted on host2 [lSGsn19OIWICMcDpaMvAXA] 
+Host2: msg INBOX.Trash/836 marked \Deleted on host2 [zLw33+23/edaZi42LoxZuQ] 
+Host2: msg INBOX.Trash/837 marked \Deleted on host2 [reb+09OxqIDjCnck9l703Q] 
+Host2: msg INBOX.Trash/838 marked \Deleted on host2 [Zqi1xN/3ScVMO0rbb/lFsg] 
+Host2: msg INBOX.Trash/839 marked \Deleted on host2 [/nLUDNkYLbyEEqFiObMeMg] 
+Host2: msg INBOX.Trash/840 marked \Deleted on host2 [nkZAH/TE2J/rAM3oCrzJ5w] 
+Host2: msg INBOX.Trash/841 marked \Deleted on host2 [qaIcpySMF8xkYH++SzxeOQ] 
+Host2: msg INBOX.Trash/842 marked \Deleted on host2 [9YnyNj1L0P6nPuaviMk9pA] 
+Host2: msg INBOX.Trash/843 marked \Deleted on host2 [UVBNnTpQSyncfFqwzZFt3g] 
+Host2: msg INBOX.Trash/844 marked \Deleted on host2 [nmv/THfjFhP/F2nfC55eeA] 
+Host2: msg INBOX.Trash/845 marked \Deleted on host2 [c/bzfgmTOsDLcyrC9xd3aw] 
+Host2: msg INBOX.Trash/846 marked \Deleted on host2 [47GA9pfoV8ljHaBi+SnjUg] 
+Host2: msg INBOX.Trash/847 marked \Deleted on host2 [M9L+tRZnMaHwzk73Qorh8w] 
+Host2: msg INBOX.Trash/848 marked \Deleted on host2 [1AzPETnK0pS4mnP65zFAyQ] 
+Host2: msg INBOX.Trash/849 marked \Deleted on host2 [Ga8SPgtuuYdAIPmU+wuCHg] 
+Host2: msg INBOX.Trash/850 marked \Deleted on host2 [JRgUDbVO0PoH8vJ7DH9Yww] 
+Host2: msg INBOX.Trash/851 marked \Deleted on host2 [BSmysd6hrjYyrDN+/RqZ8g] 
+Host2: msg INBOX.Trash/852 marked \Deleted on host2 [K/LQFn/tOaQaB+MtDUQzAQ] 
+Host2: msg INBOX.Trash/853 marked \Deleted on host2 [zHcbI5xCWHvrxsind3lZXw] 
+Host2: msg INBOX.Trash/854 marked \Deleted on host2 [HLsuVnsr5r7X/7vW4GvSdA] 
+Host2: msg INBOX.Trash/855 marked \Deleted on host2 [LEZdD8Vq6lU9dDNyAjxYkw] 
+Host2: msg INBOX.Trash/856 marked \Deleted on host2 [0tnkrr1/3CCfw3jvefzNCw] 
+Host2: msg INBOX.Trash/857 marked \Deleted on host2 [ZM87eOu2DUquCZcQVlsElg] 
+Host2: msg INBOX.Trash/858 marked \Deleted on host2 [ZEW5R4UQzj5vis/58l1s3g] 
+Host2: msg INBOX.Trash/859 marked \Deleted on host2 [xBNOol0j7pQ/cJqBW+oBpw] 
+Host2: msg INBOX.Trash/860 marked \Deleted on host2 [1zGmapa5DAVLBF0oSKiGLg] 
+Host2: msg INBOX.Trash/861 marked \Deleted on host2 [ZgwNS9M82HUnInztC9y7RA] 
+Host2: msg INBOX.Trash/862 marked \Deleted on host2 [ZIrWGfZeDWJKHkWP58Gl2g] 
+Host2: msg INBOX.Trash/863 marked \Deleted on host2 [qh3gE+Nic+0AasjZFRSs+w] 
+Host2: msg INBOX.Trash/864 marked \Deleted on host2 [YIXJ27xfdXu+YHKiQh/V4g] 
+Host2: msg INBOX.Trash/865 marked \Deleted on host2 [NoT/wsho0uWJD8nfsRmfOA] 
+Host2: msg INBOX.Trash/866 marked \Deleted on host2 [KFB/gvR5nUQCAWvL+8V+ig] 
+Host2: msg INBOX.Trash/867 marked \Deleted on host2 [FiOHd/eCQaUaZ8/RJRqthQ] 
+Host2: msg INBOX.Trash/868 marked \Deleted on host2 [/Il3eEYV9C2MxHC+a8DwcA] 
+Host2: msg INBOX.Trash/869 marked \Deleted on host2 [t8xt8yiY6tqDDiQ0oDqfJg] 
+Host2: msg INBOX.Trash/870 marked \Deleted on host2 [zWNhDmFQJs8o9VgkRpuuHg] 
+Host2: msg INBOX.Trash/871 marked \Deleted on host2 [4qZF1aBQs8lR2Kc5B97l3g] 
+Host2: msg INBOX.Trash/872 marked \Deleted on host2 [pprWA+gBHZ7vfcF7q9sJHQ] 
+Host2: msg INBOX.Trash/873 marked \Deleted on host2 [MEumTCe94qhHM77GOYNoFQ] 
+Host2: msg INBOX.Trash/874 marked \Deleted on host2 [lMJpFkN7L6eEj9oMJ0LzWQ] 
+Host2: msg INBOX.Trash/875 marked \Deleted on host2 [3NQEkXGQDmd0q9vxp/29QA] 
+Host2: msg INBOX.Trash/876 marked \Deleted on host2 [0+LJ2SXoqo4h7zIEYXX2pw] 
+Host2: msg INBOX.Trash/877 marked \Deleted on host2 [rspXb1FhqWiYiYS0HtMtAg] 
+Host2: msg INBOX.Trash/878 marked \Deleted on host2 [NTrLSoHvqQJaAN/S1k9tOA] 
+Host2: msg INBOX.Trash/879 marked \Deleted on host2 [mfn0pv1Y29EQbMijlRAsHw] 
+Host2: msg INBOX.Trash/880 marked \Deleted on host2 [IzH+hwP4nU85l/TNLJQ72g] 
+Host2: msg INBOX.Trash/881 marked \Deleted on host2 [V9X/bo2Qo6QpoML7U8cPYA] 
+Host2: msg INBOX.Trash/882 marked \Deleted on host2 [nH+iFRQGnv5UhXgOxPAiEQ] 
+Host2: msg INBOX.Trash/883 marked \Deleted on host2 [HedO6opYd2oX+DVs/gYp4g] 
+Host2: msg INBOX.Trash/901 marked \Deleted on host2 [6cLZtdN9rAdxEm104l1lag] 
+Host2: msg INBOX.Trash/902 marked \Deleted on host2 [TF0xDqG2kfJ1Iz9wgZ/pDQ] 
+Host2: msg INBOX.Trash/903 marked \Deleted on host2 [JMMd4JTsYKRHqqioLCijmg] 
+Host2: msg INBOX.Trash/904 marked \Deleted on host2 [BAwWpMbyaqGpcK3j5SaJKw] 
+Host2: msg INBOX.Trash/905 marked \Deleted on host2 [UPxQzXqMv4n7y0h6nIwbEA] 
+Host2: msg INBOX.Trash/906 marked \Deleted on host2 [z0yMc//BBgvzKp65K3LqgQ] 
+Host2: msg INBOX.Trash/907 marked \Deleted on host2 [D2Lx6j6XiP/C6LGaJkSrCQ] 
+Host2: msg INBOX.Trash/908 marked \Deleted on host2 [VHnI837XaE7eEDF5isawig] 
+Host2: msg INBOX.Trash/909 marked \Deleted on host2 [jblW8pwxueisL7uIF8BP8Q] 
+Host2: msg INBOX.Trash/910 marked \Deleted on host2 [9nI/UNfjT3SVWNzKkyVz5g] 
+Host2: msg INBOX.Trash/911 marked \Deleted on host2 [sOXiLFT6BDL0RPHWQ6Fy7A] 
+Host2: msg INBOX.Trash/912 marked \Deleted on host2 [o3fQrDiDGYE3i2wnX2l46Q] 
+Host2: msg INBOX.Trash/913 marked \Deleted on host2 [zu/GAogORzzZMbeWDLOfJw] 
+Host2: msg INBOX.Trash/914 marked \Deleted on host2 [uhEPE8b/BFKHzQy5BlLU0w] 
+Host2: msg INBOX.Trash/915 marked \Deleted on host2 [et6BwLHQ4j7kL0hFMrkw/Q] 
+Host2: msg INBOX.Trash/917 marked \Deleted on host2 [3afSgW9NBBcBpypkETH9Gw] 
+Host2: msg INBOX.Trash/918 marked \Deleted on host2 [V/m5wU+6DTt0WVUXqIn62Q] 
+Host2: msg INBOX.Trash/919 marked \Deleted on host2 [qs1Ngs84eZcvuzSgD/Kh8g] 
+Host2: msg INBOX.Trash/920 marked \Deleted on host2 [cOabBqdbYvJO0+Tab1uIcg] 
+Host2: msg INBOX.Trash/921 marked \Deleted on host2 [6Cg8N+y0nMAAAKP+P6KEyQ] 
+Host2: msg INBOX.Trash/922 marked \Deleted on host2 [MF1EBi8DuVkwyzzeQVO8Mg] 
+Host2: msg INBOX.Trash/923 marked \Deleted on host2 [ps51HSMtY0PbcVIpNk43cQ] 
+Host2: msg INBOX.Trash/924 marked \Deleted on host2 [0+EF2oyKWuNpl0pDnLNxmA] 
+Host2: msg INBOX.Trash/925 marked \Deleted on host2 [UOzykEe1B2421fPVY5cN8A] 
+Host2: msg INBOX.Trash/926 marked \Deleted on host2 [B5i0qHq2m2DvHscP/frmzg] 
+Host2: msg INBOX.Trash/927 marked \Deleted on host2 [5CLLQDtTQ8D22ardcpMQ/A] 
+Host2: msg INBOX.Trash/928 marked \Deleted on host2 [wHrEuCXu+Lb0F76cL5i6Og] 
+Host2: UidExpunging 82 message(s) in folder INBOX.Trash 
+DEBUG: .../IO/Socket/SSL.pm:1199: local error: SSL read error
+- msg INBOX.Trash/1131 {25759} could not append ( Subject:[=?utf-8?B?RlJFRSDwn46BIERFTElWRVJZIPCfjoE=?=], Date:["23-Dec-2020 05:42:34 -0700"], Size:[25759], Flags:[\Seen] ) to folder INBOX.Trash: error while reading data from server: Operation timed out
+DEBUG: .../IO/Socket/SSL.pm:1279: local error: SSL write error (5)
+DEBUG: .../IO/Socket/SSL.pm:1177: global error: Undefined SSL object
+msg INBOX.Trash/1298 {87071}        copied to INBOX.Trash/929        1.16 msgs/s  58.157 KiB/s 5.923 MiB copied ETA: Mon Dec 28 15:50:40 2020  54 s  63/7858 msgs left
+msg INBOX.Trash/1371 {45491}        copied to INBOX.Trash/930        1.17 msgs/s  58.523 KiB/s 5.967 MiB copied ETA: Mon Dec 28 15:50:04 2020  18 s  21/7858 msgs left
+Host1: Expunging folder INBOX.Trash 
+ETA: Mon Dec 28 15:49:53 2020  8 s  9/7858 msgs left
+Folder   69/75 [INBOX.[Airmail]]                   -> [INBOX.[Airmail]]                  
+Host1: folder [INBOX.[Airmail]] has 0 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.[Airmail]] has 0 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.[Airmail]] permanentflags: 
+Host1: Expunging INBOX.[Airmail] 
+Host1: folder [INBOX.[Airmail]] considering 0 messages
+Host2: folder [INBOX.[Airmail]] considering 0 messages
+Host1: folder [INBOX.[Airmail]] selected 0 messages, duplicates 0
+Host2: folder [INBOX.[Airmail]] selected 0 messages, duplicates 0
+Host1: Expunging folder INBOX.[Airmail] 
+ETA: Mon Dec 28 15:49:54 2020  8 s  9/7858 msgs left
+Folder   70/75 [INBOX.[Airmail].Done]              -> [INBOX.[Airmail].Done]             
+Host1: folder [INBOX.[Airmail].Done] has 0 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.[Airmail].Done] has 0 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.[Airmail].Done] permanentflags: 
+Host1: Expunging INBOX.[Airmail].Done 
+Host1: folder [INBOX.[Airmail].Done] considering 0 messages
+Host2: folder [INBOX.[Airmail].Done] considering 0 messages
+Host1: folder [INBOX.[Airmail].Done] selected 0 messages, duplicates 0
+Host2: folder [INBOX.[Airmail].Done] selected 0 messages, duplicates 0
+Host1: Expunging folder INBOX.[Airmail].Done 
+ETA: Mon Dec 28 15:49:54 2020  8 s  9/7858 msgs left
+Folder   71/75 [INBOX.[Airmail].Memo]              -> [INBOX.[Airmail].Memo]             
+Host1: folder [INBOX.[Airmail].Memo] has 0 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.[Airmail].Memo] has 0 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.[Airmail].Memo] permanentflags: 
+Host1: Expunging INBOX.[Airmail].Memo 
+Host1: folder [INBOX.[Airmail].Memo] considering 0 messages
+Host2: folder [INBOX.[Airmail].Memo] considering 0 messages
+Host1: folder [INBOX.[Airmail].Memo] selected 0 messages, duplicates 0
+Host2: folder [INBOX.[Airmail].Memo] selected 0 messages, duplicates 0
+Host1: Expunging folder INBOX.[Airmail].Memo 
+ETA: Mon Dec 28 15:49:54 2020  8 s  9/7858 msgs left
+Folder   72/75 [INBOX.[Airmail].Send Later]        -> [INBOX.[Airmail].Send Later]       
+Host1: folder [INBOX.[Airmail].Send Later] has 0 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.[Airmail].Send Later] has 0 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.[Airmail].Send Later] permanentflags: 
+Host1: Expunging INBOX.[Airmail].Send Later 
+Host1: folder [INBOX.[Airmail].Send Later] considering 0 messages
+Host2: folder [INBOX.[Airmail].Send Later] considering 0 messages
+Host1: folder [INBOX.[Airmail].Send Later] selected 0 messages, duplicates 0
+Host2: folder [INBOX.[Airmail].Send Later] selected 0 messages, duplicates 0
+Host1: Expunging folder INBOX.[Airmail].Send Later 
+ETA: Mon Dec 28 15:49:54 2020  8 s  9/7858 msgs left
+Folder   73/75 [INBOX.[Airmail].Snooze]            -> [INBOX.[Airmail].Snooze]           
+Host1: folder [INBOX.[Airmail].Snooze] has 0 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.[Airmail].Snooze] has 0 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.[Airmail].Snooze] permanentflags: 
+Host1: Expunging INBOX.[Airmail].Snooze 
+Host1: folder [INBOX.[Airmail].Snooze] considering 0 messages
+Host2: folder [INBOX.[Airmail].Snooze] considering 0 messages
+Host1: folder [INBOX.[Airmail].Snooze] selected 0 messages, duplicates 0
+Host2: folder [INBOX.[Airmail].Snooze] selected 0 messages, duplicates 0
+Host1: Expunging folder INBOX.[Airmail].Snooze 
+ETA: Mon Dec 28 15:49:54 2020  8 s  9/7858 msgs left
+Folder   74/75 [INBOX.[Airmail].To Do]             -> [INBOX.[Airmail].To Do]            
+Host1: folder [INBOX.[Airmail].To Do] has 0 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.[Airmail].To Do] has 0 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.[Airmail].To Do] permanentflags: 
+Host1: Expunging INBOX.[Airmail].To Do 
+Host1: folder [INBOX.[Airmail].To Do] considering 0 messages
+Host2: folder [INBOX.[Airmail].To Do] considering 0 messages
+Host1: folder [INBOX.[Airmail].To Do] selected 0 messages, duplicates 0
+Host2: folder [INBOX.[Airmail].To Do] selected 0 messages, duplicates 0
+Host1: Expunging folder INBOX.[Airmail].To Do 
+ETA: Mon Dec 28 15:49:55 2020  8 s  9/7858 msgs left
+Folder   75/75 [INBOX.spam]                        -> [INBOX.spam]                       
+Host1: folder [INBOX.spam] has 9 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.spam] has 0 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.spam] permanentflags: 
+Host1: Expunging INBOX.spam 
+Host1: folder [INBOX.spam] considering 9 messages
+Host2: folder [INBOX.spam] considering 0 messages
+Host1: folder [INBOX.spam] selected 9 messages, duplicates 0
+Host2: folder [INBOX.spam] selected 0 messages, duplicates 0
+msg INBOX.spam/17 {129748}         copied to INBOX.spam/1          1.16 msgs/s  58.853 KiB/s 6.090 MiB copied ETA: Mon Dec 28 15:49:54 2020  7 s  8/7858 msgs left
+msg INBOX.spam/18 {49928}          copied to INBOX.spam/2          1.17 msgs/s  59.242 KiB/s 6.138 MiB copied ETA: Mon Dec 28 15:49:53 2020  6 s  7/7858 msgs left
+msg INBOX.spam/19 {124925}         copied to INBOX.spam/3          1.18 msgs/s  60.305 KiB/s 6.257 MiB copied ETA: Mon Dec 28 15:49:53 2020  5 s  6/7858 msgs left
+msg INBOX.spam/20 {39380}          copied to INBOX.spam/4          1.18 msgs/s  60.613 KiB/s 6.295 MiB copied ETA: Mon Dec 28 15:49:52 2020  4 s  5/7858 msgs left
+msg INBOX.spam/21 {28023}          copied to INBOX.spam/5          1.19 msgs/s  60.824 KiB/s 6.322 MiB copied ETA: Mon Dec 28 15:49:51 2020  3 s  4/7858 msgs left
+msg INBOX.spam/22 {100231}         copied to INBOX.spam/6          1.20 msgs/s  61.671 KiB/s 6.417 MiB copied ETA: Mon Dec 28 15:49:50 2020  2 s  3/7858 msgs left
+msg INBOX.spam/23 {56494}          copied to INBOX.spam/7          1.21 msgs/s  62.136 KiB/s 6.471 MiB copied ETA: Mon Dec 28 15:49:49 2020  2 s  2/7858 msgs left
+msg INBOX.spam/24 {98459}          copied to INBOX.spam/8          1.22 msgs/s  62.955 KiB/s 6.565 MiB copied ETA: Mon Dec 28 15:49:49 2020  1 s  1/7858 msgs left
+msg INBOX.spam/25 {91841}          copied to INBOX.spam/9          1.23 msgs/s  63.719 KiB/s 6.652 MiB copied ETA: Mon Dec 28 15:49:48 2020  0 s  0/7858 msgs left
+Host1: Expunging folder INBOX.spam 
+ETA: Mon Dec 28 15:49:48 2020  0 s  0/7858 msgs left
+++++ End looping on each folder
+
+Folders sizes after the synchronization.
+You can remove this foldersizes listing by using  "--nofoldersizesatend"
+Host1 folder    1/75 [INBOX]                             Size:  11428374 Messages:   124 Biggest:   4242742
+Host2 folder    1/75 [INBOX]                             Size:  10796780 Messages:   112 Biggest:   4242742
+Host2-Host1                                                      -631594             -12                  0
+
+Host1 folder    2/75 [INBOX.@Action]                     Size:    364779 Messages:     7 Biggest:     91948
+Host2 folder    2/75 [INBOX.@Action]                     Size:    364779 Messages:     7 Biggest:     91948
+Host2-Host1                                                            0               0                  0
+
+Host1 folder    3/75 [INBOX.@Action.Offers]              Size:   3188264 Messages:    64 Biggest:    129933
+Host2 folder    3/75 [INBOX.@Action.Offers]              Size:   3188264 Messages:    64 Biggest:    129933
+Host2-Host1                                                            0               0                  0
+
+Host1 folder    4/75 [INBOX.@Reference]                  Size:         0 Messages:     0 Biggest:         0
+Host2 folder    4/75 [INBOX.@Reference]                  Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder    5/75 [INBOX.@Reference.Auto]             Size:   1258626 Messages:    12 Biggest:    810993
+Host2 folder    5/75 [INBOX.@Reference.Auto]             Size:   1258626 Messages:    12 Biggest:    810993
+Host2-Host1                                                            0               0                  0
+
+Host1 folder    6/75 [INBOX.@Reference.Backpacking]      Size:         0 Messages:     0 Biggest:         0
+Host2 folder    6/75 [INBOX.@Reference.Backpacking]      Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder    7/75 [INBOX.@Reference.Bills]            Size:  13397701 Messages:   193 Biggest:   3000665
+Host2 folder    7/75 [INBOX.@Reference.Bills]            Size:  13397701 Messages:   193 Biggest:   3000665
+Host2-Host1                                                            0               0                  0
+
+Host1 folder    8/75 [INBOX.@Reference.Business Contacts] Size:    198086 Messages:    11 Biggest:     36259
+Host2 folder    8/75 [INBOX.@Reference.Business Contacts] Size:    198086 Messages:    11 Biggest:     36259
+Host2-Host1                                                            0               0                  0
+
+Host1 folder    9/75 [INBOX.@Reference.Education]        Size:   1132658 Messages:    31 Biggest:    126015
+Host2 folder    9/75 [INBOX.@Reference.Education]        Size:   1132658 Messages:    31 Biggest:    126015
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   10/75 [INBOX.@Reference.Family]           Size:  35113159 Messages:   385 Biggest:   5772968
+Host2 folder   10/75 [INBOX.@Reference.Family]           Size:  35113159 Messages:   385 Biggest:   5772968
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   11/75 [INBOX.@Reference.Family.Expenses]  Size:         0 Messages:     0 Biggest:         0
+Host2 folder   11/75 [INBOX.@Reference.Family.Expenses]  Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   12/75 [INBOX.@Reference.Family.Pets]      Size:   1707015 Messages:     2 Biggest:   1672620
+Host2 folder   12/75 [INBOX.@Reference.Family.Pets]      Size:   1707015 Messages:     2 Biggest:   1672620
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   13/75 [INBOX.@Reference.Finance]          Size:  33391521 Messages:   561 Biggest:   5605619
+Host2 folder   13/75 [INBOX.@Reference.Finance]          Size:  33391521 Messages:   561 Biggest:   5605619
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   14/75 [INBOX.@Reference.Finance.Business Expenses] Size:   8780411 Messages:   101 Biggest:    419045
+Host2 folder   14/75 [INBOX.@Reference.Finance.Business Expenses] Size:   8780411 Messages:   101 Biggest:    419045
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   15/75 [INBOX.@Reference.Finance.Domain Registration] Size:    171791 Messages:    10 Biggest:     26366
+Host2 folder   15/75 [INBOX.@Reference.Finance.Domain Registration] Size:    171791 Messages:    10 Biggest:     26366
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   16/75 [INBOX.@Reference.Finance.Real Estate] Size:  85216520 Messages:   372 Biggest:  14195141
+Host2 folder   16/75 [INBOX.@Reference.Finance.Real Estate] Size:  85216520 Messages:   372 Biggest:  14195141
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   17/75 [INBOX.@Reference.Finance.Real Estate.Allstar] Size:  49295251 Messages:   268 Biggest:  16219876
+Host2 folder   17/75 [INBOX.@Reference.Finance.Real Estate.Allstar] Size:  49295251 Messages:   268 Biggest:  16219876
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   18/75 [INBOX.@Reference.Finance.Real Estate.Bigger Pockets] Size:   5104823 Messages:    48 Biggest:    139612
+Host2 folder   18/75 [INBOX.@Reference.Finance.Real Estate.Bigger Pockets] Size:   5104823 Messages:    48 Biggest:    139612
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   19/75 [INBOX.@Reference.Finance.Real Estate.Chuck Baer] Size:  44575351 Messages:   130 Biggest:   7878438
+Host2 folder   19/75 [INBOX.@Reference.Finance.Real Estate.Chuck Baer] Size:  44575351 Messages:   130 Biggest:   7878438
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   20/75 [INBOX.@Reference.Finance.Real Estate.Cozy] Size:    522487 Messages:    14 Biggest:     40823
+Host2 folder   20/75 [INBOX.@Reference.Finance.Real Estate.Cozy] Size:    522487 Messages:    14 Biggest:     40823
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   21/75 [INBOX.@Reference.Finance.Real Estate.Housefolios] Size:    972053 Messages:    13 Biggest:    130734
+Host2 folder   21/75 [INBOX.@Reference.Finance.Real Estate.Housefolios] Size:    972053 Messages:    13 Biggest:    130734
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   22/75 [INBOX.@Reference.Finance.Real Estate.Investing] Size: 231776376 Messages:   624 Biggest:  17252863
+Host2 folder   22/75 [INBOX.@Reference.Finance.Real Estate.Investing] Size: 231776376 Messages:   624 Biggest:  17252863
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   23/75 [INBOX.@Reference.Finance.Real Estate.Olmstead] Size:  40402830 Messages:   249 Biggest:   4212788
+Host2 folder   23/75 [INBOX.@Reference.Finance.Real Estate.Olmstead] Size:  40402830 Messages:   249 Biggest:   4212788
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   24/75 [INBOX.@Reference.Finance.Real Estate.PMI] Size:  28393219 Messages:   183 Biggest:   7675140
+Host2 folder   24/75 [INBOX.@Reference.Finance.Real Estate.PMI] Size:  28393219 Messages:   183 Biggest:   7675140
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   25/75 [INBOX.@Reference.Finance.Real Estate.Property Boss] Size:  10845915 Messages:     3 Biggest:  10790957
+Host2 folder   25/75 [INBOX.@Reference.Finance.Real Estate.Property Boss] Size:  10845915 Messages:     3 Biggest:  10790957
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   26/75 [INBOX.@Reference.Finance.Real Estate.RREI] Size:     65000 Messages:     2 Biggest:     44750
+Host2 folder   26/75 [INBOX.@Reference.Finance.Real Estate.RREI] Size:     65000 Messages:     2 Biggest:     44750
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   27/75 [INBOX.@Reference.Finance.Real Estate.RealWealth] Size:  10244774 Messages:   202 Biggest:    126984
+Host2 folder   27/75 [INBOX.@Reference.Finance.Real Estate.RealWealth] Size:  10244774 Messages:   202 Biggest:    126984
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   28/75 [INBOX.@Reference.Finance.Real Estate.Realty Doctors] Size:  17658595 Messages:   142 Biggest:   3831712
+Host2 folder   28/75 [INBOX.@Reference.Finance.Real Estate.Realty Doctors] Size:  17658595 Messages:   142 Biggest:   3831712
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   29/75 [INBOX.@Reference.Finance.Real Estate.Renshaw] Size:  30569836 Messages:   169 Biggest:  16219150
+Host2 folder   29/75 [INBOX.@Reference.Finance.Real Estate.Renshaw] Size:  30569836 Messages:   169 Biggest:  16219150
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   30/75 [INBOX.@Reference.Finance.Real Estate.Roofstock] Size:  88055958 Messages:   342 Biggest:  10471236
+Host2 folder   30/75 [INBOX.@Reference.Finance.Real Estate.Roofstock] Size:  88055958 Messages:   342 Biggest:  10471236
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   31/75 [INBOX.@Reference.Finance.Real Estate.Stessa] Size:   5147589 Messages:    49 Biggest:    143151
+Host2 folder   31/75 [INBOX.@Reference.Finance.Real Estate.Stessa] Size:   5147589 Messages:    49 Biggest:    143151
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   32/75 [INBOX.@Reference.Finance.TCF Bank] Size:    424230 Messages:     7 Biggest:    203741
+Host2 folder   32/75 [INBOX.@Reference.Finance.TCF Bank] Size:    424230 Messages:     7 Biggest:    203741
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   33/75 [INBOX.@Reference.Finance.Taxes]    Size:   6638813 Messages:   156 Biggest:   1685506
+Host2 folder   33/75 [INBOX.@Reference.Finance.Taxes]    Size:   6638813 Messages:   156 Biggest:   1685506
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   34/75 [INBOX.@Reference.Food]             Size:    191538 Messages:     2 Biggest:    152957
+Host2 folder   34/75 [INBOX.@Reference.Food]             Size:    191538 Messages:     2 Biggest:    152957
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   35/75 [INBOX.@Reference.Friends]          Size:  52786555 Messages:   317 Biggest:  16802125
+Host2 folder   35/75 [INBOX.@Reference.Friends]          Size:  52786555 Messages:   317 Biggest:  16802125
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   36/75 [INBOX.@Reference.Health]           Size:   1427933 Messages:    38 Biggest:    158110
+Host2 folder   36/75 [INBOX.@Reference.Health]           Size:   1427933 Messages:    38 Biggest:    158110
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   37/75 [INBOX.@Reference.Hobby]            Size:    473321 Messages:    10 Biggest:    113102
+Host2 folder   37/75 [INBOX.@Reference.Hobby]            Size:    473321 Messages:    10 Biggest:    113102
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   38/75 [INBOX.@Reference.Hobby.Work From Home] Size:     50483 Messages:     1 Biggest:     50483
+Host2 folder   38/75 [INBOX.@Reference.Hobby.Work From Home] Size:     50483 Messages:     1 Biggest:     50483
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   39/75 [INBOX.@Reference.Home]             Size:    745327 Messages:     9 Biggest:    340368
+Host2 folder   39/75 [INBOX.@Reference.Home]             Size:    745327 Messages:     9 Biggest:    340368
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   40/75 [INBOX.@Reference.Home.Charlotte Home] Size:   4506827 Messages:    21 Biggest:   1959716
+Host2 folder   40/75 [INBOX.@Reference.Home.Charlotte Home] Size:   4506827 Messages:    21 Biggest:   1959716
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   41/75 [INBOX.@Reference.Home.Landscaping] Size:  11811361 Messages:   109 Biggest:   5982281
+Host2 folder   41/75 [INBOX.@Reference.Home.Landscaping] Size:  11811361 Messages:   109 Biggest:   5982281
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   42/75 [INBOX.@Reference.Home.Retirement Home] Size:  13524925 Messages:   362 Biggest:     83642
+Host2 folder   42/75 [INBOX.@Reference.Home.Retirement Home] Size:  13524925 Messages:   362 Biggest:     83642
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   43/75 [INBOX.@Reference.Home.Solar]       Size:   6200334 Messages:    18 Biggest:   3023591
+Host2 folder   43/75 [INBOX.@Reference.Home.Solar]       Size:   6200334 Messages:    18 Biggest:   3023591
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   44/75 [INBOX.@Reference.Home.Work From Home] Size:     17958 Messages:     1 Biggest:     17958
+Host2 folder   44/75 [INBOX.@Reference.Home.Work From Home] Size:     17958 Messages:     1 Biggest:     17958
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   45/75 [INBOX.@Reference.Internet Services] Size:   4703881 Messages:   133 Biggest:    899643
+Host2 folder   45/75 [INBOX.@Reference.Internet Services] Size:   4698730 Messages:   132 Biggest:    899643
+Host2-Host1                                                        -5151              -1                  0
+
+Host1 folder   46/75 [INBOX.@Reference.Internet Services.Support Tickets] Size:     25738 Messages:     3 Biggest:     12057
+Host2 folder   46/75 [INBOX.@Reference.Internet Services.Support Tickets] Size:     25738 Messages:     3 Biggest:     12057
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   47/75 [INBOX.@Reference.Items I'm Selling] Size:   1104272 Messages:    32 Biggest:     67948
+Host2 folder   47/75 [INBOX.@Reference.Items I'm Selling] Size:   1104272 Messages:    32 Biggest:     67948
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   48/75 [INBOX.@Reference.Legal]            Size:     87850 Messages:     4 Biggest:     32775
+Host2 folder   48/75 [INBOX.@Reference.Legal]            Size:     87850 Messages:     4 Biggest:     32775
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   49/75 [INBOX.@Reference.Lifestyle]        Size:   5565401 Messages:    78 Biggest:    118715
+Host2 folder   49/75 [INBOX.@Reference.Lifestyle]        Size:   5565401 Messages:    78 Biggest:    118715
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   50/75 [INBOX.@Reference.Productivity]     Size:     16674 Messages:     1 Biggest:     16674
+Host2 folder   50/75 [INBOX.@Reference.Productivity]     Size:     16674 Messages:     1 Biggest:     16674
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   51/75 [INBOX.@Reference.Purchases]        Size:  61916497 Messages:   909 Biggest:   7016973
+Host2 folder   51/75 [INBOX.@Reference.Purchases]        Size:  61916497 Messages:   909 Biggest:   7016973
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   52/75 [INBOX.@Reference.Self Development] Size:     30642 Messages:     1 Biggest:     30642
+Host2 folder   52/75 [INBOX.@Reference.Self Development] Size:     30642 Messages:     1 Biggest:     30642
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   53/75 [INBOX.@Reference.Travel]           Size:  62690847 Messages:   296 Biggest:  11136820
+Host2 folder   53/75 [INBOX.@Reference.Travel]           Size:  62690847 Messages:   296 Biggest:  11136820
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   54/75 [INBOX.@Reference.Work]             Size:  17041172 Messages:   124 Biggest:   2475799
+Host2 folder   54/75 [INBOX.@Reference.Work]             Size:  17041172 Messages:   124 Biggest:   2475799
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   55/75 [INBOX.@Reference.Work.Leadership Development] Size:         0 Messages:     0 Biggest:         0
+Host2 folder   55/75 [INBOX.@Reference.Work.Leadership Development] Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   56/75 [INBOX.@Reference.Work.Process Excellence] Size:         0 Messages:     0 Biggest:         0
+Host2 folder   56/75 [INBOX.@Reference.Work.Process Excellence] Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   57/75 [INBOX.@Review]                     Size:    126111 Messages:     1 Biggest:    126111
+Host2 folder   57/75 [INBOX.@Review]                     Size:    126111 Messages:     1 Biggest:    126111
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   58/75 [INBOX.@Review.For Entertainment]   Size:         0 Messages:     0 Biggest:         0
+Host2 folder   58/75 [INBOX.@Review.For Entertainment]   Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   59/75 [INBOX.@Review.For Work]            Size:         0 Messages:     0 Biggest:         0
+Host2 folder   59/75 [INBOX.@Review.For Work]            Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   60/75 [INBOX.@Waiting For]                Size:         0 Messages:     0 Biggest:         0
+Host2 folder   60/75 [INBOX.@Waiting For]                Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   61/75 [INBOX.Archive]                     Size:   5644973 Messages:    86 Biggest:   1677031
+Host2 folder   61/75 [INBOX.Archive]                     Size:   6222270 Messages:    97 Biggest:   1677031
+Host2-Host1                                                       577297              11                  0
+
+Host1 folder   62/75 [INBOX.Drafts]                      Size:         0 Messages:     0 Biggest:         0
+Host2 folder   62/75 [INBOX.Drafts]                      Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   63/75 [INBOX.Realty Medics (PM)]          Size:   7386438 Messages:    21 Biggest:   2942508
+Host2 folder   63/75 [INBOX.Realty Medics (PM)]          Size:   7386438 Messages:    21 Biggest:   2942508
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   64/75 [INBOX.Sent]                        Size:  53171298 Messages:    49 Biggest:  24592319
+Host2 folder   64/75 [INBOX.Sent]                        Size:  53171298 Messages:    49 Biggest:  24592319
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   65/75 [INBOX.Sent Items]                  Size: 103125914 Messages:   327 Biggest:   8090875
+Host2 folder   65/75 [INBOX.Sent Items]                  Size: 103124987 Messages:   326 Biggest:   8090875
+Host2-Host1                                                         -927              -1                  0
+
+Host1 folder   66/75 [INBOX.Spam]                        Size:         0 Messages:     0 Biggest:         0
+Host2 folder   66/75 [INBOX.Spam]                        Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   67/75 [INBOX.Starred]                     Size:         0 Messages:     0 Biggest:         0
+Host2 folder   67/75 [INBOX.Starred]                     Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   68/75 [INBOX.Trash]                       Size:  25095567 Messages:   423 Biggest:    304347
+Host2 folder   68/75 [INBOX.Trash]                       Size:  25069808 Messages:   422 Biggest:    304347
+Host2-Host1                                                       -25759              -1                  0
+
+Host1 folder   69/75 [INBOX.[Airmail]]                   Size:         0 Messages:     0 Biggest:         0
+Host2 folder   69/75 [INBOX.[Airmail]]                   Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   70/75 [INBOX.[Airmail].Done]              Size:         0 Messages:     0 Biggest:         0
+Host2 folder   70/75 [INBOX.[Airmail].Done]              Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   71/75 [INBOX.[Airmail].Memo]              Size:         0 Messages:     0 Biggest:         0
+Host2 folder   71/75 [INBOX.[Airmail].Memo]              Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   72/75 [INBOX.[Airmail].Send Later]        Size:         0 Messages:     0 Biggest:         0
+Host2 folder   72/75 [INBOX.[Airmail].Send Later]        Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   73/75 [INBOX.[Airmail].Snooze]            Size:         0 Messages:     0 Biggest:         0
+Host2 folder   73/75 [INBOX.[Airmail].Snooze]            Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   74/75 [INBOX.[Airmail].To Do]             Size:         0 Messages:     0 Biggest:         0
+Host2 folder   74/75 [INBOX.[Airmail].To Do]             Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   75/75 [INBOX.spam]                        Size:    719029 Messages:     9 Biggest:    129748
+Host2 folder   75/75 [INBOX.spam]                        Size:    719029 Messages:     9 Biggest:    129748
+Host2-Host1                                                            0               0                  0
+
+Host1 Nb folders:                    75 folders
+Host2 Nb folders:                    75 folders
+
+Host1 Nb messages:                 7859 messages
+Host2 Nb messages:                 7855 messages
+
+Host1 Total size:            1206230871 bytes (1.123 GiB)
+Host2 Total size:            1206144737 bytes (1.123 GiB)
+
+Host1 Biggest message:         24592319 bytes (23.453 MiB)
+Host2 Biggest message:         24592319 bytes (23.453 MiB)
+
+Time spent on sizing:        11.7 seconds
+++++ Statistics
+Transfer started on                     : Mon Dec 28 15:47:45 2020
+Transfer ended on                       : Mon Dec 28 15:50:00 2020
+Transfer time                           : 135.0 sec
+Folders synced                          : 75/75 synced
+Messages transferred                    : 131 
+Messages skipped                        : 7724
+Messages found duplicate on host1       : 0
+Messages found duplicate on host2       : 0
+Messages found crossduplicate on host2  : 0
+Messages void (noheader) on host1       : 0  
+Messages void (noheader) on host2       : 0
+Messages found in host1 not in host2    : 3 messages
+Messages found in host2 not in host1    : 0 messages
+Messages deleted on host1               : 0
+Messages deleted on host2               : 90
+Total bytes transferred                 : 6975630 (6.652 MiB)
+Total bytes skipped                     : 1199185900 (1.117 GiB)
+Message rate                            : 1.0 messages/s
+Average bandwidth rate                  : 50.5 KiB/s
+Reconnections to host1                  : 0
+Reconnections to host2                  : 0
+Memory consumption at the end           : 4421.7 MiB (started with 4362.1 MiB)
+Load end is                             : 4.70 7.86 8.97 on 4 cores
+Biggest message                         : 485230 bytes (473.857 KiB)
+Memory/biggest message ratio            : 9555.2
+Start difference host2 - host1          : -45 messages, -2266906 bytes (-2.162 MiB)
+Final difference host2 - host1          : -4 messages, -86134 bytes (-84.115 KiB)
+The sync is not finished, there are 3 identified messages in host1 that are not on host2.
+There is no unidentified message
+The sync is strict, all 7810 identified messages in host2 are on host1.
+Detected 3 errors
+
+This imapsync is up to date. ( local 1.977 >= official 1.977 )( Use --noreleasecheck to avoid this release check. )
+Homepage: https://imapsync.lamiral.info/
+++++ Listing 3 errors encountered during the sync ( avoid this listing with --noerrorsdump ).
+Err 1/3: - msg INBOX.@Reference.Internet Services/40 {5151} could not append ( Subject:[Thinger.io Beta Access Key], Date:["27-Aug-2016 18:05:05 -0700"], Size:[5151], Flags:[\Seen $NotJunk] ) to folder INBOX.@Reference.Internet Services: error while reading data from server: Operation timed out
+Err 2/3: - msg INBOX.Sent Items/327 {927} could not append ( Subject:[Testing godaddy domains sneakemail address], Date:["27-Dec-2020 15:53:41 -0700"], Size:[927], Flags:[\Seen] ) to folder INBOX.Sent Items: error while reading data from server: Operation timed out
+Err 3/3: - msg INBOX.Trash/1131 {25759} could not append ( Subject:[=?utf-8?B?RlJFRSDwn46BIERFTElWRVJZIPCfjoE=?=], Date:["23-Dec-2020 05:42:34 -0700"], Size:[25759], Flags:[\Seen] ) to folder INBOX.Trash: error while reading data from server: Operation timed out
+Exiting with return value 111 (EXIT_WITH_ERRORS) 3/50 nb_errors/max_errors
+Log file is LOG_imapsync/2020_12_28_15_47_45_402_shawn@furgason.com_shawn@furgason.com.txt ( to change it, use --logfile filepath ; or use --nolog to turn off logging )

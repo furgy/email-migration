@@ -1,0 +1,1280 @@
+Here is imapsync 2.229 on host Shawns-MacBook-Pro-2.local, a darwin system with 1.6/16.0 free GiB of RAM, 59.14% used by processes.
+with Perl 5.30.3 and Mail::IMAPClient 3.43
+Transfer started at Tuesday 31 October 2023-10-31 19:13:00 -0700 MST
+PID is 40817 my PPID is 30935
+Log file is LOG_imapsync/2023_10_31_19_13_00_802_ops@fourmoons.net_ops@fourmoons.net.txt ( to change it, use --logfile path ; or use --nolog to turn off logging )
+Load is 2.71 3.32 3.63 on 10 cores
+Current directory is /Users/shawn/Code/email/email-migration
+Real user id is shawn (uid 501)
+Effective user id is shawn (euid 501)
+$RCSfile: imapsync,v $ $Revision: 2.229 $ $Date: 2022/09/14 18:08:24 $ 
+Command line used, run by perl:
+/usr/local/bin/imapsync --host1 mail.fourmoons.net --host2 redbull.mxrouting.net --user1 ops@fourmoons.net --password1 MASKED --user2 ops@fourmoons.net --password2 MASKED --nosslcheck
+Temp directory is /var/folders/lj/pt22s9q55t1925h7_g57tt5h0000gn/T ( to change it use --tmpdir dirpath )
+kill -QUIT 40817 # special behavior: call to sub catch_exit
+kill -TERM 40817 # special behavior: call to sub catch_exit
+kill -INT 40817 # special behavior: call to sub catch_reconnect
+kill -HUP 40817 # special behavior: call to sub catch_print
+kill -USR1 40817 # special behavior: call to sub toggle_sleep
+File /var/folders/lj/pt22s9q55t1925h7_g57tt5h0000gn/T/imapsync.pid does not exist
+PID file is /var/folders/lj/pt22s9q55t1925h7_g57tt5h0000gn/T/imapsync.pid ( to change it, use --pidfile filepath ; to avoid it use --pidfile "" )
+Writing my PID 40817 in /var/folders/lj/pt22s9q55t1925h7_g57tt5h0000gn/T/imapsync.pid
+Writing also my logfile name in /var/folders/lj/pt22s9q55t1925h7_g57tt5h0000gn/T/imapsync.pid : LOG_imapsync/2023_10_31_19_13_00_802_ops@fourmoons.net_ops@fourmoons.net.txt
+Modules version list ( use --no-modulesversion to turn off printing this Perl modules list ):
+Authen::NTLM         1.09
+CGI                  4.48
+Compress::Zlib       2.084
+Crypt::OpenSSL::RSA  0.31
+Data::Uniqid         0.12
+Digest::HMAC_MD5     1.01
+Digest::HMAC_SHA1    1.03
+Digest::MD5          2.55
+Encode               3.01
+Encode::IMAPUTF7     1.05
+File::Copy::Recursive 0.45
+File::Spec           3.78
+Getopt::Long         2.5
+HTML::Entities       3.69
+IO::Socket           1.40
+IO::Socket::INET     1.40
+IO::Socket::INET6    2.72
+IO::Socket::IP       0.39
+IO::Socket::SSL      2.068
+IO::Tee              0.65
+JSON                 4.02
+JSON::WebToken       0.05
+LWP                  6.44
+MIME::Base64         3.15
+Mail::IMAPClient     3.43
+Net::Ping            2.71
+Net::SSLeay          1.88
+Term::ReadKey        2.38
+Test::MockObject     1.20200122
+Time::HiRes          1.976
+URI::Escape          3.31
+Unicode::String      2.10
+
+Info: will resync flags for already transferred messages. Use --noresyncflags to not resync flags.
+Info: turned ON syncinternaldates, will set the internal dates (arrival dates) on host2 same as host1.
+Host1: will try to use LOGIN authentication on host1
+Host2: will try to use LOGIN authentication on host2
+Host1: imap connection timeout is 120 seconds
+Host2: imap connection timeout is 120 seconds
+Host1: imap connection keepalive is on on host1. Use --nokeepalive1 to disable it.
+Host2: imap connection keepalive is on on host2. Use --nokeepalive2 to disable it.
+Host1: IMAP server [mail.fourmoons.net] port [143] user [ops@fourmoons.net]
+Host2: IMAP server [redbull.mxrouting.net] port [143] user [ops@fourmoons.net]
+Host1: connecting and login on host1 [mail.fourmoons.net] port [143] with user [ops@fourmoons.net]
+Host1 IP address: 108.167.140.95 Local IP address: 192.168.1.34
+Host1 banner: * OK [CAPABILITY IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE NAMESPACE LITERAL+ STARTTLS AUTH=PLAIN AUTH=LOGIN] Dovecot ready.
+Host1 capability before authentication: IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE NAMESPACE LITERAL+ STARTTLS AUTH=PLAIN AUTH=LOGIN AUTH
+Host1: going to ssl because STARTTLS is in CAPABILITY. Use --notls1 or --notls2 to avoid that behavior
+DEBUG: .../IO/Socket/SSL.pm:1177: global error: Undefined SSL object
+Host1: Socket successfully converted to SSL
+Host1: mail.fourmoons.net says it has CAPABILITY for AUTHENTICATE LOGIN
+Host1: success login on [mail.fourmoons.net] with user [ops@fourmoons.net] auth [LOGIN] or [LOGIN]
+Host2: connecting and login on host2 [redbull.mxrouting.net] port [143] with user [ops@fourmoons.net]
+Host2 IP address: 45.43.208.33 Local IP address: 192.168.1.34
+Host2 banner: * OK [CAPABILITY IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE LITERAL+ STARTTLS AUTH=PLAIN] Dovecot DA ready.
+Host2 capability before authentication: IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE LITERAL+ STARTTLS AUTH=PLAIN AUTH
+Host2: going to ssl because STARTTLS is in CAPABILITY. Use --notls1 or --notls2 to avoid that behavior
+DEBUG: .../IO/Socket/SSL.pm:1177: global error: Undefined SSL object
+Host2: Socket successfully converted to SSL
+Host2: success login on [redbull.mxrouting.net] with user [ops@fourmoons.net] auth [LOGIN] or [LOGIN]
+Host1: state Authenticated
+Host2: state Authenticated
+Host1 capability once authenticated: IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE SORT SORT=DISPLAY THREAD=REFERENCES THREAD=REFS THREAD=ORDEREDSUBJECT MULTIAPPEND URL-PARTIAL CATENATE UNSELECT CHILDREN NAMESPACE UIDPLUS LIST-EXTENDED I18NLEVEL=1 CONDSTORE QRESYNC ESEARCH ESORT SEARCHRES WITHIN CONTEXT=SEARCH LIST-STATUS BINARY MOVE SNIPPET=FUZZY PREVIEW=FUZZY PREVIEW STATUS=SIZE SAVEDATE NAMESPACE LITERAL+ NOTIFY SPECIAL-USE COMPRESS=DEFLATE QUOTA THREAD I18NLEVEL CONTEXT SNIPPET PREVIEW STATUS COMPRESS
+Host2 capability once authenticated: IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE SORT SORT=DISPLAY THREAD=REFERENCES THREAD=REFS THREAD=ORDEREDSUBJECT MULTIAPPEND URL-PARTIAL CATENATE UNSELECT CHILDREN NAMESPACE UIDPLUS LIST-EXTENDED I18NLEVEL=1 CONDSTORE QRESYNC ESEARCH ESORT SEARCHRES WITHIN CONTEXT=SEARCH LIST-STATUS BINARY MOVE SNIPPET=FUZZY PREVIEW=FUZZY PREVIEW STATUS=SIZE SAVEDATE LITERAL+ NOTIFY SPECIAL-USE XAPPLEPUSHSERVICE QUOTA THREAD I18NLEVEL CONTEXT SNIPPET PREVIEW STATUS
+Host1: found ID capability. Sending/receiving ID, presented in raw IMAP for now.
+In order to avoid sending/receiving ID, use option --noid
+Sending: 6 ID ("name" "imapsync" "version" "2.229" "os" "darwin" "vendor" "Gilles LAMIRAL" "support-url" "https://imapsync.lamiral.info/" "date" "14-Sep-2022 18:08:24 +0000" "side" "host1")
+Sent 182 bytes
+Read: 	* ID ("name" "Dovecot")
+  	6 OK ID completed (0.001 + 0.000 secs).
+Host2: found ID capability. Sending/receiving ID, presented in raw IMAP for now.
+In order to avoid sending/receiving ID, use option --noid
+Sending: 6 ID ("name" "imapsync" "version" "2.229" "os" "darwin" "vendor" "Gilles LAMIRAL" "support-url" "https://imapsync.lamiral.info/" "date" "14-Sep-2022 18:08:24 +0000" "side" "host2")
+Sent 182 bytes
+Read: 	* ID ("name" "Dovecot")
+  	6 OK ID completed (0.001 + 0.000 secs).
+
+Host2: QUOTA capability found, presented in raw IMAP on next lines
+Sending: 7 GETQUOTAROOT INBOX
+Sent 22 bytes
+Read: 	7 OK No quota (0.014 + 0.000 + 0.013 secs).
+
+Host2: Quota current storage is 0 bytes. Limit is 0 bytes. So 0 % full
+Host1: Compression is off. Use --compress1 to allow compression on host1
+Host2: Compression is off. Use --compress2 to allow compression on host2
+Host1: found 45 folders.
+Host2: found 6 folders.
+Host1: guessing separator from folder listing: [.]
+Host1: separator given by NAMESPACE: [.]
+Host2: guessing separator from folder listing: [.]
+Host2: separator given by NAMESPACE: [.]
+Host1: guessing prefix from folder listing: [INBOX.]
+Host1: prefix given by NAMESPACE: [INBOX.]
+Host2: guessing prefix from folder listing: []
+Host2: prefix given by NAMESPACE: []
+Host1: separator and prefix: [.][INBOX.]
+Host2: separator and prefix: [.][]
+Including all folders found by default. Use --subscribed or --folder or --folderrec or --include to select specific folders. Use --exclude to unselect specific folders.
+Host1: Checking wanted folders exist. Use --nocheckfoldersexist to avoid this check (shared of public namespace targeted).
+Host1: Checking wanted folders are selectable. Use --nocheckselectable to avoid this check.
+Turned off automapping folders ( use --automap to turn on automapping )
+
+++++ Listing folders
+All foldernames are presented between brackets like [X] where X is the foldername.
+When a foldername contains non-ASCII characters it is presented in the form
+[X] = [Y] where
+X is the imap foldername you have to use in command line options and
+Y is the utf8 output just printed for convenience, to recognize it.
+
+Host1: folders list (first the raw imap format then the [X] = [Y]):
+* LIST (\HasChildren) "." INBOX
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.Martello_Mariconi - Cahokia"
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.ROI Turnkey"
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.Investors Choice - Cahokia"
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.Apartments (Generic)"
+* LIST (\HasNoChildren \UnMarked \Junk) "." INBOX.spam
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.To Be Filed"
+* LIST (\HasNoChildren \UnMarked) "." INBOX.Action
+* LIST (\HasChildren \UnMarked) "." "INBOX.Properties - Indiana"
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.Properties - Indiana.554 Kentucky"
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.Properties - Arizona"
+* LIST (\HasChildren \UnMarked) "." "INBOX.Properties - Florida"
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.Properties - Florida.Ocala"
+* LIST (\HasNoChildren \UnMarked) "." INBOX.Starred
+* LIST (\HasChildren \UnMarked) "." INBOX.[Airmail]
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.[Airmail].Send Later"
+* LIST (\HasNoChildren \UnMarked) "." INBOX.[Airmail].Snooze
+* LIST (\HasNoChildren \UnMarked) "." INBOX.[Airmail].Done
+* LIST (\HasNoChildren \UnMarked) "." INBOX.[Airmail].Memo
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.[Airmail].To Do"
+* LIST (\HasNoChildren \UnMarked) "." INBOX.Anderson
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.SM - Flamingo"
+* LIST (\HasNoChildren \UnMarked) "." INBOX.Hawk
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.SM - Hawk"
+* LIST (\HasNoChildren \UnMarked) "." INBOX.Investing
+* LIST (\HasNoChildren \UnMarked) "." INBOX.RREI
+* LIST (\HasNoChildren \UnMarked) "." INBOX.Cozy
+* LIST (\HasNoChildren \UnMarked) "." INBOX.Stessa
+* LIST (\HasNoChildren \UnMarked) "." INBOX.Housefolios
+* LIST (\HasNoChildren \UnMarked) "." INBOX.BiggerPockets
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.Chuck Baer"
+* LIST (\HasNoChildren \UnMarked) "." INBOX.PMI
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.Real Wealth Network"
+* LIST (\HasNoChildren \UnMarked) "." INBOX.Roofstock
+* LIST (\HasNoChildren \UnMarked) "." INBOX.Renshaw
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.Realty Medics"
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.Realty Doctors"
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.Property Boss"
+* LIST (\HasNoChildren \UnMarked) "." INBOX.Olmstead
+* LIST (\HasNoChildren \UnMarked) "." INBOX.Allstar
+* LIST (\HasNoChildren \UnMarked \Archive) "." INBOX.Archive
+* LIST (\HasNoChildren \UnMarked \Drafts) "." INBOX.Drafts
+* LIST (\HasNoChildren \UnMarked \Sent) "." INBOX.Sent
+* LIST (\HasNoChildren \UnMarked) "." INBOX.Junk
+* LIST (\HasNoChildren \UnMarked \Trash) "." INBOX.Trash
+56 OK List completed (0.001 + 0.000 secs).
+
+[INBOX]
+[INBOX.Action]
+[INBOX.Allstar]
+[INBOX.Anderson]
+[INBOX.Apartments (Generic)]
+[INBOX.Archive]
+[INBOX.BiggerPockets]
+[INBOX.Chuck Baer]
+[INBOX.Cozy]
+[INBOX.Drafts]
+[INBOX.Hawk]
+[INBOX.Housefolios]
+[INBOX.Investing]
+[INBOX.Investors Choice - Cahokia]
+[INBOX.Junk]
+[INBOX.Martello_Mariconi - Cahokia]
+[INBOX.Olmstead]
+[INBOX.PMI]
+[INBOX.Properties - Arizona]
+[INBOX.Properties - Florida]
+[INBOX.Properties - Florida.Ocala]
+[INBOX.Properties - Indiana]
+[INBOX.Properties - Indiana.554 Kentucky]
+[INBOX.Property Boss]
+[INBOX.ROI Turnkey]
+[INBOX.RREI]
+[INBOX.Real Wealth Network]
+[INBOX.Realty Doctors]
+[INBOX.Realty Medics]
+[INBOX.Renshaw]
+[INBOX.Roofstock]
+[INBOX.SM - Flamingo]
+[INBOX.SM - Hawk]
+[INBOX.Sent]
+[INBOX.Starred]
+[INBOX.Stessa]
+[INBOX.To Be Filed]
+[INBOX.Trash]
+[INBOX.[Airmail]]
+[INBOX.[Airmail].Done]
+[INBOX.[Airmail].Memo]
+[INBOX.[Airmail].Send Later]
+[INBOX.[Airmail].Snooze]
+[INBOX.[Airmail].To Do]
+[INBOX.spam]
+
+Host2: folders list (first the raw imap format then the [X] = [Y]):
+* LIST (\HasNoChildren) "." INBOX.spam
+* LIST (\HasNoChildren \Drafts) "." Drafts
+* LIST (\HasNoChildren \Junk) "." Junk
+* LIST (\HasNoChildren \Trash) "." Trash
+* LIST (\HasNoChildren \Sent) "." Sent
+* LIST (\HasChildren) "." INBOX
+12 OK List completed (0.001 + 0.000 secs).
+
+[Drafts]
+[INBOX]
+[INBOX.spam]
+[Junk]
+[Sent]
+[Trash]
+
+Checking SEARCH ALL works on both accounts. To avoid that check, use --nochecknoabletosearch
+Host1: checking if SEARCH ALL works on INBOX
+Host1: folder [INBOX] has 59 messages mentioned by SELECT
+Host1: folder [INBOX] has 59 messages found by SEARCH ALL
+Host1: folder [INBOX] has the same messages count (59) by SELECT and SEARCH ALL
+Host2: checking if SEARCH ALL works on INBOX
+Host2: folder [INBOX] has 0 messages mentioned by SELECT
+Host2: folder [INBOX] has 0 messages found by SEARCH ALL
+Host2: folder [INBOX] has the same messages count (0) by SELECT and SEARCH ALL
+Good! SEARCH ALL works on both accounts.
+
+Folders sizes before the synchronization. It can take some time. Be patient.
+You can remove foldersizes listings by using "--nofoldersizes" and "--nofoldersizesatend"
+but then you will also lose the ETA (Estimation Time of Arrival) given after each message copy.
+Host1 folder    1/45 [INBOX]                             Size:  12658867 Messages:    59 Biggest:   5737115
+Host2 folder    1/45 [INBOX]                             Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                    -12658867             -59           -5737115
+
+Host1 folder    2/45 [INBOX.Action]                      Size:         0 Messages:     0 Biggest:         0
+Host2 folder    2/45 [Action]                             does not exist yet
+Host2-Host1                                                            0               0                  0
+
+Host1 folder    3/45 [INBOX.Allstar]                     Size:  52398649 Messages:   332 Biggest:  16219876
+Host2 folder    3/45 [Allstar]                            does not exist yet
+Host2-Host1                                                    -52398649            -332          -16219876
+
+Host1 folder    4/45 [INBOX.Anderson]                    Size:    158131 Messages:     3 Biggest:     72381
+Host2 folder    4/45 [Anderson]                           does not exist yet
+Host2-Host1                                                      -158131              -3             -72381
+
+Host1 folder    5/45 [INBOX.Apartments (Generic)]        Size:   1840667 Messages:    46 Biggest:     57465
+Host2 folder    5/45 [Apartments (Generic)]               does not exist yet
+Host2-Host1                                                     -1840667             -46             -57465
+
+Host1 folder    6/45 [INBOX.Archive]                     Size:     36970 Messages:     1 Biggest:     36970
+Host2 folder    6/45 [Archive]                            does not exist yet
+Host2-Host1                                                       -36970              -1             -36970
+
+Host1 folder    7/45 [INBOX.BiggerPockets]               Size:    303804 Messages:     2 Biggest:    152403
+Host2 folder    7/45 [BiggerPockets]                      does not exist yet
+Host2-Host1                                                      -303804              -2            -152403
+
+Host1 folder    8/45 [INBOX.Chuck Baer]                  Size:  47722257 Messages:   142 Biggest:   7878438
+Host2 folder    8/45 [Chuck Baer]                         does not exist yet
+Host2-Host1                                                    -47722257            -142           -7878438
+
+Host1 folder    9/45 [INBOX.Cozy]                        Size:    587364 Messages:    16 Biggest:     40823
+Host2 folder    9/45 [Cozy]                               does not exist yet
+Host2-Host1                                                      -587364             -16             -40823
+
+Host1 folder   10/45 [INBOX.Drafts]                      Size:     28207 Messages:     1 Biggest:     28207
+Host2 folder   10/45 [Drafts]                            Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                       -28207              -1             -28207
+
+Host1 folder   11/45 [INBOX.Hawk]                        Size:         0 Messages:     0 Biggest:         0
+Host2 folder   11/45 [Hawk]                               does not exist yet
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   12/45 [INBOX.Housefolios]                 Size:   2129882 Messages:    30 Biggest:    131602
+Host2 folder   12/45 [Housefolios]                        does not exist yet
+Host2-Host1                                                     -2129882             -30            -131602
+
+Host1 folder   13/45 [INBOX.Investing]                   Size: 147417604 Messages:   358 Biggest:  17252863
+Host2 folder   13/45 [Investing]                          does not exist yet
+Host2-Host1                                                    -147417604            -358          -17252863
+
+Host1 folder   14/45 [INBOX.Investors Choice - Cahokia]  Size:    426548 Messages:    12 Biggest:    122225
+Host2 folder   14/45 [Investors Choice - Cahokia]         does not exist yet
+Host2-Host1                                                      -426548             -12            -122225
+
+Host1 folder   15/45 [INBOX.Junk]                        Size:         0 Messages:     0 Biggest:         0
+Host2 folder   15/45 [Junk]                              Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   16/45 [INBOX.Martello_Mariconi - Cahokia] Size: 109036521 Messages:   281 Biggest:  21515769
+Host2 folder   16/45 [Martello_Mariconi - Cahokia]        does not exist yet
+Host2-Host1                                                    -109036521            -281          -21515769
+
+Host1 folder   17/45 [INBOX.Olmstead]                    Size:   7482311 Messages:    28 Biggest:   1485452
+Host2 folder   17/45 [Olmstead]                           does not exist yet
+Host2-Host1                                                     -7482311             -28           -1485452
+
+Host1 folder   18/45 [INBOX.PMI]                         Size:  29487595 Messages:   257 Biggest:   7675140
+Host2 folder   18/45 [PMI]                                does not exist yet
+Host2-Host1                                                    -29487595            -257           -7675140
+
+Host1 folder   19/45 [INBOX.Properties - Arizona]        Size:    270520 Messages:    14 Biggest:     41425
+Host2 folder   19/45 [Properties - Arizona]               does not exist yet
+Host2-Host1                                                      -270520             -14             -41425
+
+Host1 folder   20/45 [INBOX.Properties - Florida]        Size:  18323133 Messages:   131 Biggest:   1900289
+Host2 folder   20/45 [Properties - Florida]               does not exist yet
+Host2-Host1                                                    -18323133            -131           -1900289
+
+Host1 folder   21/45 [INBOX.Properties - Florida.Ocala]  Size:  14337520 Messages:    65 Biggest:   2208138
+Host2 folder   21/45 [Properties - Florida.Ocala]         does not exist yet
+Host2-Host1                                                    -14337520             -65           -2208138
+
+Host1 folder   22/45 [INBOX.Properties - Indiana]        Size:  12034666 Messages:    21 Biggest:   5495521
+Host2 folder   22/45 [Properties - Indiana]               does not exist yet
+Host2-Host1                                                    -12034666             -21           -5495521
+
+Host1 folder   23/45 [INBOX.Properties - Indiana.554 Kentucky] Size:   5525606 Messages:     7 Biggest:   5492083
+Host2 folder   23/45 [Properties - Indiana.554 Kentucky]  does not exist yet
+Host2-Host1                                                     -5525606              -7           -5492083
+
+Host1 folder   24/45 [INBOX.Property Boss]               Size:  14968592 Messages:    20 Biggest:   8653099
+Host2 folder   24/45 [Property Boss]                      does not exist yet
+Host2-Host1                                                    -14968592             -20           -8653099
+
+Host1 folder   25/45 [INBOX.ROI Turnkey]                 Size:     75411 Messages:     1 Biggest:     75411
+Host2 folder   25/45 [ROI Turnkey]                        does not exist yet
+Host2-Host1                                                       -75411              -1             -75411
+
+Host1 folder   26/45 [INBOX.RREI]                        Size:    992117 Messages:     3 Biggest:    927117
+Host2 folder   26/45 [RREI]                               does not exist yet
+Host2-Host1                                                      -992117              -3            -927117
+
+Host1 folder   27/45 [INBOX.Real Wealth Network]         Size:   9491628 Messages:   187 Biggest:    126984
+Host2 folder   27/45 [Real Wealth Network]                does not exist yet
+Host2-Host1                                                     -9491628            -187            -126984
+
+Host1 folder   28/45 [INBOX.Realty Doctors]              Size:   9844116 Messages:    69 Biggest:   3831712
+Host2 folder   28/45 [Realty Doctors]                     does not exist yet
+Host2-Host1                                                     -9844116             -69           -3831712
+
+Host1 folder   29/45 [INBOX.Realty Medics]               Size:  49614094 Messages:   390 Biggest:  14749970
+Host2 folder   29/45 [Realty Medics]                      does not exist yet
+Host2-Host1                                                    -49614094            -390          -14749970
+
+Host1 folder   30/45 [INBOX.Renshaw]                     Size:  30603433 Messages:   171 Biggest:  16219150
+Host2 folder   30/45 [Renshaw]                            does not exist yet
+Host2-Host1                                                    -30603433            -171          -16219150
+
+Host1 folder   31/45 [INBOX.Roofstock]                   Size:  87913159 Messages:   340 Biggest:  10471236
+Host2 folder   31/45 [Roofstock]                          does not exist yet
+Host2-Host1                                                    -87913159            -340          -10471236
+
+Host1 folder   32/45 [INBOX.SM - Flamingo]               Size: 117843049 Messages:   145 Biggest:  46448088
+Host2 folder   32/45 [SM - Flamingo]                      does not exist yet
+Host2-Host1                                                    -117843049            -145          -46448088
+
+Host1 folder   33/45 [INBOX.SM - Hawk]                   Size:  25895258 Messages:    89 Biggest:  10708442
+Host2 folder   33/45 [SM - Hawk]                          does not exist yet
+Host2-Host1                                                    -25895258             -89          -10708442
+
+Host1 folder   34/45 [INBOX.Sent]                        Size:  99337841 Messages:   249 Biggest:  45021484
+Host2 folder   34/45 [Sent]                              Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                    -99337841            -249          -45021484
+
+Host1 folder   35/45 [INBOX.Starred]                     Size:     13557 Messages:     2 Biggest:      8730
+Host2 folder   35/45 [Starred]                            does not exist yet
+Host2-Host1                                                       -13557              -2              -8730
+
+Host1 folder   36/45 [INBOX.Stessa]                      Size:   5399898 Messages:    53 Biggest:    143151
+Host2 folder   36/45 [Stessa]                             does not exist yet
+Host2-Host1                                                     -5399898             -53            -143151
+
+Host1 folder   37/45 [INBOX.To Be Filed]                 Size:  35100502 Messages:    40 Biggest:  10377166
+Host2 folder   37/45 [To Be Filed]                        does not exist yet
+Host2-Host1                                                    -35100502             -40          -10377166
+
+Host1 folder   38/45 [INBOX.Trash]                       Size:   3492690 Messages:    49 Biggest:    213143
+Host2 folder   38/45 [Trash]                             Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                     -3492690             -49            -213143
+
+Host1 folder   39/45 [INBOX.[Airmail]]                   Size:         0 Messages:     0 Biggest:         0
+Host2 folder   39/45 [[Airmail]]                          does not exist yet
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   40/45 [INBOX.[Airmail].Done]              Size:         0 Messages:     0 Biggest:         0
+Host2 folder   40/45 [[Airmail].Done]                     does not exist yet
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   41/45 [INBOX.[Airmail].Memo]              Size:         0 Messages:     0 Biggest:         0
+Host2 folder   41/45 [[Airmail].Memo]                     does not exist yet
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   42/45 [INBOX.[Airmail].Send Later]        Size:         0 Messages:     0 Biggest:         0
+Host2 folder   42/45 [[Airmail].Send Later]               does not exist yet
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   43/45 [INBOX.[Airmail].Snooze]            Size:         0 Messages:     0 Biggest:         0
+Host2 folder   43/45 [[Airmail].Snooze]                   does not exist yet
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   44/45 [INBOX.[Airmail].To Do]             Size:         0 Messages:     0 Biggest:         0
+Host2 folder   44/45 [[Airmail].To Do]                    does not exist yet
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   45/45 [INBOX.spam]                        Size:    163772 Messages:     1 Biggest:    163772
+Host2 folder   45/45 [spam]                               does not exist yet
+Host2-Host1                                                      -163772              -1            -163772
+
+Host1 Nb folders:                    45 folders
+Host2 Nb folders:                    45 folders
+
+Host1 Nb messages:                 3615 messages
+Host2 Nb messages:                    0 messages
+
+Host1 Total size:             952955939 bytes (908.810 MiB)
+Host2 Total size:                     0 bytes (0.000 KiB)
+
+Host1 Biggest message:         46448088 bytes (44.296 MiB)
+Host2 Biggest message:                0 bytes (0.000 KiB)
+
+Time spent on sizing:        12.3 seconds
+++++ Looping on each one of 45 folders to sync
+ETA: Tuesday 31 October 2023-10-31 19:13:13 -0700 MST  0 s  3615/3615 msgs left
+Folder    1/45 [INBOX]                             -> [INBOX]                            
+Host1: folder [INBOX] has 59 messages in total (mentioned by SELECT)
+Host2: folder [INBOX] has 0 messages in total (mentioned by SELECT)
+Host2: folder [INBOX] permanentflags: 
+Host1: folder [INBOX] considering 59 messages
+Host2: folder [INBOX] considering 0 messages
+Host1: folder [INBOX] selected 59 messages, duplicates 0
+Host2: folder [INBOX] selected 0 messages, duplicates 0
+msg INBOX/3207 {5469}         copied to INBOX/1          1.25 msgs/s  6.653 KiB/s 5.341 KiB copied ETA: Tuesday 31 October 2023-10-31 20:01:36 -0700 MST  2903 s  3614/3615 msgs left
+msg INBOX/3233 {213556}       copied to INBOX/2          0.95 msgs/s  101.068 KiB/s 213.892 KiB copied ETA: Tuesday 31 October 2023-10-31 20:16:59 -0700 MST  3824 s  3613/3615 msgs left
+msg INBOX/3234 {360621}       copied to INBOX/3          0.85 msgs/s  159.557 KiB/s 566.061 KiB copied ETA: Tuesday 31 October 2023-10-31 20:24:28 -0700 MST  4272 s  3612/3615 msgs left
+msg INBOX/3237 {7589}         copied to INBOX/4          1.05 msgs/s  151.021 KiB/s 573.472 KiB copied ETA: Tuesday 31 October 2023-10-31 20:10:25 -0700 MST  3428 s  3611/3615 msgs left
+msg INBOX/3242 {31534}        copied to INBOX/5          1.24 msgs/s  150.267 KiB/s 604.267 KiB copied ETA: Tuesday 31 October 2023-10-31 20:01:40 -0700 MST  2904 s  3610/3615 msgs left
+msg INBOX/3246 {16388}        copied to INBOX/6          1.39 msgs/s  143.638 KiB/s 620.271 KiB copied ETA: Tuesday 31 October 2023-10-31 19:56:35 -0700 MST  2598 s  3609/3615 msgs left
+msg INBOX/3252 {19046}        copied to INBOX/7          1.54 msgs/s  140.724 KiB/s 638.870 KiB copied ETA: Tuesday 31 October 2023-10-31 19:52:17 -0700 MST  2340 s  3608/3615 msgs left
+msg INBOX/3260 {2856}         copied to INBOX/8          1.68 msgs/s  134.742 KiB/s 641.659 KiB copied ETA: Tuesday 31 October 2023-10-31 19:49:05 -0700 MST  2147 s  3607/3615 msgs left
+msg INBOX/3267 {38563}        copied to INBOX/9          1.78 msgs/s  134.143 KiB/s 679.318 KiB copied ETA: Tuesday 31 October 2023-10-31 19:47:07 -0700 MST  2029 s  3606/3615 msgs left
+msg INBOX/3276 {50050}        copied to INBOX/10         1.86 msgs/s  135.601 KiB/s 728.195 KiB copied ETA: Tuesday 31 October 2023-10-31 19:45:34 -0700 MST  1936 s  3605/3615 msgs left
+msg INBOX/3277 {8744}         copied to INBOX/11         1.97 msgs/s  131.829 KiB/s 736.734 KiB copied ETA: Tuesday 31 October 2023-10-31 19:43:49 -0700 MST  1831 s  3604/3615 msgs left
+msg INBOX/3278 {9199}         copied to INBOX/12         2.07 msgs/s  128.415 KiB/s 745.718 KiB copied ETA: Tuesday 31 October 2023-10-31 19:42:22 -0700 MST  1744 s  3603/3615 msgs left
+msg INBOX/3281 {22412}        copied to INBOX/13         2.16 msgs/s  127.533 KiB/s 767.604 KiB copied ETA: Tuesday 31 October 2023-10-31 19:41:06 -0700 MST  1668 s  3602/3615 msgs left
+msg INBOX/3282 {6604}         copied to INBOX/14         2.25 msgs/s  124.155 KiB/s 774.054 KiB copied ETA: Tuesday 31 October 2023-10-31 19:40:03 -0700 MST  1604 s  3601/3615 msgs left
+msg INBOX/3296 {22268}        copied to INBOX/15         2.33 msgs/s  123.352 KiB/s 795.800 KiB copied ETA: Tuesday 31 October 2023-10-31 19:39:07 -0700 MST  1548 s  3600/3615 msgs left
+msg INBOX/3298 {13717}        copied to INBOX/16         2.40 msgs/s  121.334 KiB/s 809.195 KiB copied ETA: Tuesday 31 October 2023-10-31 19:38:19 -0700 MST  1500 s  3599/3615 msgs left
+msg INBOX/3300 {6042}         copied to INBOX/17         2.47 msgs/s  118.357 KiB/s 815.096 KiB copied ETA: Tuesday 31 October 2023-10-31 19:37:37 -0700 MST  1458 s  3598/3615 msgs left
+msg INBOX/3301 {5647}         copied to INBOX/18         2.53 msgs/s  115.476 KiB/s 820.610 KiB copied ETA: Tuesday 31 October 2023-10-31 19:37:00 -0700 MST  1420 s  3597/3615 msgs left
+msg INBOX/3308 {15745}        copied to INBOX/19         2.59 msgs/s  114.102 KiB/s 835.986 KiB copied ETA: Tuesday 31 October 2023-10-31 19:36:27 -0700 MST  1387 s  3596/3615 msgs left
+msg INBOX/3310 {296488}       copied to INBOX/20         2.56 msgs/s  144.157 KiB/s 1.099 MiB copied ETA: Tuesday 31 October 2023-10-31 19:36:44 -0700 MST  1403 s  3595/3615 msgs left
+msg INBOX/3326 {1721413}      copied to INBOX/21         2.31 msgs/s  309.362 KiB/s 2.741 MiB copied ETA: Tuesday 31 October 2023-10-31 19:39:14 -0700 MST  1553 s  3594/3615 msgs left
+msg INBOX/3329 {6219}         copied to INBOX/22         2.37 msgs/s  302.725 KiB/s 2.747 MiB copied ETA: Tuesday 31 October 2023-10-31 19:38:39 -0700 MST  1518 s  3593/3615 msgs left
+msg INBOX/3334 {10484}        copied to INBOX/23         2.41 msgs/s  296.384 KiB/s 2.757 MiB copied ETA: Tuesday 31 October 2023-10-31 19:38:10 -0700 MST  1487 s  3592/3615 msgs left
+msg INBOX/3335 {2640846}      copied to INBOX/24         2.25 msgs/s  507.107 KiB/s 5.275 MiB copied ETA: Tuesday 31 October 2023-10-31 19:39:57 -0700 MST  1594 s  3591/3615 msgs left
+msg INBOX/3336 {10082}        copied to INBOX/25         2.30 msgs/s  497.706 KiB/s 5.285 MiB copied ETA: Tuesday 31 October 2023-10-31 19:39:25 -0700 MST  1561 s  3590/3615 msgs left
+msg INBOX/3339 {14539}        copied to INBOX/26         2.34 msgs/s  489.163 KiB/s 5.299 MiB copied ETA: Tuesday 31 October 2023-10-31 19:38:55 -0700 MST  1531 s  3589/3615 msgs left
+msg INBOX/3340 {23504}        copied to INBOX/27         2.39 msgs/s  481.733 KiB/s 5.321 MiB copied ETA: Tuesday 31 October 2023-10-31 19:38:27 -0700 MST  1503 s  3588/3615 msgs left
+msg INBOX/3343 {88472}        copied to INBOX/28         2.43 msgs/s  479.467 KiB/s 5.406 MiB copied ETA: Tuesday 31 October 2023-10-31 19:38:03 -0700 MST  1479 s  3587/3615 msgs left
+msg INBOX/3344 {579909}       copied to INBOX/29         2.44 msgs/s  513.251 KiB/s 5.959 MiB copied ETA: Tuesday 31 October 2023-10-31 19:37:55 -0700 MST  1470 s  3586/3615 msgs left
+msg INBOX/3345 {12872}        copied to INBOX/30         2.48 msgs/s  505.018 KiB/s 5.971 MiB copied ETA: Tuesday 31 October 2023-10-31 19:37:31 -0700 MST  1447 s  3585/3615 msgs left
+msg INBOX/3349 {10946}        copied to INBOX/31         2.52 msgs/s  497.042 KiB/s 5.981 MiB copied ETA: Tuesday 31 October 2023-10-31 19:37:10 -0700 MST  1425 s  3584/3615 msgs left
+msg INBOX/3350 {16504}        copied to INBOX/32         2.54 msgs/s  486.732 KiB/s 5.997 MiB copied ETA: Tuesday 31 October 2023-10-31 19:36:58 -0700 MST  1413 s  3583/3615 msgs left
+msg INBOX/3362 {25014}        copied to INBOX/33         2.57 msgs/s  480.368 KiB/s 6.021 MiB copied ETA: Tuesday 31 October 2023-10-31 19:36:39 -0700 MST  1393 s  3582/3615 msgs left
+msg INBOX/3363 {38557}        copied to INBOX/34         2.60 msgs/s  475.072 KiB/s 6.058 MiB copied ETA: Tuesday 31 October 2023-10-31 19:36:21 -0700 MST  1375 s  3581/3615 msgs left
+msg INBOX/3364 {2856}         copied to INBOX/35         2.64 msgs/s  467.335 KiB/s 6.060 MiB copied ETA: Tuesday 31 October 2023-10-31 19:36:04 -0700 MST  1358 s  3580/3615 msgs left
+msg INBOX/3367 {6646}         copied to INBOX/36         2.67 msgs/s  460.279 KiB/s 6.067 MiB copied ETA: Tuesday 31 October 2023-10-31 19:35:48 -0700 MST  1342 s  3579/3615 msgs left
+msg INBOX/3374 {22263}        copied to INBOX/37         2.70 msgs/s  454.567 KiB/s 6.088 MiB copied ETA: Tuesday 31 October 2023-10-31 19:35:33 -0700 MST  1326 s  3578/3615 msgs left
+msg INBOX/3375 {8513}         copied to INBOX/38         2.72 msgs/s  446.214 KiB/s 6.096 MiB copied ETA: Tuesday 31 October 2023-10-31 19:35:23 -0700 MST  1317 s  3577/3615 msgs left
+msg INBOX/3378 {38549}        copied to INBOX/39         2.74 msgs/s  441.842 KiB/s 6.133 MiB copied ETA: Tuesday 31 October 2023-10-31 19:35:10 -0700 MST  1303 s  3576/3615 msgs left
+msg INBOX/3379 {5288}         copied to INBOX/40         2.77 msgs/s  435.443 KiB/s 6.138 MiB copied ETA: Tuesday 31 October 2023-10-31 19:34:57 -0700 MST  1290 s  3575/3615 msgs left
+msg INBOX/3381 {6998}         copied to INBOX/41         2.80 msgs/s  429.550 KiB/s 6.145 MiB copied ETA: Tuesday 31 October 2023-10-31 19:34:44 -0700 MST  1277 s  3574/3615 msgs left
+msg INBOX/3384 {8952}         copied to INBOX/42         2.82 msgs/s  423.755 KiB/s 6.153 MiB copied ETA: Tuesday 31 October 2023-10-31 19:34:32 -0700 MST  1265 s  3573/3615 msgs left
+msg INBOX/3385 {10617}        copied to INBOX/43         2.78 msgs/s  408.349 KiB/s 6.163 MiB copied ETA: Tuesday 31 October 2023-10-31 19:34:52 -0700 MST  1284 s  3572/3615 msgs left
+msg INBOX/3386 {2839}         copied to INBOX/44         2.81 msgs/s  402.904 KiB/s 6.166 MiB copied ETA: Tuesday 31 October 2023-10-31 19:34:40 -0700 MST  1272 s  3571/3615 msgs left
+msg INBOX/3388 {2857}         copied to INBOX/45         2.83 msgs/s  397.525 KiB/s 6.169 MiB copied ETA: Tuesday 31 October 2023-10-31 19:34:29 -0700 MST  1261 s  3570/3615 msgs left
+msg INBOX/3391 {22259}        copied to INBOX/46         2.84 msgs/s  391.650 KiB/s 6.190 MiB copied ETA: Tuesday 31 October 2023-10-31 19:34:24 -0700 MST  1256 s  3569/3615 msgs left
+msg INBOX/3395 {9413}         copied to INBOX/47         2.86 msgs/s  386.552 KiB/s 6.199 MiB copied ETA: Tuesday 31 October 2023-10-31 19:34:16 -0700 MST  1247 s  3568/3615 msgs left
+msg INBOX/3396 {8539}         copied to INBOX/48         2.88 msgs/s  381.992 KiB/s 6.207 MiB copied ETA: Tuesday 31 October 2023-10-31 19:34:06 -0700 MST  1237 s  3567/3615 msgs left
+msg INBOX/3397 {8692}         copied to INBOX/49         2.91 msgs/s  377.537 KiB/s 6.215 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:56 -0700 MST  1227 s  3566/3615 msgs left
+msg INBOX/3404 {13785}        copied to INBOX/50         2.93 msgs/s  373.376 KiB/s 6.228 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:48 -0700 MST  1218 s  3565/3615 msgs left
+msg INBOX/3410 {15766}        copied to INBOX/51         2.95 msgs/s  369.455 KiB/s 6.243 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:39 -0700 MST  1209 s  3564/3615 msgs left
+msg INBOX/3412 {6971}         copied to INBOX/52         2.97 msgs/s  365.195 KiB/s 6.250 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:31 -0700 MST  1201 s  3563/3615 msgs left
+msg INBOX/3414 {5737115}      copied to INBOX/53         2.32 msgs/s  524.601 KiB/s 11.721 MiB copied ETA: Tuesday 31 October 2023-10-31 19:39:13 -0700 MST  1538 s  3562/3615 msgs left
+msg INBOX/3419 {7548}         copied to INBOX/54         2.34 msgs/s  519.974 KiB/s 11.729 MiB copied ETA: Tuesday 31 October 2023-10-31 19:38:59 -0700 MST  1523 s  3561/3615 msgs left
+msg INBOX/3420 {298143}       copied to INBOX/55         2.35 msgs/s  525.300 KiB/s 12.013 MiB copied ETA: Tuesday 31 October 2023-10-31 19:38:52 -0700 MST  1516 s  3560/3615 msgs left
+msg INBOX/3423 {16647}        copied to INBOX/56         2.36 msgs/s  519.336 KiB/s 12.029 MiB copied ETA: Tuesday 31 October 2023-10-31 19:38:44 -0700 MST  1507 s  3559/3615 msgs left
+msg INBOX/3425 {16314}        copied to INBOX/57         2.38 msgs/s  515.151 KiB/s 12.044 MiB copied ETA: Tuesday 31 October 2023-10-31 19:38:31 -0700 MST  1494 s  3558/3615 msgs left
+msg INBOX/3428 {12881}        copied to INBOX/58         2.40 msgs/s  510.212 KiB/s 12.057 MiB copied ETA: Tuesday 31 October 2023-10-31 19:38:21 -0700 MST  1484 s  3557/3615 msgs left
+msg INBOX/3430 {16517}        copied to INBOX/59         2.41 msgs/s  504.735 KiB/s 12.072 MiB copied ETA: Tuesday 31 October 2023-10-31 19:38:13 -0700 MST  1476 s  3556/3615 msgs left
+ETA: Tuesday 31 October 2023-10-31 19:38:13 -0700 MST  1476 s  3556/3615 msgs left
+Folder    2/45 [INBOX.Action]                      -> [Action]                           
+Host1: folder [INBOX.Action] has 0 messages in total (mentioned by SELECT)
+Creating folder [Action] on host2
+Created folder [Action] on host2
+Host2: folder [Action] has 0 messages in total (mentioned by SELECT)
+Host2: folder [Action] permanentflags: 
+Host2: Subscribing to folder Action
+Host1: folder [INBOX.Action] considering 0 messages
+Host2: folder [Action] considering 0 messages
+Host1: folder [INBOX.Action] selected 0 messages, duplicates 0
+Host2: folder [Action] selected 0 messages, duplicates 0
+ETA: Tuesday 31 October 2023-10-31 19:38:49 -0700 MST  1512 s  3556/3615 msgs left
+Folder    3/45 [INBOX.Allstar]                     -> [Allstar]                          
+Host1: folder [INBOX.Allstar] has 332 messages in total (mentioned by SELECT)
+Creating folder [Allstar] on host2
+Created folder [Allstar] on host2
+Host2: folder [Allstar] has 0 messages in total (mentioned by SELECT)
+Host2: folder [Allstar] permanentflags: 
+Host2: Subscribing to folder Allstar
+Host1: folder [INBOX.Allstar] considering 332 messages
+Host2: folder [Allstar] considering 0 messages
+Host1: folder [INBOX.Allstar] selected 332 messages, duplicates 0
+Host2: folder [Allstar] selected 0 messages, duplicates 0
+msg INBOX.Allstar/273 {13317}         copied to Allstar/1          2.24 msgs/s  462.601 KiB/s 12.085 MiB copied ETA: Tuesday 31 October 2023-10-31 19:40:04 -0700 MST  1585 s  3555/3615 msgs left
+msg INBOX.Allstar/274 {13212}         copied to Allstar/2          2.26 msgs/s  459.331 KiB/s 12.098 MiB copied ETA: Tuesday 31 October 2023-10-31 19:39:51 -0700 MST  1571 s  3554/3615 msgs left
+msg INBOX.Allstar/275 {65567}         copied to Allstar/3          2.27 msgs/s  456.603 KiB/s 12.160 MiB copied ETA: Tuesday 31 October 2023-10-31 19:39:43 -0700 MST  1563 s  3553/3615 msgs left
+msg INBOX.Allstar/276 {14004}         copied to Allstar/4          2.29 msgs/s  453.442 KiB/s 12.174 MiB copied ETA: Tuesday 31 October 2023-10-31 19:39:30 -0700 MST  1550 s  3552/3615 msgs left
+msg INBOX.Allstar/277 {9626}          copied to Allstar/5          2.31 msgs/s  450.202 KiB/s 12.183 MiB copied ETA: Tuesday 31 October 2023-10-31 19:39:18 -0700 MST  1538 s  3551/3615 msgs left
+msg INBOX.Allstar/278 {89174}         copied to Allstar/6          2.33 msgs/s  449.654 KiB/s 12.268 MiB copied ETA: Tuesday 31 October 2023-10-31 19:39:06 -0700 MST  1526 s  3550/3615 msgs left
+msg INBOX.Allstar/279 {9058}          copied to Allstar/7          2.34 msgs/s  446.500 KiB/s 12.276 MiB copied ETA: Tuesday 31 October 2023-10-31 19:38:55 -0700 MST  1514 s  3549/3615 msgs left
+msg INBOX.Allstar/280 {29289}         copied to Allstar/8          2.36 msgs/s  444.060 KiB/s 12.304 MiB copied ETA: Tuesday 31 October 2023-10-31 19:38:44 -0700 MST  1503 s  3548/3615 msgs left
+msg INBOX.Allstar/281 {295060}        copied to Allstar/9          2.37 msgs/s  449.279 KiB/s 12.586 MiB copied ETA: Tuesday 31 October 2023-10-31 19:38:38 -0700 MST  1496 s  3547/3615 msgs left
+msg INBOX.Allstar/282 {9666}          copied to Allstar/10         2.39 msgs/s  446.145 KiB/s 12.595 MiB copied ETA: Tuesday 31 October 2023-10-31 19:38:27 -0700 MST  1486 s  3546/3615 msgs left
+msg INBOX.Allstar/283 {9504}          copied to Allstar/11         2.40 msgs/s  443.072 KiB/s 12.604 MiB copied ETA: Tuesday 31 October 2023-10-31 19:38:17 -0700 MST  1475 s  3545/3615 msgs left
+msg INBOX.Allstar/284 {13733}         copied to Allstar/12         2.42 msgs/s  440.191 KiB/s 12.617 MiB copied ETA: Tuesday 31 October 2023-10-31 19:38:07 -0700 MST  1465 s  3544/3615 msgs left
+msg INBOX.Allstar/285 {95749}         copied to Allstar/13         2.43 msgs/s  439.882 KiB/s 12.708 MiB copied ETA: Tuesday 31 October 2023-10-31 19:37:58 -0700 MST  1456 s  3543/3615 msgs left
+msg INBOX.Allstar/286 {8693}          copied to Allstar/14         2.45 msgs/s  436.973 KiB/s 12.717 MiB copied ETA: Tuesday 31 October 2023-10-31 19:37:48 -0700 MST  1446 s  3542/3615 msgs left
+msg INBOX.Allstar/287 {8724}          copied to Allstar/15         2.47 msgs/s  434.121 KiB/s 12.725 MiB copied ETA: Tuesday 31 October 2023-10-31 19:37:39 -0700 MST  1436 s  3541/3615 msgs left
+msg INBOX.Allstar/288 {22979}         copied to Allstar/16         2.48 msgs/s  431.726 KiB/s 12.747 MiB copied ETA: Tuesday 31 October 2023-10-31 19:37:30 -0700 MST  1427 s  3540/3615 msgs left
+msg INBOX.Allstar/289 {13784}         copied to Allstar/17         2.50 msgs/s  429.098 KiB/s 12.760 MiB copied ETA: Tuesday 31 October 2023-10-31 19:37:21 -0700 MST  1418 s  3539/3615 msgs left
+msg INBOX.Allstar/290 {13731}         copied to Allstar/18         2.51 msgs/s  426.438 KiB/s 12.773 MiB copied ETA: Tuesday 31 October 2023-10-31 19:37:13 -0700 MST  1409 s  3538/3615 msgs left
+msg INBOX.Allstar/291 {79858}         copied to Allstar/19         2.52 msgs/s  425.783 KiB/s 12.849 MiB copied ETA: Tuesday 31 October 2023-10-31 19:37:05 -0700 MST  1401 s  3537/3615 msgs left
+msg INBOX.Allstar/292 {14702}         copied to Allstar/20         2.54 msgs/s  423.243 KiB/s 12.863 MiB copied ETA: Tuesday 31 October 2023-10-31 19:36:57 -0700 MST  1393 s  3536/3615 msgs left
+msg INBOX.Allstar/293 {13949}         copied to Allstar/21         2.55 msgs/s  420.717 KiB/s 12.877 MiB copied ETA: Tuesday 31 October 2023-10-31 19:36:49 -0700 MST  1385 s  3535/3615 msgs left
+msg INBOX.Allstar/294 {60124}         copied to Allstar/22         2.57 msgs/s  419.594 KiB/s 12.934 MiB copied ETA: Tuesday 31 October 2023-10-31 19:36:41 -0700 MST  1377 s  3534/3615 msgs left
+msg INBOX.Allstar/295 {10819}         copied to Allstar/23         2.58 msgs/s  417.073 KiB/s 12.944 MiB copied ETA: Tuesday 31 October 2023-10-31 19:36:34 -0700 MST  1369 s  3533/3615 msgs left
+msg INBOX.Allstar/296 {9655}          copied to Allstar/24         2.59 msgs/s  414.517 KiB/s 12.954 MiB copied ETA: Tuesday 31 October 2023-10-31 19:36:26 -0700 MST  1362 s  3532/3615 msgs left
+msg INBOX.Allstar/297 {8563}          copied to Allstar/25         2.61 msgs/s  411.935 KiB/s 12.962 MiB copied ETA: Tuesday 31 October 2023-10-31 19:36:19 -0700 MST  1354 s  3531/3615 msgs left
+msg INBOX.Allstar/298 {109987}        copied to Allstar/26         2.62 msgs/s  412.219 KiB/s 13.067 MiB copied ETA: Tuesday 31 October 2023-10-31 19:36:13 -0700 MST  1348 s  3530/3615 msgs left
+msg INBOX.Allstar/299 {9770}          copied to Allstar/27         2.63 msgs/s  409.783 KiB/s 13.076 MiB copied ETA: Tuesday 31 October 2023-10-31 19:36:06 -0700 MST  1341 s  3529/3615 msgs left
+msg INBOX.Allstar/300 {51546}         copied to Allstar/28         2.64 msgs/s  408.561 KiB/s 13.125 MiB copied ETA: Tuesday 31 October 2023-10-31 19:35:59 -0700 MST  1334 s  3528/3615 msgs left
+msg INBOX.Allstar/301 {9650}          copied to Allstar/29         2.66 msgs/s  406.125 KiB/s 13.134 MiB copied ETA: Tuesday 31 October 2023-10-31 19:35:53 -0700 MST  1327 s  3527/3615 msgs left
+msg INBOX.Allstar/302 {13730}         copied to Allstar/30         2.67 msgs/s  403.401 KiB/s 13.147 MiB copied ETA: Tuesday 31 October 2023-10-31 19:35:48 -0700 MST  1322 s  3526/3615 msgs left
+msg INBOX.Allstar/303 {13669}         copied to Allstar/31         2.68 msgs/s  401.226 KiB/s 13.160 MiB copied ETA: Tuesday 31 October 2023-10-31 19:35:42 -0700 MST  1316 s  3525/3615 msgs left
+msg INBOX.Allstar/304 {9712}          copied to Allstar/32         2.69 msgs/s  398.856 KiB/s 13.170 MiB copied ETA: Tuesday 31 October 2023-10-31 19:35:36 -0700 MST  1309 s  3524/3615 msgs left
+msg INBOX.Allstar/305 {82712}         copied to Allstar/33         2.69 msgs/s  397.083 KiB/s 13.249 MiB copied ETA: Tuesday 31 October 2023-10-31 19:35:35 -0700 MST  1308 s  3523/3615 msgs left
+msg INBOX.Allstar/306 {13818}         copied to Allstar/34         2.70 msgs/s  394.971 KiB/s 13.262 MiB copied ETA: Tuesday 31 October 2023-10-31 19:35:29 -0700 MST  1302 s  3522/3615 msgs left
+msg INBOX.Allstar/307 {16780}         copied to Allstar/35         2.71 msgs/s  392.078 KiB/s 13.278 MiB copied ETA: Tuesday 31 October 2023-10-31 19:35:26 -0700 MST  1299 s  3521/3615 msgs left
+msg INBOX.Allstar/308 {14467}         copied to Allstar/36         2.72 msgs/s  389.995 KiB/s 13.292 MiB copied ETA: Tuesday 31 October 2023-10-31 19:35:21 -0700 MST  1293 s  3520/3615 msgs left
+msg INBOX.Allstar/309 {3883}          copied to Allstar/37         2.73 msgs/s  387.691 KiB/s 13.295 MiB copied ETA: Tuesday 31 October 2023-10-31 19:35:15 -0700 MST  1287 s  3519/3615 msgs left
+msg INBOX.Allstar/310 {145063}        copied to Allstar/38         2.74 msgs/s  389.044 KiB/s 13.434 MiB copied ETA: Tuesday 31 October 2023-10-31 19:35:10 -0700 MST  1282 s  3518/3615 msgs left
+msg INBOX.Allstar/311 {105890}        copied to Allstar/39         2.75 msgs/s  389.216 KiB/s 13.535 MiB copied ETA: Tuesday 31 October 2023-10-31 19:35:06 -0700 MST  1278 s  3517/3615 msgs left
+msg INBOX.Allstar/312 {8712}          copied to Allstar/40         2.76 msgs/s  387.070 KiB/s 13.543 MiB copied ETA: Tuesday 31 October 2023-10-31 19:35:01 -0700 MST  1272 s  3516/3615 msgs left
+msg INBOX.Allstar/313 {13677}         copied to Allstar/41         2.77 msgs/s  385.064 KiB/s 13.556 MiB copied ETA: Tuesday 31 October 2023-10-31 19:34:56 -0700 MST  1267 s  3515/3615 msgs left
+msg INBOX.Allstar/314 {8932}          copied to Allstar/42         2.78 msgs/s  382.967 KiB/s 13.564 MiB copied ETA: Tuesday 31 October 2023-10-31 19:34:51 -0700 MST  1262 s  3514/3615 msgs left
+msg INBOX.Allstar/315 {8346}          copied to Allstar/43         2.80 msgs/s  380.850 KiB/s 13.572 MiB copied ETA: Tuesday 31 October 2023-10-31 19:34:46 -0700 MST  1257 s  3513/3615 msgs left
+msg INBOX.Allstar/316 {20855}         copied to Allstar/44         2.81 msgs/s  379.146 KiB/s 13.592 MiB copied ETA: Tuesday 31 October 2023-10-31 19:34:41 -0700 MST  1252 s  3512/3615 msgs left
+msg INBOX.Allstar/317 {13240}         copied to Allstar/45         2.82 msgs/s  377.230 KiB/s 13.605 MiB copied ETA: Tuesday 31 October 2023-10-31 19:34:36 -0700 MST  1247 s  3511/3615 msgs left
+msg INBOX.Allstar/318 {37928}         copied to Allstar/46         2.83 msgs/s  375.967 KiB/s 13.641 MiB copied ETA: Tuesday 31 October 2023-10-31 19:34:32 -0700 MST  1242 s  3510/3615 msgs left
+msg INBOX.Allstar/319 {49803}         copied to Allstar/47         2.83 msgs/s  374.230 KiB/s 13.689 MiB copied ETA: Tuesday 31 October 2023-10-31 19:34:30 -0700 MST  1240 s  3509/3615 msgs left
+msg INBOX.Allstar/320 {8634}          copied to Allstar/48         2.84 msgs/s  372.303 KiB/s 13.697 MiB copied ETA: Tuesday 31 October 2023-10-31 19:34:25 -0700 MST  1235 s  3508/3615 msgs left
+msg INBOX.Allstar/321 {66182}         copied to Allstar/49         2.84 msgs/s  371.101 KiB/s 13.760 MiB copied ETA: Tuesday 31 October 2023-10-31 19:34:23 -0700 MST  1233 s  3507/3615 msgs left
+msg INBOX.Allstar/322 {190332}        copied to Allstar/50         2.85 msgs/s  373.582 KiB/s 13.942 MiB copied ETA: Tuesday 31 October 2023-10-31 19:34:20 -0700 MST  1229 s  3506/3615 msgs left
+msg INBOX.Allstar/323 {4733}          copied to Allstar/51         2.86 msgs/s  371.616 KiB/s 13.946 MiB copied ETA: Tuesday 31 October 2023-10-31 19:34:15 -0700 MST  1224 s  3505/3615 msgs left
+msg INBOX.Allstar/324 {39574}         copied to Allstar/52         2.87 msgs/s  370.268 KiB/s 13.984 MiB copied ETA: Tuesday 31 October 2023-10-31 19:34:12 -0700 MST  1221 s  3504/3615 msgs left
+msg INBOX.Allstar/325 {88446}         copied to Allstar/53         2.88 msgs/s  369.980 KiB/s 14.068 MiB copied ETA: Tuesday 31 October 2023-10-31 19:34:09 -0700 MST  1218 s  3503/3615 msgs left
+msg INBOX.Allstar/326 {5281}          copied to Allstar/54         2.89 msgs/s  368.076 KiB/s 14.073 MiB copied ETA: Tuesday 31 October 2023-10-31 19:34:05 -0700 MST  1213 s  3502/3615 msgs left
+msg INBOX.Allstar/327 {13185}         copied to Allstar/55         2.90 msgs/s  366.353 KiB/s 14.086 MiB copied ETA: Tuesday 31 October 2023-10-31 19:34:01 -0700 MST  1209 s  3501/3615 msgs left
+msg INBOX.Allstar/328 {13691}         copied to Allstar/56         2.90 msgs/s  364.686 KiB/s 14.099 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:57 -0700 MST  1205 s  3500/3615 msgs left
+msg INBOX.Allstar/329 {13714}         copied to Allstar/57         2.91 msgs/s  363.049 KiB/s 14.112 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:53 -0700 MST  1201 s  3499/3615 msgs left
+msg INBOX.Allstar/330 {21784}         copied to Allstar/58         2.92 msgs/s  361.622 KiB/s 14.133 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:49 -0700 MST  1196 s  3498/3615 msgs left
+msg INBOX.Allstar/331 {12808}         copied to Allstar/59         2.93 msgs/s  360.006 KiB/s 14.145 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:45 -0700 MST  1192 s  3497/3615 msgs left
+msg INBOX.Allstar/332 {221078}        copied to Allstar/60         2.94 msgs/s  362.937 KiB/s 14.356 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:43 -0700 MST  1190 s  3496/3615 msgs left
+msg INBOX.Allstar/333 {40686}         copied to Allstar/61         2.95 msgs/s  361.951 KiB/s 14.394 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:39 -0700 MST  1186 s  3495/3615 msgs left
+msg INBOX.Allstar/334 {180980}        copied to Allstar/62         2.95 msgs/s  363.560 KiB/s 14.567 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:38 -0700 MST  1185 s  3494/3615 msgs left
+msg INBOX.Allstar/335 {49443}         copied to Allstar/63         2.95 msgs/s  362.051 KiB/s 14.614 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:37 -0700 MST  1183 s  3493/3615 msgs left
+msg INBOX.Allstar/336 {80484}         copied to Allstar/64         2.96 msgs/s  361.970 KiB/s 14.691 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:34 -0700 MST  1180 s  3492/3615 msgs left
+msg INBOX.Allstar/337 {11725}         copied to Allstar/65         2.97 msgs/s  360.346 KiB/s 14.702 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:31 -0700 MST  1176 s  3491/3615 msgs left
+msg INBOX.Allstar/338 {59216}         copied to Allstar/66         2.98 msgs/s  359.805 KiB/s 14.759 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:27 -0700 MST  1173 s  3490/3615 msgs left
+msg INBOX.Allstar/339 {78906}         copied to Allstar/67         2.98 msgs/s  359.655 KiB/s 14.834 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:24 -0700 MST  1170 s  3489/3615 msgs left
+msg INBOX.Allstar/340 {7726}          copied to Allstar/68         2.99 msgs/s  357.998 KiB/s 14.841 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:21 -0700 MST  1166 s  3488/3615 msgs left
+msg INBOX.Allstar/341 {13138}         copied to Allstar/69         3.00 msgs/s  356.474 KiB/s 14.854 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:18 -0700 MST  1162 s  3487/3615 msgs left
+msg INBOX.Allstar/342 {8741}          copied to Allstar/70         3.01 msgs/s  354.856 KiB/s 14.862 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:14 -0700 MST  1159 s  3486/3615 msgs left
+msg INBOX.Allstar/343 {8239}          copied to Allstar/71         3.02 msgs/s  353.288 KiB/s 14.870 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:11 -0700 MST  1155 s  3485/3615 msgs left
+msg INBOX.Allstar/344 {120076}        copied to Allstar/72         3.02 msgs/s  354.080 KiB/s 14.984 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:08 -0700 MST  1153 s  3484/3615 msgs left
+msg INBOX.Allstar/345 {20933}         copied to Allstar/73         3.03 msgs/s  352.778 KiB/s 15.004 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:05 -0700 MST  1149 s  3483/3615 msgs left
+msg INBOX.Allstar/346 {10357}         copied to Allstar/74         3.04 msgs/s  351.213 KiB/s 15.014 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:02 -0700 MST  1146 s  3482/3615 msgs left
+msg INBOX.Allstar/347 {192210}        copied to Allstar/75         3.04 msgs/s  353.519 KiB/s 15.198 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:00 -0700 MST  1144 s  3481/3615 msgs left
+msg INBOX.Allstar/348 {221573}        copied to Allstar/76         3.05 msgs/s  356.362 KiB/s 15.409 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:58 -0700 MST  1141 s  3480/3615 msgs left
+msg INBOX.Allstar/349 {25255}         copied to Allstar/77         3.06 msgs/s  355.155 KiB/s 15.433 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:55 -0700 MST  1138 s  3479/3615 msgs left
+msg INBOX.Allstar/350 {96167}         copied to Allstar/78         3.06 msgs/s  355.401 KiB/s 15.525 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:53 -0700 MST  1136 s  3478/3615 msgs left
+msg INBOX.Allstar/351 {6219}          copied to Allstar/79         3.07 msgs/s  353.784 KiB/s 15.531 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:50 -0700 MST  1133 s  3477/3615 msgs left
+msg INBOX.Allstar/352 {118965}        copied to Allstar/80         3.08 msgs/s  354.511 KiB/s 15.644 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:48 -0700 MST  1130 s  3476/3615 msgs left
+msg INBOX.Allstar/353 {70576}         copied to Allstar/81         3.08 msgs/s  354.268 KiB/s 15.711 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:45 -0700 MST  1127 s  3475/3615 msgs left
+msg INBOX.Allstar/354 {67327}         copied to Allstar/82         3.09 msgs/s  353.927 KiB/s 15.776 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:43 -0700 MST  1125 s  3474/3615 msgs left
+msg INBOX.Allstar/355 {16668}         copied to Allstar/83         3.09 msgs/s  352.040 KiB/s 15.792 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:42 -0700 MST  1123 s  3473/3615 msgs left
+msg INBOX.Allstar/356 {13618}         copied to Allstar/84         3.10 msgs/s  350.660 KiB/s 15.805 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:39 -0700 MST  1121 s  3472/3615 msgs left
+msg INBOX.Allstar/357 {14308}         copied to Allstar/85         3.11 msgs/s  349.339 KiB/s 15.818 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:37 -0700 MST  1118 s  3471/3615 msgs left
+msg INBOX.Allstar/358 {8551}          copied to Allstar/86         3.11 msgs/s  347.888 KiB/s 15.826 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:34 -0700 MST  1115 s  3470/3615 msgs left
+msg INBOX.Allstar/359 {13167}         copied to Allstar/87         3.12 msgs/s  346.385 KiB/s 15.839 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:32 -0700 MST  1113 s  3469/3615 msgs left
+msg INBOX.Allstar/360 {12845}         copied to Allstar/88         3.12 msgs/s  345.018 KiB/s 15.851 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:30 -0700 MST  1110 s  3468/3615 msgs left
+msg INBOX.Allstar/361 {6078}          copied to Allstar/89         3.13 msgs/s  343.554 KiB/s 15.857 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:27 -0700 MST  1107 s  3467/3615 msgs left
+msg INBOX.Allstar/362 {141985}        copied to Allstar/90         3.14 msgs/s  344.729 KiB/s 15.992 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:25 -0700 MST  1105 s  3466/3615 msgs left
+msg INBOX.Allstar/363 {83071}         copied to Allstar/91         3.14 msgs/s  344.154 KiB/s 16.072 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:25 -0700 MST  1105 s  3465/3615 msgs left
+msg INBOX.Allstar/364 {47231}         copied to Allstar/92         3.14 msgs/s  343.502 KiB/s 16.117 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:23 -0700 MST  1102 s  3464/3615 msgs left
+msg INBOX.Allstar/365 {87554}         copied to Allstar/93         3.15 msgs/s  343.640 KiB/s 16.200 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:21 -0700 MST  1100 s  3463/3615 msgs left
+msg INBOX.Allstar/366 {47608}         copied to Allstar/94         3.15 msgs/s  342.884 KiB/s 16.246 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:19 -0700 MST  1098 s  3462/3615 msgs left
+msg INBOX.Allstar/367 {383797}        copied to Allstar/95         3.16 msgs/s  348.577 KiB/s 16.612 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:18 -0700 MST  1097 s  3461/3615 msgs left
+msg INBOX.Allstar/368 {66316}         copied to Allstar/96         3.16 msgs/s  347.671 KiB/s 16.675 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:18 -0700 MST  1096 s  3460/3615 msgs left
+msg INBOX.Allstar/369 {62528}         copied to Allstar/97         3.16 msgs/s  347.280 KiB/s 16.734 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:16 -0700 MST  1094 s  3459/3615 msgs left
+msg INBOX.Allstar/370 {28340}         copied to Allstar/98         3.17 msgs/s  346.291 KiB/s 16.761 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:14 -0700 MST  1092 s  3458/3615 msgs left
+msg INBOX.Allstar/371 {22775}         copied to Allstar/99         3.17 msgs/s  345.131 KiB/s 16.783 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:12 -0700 MST  1090 s  3457/3615 msgs left
+msg INBOX.Allstar/372 {14359}         copied to Allstar/100        3.18 msgs/s  343.867 KiB/s 16.797 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:10 -0700 MST  1087 s  3456/3615 msgs left
+msg INBOX.Allstar/373 {13474}         copied to Allstar/101        3.18 msgs/s  342.637 KiB/s 16.810 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:08 -0700 MST  1085 s  3455/3615 msgs left
+msg INBOX.Allstar/374 {13716}         copied to Allstar/102        3.19 msgs/s  341.422 KiB/s 16.823 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:05 -0700 MST  1082 s  3454/3615 msgs left
+msg INBOX.Allstar/375 {12816}         copied to Allstar/103        3.20 msgs/s  340.179 KiB/s 16.835 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:03 -0700 MST  1080 s  3453/3615 msgs left
+msg INBOX.Allstar/376 {228103}        copied to Allstar/104        3.20 msgs/s  342.876 KiB/s 17.053 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:02 -0700 MST  1079 s  3452/3615 msgs left
+msg INBOX.Allstar/377 {49283}         copied to Allstar/105        3.20 msgs/s  341.765 KiB/s 17.100 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:02 -0700 MST  1078 s  3451/3615 msgs left
+msg INBOX.Allstar/378 {144085}        copied to Allstar/106        3.21 msgs/s  342.888 KiB/s 17.237 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:00 -0700 MST  1076 s  3450/3615 msgs left
+msg INBOX.Allstar/379 {72614}         copied to Allstar/107        3.21 msgs/s  342.767 KiB/s 17.306 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:58 -0700 MST  1074 s  3449/3615 msgs left
+msg INBOX.Allstar/720 {389809}        copied to Allstar/108        3.21 msgs/s  348.337 KiB/s 17.678 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:58 -0700 MST  1073 s  3448/3615 msgs left
+msg INBOX.Allstar/722 {84528}         copied to Allstar/109        3.22 msgs/s  348.388 KiB/s 17.759 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:56 -0700 MST  1071 s  3447/3615 msgs left
+msg INBOX.Allstar/724 {59850}         copied to Allstar/110        3.22 msgs/s  348.012 KiB/s 17.816 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:54 -0700 MST  1069 s  3446/3615 msgs left
+msg INBOX.Allstar/725 {3989}          copied to Allstar/111        3.23 msgs/s  346.607 KiB/s 17.819 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:52 -0700 MST  1067 s  3445/3615 msgs left
+msg INBOX.Allstar/727 {78352}         copied to Allstar/112        3.23 msgs/s  346.545 KiB/s 17.894 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:50 -0700 MST  1065 s  3444/3615 msgs left
+msg INBOX.Allstar/729 {14099}         copied to Allstar/113        3.24 msgs/s  345.376 KiB/s 17.908 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:48 -0700 MST  1063 s  3443/3615 msgs left
+msg INBOX.Allstar/730 {53776}         copied to Allstar/114        3.24 msgs/s  344.675 KiB/s 17.959 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:47 -0700 MST  1062 s  3442/3615 msgs left
+msg INBOX.Allstar/731 {21611}         copied to Allstar/115        3.25 msgs/s  343.624 KiB/s 17.979 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:46 -0700 MST  1060 s  3441/3615 msgs left
+msg INBOX.Allstar/732 {346390}        copied to Allstar/116        3.25 msgs/s  348.009 KiB/s 18.310 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:45 -0700 MST  1059 s  3440/3615 msgs left
+msg INBOX.Allstar/734 {31955}         copied to Allstar/117        3.25 msgs/s  347.173 KiB/s 18.340 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:44 -0700 MST  1057 s  3439/3615 msgs left
+msg INBOX.Allstar/735 {55859}         copied to Allstar/118        3.26 msgs/s  346.738 KiB/s 18.394 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:42 -0700 MST  1055 s  3438/3615 msgs left
+msg INBOX.Allstar/736 {2222592}       copied to Allstar/119        3.18 msgs/s  375.498 KiB/s 20.513 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:09 -0700 MST  1080 s  3437/3615 msgs left
+msg INBOX.Allstar/737 {44740}         copied to Allstar/120        3.19 msgs/s  374.720 KiB/s 20.556 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:07 -0700 MST  1078 s  3436/3615 msgs left
+msg INBOX.Allstar/739 {195152}        copied to Allstar/121        3.19 msgs/s  376.012 KiB/s 20.742 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:07 -0700 MST  1078 s  3435/3615 msgs left
+msg INBOX.Allstar/740 {2163152}       copied to Allstar/122        3.15 msgs/s  406.009 KiB/s 22.805 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:21 -0700 MST  1091 s  3434/3615 msgs left
+msg INBOX.Allstar/741 {208723}        copied to Allstar/123        3.13 msgs/s  404.607 KiB/s 23.004 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:29 -0700 MST  1098 s  3433/3615 msgs left
+msg INBOX.Allstar/742 {50625}         copied to Allstar/124        3.13 msgs/s  403.830 KiB/s 23.052 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:27 -0700 MST  1096 s  3432/3615 msgs left
+msg INBOX.Allstar/744 {120769}        copied to Allstar/125        3.13 msgs/s  404.146 KiB/s 23.167 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:26 -0700 MST  1095 s  3431/3615 msgs left
+msg INBOX.Allstar/745 {19167}         copied to Allstar/126        3.14 msgs/s  402.823 KiB/s 23.186 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:24 -0700 MST  1093 s  3430/3615 msgs left
+msg INBOX.Allstar/746 {94903}         copied to Allstar/127        3.14 msgs/s  402.763 KiB/s 23.276 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:23 -0700 MST  1091 s  3429/3615 msgs left
+msg INBOX.Allstar/747 {22182}         copied to Allstar/128        3.15 msgs/s  401.648 KiB/s 23.297 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:21 -0700 MST  1089 s  3428/3615 msgs left
+msg INBOX.Allstar/749 {118588}        copied to Allstar/129        3.15 msgs/s  402.042 KiB/s 23.410 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:19 -0700 MST  1087 s  3427/3615 msgs left
+msg INBOX.Allstar/750 {23770}         copied to Allstar/130        3.16 msgs/s  400.958 KiB/s 23.433 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:17 -0700 MST  1085 s  3426/3615 msgs left
+msg INBOX.Allstar/751 {66934}         copied to Allstar/131        3.16 msgs/s  400.050 KiB/s 23.497 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:17 -0700 MST  1084 s  3425/3615 msgs left
+msg INBOX.Allstar/752 {6587}          copied to Allstar/132        3.16 msgs/s  398.689 KiB/s 23.503 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:15 -0700 MST  1082 s  3424/3615 msgs left
+msg INBOX.Allstar/754 {99343}         copied to Allstar/133        3.16 msgs/s  398.306 KiB/s 23.598 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:15 -0700 MST  1082 s  3423/3615 msgs left
+msg INBOX.Allstar/755 {16858}         copied to Allstar/134        3.17 msgs/s  396.621 KiB/s 23.614 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:15 -0700 MST  1081 s  3422/3615 msgs left
+msg INBOX.Allstar/758 {58024}         copied to Allstar/135        3.17 msgs/s  396.082 KiB/s 23.669 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:13 -0700 MST  1079 s  3421/3615 msgs left
+msg INBOX.Allstar/759 {22083}         copied to Allstar/136        3.18 msgs/s  395.016 KiB/s 23.690 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:11 -0700 MST  1077 s  3420/3615 msgs left
+msg INBOX.Allstar/762 {35922}         copied to Allstar/137        3.18 msgs/s  394.154 KiB/s 23.725 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:09 -0700 MST  1075 s  3419/3615 msgs left
+msg INBOX.Allstar/763 {42114}         copied to Allstar/138        3.18 msgs/s  393.388 KiB/s 23.765 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:08 -0700 MST  1073 s  3418/3615 msgs left
+msg INBOX.Allstar/764 {59801}         copied to Allstar/139        3.19 msgs/s  392.904 KiB/s 23.822 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:06 -0700 MST  1071 s  3417/3615 msgs left
+msg INBOX.Allstar/765 {8760}          copied to Allstar/140        3.19 msgs/s  391.665 KiB/s 23.830 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:04 -0700 MST  1070 s  3416/3615 msgs left
+msg INBOX.Allstar/766 {93785}         copied to Allstar/141        3.20 msgs/s  391.710 KiB/s 23.920 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:03 -0700 MST  1068 s  3415/3615 msgs left
+msg INBOX.Allstar/767 {197285}        copied to Allstar/142        3.20 msgs/s  392.850 KiB/s 24.108 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:03 -0700 MST  1067 s  3414/3615 msgs left
+msg INBOX.Allstar/768 {2369593}       copied to Allstar/143        3.16 msgs/s  422.661 KiB/s 26.368 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:16 -0700 MST  1079 s  3413/3615 msgs left
+msg INBOX.Allstar/769 {56790}         copied to Allstar/144        3.15 msgs/s  419.728 KiB/s 26.422 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:20 -0700 MST  1083 s  3412/3615 msgs left
+msg INBOX.Allstar/771 {18144}         copied to Allstar/145        3.15 msgs/s  418.589 KiB/s 26.439 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:19 -0700 MST  1081 s  3411/3615 msgs left
+msg INBOX.Allstar/773 {18045}         copied to Allstar/146        3.16 msgs/s  417.416 KiB/s 26.456 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:17 -0700 MST  1080 s  3410/3615 msgs left
+msg INBOX.Allstar/776 {25386}         copied to Allstar/147        3.16 msgs/s  416.366 KiB/s 26.481 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:15 -0700 MST  1078 s  3409/3615 msgs left
+msg INBOX.Allstar/778 {544150}        copied to Allstar/148        3.16 msgs/s  421.675 KiB/s 27.000 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:18 -0700 MST  1079 s  3408/3615 msgs left
+msg INBOX.Allstar/780 {8353}          copied to Allstar/149        3.16 msgs/s  420.390 KiB/s 27.007 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:16 -0700 MST  1078 s  3407/3615 msgs left
+msg INBOX.Allstar/781 {37408}         copied to Allstar/150        3.17 msgs/s  419.489 KiB/s 27.043 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:14 -0700 MST  1076 s  3406/3615 msgs left
+msg INBOX.Allstar/782 {192993}        copied to Allstar/151        3.17 msgs/s  420.770 KiB/s 27.227 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:13 -0700 MST  1074 s  3405/3615 msgs left
+msg INBOX.Allstar/783 {863302}        copied to Allstar/152        3.16 msgs/s  430.839 KiB/s 28.051 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:15 -0700 MST  1076 s  3404/3615 msgs left
+msg INBOX.Allstar/784 {3878}          copied to Allstar/153        3.17 msgs/s  429.510 KiB/s 28.054 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:13 -0700 MST  1074 s  3403/3615 msgs left
+msg INBOX.Allstar/786 {221391}        copied to Allstar/154        3.17 msgs/s  431.142 KiB/s 28.265 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:12 -0700 MST  1072 s  3402/3615 msgs left
+msg INBOX.Allstar/788 {13930}         copied to Allstar/155        3.18 msgs/s  429.922 KiB/s 28.279 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:10 -0700 MST  1070 s  3401/3615 msgs left
+msg INBOX.Allstar/791 {37512}         copied to Allstar/156        3.18 msgs/s  429.038 KiB/s 28.314 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:09 -0700 MST  1069 s  3400/3615 msgs left
+msg INBOX.Allstar/793 {113683}        copied to Allstar/157        3.18 msgs/s  429.144 KiB/s 28.423 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:08 -0700 MST  1067 s  3399/3615 msgs left
+msg INBOX.Allstar/796 {254698}        copied to Allstar/158        3.19 msgs/s  431.163 KiB/s 28.666 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:07 -0700 MST  1066 s  3398/3615 msgs left
+msg INBOX.Allstar/798 {52747}         copied to Allstar/159        3.19 msgs/s  430.469 KiB/s 28.716 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:05 -0700 MST  1064 s  3397/3615 msgs left
+msg INBOX.Allstar/799 {3984}          copied to Allstar/160        3.20 msgs/s  429.116 KiB/s 28.720 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:04 -0700 MST  1063 s  3396/3615 msgs left
+msg INBOX.Allstar/800 {16772}         copied to Allstar/161        3.19 msgs/s  427.083 KiB/s 28.736 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:05 -0700 MST  1063 s  3395/3615 msgs left
+msg INBOX.Allstar/801 {73635}         copied to Allstar/162        3.20 msgs/s  426.661 KiB/s 28.806 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:03 -0700 MST  1062 s  3394/3615 msgs left
+msg INBOX.Allstar/802 {319479}        copied to Allstar/163        3.20 msgs/s  429.507 KiB/s 29.111 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:03 -0700 MST  1061 s  3393/3615 msgs left
+msg INBOX.Allstar/803 {53712}         copied to Allstar/164        3.20 msgs/s  428.857 KiB/s 29.162 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:01 -0700 MST  1059 s  3392/3615 msgs left
+msg INBOX.Allstar/804 {43765}         copied to Allstar/165        3.20 msgs/s  427.809 KiB/s 29.204 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:01 -0700 MST  1058 s  3391/3615 msgs left
+msg INBOX.Allstar/808 {30762}         copied to Allstar/166        3.21 msgs/s  426.871 KiB/s 29.233 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:59 -0700 MST  1057 s  3390/3615 msgs left
+msg INBOX.Allstar/809 {59899}         copied to Allstar/167        3.21 msgs/s  426.313 KiB/s 29.290 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:58 -0700 MST  1055 s  3389/3615 msgs left
+msg INBOX.Allstar/811 {72081}         copied to Allstar/168        3.22 msgs/s  425.889 KiB/s 29.359 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:57 -0700 MST  1054 s  3388/3615 msgs left
+msg INBOX.Allstar/813 {44223}         copied to Allstar/169        3.22 msgs/s  425.131 KiB/s 29.401 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:55 -0700 MST  1052 s  3387/3615 msgs left
+msg INBOX.Allstar/814 {4049}          copied to Allstar/170        3.22 msgs/s  423.857 KiB/s 29.405 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:54 -0700 MST  1050 s  3386/3615 msgs left
+msg INBOX.Allstar/815 {27625}         copied to Allstar/171        3.23 msgs/s  422.877 KiB/s 29.431 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:53 -0700 MST  1049 s  3385/3615 msgs left
+msg INBOX.Allstar/816 {33966}         copied to Allstar/172        3.23 msgs/s  421.559 KiB/s 29.464 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:53 -0700 MST  1048 s  3384/3615 msgs left
+msg INBOX.Allstar/817 {116207}        copied to Allstar/173        3.23 msgs/s  421.731 KiB/s 29.574 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:52 -0700 MST  1047 s  3383/3615 msgs left
+msg INBOX.Allstar/818 {118543}        copied to Allstar/174        3.23 msgs/s  421.903 KiB/s 29.688 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:51 -0700 MST  1046 s  3382/3615 msgs left
+msg INBOX.Allstar/819 {12024}         copied to Allstar/175        3.24 msgs/s  420.755 KiB/s 29.699 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:49 -0700 MST  1044 s  3381/3615 msgs left
+msg INBOX.Allstar/820 {42154}         copied to Allstar/176        3.24 msgs/s  419.902 KiB/s 29.739 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:48 -0700 MST  1043 s  3380/3615 msgs left
+msg INBOX.Allstar/821 {16219876}      copied to Allstar/177        3.00 msgs/s  588.757 KiB/s 45.208 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:17 -0700 MST  1126 s  3379/3615 msgs left
+msg INBOX.Allstar/823 {120766}        copied to Allstar/178        3.00 msgs/s  588.192 KiB/s 45.323 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:16 -0700 MST  1125 s  3378/3615 msgs left
+msg INBOX.Allstar/824 {18305}         copied to Allstar/179        3.01 msgs/s  586.766 KiB/s 45.340 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:14 -0700 MST  1123 s  3377/3615 msgs left
+msg INBOX.Allstar/825 {32220}         copied to Allstar/180        3.01 msgs/s  585.546 KiB/s 45.371 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:13 -0700 MST  1121 s  3376/3615 msgs left
+msg INBOX.Allstar/828 {13063}         copied to Allstar/181        3.02 msgs/s  584.090 KiB/s 45.383 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:11 -0700 MST  1119 s  3375/3615 msgs left
+msg INBOX.Allstar/829 {79584}         copied to Allstar/182        3.02 msgs/s  583.362 KiB/s 45.459 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:10 -0700 MST  1117 s  3374/3615 msgs left
+msg INBOX.Allstar/830 {7857}          copied to Allstar/183        3.02 msgs/s  581.801 KiB/s 45.467 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:08 -0700 MST  1115 s  3373/3615 msgs left
+msg INBOX.Allstar/831 {8221}          copied to Allstar/184        3.03 msgs/s  580.339 KiB/s 45.475 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:06 -0700 MST  1113 s  3372/3615 msgs left
+msg INBOX.Allstar/832 {598369}        copied to Allstar/185        3.03 msgs/s  584.938 KiB/s 46.045 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:07 -0700 MST  1114 s  3371/3615 msgs left
+msg INBOX.Allstar/833 {17009}         copied to Allstar/186        3.03 msgs/s  582.905 KiB/s 46.062 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:07 -0700 MST  1113 s  3370/3615 msgs left
+msg INBOX.Allstar/834 {4098}          copied to Allstar/187        3.03 msgs/s  581.375 KiB/s 46.066 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:05 -0700 MST  1111 s  3369/3615 msgs left
+msg INBOX.Allstar/836 {69266}         copied to Allstar/188        3.04 msgs/s  580.566 KiB/s 46.132 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:03 -0700 MST  1109 s  3368/3615 msgs left
+msg INBOX.Allstar/837 {469277}        copied to Allstar/189        3.03 msgs/s  583.706 KiB/s 46.579 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:04 -0700 MST  1109 s  3367/3615 msgs left
+msg INBOX.Allstar/838 {32773}         copied to Allstar/190        3.04 msgs/s  581.983 KiB/s 46.610 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:03 -0700 MST  1109 s  3366/3615 msgs left
+msg INBOX.Allstar/841 {37959}         copied to Allstar/191        3.04 msgs/s  580.801 KiB/s 46.647 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:02 -0700 MST  1107 s  3365/3615 msgs left
+msg INBOX.Allstar/842 {71365}         copied to Allstar/192        3.04 msgs/s  580.009 KiB/s 46.715 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:00 -0700 MST  1105 s  3364/3615 msgs left
+msg INBOX.Allstar/843 {20672}         copied to Allstar/193        3.05 msgs/s  578.691 KiB/s 46.734 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:59 -0700 MST  1104 s  3363/3615 msgs left
+msg INBOX.Allstar/845 {8572}          copied to Allstar/194        3.05 msgs/s  577.009 KiB/s 46.742 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:58 -0700 MST  1102 s  3362/3615 msgs left
+msg INBOX.Allstar/846 {47951}         copied to Allstar/195        3.05 msgs/s  575.992 KiB/s 46.788 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:56 -0700 MST  1101 s  3361/3615 msgs left
+msg INBOX.Allstar/847 {18021}         copied to Allstar/196        3.06 msgs/s  574.701 KiB/s 46.805 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:55 -0700 MST  1099 s  3360/3615 msgs left
+msg INBOX.Allstar/848 {6768}          copied to Allstar/197        3.06 msgs/s  573.140 KiB/s 46.812 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:54 -0700 MST  1097 s  3359/3615 msgs left
+msg INBOX.Allstar/849 {66396}         copied to Allstar/198        3.06 msgs/s  571.741 KiB/s 46.875 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:53 -0700 MST  1097 s  3358/3615 msgs left
+msg INBOX.Allstar/853 {23826}         copied to Allstar/199        3.05 msgs/s  568.063 KiB/s 46.898 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:57 -0700 MST  1100 s  3357/3615 msgs left
+msg INBOX.Allstar/858 {1596918}       copied to Allstar/200        3.02 msgs/s  579.022 KiB/s 48.421 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:08 -0700 MST  1110 s  3356/3615 msgs left
+msg INBOX.Allstar/861 {45932}         copied to Allstar/201        3.03 msgs/s  577.969 KiB/s 48.465 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:06 -0700 MST  1108 s  3355/3615 msgs left
+msg INBOX.Allstar/863 {3216556}       copied to Allstar/202        2.99 msgs/s  605.122 KiB/s 51.532 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:20 -0700 MST  1121 s  3354/3615 msgs left
+msg INBOX.Allstar/864 {8265}          copied to Allstar/203        3.00 msgs/s  603.720 KiB/s 51.540 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:19 -0700 MST  1119 s  3353/3615 msgs left
+msg INBOX.Allstar/865 {7592}          copied to Allstar/204        3.00 msgs/s  602.314 KiB/s 51.547 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:17 -0700 MST  1117 s  3352/3615 msgs left
+msg INBOX.Allstar/866 {50431}         copied to Allstar/205        3.00 msgs/s  600.787 KiB/s 51.595 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:17 -0700 MST  1116 s  3351/3615 msgs left
+msg INBOX.Allstar/867 {84554}         copied to Allstar/206        3.01 msgs/s  600.189 KiB/s 51.676 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:15 -0700 MST  1115 s  3350/3615 msgs left
+msg INBOX.Allstar/868 {120748}        copied to Allstar/207        3.01 msgs/s  599.809 KiB/s 51.791 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:14 -0700 MST  1113 s  3349/3615 msgs left
+msg INBOX.Allstar/869 {36512}         copied to Allstar/208        3.01 msgs/s  598.540 KiB/s 51.826 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:13 -0700 MST  1112 s  3348/3615 msgs left
+msg INBOX.Allstar/871 {247949}        copied to Allstar/209        3.01 msgs/s  599.413 KiB/s 52.062 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:12 -0700 MST  1111 s  3347/3615 msgs left
+msg INBOX.Allstar/873 {51905}         copied to Allstar/210        3.02 msgs/s  598.422 KiB/s 52.112 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:11 -0700 MST  1109 s  3346/3615 msgs left
+msg INBOX.Allstar/874 {382822}        copied to Allstar/211        3.02 msgs/s  600.380 KiB/s 52.477 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:11 -0700 MST  1109 s  3345/3615 msgs left
+msg INBOX.Allstar/876 {13553}         copied to Allstar/212        3.02 msgs/s  599.047 KiB/s 52.490 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:09 -0700 MST  1107 s  3344/3615 msgs left
+msg INBOX.Allstar/878 {71795}         copied to Allstar/213        3.02 msgs/s  598.278 KiB/s 52.558 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:08 -0700 MST  1106 s  3343/3615 msgs left
+msg INBOX.Allstar/879 {3999}          copied to Allstar/214        3.03 msgs/s  596.878 KiB/s 52.562 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:07 -0700 MST  1104 s  3342/3615 msgs left
+msg INBOX.Allstar/880 {20879}         copied to Allstar/215        3.03 msgs/s  595.646 KiB/s 52.582 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:05 -0700 MST  1102 s  3341/3615 msgs left
+msg INBOX.Allstar/881 {12896}         copied to Allstar/216        3.03 msgs/s  594.295 KiB/s 52.595 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:04 -0700 MST  1101 s  3340/3615 msgs left
+msg INBOX.Allstar/882 {56677}         copied to Allstar/217        3.04 msgs/s  593.413 KiB/s 52.649 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:03 -0700 MST  1099 s  3339/3615 msgs left
+msg INBOX.Allstar/883 {19457}         copied to Allstar/218        3.04 msgs/s  592.100 KiB/s 52.667 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:01 -0700 MST  1098 s  3338/3615 msgs left
+msg INBOX.Allstar/884 {48123}         copied to Allstar/219        3.04 msgs/s  590.941 KiB/s 52.713 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:00 -0700 MST  1096 s  3337/3615 msgs left
+msg INBOX.Allstar/886 {62923}         copied to Allstar/220        3.05 msgs/s  590.155 KiB/s 52.773 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:59 -0700 MST  1095 s  3336/3615 msgs left
+msg INBOX.Allstar/888 {40936}         copied to Allstar/221        3.05 msgs/s  589.129 KiB/s 52.812 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:58 -0700 MST  1093 s  3335/3615 msgs left
+msg INBOX.Allstar/889 {4044}          copied to Allstar/222        3.05 msgs/s  587.746 KiB/s 52.816 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:56 -0700 MST  1092 s  3334/3615 msgs left
+msg INBOX.Allstar/890 {18618}         copied to Allstar/223        3.06 msgs/s  586.549 KiB/s 52.834 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:55 -0700 MST  1090 s  3333/3615 msgs left
+msg INBOX.Allstar/893 {120746}        copied to Allstar/224        3.06 msgs/s  586.316 KiB/s 52.949 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:54 -0700 MST  1089 s  3332/3615 msgs left
+msg INBOX.Allstar/894 {2345210}       copied to Allstar/225        3.03 msgs/s  603.250 KiB/s 55.185 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:05 -0700 MST  1099 s  3331/3615 msgs left
+msg INBOX.Allstar/895 {12402}         copied to Allstar/226        3.03 msgs/s  600.739 KiB/s 55.197 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:06 -0700 MST  1099 s  3330/3615 msgs left
+msg INBOX.Allstar/896 {13908}         copied to Allstar/227        3.03 msgs/s  599.443 KiB/s 55.210 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:05 -0700 MST  1098 s  3329/3615 msgs left
+msg INBOX.Allstar/1605 {194915}       copied to Allstar/228        3.02 msgs/s  596.451 KiB/s 55.396 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:11 -0700 MST  1103 s  3328/3615 msgs left
+msg INBOX.Allstar/1606 {118564}       copied to Allstar/229        3.01 msgs/s  594.721 KiB/s 55.509 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:12 -0700 MST  1104 s  3327/3615 msgs left
+msg INBOX.Allstar/1607 {26429}        copied to Allstar/230        3.02 msgs/s  593.577 KiB/s 55.535 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:11 -0700 MST  1103 s  3326/3615 msgs left
+msg INBOX.Allstar/1608 {45028}        copied to Allstar/231        3.02 msgs/s  592.583 KiB/s 55.578 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:10 -0700 MST  1101 s  3325/3615 msgs left
+msg INBOX.Allstar/1609 {50124}        copied to Allstar/232        3.02 msgs/s  591.270 KiB/s 55.625 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:09 -0700 MST  1100 s  3324/3615 msgs left
+msg INBOX.Allstar/1610 {6057}         copied to Allstar/233        3.02 msgs/s  590.005 KiB/s 55.631 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:08 -0700 MST  1099 s  3323/3615 msgs left
+msg INBOX.Allstar/1611 {120745}       copied to Allstar/234        3.03 msgs/s  589.805 KiB/s 55.746 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:07 -0700 MST  1097 s  3322/3615 msgs left
+msg INBOX.Allstar/1612 {15485}        copied to Allstar/235        3.03 msgs/s  588.582 KiB/s 55.761 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:05 -0700 MST  1096 s  3321/3615 msgs left
+msg INBOX.Allstar/1613 {44532}        copied to Allstar/236        3.03 msgs/s  587.705 KiB/s 55.804 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:04 -0700 MST  1094 s  3320/3615 msgs left
+msg INBOX.Allstar/1616 {602000}       copied to Allstar/237        3.03 msgs/s  591.604 KiB/s 56.378 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:04 -0700 MST  1094 s  3319/3615 msgs left
+msg INBOX.Allstar/1617 {6683}         copied to Allstar/238        3.04 msgs/s  590.213 KiB/s 56.384 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:03 -0700 MST  1093 s  3318/3615 msgs left
+msg INBOX.Allstar/1619 {17106}        copied to Allstar/239        3.04 msgs/s  588.604 KiB/s 56.400 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:03 -0700 MST  1092 s  3317/3615 msgs left
+msg INBOX.Allstar/1620 {196984}       copied to Allstar/240        3.04 msgs/s  588.574 KiB/s 56.588 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:03 -0700 MST  1092 s  3316/3615 msgs left
+msg INBOX.Allstar/1621 {27076}        copied to Allstar/241        3.04 msgs/s  587.369 KiB/s 56.614 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:02 -0700 MST  1091 s  3315/3615 msgs left
+msg INBOX.Allstar/1622 {47383}        copied to Allstar/242        3.03 msgs/s  584.330 KiB/s 56.659 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:05 -0700 MST  1093 s  3314/3615 msgs left
+msg INBOX.Allstar/1624 {81979}        copied to Allstar/243        3.03 msgs/s  582.810 KiB/s 56.737 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:06 -0700 MST  1094 s  3313/3615 msgs left
+msg INBOX.Allstar/1625 {47431}        copied to Allstar/244        3.03 msgs/s  581.979 KiB/s 56.783 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:05 -0700 MST  1092 s  3312/3615 msgs left
+msg INBOX.Allstar/1626 {31277}        copied to Allstar/245        3.04 msgs/s  581.009 KiB/s 56.812 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:03 -0700 MST  1091 s  3311/3615 msgs left
+msg INBOX.Allstar/1629 {207424}       copied to Allstar/246        3.04 msgs/s  581.135 KiB/s 57.010 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:03 -0700 MST  1090 s  3310/3615 msgs left
+msg INBOX.Allstar/1631 {18137}        copied to Allstar/247        3.04 msgs/s  580.057 KiB/s 57.028 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:02 -0700 MST  1089 s  3309/3615 msgs left
+msg INBOX.Allstar/1634 {58413}        copied to Allstar/248        3.04 msgs/s  579.315 KiB/s 57.083 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:01 -0700 MST  1087 s  3308/3615 msgs left
+msg INBOX.Allstar/1636 {13067}        copied to Allstar/249        3.05 msgs/s  578.177 KiB/s 57.096 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:59 -0700 MST  1086 s  3307/3615 msgs left
+msg INBOX.Allstar/1637 {77012}        copied to Allstar/250        3.05 msgs/s  577.627 KiB/s 57.169 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:58 -0700 MST  1084 s  3306/3615 msgs left
+msg INBOX.Allstar/1638 {13619}        copied to Allstar/251        3.05 msgs/s  576.530 KiB/s 57.182 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:57 -0700 MST  1083 s  3305/3615 msgs left
+msg INBOX.Allstar/1639 {422558}       copied to Allstar/252        3.05 msgs/s  578.649 KiB/s 57.585 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:57 -0700 MST  1083 s  3304/3615 msgs left
+msg INBOX.Allstar/1640 {7739}         copied to Allstar/253        3.05 msgs/s  577.450 KiB/s 57.593 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:56 -0700 MST  1081 s  3303/3615 msgs left
+msg INBOX.Allstar/1641 {543656}       copied to Allstar/254        3.05 msgs/s  580.665 KiB/s 58.111 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:56 -0700 MST  1081 s  3302/3615 msgs left
+msg INBOX.Allstar/1642 {66897}        copied to Allstar/255        3.06 msgs/s  579.594 KiB/s 58.175 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:56 -0700 MST  1081 s  3301/3615 msgs left
+msg INBOX.Allstar/1644 {11842}        copied to Allstar/256        3.06 msgs/s  578.477 KiB/s 58.186 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:55 -0700 MST  1079 s  3300/3615 msgs left
+msg INBOX.Allstar/1646 {118737}       copied to Allstar/257        3.06 msgs/s  578.298 KiB/s 58.299 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:54 -0700 MST  1078 s  3299/3615 msgs left
+msg INBOX.Allstar/1649 {50886}        copied to Allstar/258        3.06 msgs/s  577.547 KiB/s 58.348 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:52 -0700 MST  1076 s  3298/3615 msgs left
+msg INBOX.Allstar/1651 {118714}       copied to Allstar/259        3.07 msgs/s  577.342 KiB/s 58.461 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:51 -0700 MST  1075 s  3297/3615 msgs left
+msg INBOX.Allstar/1653 {13171}        copied to Allstar/260        3.07 msgs/s  575.995 KiB/s 58.474 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:51 -0700 MST  1074 s  3296/3615 msgs left
+msg INBOX.Allstar/1654 {56005}        copied to Allstar/261        3.07 msgs/s  575.279 KiB/s 58.527 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:49 -0700 MST  1073 s  3295/3615 msgs left
+msg INBOX.Allstar/1655 {10694}        copied to Allstar/262        3.07 msgs/s  574.124 KiB/s 58.537 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:48 -0700 MST  1071 s  3294/3615 msgs left
+msg INBOX.Allstar/1656 {51228}        copied to Allstar/263        3.08 msgs/s  573.363 KiB/s 58.586 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:47 -0700 MST  1070 s  3293/3615 msgs left
+msg INBOX.Allstar/2109 {26742}        copied to Allstar/264        3.08 msgs/s  572.398 KiB/s 58.612 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:46 -0700 MST  1069 s  3292/3615 msgs left
+msg INBOX.Allstar/2110 {11600}        copied to Allstar/265        3.08 msgs/s  571.258 KiB/s 58.623 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:45 -0700 MST  1067 s  3291/3615 msgs left
+msg INBOX.Allstar/2111 {7295}         copied to Allstar/266        3.09 msgs/s  570.155 KiB/s 58.630 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:44 -0700 MST  1066 s  3290/3615 msgs left
+msg INBOX.Allstar/2112 {7461}         copied to Allstar/267        3.09 msgs/s  569.048 KiB/s 58.637 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:43 -0700 MST  1065 s  3289/3615 msgs left
+msg INBOX.Allstar/2113 {11777}        copied to Allstar/268        3.09 msgs/s  567.933 KiB/s 58.648 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:42 -0700 MST  1063 s  3288/3615 msgs left
+msg INBOX.Allstar/2114 {7435}         copied to Allstar/269        3.10 msgs/s  566.802 KiB/s 58.655 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:40 -0700 MST  1062 s  3287/3615 msgs left
+msg INBOX.Allstar/2115 {11782}        copied to Allstar/270        3.10 msgs/s  565.765 KiB/s 58.666 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:39 -0700 MST  1061 s  3286/3615 msgs left
+msg INBOX.Allstar/2116 {7297}         copied to Allstar/271        3.10 msgs/s  564.684 KiB/s 58.673 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:38 -0700 MST  1059 s  3285/3615 msgs left
+msg INBOX.Allstar/2117 {11591}        copied to Allstar/272        3.10 msgs/s  563.646 KiB/s 58.684 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:37 -0700 MST  1058 s  3284/3615 msgs left
+msg INBOX.Allstar/2118 {11754}        copied to Allstar/273        3.11 msgs/s  562.561 KiB/s 58.696 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:36 -0700 MST  1056 s  3283/3615 msgs left
+msg INBOX.Allstar/2119 {7558}         copied to Allstar/274        3.11 msgs/s  561.469 KiB/s 58.703 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:35 -0700 MST  1055 s  3282/3615 msgs left
+msg INBOX.Allstar/2120 {6667}         copied to Allstar/275        3.11 msgs/s  560.378 KiB/s 58.709 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:34 -0700 MST  1054 s  3281/3615 msgs left
+msg INBOX.Allstar/2121 {11775}        copied to Allstar/276        3.12 msgs/s  559.264 KiB/s 58.720 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:33 -0700 MST  1053 s  3280/3615 msgs left
+msg INBOX.Allstar/2122 {243191}       copied to Allstar/277        3.12 msgs/s  560.148 KiB/s 58.952 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:32 -0700 MST  1052 s  3279/3615 msgs left
+msg INBOX.Allstar/2123 {7439}         copied to Allstar/278        3.12 msgs/s  559.035 KiB/s 58.959 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:31 -0700 MST  1050 s  3278/3615 msgs left
+msg INBOX.Allstar/2124 {7449}         copied to Allstar/279        3.12 msgs/s  557.982 KiB/s 58.966 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:30 -0700 MST  1049 s  3277/3615 msgs left
+msg INBOX.Allstar/2125 {7479}         copied to Allstar/280        3.13 msgs/s  556.869 KiB/s 58.974 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:29 -0700 MST  1048 s  3276/3615 msgs left
+msg INBOX.Allstar/2126 {121567}       copied to Allstar/281        3.13 msgs/s  556.673 KiB/s 59.089 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:28 -0700 MST  1047 s  3275/3615 msgs left
+msg INBOX.Allstar/2127 {11760}        copied to Allstar/282        3.13 msgs/s  555.479 KiB/s 59.101 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:28 -0700 MST  1046 s  3274/3615 msgs left
+msg INBOX.Allstar/2128 {7904}         copied to Allstar/283        3.13 msgs/s  554.428 KiB/s 59.108 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:27 -0700 MST  1045 s  3273/3615 msgs left
+msg INBOX.Allstar/2129 {12596}        copied to Allstar/284        3.14 msgs/s  553.386 KiB/s 59.120 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:26 -0700 MST  1044 s  3272/3615 msgs left
+msg INBOX.Allstar/2130 {16499}        copied to Allstar/285        3.14 msgs/s  552.006 KiB/s 59.136 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:25 -0700 MST  1043 s  3271/3615 msgs left
+msg INBOX.Allstar/2131 {12587}        copied to Allstar/286        3.14 msgs/s  550.935 KiB/s 59.148 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:25 -0700 MST  1042 s  3270/3615 msgs left
+msg INBOX.Allstar/2132 {16491}        copied to Allstar/287        3.14 msgs/s  549.582 KiB/s 59.164 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:24 -0700 MST  1042 s  3269/3615 msgs left
+msg INBOX.Allstar/2133 {12593}        copied to Allstar/288        3.14 msgs/s  548.608 KiB/s 59.176 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:23 -0700 MST  1040 s  3268/3615 msgs left
+msg INBOX.Allstar/2134 {12587}        copied to Allstar/289        3.14 msgs/s  547.654 KiB/s 59.188 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:22 -0700 MST  1039 s  3267/3615 msgs left
+msg INBOX.Allstar/2135 {12578}        copied to Allstar/290        3.15 msgs/s  546.672 KiB/s 59.200 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:21 -0700 MST  1038 s  3266/3615 msgs left
+msg INBOX.Allstar/2136 {8371}         copied to Allstar/291        3.15 msgs/s  545.690 KiB/s 59.208 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:20 -0700 MST  1036 s  3265/3615 msgs left
+msg INBOX.Allstar/2137 {942}          copied to Allstar/292        3.15 msgs/s  544.656 KiB/s 59.209 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:19 -0700 MST  1035 s  3264/3615 msgs left
+msg INBOX.Allstar/2138 {7994}         copied to Allstar/293        3.16 msgs/s  543.658 KiB/s 59.216 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:18 -0700 MST  1034 s  3263/3615 msgs left
+msg INBOX.Allstar/2139 {26006}        copied to Allstar/294        3.16 msgs/s  542.825 KiB/s 59.241 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:17 -0700 MST  1033 s  3262/3615 msgs left
+msg INBOX.Allstar/2140 {33411}        copied to Allstar/295        3.16 msgs/s  541.660 KiB/s 59.273 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:17 -0700 MST  1032 s  3261/3615 msgs left
+msg INBOX.Allstar/2141 {14712}        copied to Allstar/296        3.16 msgs/s  540.742 KiB/s 59.287 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:16 -0700 MST  1031 s  3260/3615 msgs left
+msg INBOX.Allstar/2142 {10158}        copied to Allstar/297        3.16 msgs/s  539.784 KiB/s 59.297 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:15 -0700 MST  1030 s  3259/3615 msgs left
+msg INBOX.Allstar/2143 {16346}        copied to Allstar/298        3.17 msgs/s  538.864 KiB/s 59.312 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:14 -0700 MST  1029 s  3258/3615 msgs left
+msg INBOX.Allstar/2144 {1310353}      copied to Allstar/299        3.16 msgs/s  547.757 KiB/s 60.562 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:16 -0700 MST  1030 s  3257/3615 msgs left
+msg INBOX.Allstar/2145 {12607}        copied to Allstar/300        3.16 msgs/s  546.806 KiB/s 60.574 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:15 -0700 MST  1029 s  3256/3615 msgs left
+msg INBOX.Allstar/2146 {16491}        copied to Allstar/301        3.16 msgs/s  545.345 KiB/s 60.590 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:15 -0700 MST  1029 s  3255/3615 msgs left
+msg INBOX.Allstar/2147 {16438}        copied to Allstar/302        3.16 msgs/s  544.048 KiB/s 60.605 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:15 -0700 MST  1028 s  3254/3615 msgs left
+msg INBOX.Allstar/2148 {15777}        copied to Allstar/303        3.17 msgs/s  543.145 KiB/s 60.620 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:14 -0700 MST  1027 s  3253/3615 msgs left
+msg INBOX.Allstar/2149 {16515}        copied to Allstar/304        3.17 msgs/s  541.855 KiB/s 60.636 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:14 -0700 MST  1027 s  3252/3615 msgs left
+msg INBOX.Allstar/2150 {12593}        copied to Allstar/305        3.17 msgs/s  540.928 KiB/s 60.648 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:13 -0700 MST  1025 s  3251/3615 msgs left
+msg INBOX.Allstar/2151 {12602}        copied to Allstar/306        3.17 msgs/s  540.021 KiB/s 60.660 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:12 -0700 MST  1024 s  3250/3615 msgs left
+msg INBOX.Allstar/2152 {16350}        copied to Allstar/307        3.18 msgs/s  539.115 KiB/s 60.676 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:11 -0700 MST  1023 s  3249/3615 msgs left
+msg INBOX.Allstar/2153 {154875}       copied to Allstar/308        3.18 msgs/s  539.286 KiB/s 60.823 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:10 -0700 MST  1022 s  3248/3615 msgs left
+msg INBOX.Allstar/2154 {12607}        copied to Allstar/309        3.18 msgs/s  538.378 KiB/s 60.835 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:09 -0700 MST  1021 s  3247/3615 msgs left
+msg INBOX.Allstar/2155 {16362}        copied to Allstar/310        3.18 msgs/s  537.529 KiB/s 60.851 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:08 -0700 MST  1020 s  3246/3615 msgs left
+msg INBOX.Allstar/2156 {143874}       copied to Allstar/311        3.18 msgs/s  537.488 KiB/s 60.988 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:08 -0700 MST  1019 s  3245/3615 msgs left
+msg INBOX.Allstar/2157 {12614}        copied to Allstar/312        3.19 msgs/s  536.550 KiB/s 61.000 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:07 -0700 MST  1018 s  3244/3615 msgs left
+msg INBOX.Allstar/2158 {16357}        copied to Allstar/313        3.19 msgs/s  535.667 KiB/s 61.016 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:06 -0700 MST  1017 s  3243/3615 msgs left
+msg INBOX.Allstar/2159 {84584}        copied to Allstar/314        3.19 msgs/s  535.330 KiB/s 61.097 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:05 -0700 MST  1016 s  3242/3615 msgs left
+msg INBOX.Allstar/2160 {14176}        copied to Allstar/315        3.19 msgs/s  534.442 KiB/s 61.110 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:04 -0700 MST  1015 s  3241/3615 msgs left
+msg INBOX.Allstar/2161 {23516}        copied to Allstar/316        3.20 msgs/s  533.665 KiB/s 61.132 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:03 -0700 MST  1013 s  3240/3615 msgs left
+msg INBOX.Allstar/2162 {145271}       copied to Allstar/317        3.20 msgs/s  533.768 KiB/s 61.271 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:03 -0700 MST  1013 s  3239/3615 msgs left
+msg INBOX.Allstar/2163 {10726}        copied to Allstar/318        3.20 msgs/s  532.865 KiB/s 61.281 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:02 -0700 MST  1011 s  3238/3615 msgs left
+msg INBOX.Allstar/2164 {21043}        copied to Allstar/319        3.20 msgs/s  532.054 KiB/s 61.301 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:01 -0700 MST  1010 s  3237/3615 msgs left
+msg INBOX.Allstar/2165 {21476}        copied to Allstar/320        3.21 msgs/s  531.079 KiB/s 61.322 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:00 -0700 MST  1010 s  3236/3615 msgs left
+msg INBOX.Allstar/2166 {11752}        copied to Allstar/321        3.21 msgs/s  530.137 KiB/s 61.333 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:00 -0700 MST  1009 s  3235/3615 msgs left
+msg INBOX.Allstar/2167 {7459}         copied to Allstar/322        3.21 msgs/s  528.971 KiB/s 61.340 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:59 -0700 MST  1008 s  3234/3615 msgs left
+msg INBOX.Allstar/2168 {12302}        copied to Allstar/323        3.21 msgs/s  528.098 KiB/s 61.352 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:58 -0700 MST  1007 s  3233/3615 msgs left
+msg INBOX.Allstar/2169 {8003}         copied to Allstar/324        3.21 msgs/s  527.215 KiB/s 61.359 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:57 -0700 MST  1006 s  3232/3615 msgs left
+msg INBOX.Allstar/2170 {12315}        copied to Allstar/325        3.22 msgs/s  526.331 KiB/s 61.371 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:57 -0700 MST  1005 s  3231/3615 msgs left
+msg INBOX.Allstar/2171 {7988}         copied to Allstar/326        3.22 msgs/s  525.414 KiB/s 61.379 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:56 -0700 MST  1004 s  3230/3615 msgs left
+msg INBOX.Allstar/2172 {140396}       copied to Allstar/327        3.22 msgs/s  525.475 KiB/s 61.513 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:55 -0700 MST  1003 s  3229/3615 msgs left
+msg INBOX.Allstar/2173 {84449}        copied to Allstar/328        3.22 msgs/s  525.092 KiB/s 61.593 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:55 -0700 MST  1002 s  3228/3615 msgs left
+msg INBOX.Allstar/2174 {29485}        copied to Allstar/329        3.22 msgs/s  524.339 KiB/s 61.621 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:54 -0700 MST  1001 s  3227/3615 msgs left
+msg INBOX.Allstar/2175 {143362}       copied to Allstar/330        3.23 msgs/s  524.438 KiB/s 61.758 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:53 -0700 MST  1000 s  3226/3615 msgs left
+msg INBOX.Allstar/2176 {274581}       copied to Allstar/331        3.23 msgs/s  525.535 KiB/s 62.020 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:53 -0700 MST  999 s  3225/3615 msgs left
+msg INBOX.Allstar/2177 {24851}        copied to Allstar/332        3.23 msgs/s  524.770 KiB/s 62.044 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:52 -0700 MST  998 s  3224/3615 msgs left
+ETA: Tuesday 31 October 2023-10-31 19:31:52 -0700 MST  998 s  3224/3615 msgs left
+Folder    4/45 [INBOX.Anderson]                    -> [Anderson]                         
+Host1: folder [INBOX.Anderson] has 3 messages in total (mentioned by SELECT)
+Creating folder [Anderson] on host2
+Created folder [Anderson] on host2
+Host2: folder [Anderson] has 0 messages in total (mentioned by SELECT)
+Host2: folder [Anderson] permanentflags: 
+Host2: Subscribing to folder Anderson
+Host1: folder [INBOX.Anderson] considering 3 messages
+Host2: folder [Anderson] considering 0 messages
+Host1: folder [INBOX.Anderson] selected 3 messages, duplicates 0
+Host2: folder [Anderson] selected 0 messages, duplicates 0
+msg INBOX.Anderson/1 {72381}           copied to Anderson/1          3.21 msgs/s  521.289 KiB/s 62.113 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:58 -0700 MST  1003 s  3223/3615 msgs left
+msg INBOX.Anderson/2 {61111}           copied to Anderson/2          3.21 msgs/s  520.803 KiB/s 62.171 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:57 -0700 MST  1002 s  3222/3615 msgs left
+msg INBOX.Anderson/3 {24639}           copied to Anderson/3          3.22 msgs/s  520.012 KiB/s 62.194 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:56 -0700 MST  1001 s  3221/3615 msgs left
+ETA: Tuesday 31 October 2023-10-31 19:31:56 -0700 MST  1001 s  3221/3615 msgs left
+Folder    5/45 [INBOX.Apartments (Generic)]        -> [Apartments (Generic)]             
+Host1: folder [INBOX.Apartments (Generic)] has 46 messages in total (mentioned by SELECT)
+Creating folder [Apartments (Generic)] on host2
+Created folder [Apartments (Generic)] on host2
+Host2: folder [Apartments (Generic)] has 0 messages in total (mentioned by SELECT)
+Host2: folder [Apartments (Generic)] permanentflags: 
+Host2: Subscribing to folder Apartments (Generic)
+Host1: folder [INBOX.Apartments (Generic)] considering 46 messages
+Host2: folder [Apartments (Generic)] considering 0 messages
+Host1: folder [INBOX.Apartments (Generic)] selected 46 messages, duplicates 0
+Host2: folder [Apartments (Generic)] selected 0 messages, duplicates 0
+msg INBOX.Apartments (Generic)/1 {57314}           copied to Apartments (Generic)/1          3.20 msgs/s  516.364 KiB/s 62.249 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:02 -0700 MST  1006 s  3220/3615 msgs left
+msg INBOX.Apartments (Generic)/2 {49925}           copied to Apartments (Generic)/2          3.20 msgs/s  515.399 KiB/s 62.297 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:02 -0700 MST  1006 s  3219/3615 msgs left
+msg INBOX.Apartments (Generic)/3 {38525}           copied to Apartments (Generic)/3          3.20 msgs/s  514.618 KiB/s 62.333 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:02 -0700 MST  1005 s  3218/3615 msgs left
+msg INBOX.Apartments (Generic)/4 {38522}           copied to Apartments (Generic)/4          3.20 msgs/s  513.980 KiB/s 62.370 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:01 -0700 MST  1004 s  3217/3615 msgs left
+msg INBOX.Apartments (Generic)/5 {38525}           copied to Apartments (Generic)/5          3.21 msgs/s  513.360 KiB/s 62.407 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:00 -0700 MST  1003 s  3216/3615 msgs left
+msg INBOX.Apartments (Generic)/6 {38537}           copied to Apartments (Generic)/6          3.21 msgs/s  512.749 KiB/s 62.444 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:00 -0700 MST  1002 s  3215/3615 msgs left
+msg INBOX.Apartments (Generic)/7 {38545}           copied to Apartments (Generic)/7          3.21 msgs/s  512.134 KiB/s 62.480 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:59 -0700 MST  1001 s  3214/3615 msgs left
+msg INBOX.Apartments (Generic)/8 {57465}           copied to Apartments (Generic)/8          3.21 msgs/s  511.649 KiB/s 62.535 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:58 -0700 MST  1000 s  3213/3615 msgs left
+msg INBOX.Apartments (Generic)/9 {38553}           copied to Apartments (Generic)/9          3.21 msgs/s  511.025 KiB/s 62.572 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:57 -0700 MST  999 s  3212/3615 msgs left
+msg INBOX.Apartments (Generic)/10 {47879}          copied to Apartments (Generic)/10         3.22 msgs/s  510.472 KiB/s 62.618 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:57 -0700 MST  998 s  3211/3615 msgs left
+msg INBOX.Apartments (Generic)/11 {38454}          copied to Apartments (Generic)/11         3.22 msgs/s  509.862 KiB/s 62.654 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:56 -0700 MST  997 s  3210/3615 msgs left
+msg INBOX.Apartments (Generic)/12 {38449}          copied to Apartments (Generic)/12         3.22 msgs/s  509.248 KiB/s 62.691 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:55 -0700 MST  996 s  3209/3615 msgs left
+msg INBOX.Apartments (Generic)/13 {38430}          copied to Apartments (Generic)/13         3.22 msgs/s  508.631 KiB/s 62.728 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:54 -0700 MST  995 s  3208/3615 msgs left
+msg INBOX.Apartments (Generic)/14 {38477}          copied to Apartments (Generic)/14         3.23 msgs/s  508.041 KiB/s 62.764 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:53 -0700 MST  994 s  3207/3615 msgs left
+msg INBOX.Apartments (Generic)/15 {38450}          copied to Apartments (Generic)/15         3.23 msgs/s  507.444 KiB/s 62.801 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:53 -0700 MST  993 s  3206/3615 msgs left
+msg INBOX.Apartments (Generic)/16 {38532}          copied to Apartments (Generic)/16         3.23 msgs/s  506.849 KiB/s 62.838 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:52 -0700 MST  992 s  3205/3615 msgs left
+msg INBOX.Apartments (Generic)/17 {38502}          copied to Apartments (Generic)/17         3.23 msgs/s  506.141 KiB/s 62.875 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:51 -0700 MST  992 s  3204/3615 msgs left
+msg INBOX.Apartments (Generic)/18 {50024}          copied to Apartments (Generic)/18         3.23 msgs/s  505.359 KiB/s 62.922 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:51 -0700 MST  991 s  3203/3615 msgs left
+msg INBOX.Apartments (Generic)/19 {38539}          copied to Apartments (Generic)/19         3.23 msgs/s  504.777 KiB/s 62.959 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:51 -0700 MST  990 s  3202/3615 msgs left
+msg INBOX.Apartments (Generic)/20 {39780}          copied to Apartments (Generic)/20         3.24 msgs/s  504.208 KiB/s 62.997 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:50 -0700 MST  989 s  3201/3615 msgs left
+msg INBOX.Apartments (Generic)/21 {31137}          copied to Apartments (Generic)/21         3.24 msgs/s  503.550 KiB/s 63.027 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:49 -0700 MST  988 s  3200/3615 msgs left
+msg INBOX.Apartments (Generic)/22 {37739}          copied to Apartments (Generic)/22         3.24 msgs/s  502.938 KiB/s 63.063 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:48 -0700 MST  987 s  3199/3615 msgs left
+msg INBOX.Apartments (Generic)/23 {38271}          copied to Apartments (Generic)/23         3.24 msgs/s  502.362 KiB/s 63.099 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:48 -0700 MST  986 s  3198/3615 msgs left
+msg INBOX.Apartments (Generic)/24 {38284}          copied to Apartments (Generic)/24         3.24 msgs/s  501.780 KiB/s 63.136 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:47 -0700 MST  985 s  3197/3615 msgs left
+msg INBOX.Apartments (Generic)/25 {39788}          copied to Apartments (Generic)/25         3.25 msgs/s  501.100 KiB/s 63.174 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:46 -0700 MST  985 s  3196/3615 msgs left
+msg INBOX.Apartments (Generic)/26 {39759}          copied to Apartments (Generic)/26         3.25 msgs/s  500.542 KiB/s 63.211 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:46 -0700 MST  984 s  3195/3615 msgs left
+msg INBOX.Apartments (Generic)/27 {37755}          copied to Apartments (Generic)/27         3.25 msgs/s  499.977 KiB/s 63.247 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:45 -0700 MST  983 s  3194/3615 msgs left
+msg INBOX.Apartments (Generic)/28 {38296}          copied to Apartments (Generic)/28         3.25 msgs/s  499.423 KiB/s 63.284 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:44 -0700 MST  982 s  3193/3615 msgs left
+msg INBOX.Apartments (Generic)/29 {38451}          copied to Apartments (Generic)/29         3.25 msgs/s  498.848 KiB/s 63.321 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:43 -0700 MST  981 s  3192/3615 msgs left
+msg INBOX.Apartments (Generic)/30 {38449}          copied to Apartments (Generic)/30         3.26 msgs/s  498.292 KiB/s 63.357 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:43 -0700 MST  980 s  3191/3615 msgs left
+msg INBOX.Apartments (Generic)/31 {38463}          copied to Apartments (Generic)/31         3.26 msgs/s  497.729 KiB/s 63.394 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:42 -0700 MST  979 s  3190/3615 msgs left
+msg INBOX.Apartments (Generic)/32 {38441}          copied to Apartments (Generic)/32         3.26 msgs/s  497.073 KiB/s 63.431 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:41 -0700 MST  978 s  3189/3615 msgs left
+msg INBOX.Apartments (Generic)/33 {38563}          copied to Apartments (Generic)/33         3.26 msgs/s  496.510 KiB/s 63.467 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:41 -0700 MST  977 s  3188/3615 msgs left
+msg INBOX.Apartments (Generic)/34 {38542}          copied to Apartments (Generic)/34         3.26 msgs/s  495.933 KiB/s 63.504 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:40 -0700 MST  976 s  3187/3615 msgs left
+msg INBOX.Apartments (Generic)/35 {38514}          copied to Apartments (Generic)/35         3.27 msgs/s  495.377 KiB/s 63.541 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:39 -0700 MST  975 s  3186/3615 msgs left
+msg INBOX.Apartments (Generic)/36 {38555}          copied to Apartments (Generic)/36         3.27 msgs/s  494.808 KiB/s 63.578 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:39 -0700 MST  975 s  3185/3615 msgs left
+msg INBOX.Apartments (Generic)/37 {47730}          copied to Apartments (Generic)/37         3.27 msgs/s  494.311 KiB/s 63.623 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:38 -0700 MST  974 s  3184/3615 msgs left
+msg INBOX.Apartments (Generic)/38 {37695}          copied to Apartments (Generic)/38         3.27 msgs/s  493.749 KiB/s 63.659 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:37 -0700 MST  973 s  3183/3615 msgs left
+msg INBOX.Apartments (Generic)/39 {37727}          copied to Apartments (Generic)/39         3.27 msgs/s  493.186 KiB/s 63.695 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:37 -0700 MST  972 s  3182/3615 msgs left
+msg INBOX.Apartments (Generic)/40 {39790}          copied to Apartments (Generic)/40         3.28 msgs/s  492.643 KiB/s 63.733 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:36 -0700 MST  971 s  3181/3615 msgs left
+msg INBOX.Apartments (Generic)/41 {39768}          copied to Apartments (Generic)/41         3.28 msgs/s  491.965 KiB/s 63.771 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:36 -0700 MST  970 s  3180/3615 msgs left
+msg INBOX.Apartments (Generic)/42 {25015}          copied to Apartments (Generic)/42         3.28 msgs/s  491.309 KiB/s 63.795 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:35 -0700 MST  969 s  3179/3615 msgs left
+msg INBOX.Apartments (Generic)/43 {38499}          copied to Apartments (Generic)/43         3.28 msgs/s  490.765 KiB/s 63.832 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:34 -0700 MST  969 s  3178/3615 msgs left
+msg INBOX.Apartments (Generic)/44 {38456}          copied to Apartments (Generic)/44         3.28 msgs/s  490.233 KiB/s 63.868 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:34 -0700 MST  968 s  3177/3615 msgs left
+msg INBOX.Apartments (Generic)/45 {31715}          copied to Apartments (Generic)/45         3.29 msgs/s  489.628 KiB/s 63.899 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:33 -0700 MST  967 s  3176/3615 msgs left
+msg INBOX.Apartments (Generic)/46 {53838}          copied to Apartments (Generic)/46         3.29 msgs/s  489.109 KiB/s 63.950 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:33 -0700 MST  966 s  3175/3615 msgs left
+ETA: Tuesday 31 October 2023-10-31 19:31:33 -0700 MST  966 s  3175/3615 msgs left
+Folder    6/45 [INBOX.Archive]                     -> [Archive]                          
+Host1: folder [INBOX.Archive] has 1 messages in total (mentioned by SELECT)
+Creating folder [Archive] on host2
+Created folder [Archive] on host2
+Host2: folder [Archive] has 0 messages in total (mentioned by SELECT)
+Host2: folder [Archive] permanentflags: 
+Host2: Subscribing to folder Archive
+Host1: folder [INBOX.Archive] considering 1 messages
+Host2: folder [Archive] considering 0 messages
+Host1: folder [INBOX.Archive] selected 1 messages, duplicates 0
+Host2: folder [Archive] selected 0 messages, duplicates 0
+msg INBOX.Archive/63 {36970}          copied to Archive/1          3.27 msgs/s  485.853 KiB/s 63.985 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:38 -0700 MST  971 s  3174/3615 msgs left
+ETA: Tuesday 31 October 2023-10-31 19:31:38 -0700 MST  971 s  3174/3615 msgs left
+Folder    7/45 [INBOX.BiggerPockets]               -> [BiggerPockets]                    
+Host1: folder [INBOX.BiggerPockets] has 2 messages in total (mentioned by SELECT)
+Creating folder [BiggerPockets] on host2
+Created folder [BiggerPockets] on host2
+Host2: folder [BiggerPockets] has 0 messages in total (mentioned by SELECT)
+Host2: folder [BiggerPockets] permanentflags: 
+Host2: Subscribing to folder BiggerPockets
+Host1: folder [INBOX.BiggerPockets] considering 2 messages
+Host2: folder [BiggerPockets] considering 0 messages
+Host1: folder [INBOX.BiggerPockets] selected 2 messages, duplicates 0
+Host2: folder [BiggerPockets] selected 0 messages, duplicates 0
+msg INBOX.BiggerPockets/66 {152403}         copied to BiggerPockets/1          3.25 msgs/s  483.548 KiB/s 64.130 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:43 -0700 MST  975 s  3173/3615 msgs left
+msg INBOX.BiggerPockets/67 {151401}         copied to BiggerPockets/2          3.26 msgs/s  483.750 KiB/s 64.275 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:43 -0700 MST  974 s  3172/3615 msgs left
+ETA: Tuesday 31 October 2023-10-31 19:31:43 -0700 MST  974 s  3172/3615 msgs left
+Folder    8/45 [INBOX.Chuck Baer]                  -> [Chuck Baer]                       
+Host1: folder [INBOX.Chuck Baer] has 142 messages in total (mentioned by SELECT)
+Creating folder [Chuck Baer] on host2
+Created folder [Chuck Baer] on host2
+Host2: folder [Chuck Baer] has 0 messages in total (mentioned by SELECT)
+Host2: folder [Chuck Baer] permanentflags: 
+Host2: Subscribing to folder Chuck Baer
+Host1: folder [INBOX.Chuck Baer] considering 142 messages
+Host2: folder [Chuck Baer] considering 0 messages
+Host1: folder [INBOX.Chuck Baer] selected 142 messages, duplicates 0
+Host2: folder [Chuck Baer] selected 0 messages, duplicates 0
+msg INBOX.Chuck Baer/1 {15400}           copied to Chuck Baer/1          3.23 msgs/s  478.401 KiB/s 64.290 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:53 -0700 MST  983 s  3171/3615 msgs left
+msg INBOX.Chuck Baer/2 {48793}           copied to Chuck Baer/2          3.23 msgs/s  477.939 KiB/s 64.336 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:52 -0700 MST  982 s  3170/3615 msgs left
+msg INBOX.Chuck Baer/3 {58696}           copied to Chuck Baer/3          3.23 msgs/s  477.553 KiB/s 64.392 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:52 -0700 MST  981 s  3169/3615 msgs left
+msg INBOX.Chuck Baer/4 {17949}           copied to Chuck Baer/4          3.23 msgs/s  476.932 KiB/s 64.409 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:51 -0700 MST  980 s  3168/3615 msgs left
+msg INBOX.Chuck Baer/5 {511210}          copied to Chuck Baer/5          3.23 msgs/s  479.523 KiB/s 64.897 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:51 -0700 MST  980 s  3167/3615 msgs left
+msg INBOX.Chuck Baer/6 {27132}           copied to Chuck Baer/6          3.23 msgs/s  478.827 KiB/s 64.923 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:50 -0700 MST  979 s  3166/3615 msgs left
+msg INBOX.Chuck Baer/7 {32823}           copied to Chuck Baer/7          3.23 msgs/s  477.918 KiB/s 64.954 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:51 -0700 MST  979 s  3165/3615 msgs left
+msg INBOX.Chuck Baer/8 {35812}           copied to Chuck Baer/8          3.24 msgs/s  477.405 KiB/s 64.988 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:50 -0700 MST  978 s  3164/3615 msgs left
+msg INBOX.Chuck Baer/9 {35663}           copied to Chuck Baer/9          3.24 msgs/s  476.912 KiB/s 65.022 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:49 -0700 MST  977 s  3163/3615 msgs left
+msg INBOX.Chuck Baer/10 {29479}          copied to Chuck Baer/10         3.24 msgs/s  476.287 KiB/s 65.050 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:49 -0700 MST  976 s  3162/3615 msgs left
+msg INBOX.Chuck Baer/11 {33098}          copied to Chuck Baer/11         3.24 msgs/s  475.518 KiB/s 65.082 MiB copied ETA: Tuesday 31 October 2023-10-31 19:31:49 -0700 MST  976 s  3161/3615 msgs left
+msg INBOX.Chuck Baer/12 {7861145}        copied to Chuck Baer/12         3.06 msgs/s  500.020 KiB/s 72.579 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:53 -0700 MST  1032 s  3160/3615 msgs left
+msg INBOX.Chuck Baer/13 {11526}          copied to Chuck Baer/13         3.06 msgs/s  499.299 KiB/s 72.590 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:53 -0700 MST  1031 s  3159/3615 msgs left
+msg INBOX.Chuck Baer/14 {4390}           copied to Chuck Baer/14         3.06 msgs/s  498.506 KiB/s 72.594 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:52 -0700 MST  1030 s  3158/3615 msgs left
+msg INBOX.Chuck Baer/15 {20893}          copied to Chuck Baer/15         3.07 msgs/s  497.923 KiB/s 72.614 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:51 -0700 MST  1029 s  3157/3615 msgs left
+msg INBOX.Chuck Baer/16 {15232}          copied to Chuck Baer/16         3.07 msgs/s  497.281 KiB/s 72.628 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:50 -0700 MST  1028 s  3156/3615 msgs left
+msg INBOX.Chuck Baer/17 {13209}          copied to Chuck Baer/17         3.07 msgs/s  496.620 KiB/s 72.641 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:50 -0700 MST  1027 s  3155/3615 msgs left
+msg INBOX.Chuck Baer/18 {69018}          copied to Chuck Baer/18         3.07 msgs/s  496.170 KiB/s 72.707 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:49 -0700 MST  1027 s  3154/3615 msgs left
+msg INBOX.Chuck Baer/19 {51126}          copied to Chuck Baer/19         3.07 msgs/s  495.736 KiB/s 72.756 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:49 -0700 MST  1026 s  3153/3615 msgs left
+msg INBOX.Chuck Baer/20 {5260}           copied to Chuck Baer/20         3.08 msgs/s  495.042 KiB/s 72.761 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:48 -0700 MST  1025 s  3152/3615 msgs left
+msg INBOX.Chuck Baer/21 {22968}          copied to Chuck Baer/21         3.08 msgs/s  494.454 KiB/s 72.782 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:47 -0700 MST  1024 s  3151/3615 msgs left
+msg INBOX.Chuck Baer/22 {15382}          copied to Chuck Baer/22         3.08 msgs/s  493.834 KiB/s 72.797 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:46 -0700 MST  1023 s  3150/3615 msgs left
+msg INBOX.Chuck Baer/23 {37816}          copied to Chuck Baer/23         3.08 msgs/s  493.342 KiB/s 72.833 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:45 -0700 MST  1022 s  3149/3615 msgs left
+msg INBOX.Chuck Baer/24 {39175}          copied to Chuck Baer/24         3.08 msgs/s  492.873 KiB/s 72.871 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:45 -0700 MST  1021 s  3148/3615 msgs left
+msg INBOX.Chuck Baer/25 {4741835}        copied to Chuck Baer/25         3.05 msgs/s  516.837 KiB/s 77.393 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:57 -0700 MST  1031 s  3147/3615 msgs left
+msg INBOX.Chuck Baer/26 {7132}           copied to Chuck Baer/26         3.05 msgs/s  516.127 KiB/s 77.399 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:56 -0700 MST  1030 s  3146/3615 msgs left
+msg INBOX.Chuck Baer/27 {8612}           copied to Chuck Baer/27         3.06 msgs/s  515.344 KiB/s 77.408 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:56 -0700 MST  1029 s  3145/3615 msgs left
+msg INBOX.Chuck Baer/28 {846812}         copied to Chuck Baer/28         3.05 msgs/s  519.094 KiB/s 78.215 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:57 -0700 MST  1030 s  3144/3615 msgs left
+msg INBOX.Chuck Baer/29 {21410}          copied to Chuck Baer/29         3.05 msgs/s  518.486 KiB/s 78.236 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:56 -0700 MST  1029 s  3143/3615 msgs left
+msg INBOX.Chuck Baer/30 {6154}           copied to Chuck Baer/30         3.06 msgs/s  517.802 KiB/s 78.242 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:55 -0700 MST  1028 s  3142/3615 msgs left
+msg INBOX.Chuck Baer/31 {6419}           copied to Chuck Baer/31         3.06 msgs/s  517.113 KiB/s 78.248 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:54 -0700 MST  1027 s  3141/3615 msgs left
+msg INBOX.Chuck Baer/32 {29208}          copied to Chuck Baer/32         3.06 msgs/s  516.561 KiB/s 78.276 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:53 -0700 MST  1026 s  3140/3615 msgs left
+msg INBOX.Chuck Baer/33 {85603}          copied to Chuck Baer/33         3.06 msgs/s  516.333 KiB/s 78.357 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:53 -0700 MST  1025 s  3139/3615 msgs left
+msg INBOX.Chuck Baer/34 {37784}          copied to Chuck Baer/34         3.06 msgs/s  515.800 KiB/s 78.393 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:52 -0700 MST  1024 s  3138/3615 msgs left
+msg INBOX.Chuck Baer/35 {9844}           copied to Chuck Baer/35         3.07 msgs/s  515.134 KiB/s 78.403 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:51 -0700 MST  1023 s  3137/3615 msgs left
+msg INBOX.Chuck Baer/36 {46179}          copied to Chuck Baer/36         3.07 msgs/s  514.681 KiB/s 78.447 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:50 -0700 MST  1022 s  3136/3615 msgs left
+msg INBOX.Chuck Baer/37 {10789}          copied to Chuck Baer/37         3.07 msgs/s  514.016 KiB/s 78.457 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:50 -0700 MST  1021 s  3135/3615 msgs left
+msg INBOX.Chuck Baer/38 {15242}          copied to Chuck Baer/38         3.07 msgs/s  513.405 KiB/s 78.471 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:49 -0700 MST  1020 s  3134/3615 msgs left
+msg INBOX.Chuck Baer/39 {4281}           copied to Chuck Baer/39         3.08 msgs/s  512.712 KiB/s 78.476 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:48 -0700 MST  1019 s  3133/3615 msgs left
+msg INBOX.Chuck Baer/40 {49790}          copied to Chuck Baer/40         3.08 msgs/s  512.038 KiB/s 78.523 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:48 -0700 MST  1018 s  3132/3615 msgs left
+msg INBOX.Chuck Baer/41 {35901}          copied to Chuck Baer/41         3.08 msgs/s  511.507 KiB/s 78.557 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:47 -0700 MST  1017 s  3131/3615 msgs left
+msg INBOX.Chuck Baer/42 {9883}           copied to Chuck Baer/42         3.08 msgs/s  510.845 KiB/s 78.567 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:46 -0700 MST  1016 s  3130/3615 msgs left
+msg INBOX.Chuck Baer/43 {30864}          copied to Chuck Baer/43         3.08 msgs/s  510.318 KiB/s 78.596 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:46 -0700 MST  1015 s  3129/3615 msgs left
+msg INBOX.Chuck Baer/44 {15790}          copied to Chuck Baer/44         3.08 msgs/s  509.693 KiB/s 78.611 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:45 -0700 MST  1014 s  3128/3615 msgs left
+msg INBOX.Chuck Baer/45 {26401}          copied to Chuck Baer/45         3.09 msgs/s  509.170 KiB/s 78.636 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:44 -0700 MST  1013 s  3127/3615 msgs left
+msg INBOX.Chuck Baer/46 {28870}          copied to Chuck Baer/46         3.09 msgs/s  508.643 KiB/s 78.664 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:43 -0700 MST  1012 s  3126/3615 msgs left
+msg INBOX.Chuck Baer/47 {20803}          copied to Chuck Baer/47         3.09 msgs/s  508.061 KiB/s 78.684 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:43 -0700 MST  1011 s  3125/3615 msgs left
+msg INBOX.Chuck Baer/48 {47808}          copied to Chuck Baer/48         3.09 msgs/s  507.486 KiB/s 78.729 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:42 -0700 MST  1011 s  3124/3615 msgs left
+msg INBOX.Chuck Baer/49 {98493}          copied to Chuck Baer/49         3.09 msgs/s  506.998 KiB/s 78.823 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:42 -0700 MST  1011 s  3123/3615 msgs left
+msg INBOX.Chuck Baer/50 {27157}          copied to Chuck Baer/50         3.09 msgs/s  506.445 KiB/s 78.849 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:42 -0700 MST  1010 s  3122/3615 msgs left
+msg INBOX.Chuck Baer/51 {9228}           copied to Chuck Baer/51         3.09 msgs/s  505.804 KiB/s 78.858 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:41 -0700 MST  1009 s  3121/3615 msgs left
+msg INBOX.Chuck Baer/52 {42652}          copied to Chuck Baer/52         3.10 msgs/s  505.330 KiB/s 78.899 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:40 -0700 MST  1008 s  3120/3615 msgs left
+msg INBOX.Chuck Baer/53 {8487}           copied to Chuck Baer/53         3.10 msgs/s  504.673 KiB/s 78.907 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:39 -0700 MST  1007 s  3119/3615 msgs left
+msg INBOX.Chuck Baer/54 {9663}           copied to Chuck Baer/54         3.10 msgs/s  504.036 KiB/s 78.916 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:39 -0700 MST  1006 s  3118/3615 msgs left
+msg INBOX.Chuck Baer/55 {82069}          copied to Chuck Baer/55         3.10 msgs/s  503.574 KiB/s 78.994 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:39 -0700 MST  1005 s  3117/3615 msgs left
+msg INBOX.Chuck Baer/56 {42052}          copied to Chuck Baer/56         3.10 msgs/s  503.107 KiB/s 79.034 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:38 -0700 MST  1005 s  3116/3615 msgs left
+msg INBOX.Chuck Baer/57 {7862165}        copied to Chuck Baer/57         3.05 msgs/s  541.314 KiB/s 86.532 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:56 -0700 MST  1020 s  3115/3615 msgs left
+msg INBOX.Chuck Baer/58 {37364}          copied to Chuck Baer/58         3.06 msgs/s  540.732 KiB/s 86.568 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:55 -0700 MST  1019 s  3114/3615 msgs left
+msg INBOX.Chuck Baer/59 {15399}          copied to Chuck Baer/59         3.06 msgs/s  540.009 KiB/s 86.583 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:55 -0700 MST  1018 s  3113/3615 msgs left
+msg INBOX.Chuck Baer/60 {53483}          copied to Chuck Baer/60         3.06 msgs/s  539.586 KiB/s 86.634 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:54 -0700 MST  1017 s  3112/3615 msgs left
+msg INBOX.Chuck Baer/61 {89422}          copied to Chuck Baer/61         3.06 msgs/s  539.366 KiB/s 86.719 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:53 -0700 MST  1016 s  3111/3615 msgs left
+msg INBOX.Chuck Baer/62 {8326}           copied to Chuck Baer/62         3.06 msgs/s  538.711 KiB/s 86.727 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:53 -0700 MST  1015 s  3110/3615 msgs left
+msg INBOX.Chuck Baer/63 {15241}          copied to Chuck Baer/63         3.07 msgs/s  538.083 KiB/s 86.741 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:52 -0700 MST  1014 s  3109/3615 msgs left
+msg INBOX.Chuck Baer/64 {5728}           copied to Chuck Baer/64         3.07 msgs/s  537.412 KiB/s 86.747 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:51 -0700 MST  1013 s  3108/3615 msgs left
+msg INBOX.Chuck Baer/65 {20538}          copied to Chuck Baer/65         3.07 msgs/s  536.820 KiB/s 86.766 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:50 -0700 MST  1012 s  3107/3615 msgs left
+msg INBOX.Chuck Baer/66 {8489}           copied to Chuck Baer/66         3.07 msgs/s  536.151 KiB/s 86.774 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:50 -0700 MST  1011 s  3106/3615 msgs left
+msg INBOX.Chuck Baer/67 {25078}          copied to Chuck Baer/67         3.07 msgs/s  535.579 KiB/s 86.798 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:49 -0700 MST  1010 s  3105/3615 msgs left
+msg INBOX.Chuck Baer/68 {4455}           copied to Chuck Baer/68         3.08 msgs/s  534.901 KiB/s 86.803 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:48 -0700 MST  1009 s  3104/3615 msgs left
+msg INBOX.Chuck Baer/69 {23320}          copied to Chuck Baer/69         3.08 msgs/s  534.324 KiB/s 86.825 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:47 -0700 MST  1008 s  3103/3615 msgs left
+msg INBOX.Chuck Baer/70 {86801}          copied to Chuck Baer/70         3.08 msgs/s  534.083 KiB/s 86.908 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:47 -0700 MST  1008 s  3102/3615 msgs left
+msg INBOX.Chuck Baer/71 {263457}         copied to Chuck Baer/71         3.08 msgs/s  534.588 KiB/s 87.159 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:47 -0700 MST  1007 s  3101/3615 msgs left
+msg INBOX.Chuck Baer/72 {44889}          copied to Chuck Baer/72         3.08 msgs/s  534.066 KiB/s 87.202 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:46 -0700 MST  1006 s  3100/3615 msgs left
+msg INBOX.Chuck Baer/73 {20268}          copied to Chuck Baer/73         3.08 msgs/s  533.490 KiB/s 87.221 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:45 -0700 MST  1005 s  3099/3615 msgs left
+msg INBOX.Chuck Baer/74 {15237}          copied to Chuck Baer/74         3.08 msgs/s  532.866 KiB/s 87.236 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:45 -0700 MST  1005 s  3098/3615 msgs left
+msg INBOX.Chuck Baer/75 {8761}           copied to Chuck Baer/75         3.09 msgs/s  532.243 KiB/s 87.244 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:44 -0700 MST  1004 s  3097/3615 msgs left
+msg INBOX.Chuck Baer/76 {69369}          copied to Chuck Baer/76         3.09 msgs/s  531.901 KiB/s 87.310 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:43 -0700 MST  1003 s  3096/3615 msgs left
+msg INBOX.Chuck Baer/77 {6622}           copied to Chuck Baer/77         3.09 msgs/s  531.244 KiB/s 87.316 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:43 -0700 MST  1002 s  3095/3615 msgs left
+msg INBOX.Chuck Baer/78 {10876}          copied to Chuck Baer/78         3.09 msgs/s  530.586 KiB/s 87.327 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:42 -0700 MST  1001 s  3094/3615 msgs left
+msg INBOX.Chuck Baer/79 {118535}         copied to Chuck Baer/79         3.09 msgs/s  530.472 KiB/s 87.440 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:41 -0700 MST  1000 s  3093/3615 msgs left
+msg INBOX.Chuck Baer/80 {15528}          copied to Chuck Baer/80         3.09 msgs/s  529.846 KiB/s 87.455 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:41 -0700 MST  999 s  3092/3615 msgs left
+msg INBOX.Chuck Baer/81 {40127}          copied to Chuck Baer/81         3.10 msgs/s  529.327 KiB/s 87.493 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:40 -0700 MST  998 s  3091/3615 msgs left
+msg INBOX.Chuck Baer/82 {30194}          copied to Chuck Baer/82         3.10 msgs/s  528.780 KiB/s 87.522 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:40 -0700 MST  998 s  3090/3615 msgs left
+msg INBOX.Chuck Baer/83 {35454}          copied to Chuck Baer/83         3.10 msgs/s  528.244 KiB/s 87.556 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:39 -0700 MST  997 s  3089/3615 msgs left
+msg INBOX.Chuck Baer/84 {45214}          copied to Chuck Baer/84         3.10 msgs/s  527.796 KiB/s 87.599 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:38 -0700 MST  996 s  3088/3615 msgs left
+msg INBOX.Chuck Baer/85 {116279}         copied to Chuck Baer/85         3.10 msgs/s  527.703 KiB/s 87.710 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:38 -0700 MST  995 s  3087/3615 msgs left
+msg INBOX.Chuck Baer/86 {12834}          copied to Chuck Baer/86         3.10 msgs/s  527.105 KiB/s 87.722 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:37 -0700 MST  994 s  3086/3615 msgs left
+msg INBOX.Chuck Baer/87 {5874}           copied to Chuck Baer/87         3.11 msgs/s  526.461 KiB/s 87.727 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:36 -0700 MST  993 s  3085/3615 msgs left
+msg INBOX.Chuck Baer/88 {6039148}        copied to Chuck Baer/88         3.07 msgs/s  553.604 KiB/s 93.487 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:50 -0700 MST  1004 s  3084/3615 msgs left
+msg INBOX.Chuck Baer/89 {4278}           copied to Chuck Baer/89         3.07 msgs/s  552.937 KiB/s 93.491 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:49 -0700 MST  1003 s  3083/3615 msgs left
+msg INBOX.Chuck Baer/90 {6748}           copied to Chuck Baer/90         3.07 msgs/s  552.268 KiB/s 93.497 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:48 -0700 MST  1002 s  3082/3615 msgs left
+msg INBOX.Chuck Baer/91 {81624}          copied to Chuck Baer/91         3.08 msgs/s  551.962 KiB/s 93.575 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:48 -0700 MST  1002 s  3081/3615 msgs left
+msg INBOX.Chuck Baer/92 {61021}          copied to Chuck Baer/92         3.08 msgs/s  551.494 KiB/s 93.633 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:47 -0700 MST  1001 s  3080/3615 msgs left
+msg INBOX.Chuck Baer/93 {4280}           copied to Chuck Baer/93         3.08 msgs/s  550.794 KiB/s 93.637 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:47 -0700 MST  1000 s  3079/3615 msgs left
+msg INBOX.Chuck Baer/94 {41995}          copied to Chuck Baer/94         3.08 msgs/s  550.252 KiB/s 93.677 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:46 -0700 MST  999 s  3078/3615 msgs left
+msg INBOX.Chuck Baer/95 {15405}          copied to Chuck Baer/95         3.08 msgs/s  549.628 KiB/s 93.692 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:45 -0700 MST  998 s  3077/3615 msgs left
+msg INBOX.Chuck Baer/96 {50715}          copied to Chuck Baer/96         3.08 msgs/s  549.182 KiB/s 93.741 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:45 -0700 MST  997 s  3076/3615 msgs left
+msg INBOX.Chuck Baer/97 {41646}          copied to Chuck Baer/97         3.09 msgs/s  548.693 KiB/s 93.780 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:44 -0700 MST  997 s  3075/3615 msgs left
+msg INBOX.Chuck Baer/98 {29332}          copied to Chuck Baer/98         3.09 msgs/s  548.154 KiB/s 93.808 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:44 -0700 MST  996 s  3074/3615 msgs left
+msg INBOX.Chuck Baer/99 {14954}          copied to Chuck Baer/99         3.09 msgs/s  547.536 KiB/s 93.822 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:43 -0700 MST  995 s  3073/3615 msgs left
+msg INBOX.Chuck Baer/100 {12112}         copied to Chuck Baer/100        3.09 msgs/s  546.903 KiB/s 93.834 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:42 -0700 MST  994 s  3072/3615 msgs left
+msg INBOX.Chuck Baer/101 {17652}         copied to Chuck Baer/101        3.09 msgs/s  546.044 KiB/s 93.851 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:42 -0700 MST  994 s  3071/3615 msgs left
+msg INBOX.Chuck Baer/102 {15062}         copied to Chuck Baer/102        3.09 msgs/s  545.431 KiB/s 93.865 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:41 -0700 MST  993 s  3070/3615 msgs left
+msg INBOX.Chuck Baer/103 {20020}         copied to Chuck Baer/103        3.09 msgs/s  544.856 KiB/s 93.884 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:41 -0700 MST  992 s  3069/3615 msgs left
+msg INBOX.Chuck Baer/104 {46052}         copied to Chuck Baer/104        3.10 msgs/s  544.415 KiB/s 93.928 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:40 -0700 MST  991 s  3068/3615 msgs left
+msg INBOX.Chuck Baer/105 {40486}         copied to Chuck Baer/105        3.10 msgs/s  543.949 KiB/s 93.967 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:40 -0700 MST  990 s  3067/3615 msgs left
+msg INBOX.Chuck Baer/106 {7878438}       copied to Chuck Baer/106        3.05 msgs/s  577.744 KiB/s 101.480 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:57 -0700 MST  1004 s  3066/3615 msgs left
+msg INBOX.Chuck Baer/107 {8924}          copied to Chuck Baer/107        3.05 msgs/s  577.092 KiB/s 101.489 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:56 -0700 MST  1004 s  3065/3615 msgs left
+msg INBOX.Chuck Baer/108 {40150}         copied to Chuck Baer/108        3.06 msgs/s  576.601 KiB/s 101.527 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:56 -0700 MST  1003 s  3064/3615 msgs left
+msg INBOX.Chuck Baer/109 {19768}         copied to Chuck Baer/109        3.06 msgs/s  575.982 KiB/s 101.546 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:55 -0700 MST  1002 s  3063/3615 msgs left
+msg INBOX.Chuck Baer/110 {8320}          copied to Chuck Baer/110        3.06 msgs/s  575.340 KiB/s 101.554 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:54 -0700 MST  1001 s  3062/3615 msgs left
+msg INBOX.Chuck Baer/111 {5496}          copied to Chuck Baer/111        3.06 msgs/s  574.675 KiB/s 101.559 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:53 -0700 MST  1000 s  3061/3615 msgs left
+msg INBOX.Chuck Baer/112 {65085}         copied to Chuck Baer/112        3.06 msgs/s  574.233 KiB/s 101.621 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:53 -0700 MST  999 s  3060/3615 msgs left
+msg INBOX.Chuck Baer/113 {6450}          copied to Chuck Baer/113        3.06 msgs/s  573.603 KiB/s 101.627 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:52 -0700 MST  998 s  3059/3615 msgs left
+msg INBOX.Chuck Baer/114 {42976}         copied to Chuck Baer/114        3.07 msgs/s  573.148 KiB/s 101.668 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:51 -0700 MST  997 s  3058/3615 msgs left
+msg INBOX.Chuck Baer/115 {120715}        copied to Chuck Baer/115        3.07 msgs/s  573.035 KiB/s 101.783 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:51 -0700 MST  996 s  3057/3615 msgs left
+msg INBOX.Chuck Baer/116 {18339}         copied to Chuck Baer/116        3.07 msgs/s  572.415 KiB/s 101.801 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:50 -0700 MST  996 s  3056/3615 msgs left
+msg INBOX.Chuck Baer/117 {33539}         copied to Chuck Baer/117        3.07 msgs/s  571.652 KiB/s 101.833 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:50 -0700 MST  995 s  3055/3615 msgs left
+msg INBOX.Chuck Baer/118 {36024}         copied to Chuck Baer/118        3.07 msgs/s  571.142 KiB/s 101.867 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:49 -0700 MST  994 s  3054/3615 msgs left
+msg INBOX.Chuck Baer/119 {4742600}       copied to Chuck Baer/119        3.05 msgs/s  590.502 KiB/s 106.390 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:59 -0700 MST  1002 s  3053/3615 msgs left
+msg INBOX.Chuck Baer/120 {41792}         copied to Chuck Baer/120        3.05 msgs/s  589.965 KiB/s 106.430 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:59 -0700 MST  1001 s  3052/3615 msgs left
+msg INBOX.Chuck Baer/121 {118164}        copied to Chuck Baer/121        3.05 msgs/s  589.827 KiB/s 106.543 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:58 -0700 MST  1001 s  3051/3615 msgs left
+msg INBOX.Chuck Baer/122 {3969}          copied to Chuck Baer/122        3.05 msgs/s  589.145 KiB/s 106.547 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:57 -0700 MST  1000 s  3050/3615 msgs left
+msg INBOX.Chuck Baer/123 {4305}          copied to Chuck Baer/123        3.05 msgs/s  588.467 KiB/s 106.551 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:57 -0700 MST  999 s  3049/3615 msgs left
+msg INBOX.Chuck Baer/124 {5928}          copied to Chuck Baer/124        3.05 msgs/s  587.782 KiB/s 106.556 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:56 -0700 MST  998 s  3048/3615 msgs left
+msg INBOX.Chuck Baer/125 {9834}          copied to Chuck Baer/125        3.06 msgs/s  587.109 KiB/s 106.566 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:56 -0700 MST  997 s  3047/3615 msgs left
+msg INBOX.Chuck Baer/126 {14087}         copied to Chuck Baer/126        3.06 msgs/s  586.493 KiB/s 106.579 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:55 -0700 MST  996 s  3046/3615 msgs left
+msg INBOX.Chuck Baer/127 {104900}        copied to Chuck Baer/127        3.06 msgs/s  586.280 KiB/s 106.679 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:54 -0700 MST  995 s  3045/3615 msgs left
+msg INBOX.Chuck Baer/128 {57733}         copied to Chuck Baer/128        3.06 msgs/s  585.856 KiB/s 106.734 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:54 -0700 MST  995 s  3044/3615 msgs left
+msg INBOX.Chuck Baer/129 {21371}         copied to Chuck Baer/129        3.06 msgs/s  585.263 KiB/s 106.755 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:53 -0700 MST  994 s  3043/3615 msgs left
+msg INBOX.Chuck Baer/130 {32177}         copied to Chuck Baer/130        3.06 msgs/s  584.734 KiB/s 106.785 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:52 -0700 MST  993 s  3042/3615 msgs left
+msg INBOX.Chuck Baer/131 {38069}         copied to Chuck Baer/131        3.07 msgs/s  584.236 KiB/s 106.822 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:52 -0700 MST  992 s  3041/3615 msgs left
+msg INBOX.Chuck Baer/132 {37473}         copied to Chuck Baer/132        3.07 msgs/s  583.725 KiB/s 106.857 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:51 -0700 MST  991 s  3040/3615 msgs left
+msg INBOX.Chuck Baer/133 {200423}        copied to Chuck Baer/133        3.07 msgs/s  583.962 KiB/s 107.048 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:51 -0700 MST  990 s  3039/3615 msgs left
+msg INBOX.Chuck Baer/135 {15319}         copied to Chuck Baer/134        3.07 msgs/s  583.340 KiB/s 107.063 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:50 -0700 MST  990 s  3038/3615 msgs left
+msg INBOX.Chuck Baer/136 {122824}        copied to Chuck Baer/135        3.07 msgs/s  583.184 KiB/s 107.180 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:50 -0700 MST  989 s  3037/3615 msgs left
+msg INBOX.Chuck Baer/137 {2574338}       copied to Chuck Baer/136        3.06 msgs/s  593.561 KiB/s 109.635 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:53 -0700 MST  992 s  3036/3615 msgs left
+msg INBOX.Chuck Baer/138 {12566}         copied to Chuck Baer/137        3.06 msgs/s  592.934 KiB/s 109.647 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:53 -0700 MST  991 s  3035/3615 msgs left
+msg INBOX.Chuck Baer/139 {16057}         copied to Chuck Baer/138        3.06 msgs/s  592.321 KiB/s 109.663 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:52 -0700 MST  990 s  3034/3615 msgs left
+msg INBOX.Chuck Baer/140 {4933}          copied to Chuck Baer/139        3.07 msgs/s  591.607 KiB/s 109.667 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:52 -0700 MST  989 s  3033/3615 msgs left
+msg INBOX.Chuck Baer/141 {4386}          copied to Chuck Baer/140        3.07 msgs/s  590.938 KiB/s 109.671 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:51 -0700 MST  988 s  3032/3615 msgs left
+msg INBOX.Chuck Baer/142 {12278}         copied to Chuck Baer/141        3.07 msgs/s  590.325 KiB/s 109.683 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:50 -0700 MST  987 s  3031/3615 msgs left
+msg INBOX.Chuck Baer/143 {108240}        copied to Chuck Baer/142        3.07 msgs/s  590.145 KiB/s 109.786 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:50 -0700 MST  987 s  3030/3615 msgs left
+ETA: Tuesday 31 October 2023-10-31 19:32:50 -0700 MST  987 s  3030/3615 msgs left
+Folder    9/45 [INBOX.Cozy]                        -> [Cozy]                             
+Host1: folder [INBOX.Cozy] has 16 messages in total (mentioned by SELECT)
+Creating folder [Cozy] on host2
+Created folder [Cozy] on host2
+Host2: folder [Cozy] has 0 messages in total (mentioned by SELECT)
+Host2: folder [Cozy] permanentflags: 
+Host2: Subscribing to folder Cozy
+Host1: folder [INBOX.Cozy] considering 16 messages
+Host2: folder [Cozy] considering 0 messages
+Host1: folder [INBOX.Cozy] selected 16 messages, duplicates 0
+Host2: folder [Cozy] selected 0 messages, duplicates 0
+msg INBOX.Cozy/1 {36583}           copied to Cozy/1          3.06 msgs/s  587.403 KiB/s 109.821 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:54 -0700 MST  990 s  3029/3615 msgs left
+msg INBOX.Cozy/2 {40823}           copied to Cozy/2          3.06 msgs/s  586.931 KiB/s 109.860 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:53 -0700 MST  989 s  3028/3615 msgs left
+msg INBOX.Cozy/3 {35640}           copied to Cozy/3          3.06 msgs/s  586.439 KiB/s 109.894 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:52 -0700 MST  988 s  3027/3615 msgs left
+msg INBOX.Cozy/4 {36300}           copied to Cozy/4          3.07 msgs/s  585.948 KiB/s 109.929 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:52 -0700 MST  987 s  3026/3615 msgs left
+msg INBOX.Cozy/5 {39557}           copied to Cozy/5          3.07 msgs/s  585.467 KiB/s 109.967 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:51 -0700 MST  986 s  3025/3615 msgs left
+msg INBOX.Cozy/6 {38042}           copied to Cozy/6          3.07 msgs/s  584.983 KiB/s 110.003 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:50 -0700 MST  985 s  3024/3615 msgs left
+msg INBOX.Cozy/7 {37854}           copied to Cozy/7          3.07 msgs/s  584.473 KiB/s 110.039 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:50 -0700 MST  984 s  3023/3615 msgs left
+msg INBOX.Cozy/8 {37650}           copied to Cozy/8          3.07 msgs/s  583.980 KiB/s 110.075 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:49 -0700 MST  984 s  3022/3615 msgs left
+msg INBOX.Cozy/9 {36002}           copied to Cozy/9          3.07 msgs/s  583.480 KiB/s 110.109 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:49 -0700 MST  983 s  3021/3615 msgs left
+msg INBOX.Cozy/10 {35593}          copied to Cozy/10         3.08 msgs/s  582.975 KiB/s 110.143 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:48 -0700 MST  982 s  3020/3615 msgs left
+msg INBOX.Cozy/11 {36271}          copied to Cozy/11         3.08 msgs/s  582.424 KiB/s 110.178 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:48 -0700 MST  981 s  3019/3615 msgs left
+msg INBOX.Cozy/12 {36014}          copied to Cozy/12         3.08 msgs/s  581.926 KiB/s 110.212 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:47 -0700 MST  980 s  3018/3615 msgs left
+msg INBOX.Cozy/13 {36764}          copied to Cozy/13         3.08 msgs/s  581.435 KiB/s 110.247 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:46 -0700 MST  980 s  3017/3615 msgs left
+msg INBOX.Cozy/14 {39394}          copied to Cozy/14         3.08 msgs/s  580.977 KiB/s 110.285 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:46 -0700 MST  979 s  3016/3615 msgs left
+msg INBOX.Cozy/15 {38469}          copied to Cozy/15         3.08 msgs/s  580.515 KiB/s 110.321 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:45 -0700 MST  978 s  3015/3615 msgs left
+msg INBOX.Cozy/16 {26408}          copied to Cozy/16         3.08 msgs/s  579.991 KiB/s 110.347 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:44 -0700 MST  977 s  3014/3615 msgs left
+ETA: Tuesday 31 October 2023-10-31 19:32:44 -0700 MST  977 s  3014/3615 msgs left
+Folder   10/45 [INBOX.Drafts]                      -> [Drafts]                           
+Host1: folder [INBOX.Drafts] has 1 messages in total (mentioned by SELECT)
+Host2: folder [Drafts] has 0 messages in total (mentioned by SELECT)
+Host2: folder [Drafts] permanentflags: 
+Host1: folder [INBOX.Drafts] considering 1 messages
+Host2: folder [Drafts] considering 0 messages
+Host1: folder [INBOX.Drafts] selected 1 messages, duplicates 0
+Host2: folder [Drafts] selected 0 messages, duplicates 0
+msg INBOX.Drafts/1018 {28207}        copied to Drafts/1          3.08 msgs/s  578.164 KiB/s 110.373 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:46 -0700 MST  978 s  3013/3615 msgs left
+ETA: Tuesday 31 October 2023-10-31 19:32:46 -0700 MST  978 s  3013/3615 msgs left
+Folder   11/45 [INBOX.Hawk]                        -> [Hawk]                             
+Host1: folder [INBOX.Hawk] has 0 messages in total (mentioned by SELECT)
+Creating folder [Hawk] on host2
+Created folder [Hawk] on host2
+Host2: folder [Hawk] has 0 messages in total (mentioned by SELECT)
+Host2: folder [Hawk] permanentflags: 
+Host2: Subscribing to folder Hawk
+Host1: folder [INBOX.Hawk] considering 0 messages
+Host2: folder [Hawk] considering 0 messages
+Host1: folder [INBOX.Hawk] selected 0 messages, duplicates 0
+Host2: folder [Hawk] selected 0 messages, duplicates 0
+ETA: Tuesday 31 October 2023-10-31 19:32:50 -0700 MST  981 s  3013/3615 msgs left
+Folder   12/45 [INBOX.Housefolios]                 -> [Housefolios]                      
+Host1: folder [INBOX.Housefolios] has 30 messages in total (mentioned by SELECT)
+Creating folder [Housefolios] on host2
+Created folder [Housefolios] on host2
+Host2: folder [Housefolios] has 0 messages in total (mentioned by SELECT)
+Host2: folder [Housefolios] permanentflags: 
+Host2: Subscribing to folder Housefolios
+Host1: folder [INBOX.Housefolios] considering 30 messages
+Host2: folder [Housefolios] considering 0 messages
+Host1: folder [INBOX.Housefolios] selected 30 messages, duplicates 2
+Host2: folder [Housefolios] selected 0 messages, duplicates 0
+msg INBOX.Housefolios/1 {130734}          copied to Housefolios/1          3.06 msgs/s  574.185 KiB/s 110.498 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:53 -0700 MST  984 s  3010/3615 msgs left
+msg INBOX.Housefolios/2 {65889}           copied to Housefolios/2          3.06 msgs/s  573.642 KiB/s 110.561 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:53 -0700 MST  983 s  3009/3615 msgs left
+msg INBOX.Housefolios/3 {66211}           copied to Housefolios/3          3.06 msgs/s  573.097 KiB/s 110.624 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:53 -0700 MST  983 s  3008/3615 msgs left
+msg INBOX.Housefolios/4 {61247}           copied to Housefolios/4          3.06 msgs/s  572.730 KiB/s 110.682 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:52 -0700 MST  982 s  3007/3615 msgs left
+msg INBOX.Housefolios/5 {67945}           copied to Housefolios/5          3.06 msgs/s  572.411 KiB/s 110.747 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:52 -0700 MST  981 s  3006/3615 msgs left
+msg INBOX.Housefolios/6 {64460}           copied to Housefolios/6          3.07 msgs/s  572.075 KiB/s 110.809 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:51 -0700 MST  980 s  3005/3615 msgs left
+msg INBOX.Housefolios/7 {55762}           copied to Housefolios/7          3.07 msgs/s  571.698 KiB/s 110.862 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:51 -0700 MST  979 s  3004/3615 msgs left
+msg INBOX.Housefolios/8 {121600}          copied to Housefolios/8          3.07 msgs/s  571.581 KiB/s 110.978 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:50 -0700 MST  979 s  3003/3615 msgs left
+msg INBOX.Housefolios/9 {67826}           copied to Housefolios/9          3.07 msgs/s  571.114 KiB/s 111.043 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:50 -0700 MST  978 s  3002/3615 msgs left
+msg INBOX.Housefolios/10 {68556}          copied to Housefolios/10         3.07 msgs/s  570.691 KiB/s 111.108 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:50 -0700 MST  978 s  3001/3615 msgs left
+msg INBOX.Housefolios/11 {59713}          copied to Housefolios/11         3.07 msgs/s  570.340 KiB/s 111.165 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:49 -0700 MST  977 s  3000/3615 msgs left
+msg INBOX.Housefolios/12 {65542}          copied to Housefolios/12         3.07 msgs/s  569.803 KiB/s 111.227 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:49 -0700 MST  976 s  2999/3615 msgs left
+msg INBOX.Housefolios/13 {76568}          copied to Housefolios/13         3.07 msgs/s  569.520 KiB/s 111.300 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:48 -0700 MST  976 s  2998/3615 msgs left
+msg INBOX.Housefolios/14 {73098}          copied to Housefolios/14         3.07 msgs/s  569.230 KiB/s 111.370 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:48 -0700 MST  975 s  2997/3615 msgs left
+msg INBOX.Housefolios/15 {75305}          copied to Housefolios/15         3.08 msgs/s  568.957 KiB/s 111.442 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:47 -0700 MST  974 s  2996/3615 msgs left
+msg INBOX.Housefolios/16 {12815}          copied to Housefolios/16         3.08 msgs/s  568.386 KiB/s 111.454 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:46 -0700 MST  973 s  2995/3615 msgs left
+msg INBOX.Housefolios/17 {20609}          copied to Housefolios/17         3.08 msgs/s  567.873 KiB/s 111.474 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:46 -0700 MST  972 s  2994/3615 msgs left
+msg INBOX.Housefolios/18 {17242}          copied to Housefolios/18         3.08 msgs/s  567.125 KiB/s 111.490 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:46 -0700 MST  972 s  2993/3615 msgs left
+msg INBOX.Housefolios/19 {9933}           copied to Housefolios/19         3.08 msgs/s  566.541 KiB/s 111.500 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:45 -0700 MST  971 s  2992/3615 msgs left
+msg INBOX.Housefolios/20 {45991}          copied to Housefolios/20         3.08 msgs/s  566.145 KiB/s 111.544 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:44 -0700 MST  970 s  2991/3615 msgs left
+msg INBOX.Housefolios/21 {26505}          copied to Housefolios/21         3.08 msgs/s  565.636 KiB/s 111.569 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:44 -0700 MST  969 s  2990/3615 msgs left
+msg INBOX.Housefolios/22 {46192}          copied to Housefolios/22         3.09 msgs/s  565.218 KiB/s 111.613 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:43 -0700 MST  969 s  2989/3615 msgs left
+msg INBOX.Housefolios/23 {84578}          copied to Housefolios/23         3.09 msgs/s  564.985 KiB/s 111.694 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:43 -0700 MST  968 s  2988/3615 msgs left
+msg INBOX.Housefolios/24 {129767}         copied to Housefolios/24         3.09 msgs/s  564.928 KiB/s 111.817 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:42 -0700 MST  967 s  2987/3615 msgs left
+msg INBOX.Housefolios/26 {131602}         copied to Housefolios/25         3.09 msgs/s  564.710 KiB/s 111.943 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:42 -0700 MST  967 s  2986/3615 msgs left
+msg INBOX.Housefolios/27 {77650}          copied to Housefolios/26         3.09 msgs/s  564.436 KiB/s 112.017 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:42 -0700 MST  966 s  2985/3615 msgs left
+msg INBOX.Housefolios/28 {127766}         copied to Housefolios/27         3.09 msgs/s  564.393 KiB/s 112.139 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:41 -0700 MST  965 s  2984/3615 msgs left
+msg INBOX.Housefolios/30 {130373}         copied to Housefolios/28         3.09 msgs/s  564.314 KiB/s 112.263 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:41 -0700 MST  965 s  2983/3615 msgs left
+ETA: Tuesday 31 October 2023-10-31 19:32:41 -0700 MST  965 s  2983/3615 msgs left
+Folder   13/45 [INBOX.Investing]                   -> [Investing]                        
+Host1: folder [INBOX.Investing] has 358 messages in total (mentioned by SELECT)
+Creating folder [Investing] on host2
+Created folder [Investing] on host2
+Host2: folder [Investing] has 0 messages in total (mentioned by SELECT)
+Host2: folder [Investing] permanentflags: 
+Host2: Subscribing to folder Investing
+Host1: folder [INBOX.Investing] considering 358 messages
+Host2: folder [Investing] considering 0 messages
+Host1: folder [INBOX.Investing] selected 358 messages, duplicates 0
+Host2: folder [Investing] selected 0 messages, duplicates 0
+msg INBOX.Investing/1 {6839}            copied to Investing/1          3.05 msgs/s  555.741 KiB/s 112.270 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:57 -0700 MST  978 s  2982/3615 msgs left
+msg INBOX.Investing/2 {33773}           copied to Investing/2          3.05 msgs/s  555.093 KiB/s 112.302 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:57 -0700 MST  977 s  2981/3615 msgs left
+msg INBOX.Investing/3 {47411}           copied to Investing/3          3.05 msgs/s  554.714 KiB/s 112.347 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:56 -0700 MST  976 s  2980/3615 msgs left
+msg INBOX.Investing/4 {6924}            copied to Investing/4          3.05 msgs/s  554.137 KiB/s 112.354 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:56 -0700 MST  976 s  2979/3615 msgs left
+msg INBOX.Investing/5 {11583}           copied to Investing/5          3.06 msgs/s  553.604 KiB/s 112.365 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:55 -0700 MST  975 s  2978/3615 msgs left
+msg INBOX.Investing/6 {92780}           copied to Investing/6          3.06 msgs/s  553.393 KiB/s 112.453 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:55 -0700 MST  974 s  2977/3615 msgs left
+msg INBOX.Investing/7 {10676}           copied to Investing/7          3.06 msgs/s  552.847 KiB/s 112.463 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:54 -0700 MST  973 s  2976/3615 msgs left
+msg INBOX.Investing/8 {8707}            copied to Investing/8          3.06 msgs/s  552.300 KiB/s 112.472 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:53 -0700 MST  972 s  2975/3615 msgs left
+msg INBOX.Investing/10 {44407}          copied to Investing/9          3.06 msgs/s  551.908 KiB/s 112.514 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:53 -0700 MST  972 s  2974/3615 msgs left
+msg INBOX.Investing/12 {7039}           copied to Investing/10         3.06 msgs/s  551.284 KiB/s 112.521 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:52 -0700 MST  971 s  2973/3615 msgs left
+msg INBOX.Investing/13 {4706}           copied to Investing/11         3.06 msgs/s  550.705 KiB/s 112.525 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:52 -0700 MST  970 s  2972/3615 msgs left
+msg INBOX.Investing/14 {12334}          copied to Investing/12         3.07 msgs/s  550.170 KiB/s 112.537 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:51 -0700 MST  969 s  2971/3615 msgs left
+msg INBOX.Investing/15 {13628}          copied to Investing/13         3.07 msgs/s  549.665 KiB/s 112.550 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:51 -0700 MST  968 s  2970/3615 msgs left
+msg INBOX.Investing/16 {12834}          copied to Investing/14         3.07 msgs/s  549.154 KiB/s 112.562 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:50 -0700 MST  968 s  2969/3615 msgs left
+msg INBOX.Investing/17 {53005}          copied to Investing/15         3.07 msgs/s  548.808 KiB/s 112.613 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:50 -0700 MST  967 s  2968/3615 msgs left
+msg INBOX.Investing/19 {21050}          copied to Investing/16         3.07 msgs/s  548.325 KiB/s 112.633 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:49 -0700 MST  966 s  2967/3615 msgs left
+msg INBOX.Investing/20 {7448}           copied to Investing/17         3.07 msgs/s  547.795 KiB/s 112.640 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:48 -0700 MST  965 s  2966/3615 msgs left
+msg INBOX.Investing/21 {37919}          copied to Investing/18         3.07 msgs/s  547.383 KiB/s 112.676 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:48 -0700 MST  964 s  2965/3615 msgs left
+msg INBOX.Investing/22 {18870}          copied to Investing/19         3.08 msgs/s  546.873 KiB/s 112.694 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:47 -0700 MST  964 s  2964/3615 msgs left
+msg INBOX.Investing/23 {41488}          copied to Investing/20         3.08 msgs/s  546.436 KiB/s 112.734 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:47 -0700 MST  963 s  2963/3615 msgs left
+msg INBOX.Investing/24 {6975}           copied to Investing/21         3.08 msgs/s  545.881 KiB/s 112.740 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:46 -0700 MST  962 s  2962/3615 msgs left
+msg INBOX.Investing/25 {71109}          copied to Investing/22         3.08 msgs/s  545.616 KiB/s 112.808 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:46 -0700 MST  961 s  2961/3615 msgs left
+msg INBOX.Investing/26 {16582}          copied to Investing/23         3.08 msgs/s  544.919 KiB/s 112.824 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:46 -0700 MST  961 s  2960/3615 msgs left
+msg INBOX.Investing/27 {9225}           copied to Investing/24         3.08 msgs/s  544.394 KiB/s 112.833 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:45 -0700 MST  960 s  2959/3615 msgs left
+msg INBOX.Investing/28 {31474}          copied to Investing/25         3.08 msgs/s  543.918 KiB/s 112.863 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:45 -0700 MST  960 s  2958/3615 msgs left
+msg INBOX.Investing/29 {10104}          copied to Investing/26         3.08 msgs/s  543.393 KiB/s 112.872 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:44 -0700 MST  959 s  2957/3615 msgs left
+msg INBOX.Investing/30 {14569}          copied to Investing/27         3.09 msgs/s  542.874 KiB/s 112.886 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:44 -0700 MST  958 s  2956/3615 msgs left
+msg INBOX.Investing/32 {11203}          copied to Investing/28         3.09 msgs/s  542.362 KiB/s 112.897 MiB copied ETA: Tuesday 31 October 2023-10-31 19:32:43 -0700 MST  957 s  2955/3615 msgs left
+msg INBOX.Investing/33 {17252863}       copied to Investing/29         2.91 msgs/s  585.534 KiB/s 129.351 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:53 -0700 MST  1014 s  2954/3615 msgs left
+msg INBOX.Investing/34 {10390}          copied to Investing/30         2.91 msgs/s  585.002 KiB/s 129.360 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:52 -0700 MST  1013 s  2953/3615 msgs left
+msg INBOX.Investing/35 {35910}          copied to Investing/31         2.92 msgs/s  584.575 KiB/s 129.395 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:51 -0700 MST  1012 s  2952/3615 msgs left
+msg INBOX.Investing/36 {7544}           copied to Investing/32         2.92 msgs/s  584.047 KiB/s 129.402 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:51 -0700 MST  1011 s  2951/3615 msgs left
+msg INBOX.Investing/37 {44578}          copied to Investing/33         2.92 msgs/s  583.624 KiB/s 129.444 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:50 -0700 MST  1011 s  2950/3615 msgs left
+msg INBOX.Investing/38 {19446}          copied to Investing/34         2.92 msgs/s  583.077 KiB/s 129.463 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:50 -0700 MST  1010 s  2949/3615 msgs left
+msg INBOX.Investing/39 {12832}          copied to Investing/35         2.92 msgs/s  582.561 KiB/s 129.475 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:49 -0700 MST  1009 s  2948/3615 msgs left
+msg INBOX.Investing/40 {10674}          copied to Investing/36         2.92 msgs/s  582.023 KiB/s 129.485 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:48 -0700 MST  1008 s  2947/3615 msgs left
+msg INBOX.Investing/41 {5785}           copied to Investing/37         2.92 msgs/s  581.473 KiB/s 129.491 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:48 -0700 MST  1007 s  2946/3615 msgs left
+msg INBOX.Investing/42 {45316}          copied to Investing/38         2.93 msgs/s  581.078 KiB/s 129.534 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:47 -0700 MST  1006 s  2945/3615 msgs left
+msg INBOX.Investing/44 {30015}          copied to Investing/39         2.93 msgs/s  580.601 KiB/s 129.563 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:47 -0700 MST  1006 s  2944/3615 msgs left
+msg INBOX.Investing/45 {13614}          copied to Investing/40         2.93 msgs/s  580.079 KiB/s 129.576 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:46 -0700 MST  1005 s  2943/3615 msgs left
+msg INBOX.Investing/46 {99967}          copied to Investing/41         2.93 msgs/s  579.881 KiB/s 129.671 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:46 -0700 MST  1004 s  2942/3615 msgs left
+msg INBOX.Investing/47 {11536}          copied to Investing/42         2.93 msgs/s  579.377 KiB/s 129.682 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:45 -0700 MST  1003 s  2941/3615 msgs left
+msg INBOX.Investing/48 {51534}          copied to Investing/43         2.93 msgs/s  579.016 KiB/s 129.731 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:44 -0700 MST  1002 s  2940/3615 msgs left
+msg INBOX.Investing/49 {96970}          copied to Investing/44         2.93 msgs/s  578.813 KiB/s 129.824 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:44 -0700 MST  1002 s  2939/3615 msgs left
+msg INBOX.Investing/50 {9606}           copied to Investing/45         2.94 msgs/s  578.283 KiB/s 129.833 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:43 -0700 MST  1001 s  2938/3615 msgs left
+DEBUG: .../IO/Socket/SSL.pm:1177: global error: Undefined SSL object
+msg INBOX.Investing/51 {7028}           copied to Investing/46         2.93 msgs/s  575.791 KiB/s 129.840 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:47 -0700 MST  1003 s  2937/3615 msgs left
+msg INBOX.Investing/52 {129721}         copied to Investing/47         2.93 msgs/s  575.096 KiB/s 129.963 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:48 -0700 MST  1004 s  2936/3615 msgs left
+msg INBOX.Investing/53 {32865}          copied to Investing/48         2.93 msgs/s  574.444 KiB/s 129.995 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:47 -0700 MST  1003 s  2935/3615 msgs left
+msg INBOX.Investing/54 {9566}           copied to Investing/49         2.93 msgs/s  573.930 KiB/s 130.004 MiB copied ETA: Tuesday 31 October 2023-10-31 19:33:47 -0700 MST  1002 s  2934/3615 msgs left

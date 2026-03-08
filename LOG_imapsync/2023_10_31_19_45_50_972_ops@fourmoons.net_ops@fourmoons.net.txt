@@ -1,0 +1,1199 @@
+Here is imapsync 2.229 on host Shawns-MacBook-Pro-2.local, a darwin system with 3.8/16.0 free GiB of RAM, 45.42% used by processes.
+with Perl 5.30.3 and Mail::IMAPClient 3.43
+Transfer started at Tuesday 31 October 2023-10-31 19:45:50 -0700 MST
+PID is 41549 my PPID is 30935
+Log file is LOG_imapsync/2023_10_31_19_45_50_972_ops@fourmoons.net_ops@fourmoons.net.txt ( to change it, use --logfile path ; or use --nolog to turn off logging )
+Load is 3.31 3.69 3.56 on 10 cores
+Current directory is /Users/shawn/Code/email/email-migration
+Real user id is shawn (uid 501)
+Effective user id is shawn (euid 501)
+$RCSfile: imapsync,v $ $Revision: 2.229 $ $Date: 2022/09/14 18:08:24 $ 
+Command line used, run by perl:
+/usr/local/bin/imapsync --host1 mail.fourmoons.net --host2 redbull.mxrouting.net --user1 ops@fourmoons.net --password1 MASKED --user2 ops@fourmoons.net --password2 MASKED --nosslcheck --delete2duplicates --expunge1
+Temp directory is /var/folders/lj/pt22s9q55t1925h7_g57tt5h0000gn/T ( to change it use --tmpdir dirpath )
+kill -QUIT 41549 # special behavior: call to sub catch_exit
+kill -TERM 41549 # special behavior: call to sub catch_exit
+kill -INT 41549 # special behavior: call to sub catch_reconnect
+kill -HUP 41549 # special behavior: call to sub catch_print
+kill -USR1 41549 # special behavior: call to sub toggle_sleep
+Removing old /var/folders/lj/pt22s9q55t1925h7_g57tt5h0000gn/T/imapsync.pid since its PID 41489 is not running anymore (oo-killed?)
+Removed old /var/folders/lj/pt22s9q55t1925h7_g57tt5h0000gn/T/imapsync.pid
+PID file is /var/folders/lj/pt22s9q55t1925h7_g57tt5h0000gn/T/imapsync.pid ( to change it, use --pidfile filepath ; to avoid it use --pidfile "" )
+Writing my PID 41549 in /var/folders/lj/pt22s9q55t1925h7_g57tt5h0000gn/T/imapsync.pid
+Writing also my logfile name in /var/folders/lj/pt22s9q55t1925h7_g57tt5h0000gn/T/imapsync.pid : LOG_imapsync/2023_10_31_19_45_50_972_ops@fourmoons.net_ops@fourmoons.net.txt
+Modules version list ( use --no-modulesversion to turn off printing this Perl modules list ):
+Authen::NTLM         1.09
+CGI                  4.48
+Compress::Zlib       2.084
+Crypt::OpenSSL::RSA  0.31
+Data::Uniqid         0.12
+Digest::HMAC_MD5     1.01
+Digest::HMAC_SHA1    1.03
+Digest::MD5          2.55
+Encode               3.01
+Encode::IMAPUTF7     1.05
+File::Copy::Recursive 0.45
+File::Spec           3.78
+Getopt::Long         2.5
+HTML::Entities       3.69
+IO::Socket           1.40
+IO::Socket::INET     1.40
+IO::Socket::INET6    2.72
+IO::Socket::IP       0.39
+IO::Socket::SSL      2.068
+IO::Tee              0.65
+JSON                 4.02
+JSON::WebToken       0.05
+LWP                  6.44
+MIME::Base64         3.15
+Mail::IMAPClient     3.43
+Net::Ping            2.71
+Net::SSLeay          1.88
+Term::ReadKey        2.38
+Test::MockObject     1.20200122
+Time::HiRes          1.976
+URI::Escape          3.31
+Unicode::String      2.10
+
+Info: will resync flags for already transferred messages. Use --noresyncflags to not resync flags.
+Info: will act as --uidexpunge2
+Info: turned ON syncinternaldates, will set the internal dates (arrival dates) on host2 same as host1.
+Host1: will try to use LOGIN authentication on host1
+Host2: will try to use LOGIN authentication on host2
+Host1: imap connection timeout is 120 seconds
+Host2: imap connection timeout is 120 seconds
+Host1: imap connection keepalive is on on host1. Use --nokeepalive1 to disable it.
+Host2: imap connection keepalive is on on host2. Use --nokeepalive2 to disable it.
+Host1: IMAP server [mail.fourmoons.net] port [143] user [ops@fourmoons.net]
+Host2: IMAP server [redbull.mxrouting.net] port [143] user [ops@fourmoons.net]
+Host1: connecting and login on host1 [mail.fourmoons.net] port [143] with user [ops@fourmoons.net]
+Host1 IP address: 108.167.140.95 Local IP address: 192.168.1.34
+Host1 banner: * OK [CAPABILITY IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE NAMESPACE LITERAL+ STARTTLS AUTH=PLAIN AUTH=LOGIN] Dovecot ready.
+Host1 capability before authentication: IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE NAMESPACE LITERAL+ STARTTLS AUTH=PLAIN AUTH=LOGIN AUTH
+Host1: going to ssl because STARTTLS is in CAPABILITY. Use --notls1 or --notls2 to avoid that behavior
+DEBUG: .../IO/Socket/SSL.pm:1177: global error: Undefined SSL object
+Host1: Socket successfully converted to SSL
+Host1: mail.fourmoons.net says it has CAPABILITY for AUTHENTICATE LOGIN
+Host1: success login on [mail.fourmoons.net] with user [ops@fourmoons.net] auth [LOGIN] or [LOGIN]
+Host2: connecting and login on host2 [redbull.mxrouting.net] port [143] with user [ops@fourmoons.net]
+Host2 IP address: 45.43.208.33 Local IP address: 192.168.1.34
+Host2 banner: * OK [CAPABILITY IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE LITERAL+ STARTTLS AUTH=PLAIN] Dovecot DA ready.
+Host2 capability before authentication: IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE LITERAL+ STARTTLS AUTH=PLAIN AUTH
+Host2: going to ssl because STARTTLS is in CAPABILITY. Use --notls1 or --notls2 to avoid that behavior
+DEBUG: .../IO/Socket/SSL.pm:1177: global error: Undefined SSL object
+Host2: Socket successfully converted to SSL
+Host2: success login on [redbull.mxrouting.net] with user [ops@fourmoons.net] auth [LOGIN] or [LOGIN]
+Host1: state Authenticated
+Host2: state Authenticated
+Host1 capability once authenticated: IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE SORT SORT=DISPLAY THREAD=REFERENCES THREAD=REFS THREAD=ORDEREDSUBJECT MULTIAPPEND URL-PARTIAL CATENATE UNSELECT CHILDREN NAMESPACE UIDPLUS LIST-EXTENDED I18NLEVEL=1 CONDSTORE QRESYNC ESEARCH ESORT SEARCHRES WITHIN CONTEXT=SEARCH LIST-STATUS BINARY MOVE SNIPPET=FUZZY PREVIEW=FUZZY PREVIEW STATUS=SIZE SAVEDATE NAMESPACE LITERAL+ NOTIFY SPECIAL-USE COMPRESS=DEFLATE QUOTA THREAD I18NLEVEL CONTEXT SNIPPET PREVIEW STATUS COMPRESS
+Host2 capability once authenticated: IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE SORT SORT=DISPLAY THREAD=REFERENCES THREAD=REFS THREAD=ORDEREDSUBJECT MULTIAPPEND URL-PARTIAL CATENATE UNSELECT CHILDREN NAMESPACE UIDPLUS LIST-EXTENDED I18NLEVEL=1 CONDSTORE QRESYNC ESEARCH ESORT SEARCHRES WITHIN CONTEXT=SEARCH LIST-STATUS BINARY MOVE SNIPPET=FUZZY PREVIEW=FUZZY PREVIEW STATUS=SIZE SAVEDATE LITERAL+ NOTIFY SPECIAL-USE XAPPLEPUSHSERVICE QUOTA THREAD I18NLEVEL CONTEXT SNIPPET PREVIEW STATUS
+Host1: found ID capability. Sending/receiving ID, presented in raw IMAP for now.
+In order to avoid sending/receiving ID, use option --noid
+Sending: 6 ID ("name" "imapsync" "version" "2.229" "os" "darwin" "vendor" "Gilles LAMIRAL" "support-url" "https://imapsync.lamiral.info/" "date" "14-Sep-2022 18:08:24 +0000" "side" "host1")
+Sent 182 bytes
+Read: 	* ID ("name" "Dovecot")
+  	6 OK ID completed (0.001 + 0.000 secs).
+Host2: found ID capability. Sending/receiving ID, presented in raw IMAP for now.
+In order to avoid sending/receiving ID, use option --noid
+Sending: 6 ID ("name" "imapsync" "version" "2.229" "os" "darwin" "vendor" "Gilles LAMIRAL" "support-url" "https://imapsync.lamiral.info/" "date" "14-Sep-2022 18:08:24 +0000" "side" "host2")
+Sent 182 bytes
+Read: 	* ID ("name" "Dovecot")
+  	6 OK ID completed (0.001 + 0.000 secs).
+
+Host2: QUOTA capability found, presented in raw IMAP on next lines
+Sending: 7 GETQUOTAROOT INBOX
+Sent 22 bytes
+Read: 	7 OK No quota (0.001 + 0.000 secs).
+
+Host2: Quota current storage is 0 bytes. Limit is 0 bytes. So 0 % full
+Host1: Compression is off. Use --compress1 to allow compression on host1
+Host2: Compression is off. Use --compress2 to allow compression on host2
+Host1: found 45 folders.
+Host2: found 34 folders.
+Host1: guessing separator from folder listing: [.]
+Host1: separator given by NAMESPACE: [.]
+Host2: guessing separator from folder listing: [.]
+Host2: separator given by NAMESPACE: [.]
+Host1: guessing prefix from folder listing: [INBOX.]
+Host1: prefix given by NAMESPACE: [INBOX.]
+Host2: guessing prefix from folder listing: []
+Host2: prefix given by NAMESPACE: []
+Host1: separator and prefix: [.][INBOX.]
+Host2: separator and prefix: [.][]
+Including all folders found by default. Use --subscribed or --folder or --folderrec or --include to select specific folders. Use --exclude to unselect specific folders.
+Host1: Checking wanted folders exist. Use --nocheckfoldersexist to avoid this check (shared of public namespace targeted).
+Host1: Checking wanted folders are selectable. Use --nocheckselectable to avoid this check.
+Turned off automapping folders ( use --automap to turn on automapping )
+
+++++ Listing folders
+All foldernames are presented between brackets like [X] where X is the foldername.
+When a foldername contains non-ASCII characters it is presented in the form
+[X] = [Y] where
+X is the imap foldername you have to use in command line options and
+Y is the utf8 output just printed for convenience, to recognize it.
+
+Host1: folders list (first the raw imap format then the [X] = [Y]):
+* LIST (\HasChildren) "." INBOX
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.Martello_Mariconi - Cahokia"
+* LIST (\HasNoChildren) "." "INBOX.ROI Turnkey"
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.Investors Choice - Cahokia"
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.Apartments (Generic)"
+* LIST (\HasNoChildren \UnMarked \Junk) "." INBOX.spam
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.To Be Filed"
+* LIST (\HasNoChildren \UnMarked) "." INBOX.Action
+* LIST (\HasChildren) "." "INBOX.Properties - Indiana"
+* LIST (\HasNoChildren) "." "INBOX.Properties - Indiana.554 Kentucky"
+* LIST (\HasNoChildren) "." "INBOX.Properties - Arizona"
+* LIST (\HasChildren) "." "INBOX.Properties - Florida"
+* LIST (\HasNoChildren) "." "INBOX.Properties - Florida.Ocala"
+* LIST (\HasNoChildren \UnMarked) "." INBOX.Starred
+* LIST (\HasChildren \UnMarked) "." INBOX.[Airmail]
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.[Airmail].Send Later"
+* LIST (\HasNoChildren \UnMarked) "." INBOX.[Airmail].Snooze
+* LIST (\HasNoChildren \UnMarked) "." INBOX.[Airmail].Done
+* LIST (\HasNoChildren \UnMarked) "." INBOX.[Airmail].Memo
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.[Airmail].To Do"
+* LIST (\HasNoChildren \UnMarked) "." INBOX.Anderson
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.SM - Flamingo"
+* LIST (\HasNoChildren \UnMarked) "." INBOX.Hawk
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.SM - Hawk"
+* LIST (\HasNoChildren \UnMarked) "." INBOX.Investing
+* LIST (\HasNoChildren) "." INBOX.RREI
+* LIST (\HasNoChildren \UnMarked) "." INBOX.Cozy
+* LIST (\HasNoChildren \UnMarked) "." INBOX.Stessa
+* LIST (\HasNoChildren \UnMarked) "." INBOX.Housefolios
+* LIST (\HasNoChildren \UnMarked) "." INBOX.BiggerPockets
+* LIST (\HasNoChildren \UnMarked) "." "INBOX.Chuck Baer"
+* LIST (\HasNoChildren) "." INBOX.PMI
+* LIST (\HasNoChildren) "." "INBOX.Real Wealth Network"
+* LIST (\HasNoChildren) "." INBOX.Roofstock
+* LIST (\HasNoChildren) "." INBOX.Renshaw
+* LIST (\HasNoChildren) "." "INBOX.Realty Medics"
+* LIST (\HasNoChildren) "." "INBOX.Realty Doctors"
+* LIST (\HasNoChildren) "." "INBOX.Property Boss"
+* LIST (\HasNoChildren) "." INBOX.Olmstead
+* LIST (\HasNoChildren \UnMarked) "." INBOX.Allstar
+* LIST (\HasNoChildren \UnMarked \Archive) "." INBOX.Archive
+* LIST (\HasNoChildren \UnMarked \Drafts) "." INBOX.Drafts
+* LIST (\HasNoChildren \UnMarked \Sent) "." INBOX.Sent
+* LIST (\HasNoChildren \UnMarked) "." INBOX.Junk
+* LIST (\HasNoChildren \UnMarked \Trash) "." INBOX.Trash
+56 OK List completed (0.001 + 0.000 secs).
+
+[INBOX]
+[INBOX.Action]
+[INBOX.Allstar]
+[INBOX.Anderson]
+[INBOX.Apartments (Generic)]
+[INBOX.Archive]
+[INBOX.BiggerPockets]
+[INBOX.Chuck Baer]
+[INBOX.Cozy]
+[INBOX.Drafts]
+[INBOX.Hawk]
+[INBOX.Housefolios]
+[INBOX.Investing]
+[INBOX.Investors Choice - Cahokia]
+[INBOX.Junk]
+[INBOX.Martello_Mariconi - Cahokia]
+[INBOX.Olmstead]
+[INBOX.PMI]
+[INBOX.Properties - Arizona]
+[INBOX.Properties - Florida]
+[INBOX.Properties - Florida.Ocala]
+[INBOX.Properties - Indiana]
+[INBOX.Properties - Indiana.554 Kentucky]
+[INBOX.Property Boss]
+[INBOX.ROI Turnkey]
+[INBOX.RREI]
+[INBOX.Real Wealth Network]
+[INBOX.Realty Doctors]
+[INBOX.Realty Medics]
+[INBOX.Renshaw]
+[INBOX.Roofstock]
+[INBOX.SM - Flamingo]
+[INBOX.SM - Hawk]
+[INBOX.Sent]
+[INBOX.Starred]
+[INBOX.Stessa]
+[INBOX.To Be Filed]
+[INBOX.Trash]
+[INBOX.[Airmail]]
+[INBOX.[Airmail].Done]
+[INBOX.[Airmail].Memo]
+[INBOX.[Airmail].Send Later]
+[INBOX.[Airmail].Snooze]
+[INBOX.[Airmail].To Do]
+[INBOX.spam]
+
+Host2: folders list (first the raw imap format then the [X] = [Y]):
+* LIST (\HasNoChildren) "." Roofstock
+* LIST (\HasNoChildren) "." Renshaw
+* LIST (\HasNoChildren) "." "Realty Medics"
+* LIST (\HasNoChildren) "." "Realty Doctors"
+* LIST (\HasNoChildren) "." "Real Wealth Network"
+* LIST (\HasNoChildren) "." RREI
+* LIST (\HasNoChildren) "." "ROI Turnkey"
+* LIST (\HasNoChildren) "." "Property Boss"
+* LIST (\HasChildren) "." "Properties - Indiana"
+* LIST (\HasNoChildren) "." "Properties - Indiana.554 Kentucky"
+* LIST (\HasChildren) "." "Properties - Florida"
+* LIST (\HasNoChildren) "." "Properties - Florida.Ocala"
+* LIST (\HasNoChildren) "." "Properties - Arizona"
+* LIST (\HasNoChildren) "." PMI
+* LIST (\HasNoChildren) "." Olmstead
+* LIST (\HasNoChildren) "." "Martello_Mariconi - Cahokia"
+* LIST (\HasNoChildren) "." "Investors Choice - Cahokia"
+* LIST (\HasNoChildren) "." Investing
+* LIST (\HasNoChildren) "." Housefolios
+* LIST (\HasNoChildren \UnMarked) "." Hawk
+* LIST (\HasNoChildren) "." Cozy
+* LIST (\HasNoChildren) "." "Chuck Baer"
+* LIST (\HasNoChildren) "." BiggerPockets
+* LIST (\HasNoChildren \Archive) "." Archive
+* LIST (\HasNoChildren) "." "Apartments (Generic)"
+* LIST (\HasNoChildren) "." Anderson
+* LIST (\HasNoChildren) "." Allstar
+* LIST (\HasNoChildren \UnMarked) "." Action
+* LIST (\HasNoChildren \UnMarked \Trash) "." Trash
+* LIST (\HasNoChildren \UnMarked \Sent) "." Sent
+* LIST (\HasNoChildren \UnMarked \Junk) "." Junk
+* LIST (\HasNoChildren \Drafts) "." Drafts
+* LIST (\HasNoChildren \UnMarked) "." INBOX.spam
+* LIST (\HasChildren) "." INBOX
+12 OK List completed (0.001 + 0.000 secs).
+
+[Action]
+[Allstar]
+[Anderson]
+[Apartments (Generic)]
+[Archive]
+[BiggerPockets]
+[Chuck Baer]
+[Cozy]
+[Drafts]
+[Hawk]
+[Housefolios]
+[INBOX]
+[INBOX.spam]
+[Investing]
+[Investors Choice - Cahokia]
+[Junk]
+[Martello_Mariconi - Cahokia]
+[Olmstead]
+[PMI]
+[Properties - Arizona]
+[Properties - Florida]
+[Properties - Florida.Ocala]
+[Properties - Indiana]
+[Properties - Indiana.554 Kentucky]
+[Property Boss]
+[ROI Turnkey]
+[RREI]
+[Real Wealth Network]
+[Realty Doctors]
+[Realty Medics]
+[Renshaw]
+[Roofstock]
+[Sent]
+[Trash]
+
+Checking SEARCH ALL works on both accounts. To avoid that check, use --nochecknoabletosearch
+Host1: checking if SEARCH ALL works on INBOX
+Host1: folder [INBOX] has 59 messages mentioned by SELECT
+Host1: folder [INBOX] has 59 messages found by SEARCH ALL
+Host1: folder [INBOX] has the same messages count (59) by SELECT and SEARCH ALL
+Host2: checking if SEARCH ALL works on INBOX
+Host2: folder [INBOX] has 59 messages mentioned by SELECT
+Host2: folder [INBOX] has 59 messages found by SEARCH ALL
+Host2: folder [INBOX] has the same messages count (59) by SELECT and SEARCH ALL
+Good! SEARCH ALL works on both accounts.
+
+Folders sizes before the synchronization. It can take some time. Be patient.
+You can remove foldersizes listings by using "--nofoldersizes" and "--nofoldersizesatend"
+but then you will also lose the ETA (Estimation Time of Arrival) given after each message copy.
+Host1 folder    1/45 [INBOX]                             Size:  12658867 Messages:    59 Biggest:   5737115
+Host2 folder    1/45 [INBOX]                             Size:  12658867 Messages:    59 Biggest:   5737115
+Host2-Host1                                                            0               0                  0
+
+Host1 folder    2/45 [INBOX.Action]                      Size:         0 Messages:     0 Biggest:         0
+Host2 folder    2/45 [Action]                            Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder    3/45 [INBOX.Allstar]                     Size:  52398649 Messages:   332 Biggest:  16219876
+Host2 folder    3/45 [Allstar]                           Size:  52398649 Messages:   332 Biggest:  16219876
+Host2-Host1                                                            0               0                  0
+
+Host1 folder    4/45 [INBOX.Anderson]                    Size:    158131 Messages:     3 Biggest:     72381
+Host2 folder    4/45 [Anderson]                          Size:    158131 Messages:     3 Biggest:     72381
+Host2-Host1                                                            0               0                  0
+
+Host1 folder    5/45 [INBOX.Apartments (Generic)]        Size:   1840667 Messages:    46 Biggest:     57465
+Host2 folder    5/45 [Apartments (Generic)]              Size:   1840667 Messages:    46 Biggest:     57465
+Host2-Host1                                                            0               0                  0
+
+Host1 folder    6/45 [INBOX.Archive]                     Size:     36970 Messages:     1 Biggest:     36970
+Host2 folder    6/45 [Archive]                           Size:     36970 Messages:     1 Biggest:     36970
+Host2-Host1                                                            0               0                  0
+
+Host1 folder    7/45 [INBOX.BiggerPockets]               Size:    303804 Messages:     2 Biggest:    152403
+Host2 folder    7/45 [BiggerPockets]                     Size:    303804 Messages:     2 Biggest:    152403
+Host2-Host1                                                            0               0                  0
+
+Host1 folder    8/45 [INBOX.Chuck Baer]                  Size:  47722257 Messages:   142 Biggest:   7878438
+Host2 folder    8/45 [Chuck Baer]                        Size:  47722257 Messages:   142 Biggest:   7878438
+Host2-Host1                                                            0               0                  0
+
+Host1 folder    9/45 [INBOX.Cozy]                        Size:    587364 Messages:    16 Biggest:     40823
+Host2 folder    9/45 [Cozy]                              Size:    587364 Messages:    16 Biggest:     40823
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   10/45 [INBOX.Drafts]                      Size:     28207 Messages:     1 Biggest:     28207
+Host2 folder   10/45 [Drafts]                            Size:     28207 Messages:     1 Biggest:     28207
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   11/45 [INBOX.Hawk]                        Size:         0 Messages:     0 Biggest:         0
+Host2 folder   11/45 [Hawk]                              Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   12/45 [INBOX.Housefolios]                 Size:   2129882 Messages:    30 Biggest:    131602
+Host2 folder   12/45 [Housefolios]                       Size:   1981479 Messages:    28 Biggest:    131602
+Host2-Host1                                                      -148403              -2                  0
+
+Host1 folder   13/45 [INBOX.Investing]                   Size: 147417604 Messages:   358 Biggest:  17252863
+Host2 folder   13/45 [Investing]                         Size: 147417604 Messages:   358 Biggest:  17252863
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   14/45 [INBOX.Investors Choice - Cahokia]  Size:    426548 Messages:    12 Biggest:    122225
+Host2 folder   14/45 [Investors Choice - Cahokia]        Size:    426548 Messages:    12 Biggest:    122225
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   15/45 [INBOX.Junk]                        Size:         0 Messages:     0 Biggest:         0
+Host2 folder   15/45 [Junk]                              Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   16/45 [INBOX.Martello_Mariconi - Cahokia] Size: 109036521 Messages:   281 Biggest:  21515769
+Host2 folder   16/45 [Martello_Mariconi - Cahokia]       Size: 107221439 Messages:   272 Biggest:  21515769
+Host2-Host1                                                     -1815082              -9                  0
+
+Host1 folder   17/45 [INBOX.Olmstead]                    Size:   7482311 Messages:    28 Biggest:   1485452
+Host2 folder   17/45 [Olmstead]                          Size:   7482311 Messages:    28 Biggest:   1485452
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   18/45 [INBOX.PMI]                         Size:  29487595 Messages:   257 Biggest:   7675140
+Host2 folder   18/45 [PMI]                               Size:  29452018 Messages:   255 Biggest:   7675140
+Host2-Host1                                                       -35577              -2                  0
+
+Host1 folder   19/45 [INBOX.Properties - Arizona]        Size:    270520 Messages:    14 Biggest:     41425
+Host2 folder   19/45 [Properties - Arizona]              Size:    270520 Messages:    14 Biggest:     41425
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   20/45 [INBOX.Properties - Florida]        Size:  18323133 Messages:   131 Biggest:   1900289
+Host2 folder   20/45 [Properties - Florida]              Size:  18323133 Messages:   131 Biggest:   1900289
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   21/45 [INBOX.Properties - Florida.Ocala]  Size:  14337520 Messages:    65 Biggest:   2208138
+Host2 folder   21/45 [Properties - Florida.Ocala]        Size:  14337520 Messages:    65 Biggest:   2208138
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   22/45 [INBOX.Properties - Indiana]        Size:  12034666 Messages:    21 Biggest:   5495521
+Host2 folder   22/45 [Properties - Indiana]              Size:  12034666 Messages:    21 Biggest:   5495521
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   23/45 [INBOX.Properties - Indiana.554 Kentucky] Size:   5525606 Messages:     7 Biggest:   5492083
+Host2 folder   23/45 [Properties - Indiana.554 Kentucky] Size:   5525606 Messages:     7 Biggest:   5492083
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   24/45 [INBOX.Property Boss]               Size:  14968592 Messages:    20 Biggest:   8653099
+Host2 folder   24/45 [Property Boss]                     Size:  14968592 Messages:    20 Biggest:   8653099
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   25/45 [INBOX.ROI Turnkey]                 Size:     75411 Messages:     1 Biggest:     75411
+Host2 folder   25/45 [ROI Turnkey]                       Size:     75411 Messages:     1 Biggest:     75411
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   26/45 [INBOX.RREI]                        Size:    992117 Messages:     3 Biggest:    927117
+Host2 folder   26/45 [RREI]                              Size:    992117 Messages:     3 Biggest:    927117
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   27/45 [INBOX.Real Wealth Network]         Size:   9491628 Messages:   187 Biggest:    126984
+Host2 folder   27/45 [Real Wealth Network]               Size:   9491628 Messages:   187 Biggest:    126984
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   28/45 [INBOX.Realty Doctors]              Size:   9844116 Messages:    69 Biggest:   3831712
+Host2 folder   28/45 [Realty Doctors]                    Size:   9844116 Messages:    69 Biggest:   3831712
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   29/45 [INBOX.Realty Medics]               Size:  49614094 Messages:   390 Biggest:  14749970
+Host2 folder   29/45 [Realty Medics]                     Size:  49614094 Messages:   390 Biggest:  14749970
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   30/45 [INBOX.Renshaw]                     Size:  30603433 Messages:   171 Biggest:  16219150
+Host2 folder   30/45 [Renshaw]                           Size:  30603433 Messages:   171 Biggest:  16219150
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   31/45 [INBOX.Roofstock]                   Size:  87913159 Messages:   340 Biggest:  10471236
+Host2 folder   31/45 [Roofstock]                         Size:  39530035 Messages:   162 Biggest:  10471236
+Host2-Host1                                                    -48383124            -178                  0
+
+Host1 folder   32/45 [INBOX.SM - Flamingo]               Size: 117843049 Messages:   145 Biggest:  46448088
+Host2 folder   32/45 [SM - Flamingo]                      does not exist yet
+Host2-Host1                                                    -117843049            -145          -46448088
+
+Host1 folder   33/45 [INBOX.SM - Hawk]                   Size:  25895258 Messages:    89 Biggest:  10708442
+Host2 folder   33/45 [SM - Hawk]                          does not exist yet
+Host2-Host1                                                    -25895258             -89          -10708442
+
+Host1 folder   34/45 [INBOX.Sent]                        Size:  99337841 Messages:   249 Biggest:  45021484
+Host2 folder   34/45 [Sent]                              Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                    -99337841            -249          -45021484
+
+Host1 folder   35/45 [INBOX.Starred]                     Size:     13557 Messages:     2 Biggest:      8730
+Host2 folder   35/45 [Starred]                            does not exist yet
+Host2-Host1                                                       -13557              -2              -8730
+
+Host1 folder   36/45 [INBOX.Stessa]                      Size:   5399898 Messages:    53 Biggest:    143151
+Host2 folder   36/45 [Stessa]                             does not exist yet
+Host2-Host1                                                     -5399898             -53            -143151
+
+Host1 folder   37/45 [INBOX.To Be Filed]                 Size:  35100502 Messages:    40 Biggest:  10377166
+Host2 folder   37/45 [To Be Filed]                        does not exist yet
+Host2-Host1                                                    -35100502             -40          -10377166
+
+Host1 folder   38/45 [INBOX.Trash]                       Size:   3656462 Messages:    50 Biggest:    213143
+Host2 folder   38/45 [Trash]                             Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                     -3656462             -50            -213143
+
+Host1 folder   39/45 [INBOX.[Airmail]]                   Size:         0 Messages:     0 Biggest:         0
+Host2 folder   39/45 [[Airmail]]                          does not exist yet
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   40/45 [INBOX.[Airmail].Done]              Size:         0 Messages:     0 Biggest:         0
+Host2 folder   40/45 [[Airmail].Done]                     does not exist yet
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   41/45 [INBOX.[Airmail].Memo]              Size:         0 Messages:     0 Biggest:         0
+Host2 folder   41/45 [[Airmail].Memo]                     does not exist yet
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   42/45 [INBOX.[Airmail].Send Later]        Size:         0 Messages:     0 Biggest:         0
+Host2 folder   42/45 [[Airmail].Send Later]               does not exist yet
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   43/45 [INBOX.[Airmail].Snooze]            Size:         0 Messages:     0 Biggest:         0
+Host2 folder   43/45 [[Airmail].Snooze]                   does not exist yet
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   44/45 [INBOX.[Airmail].To Do]             Size:         0 Messages:     0 Biggest:         0
+Host2 folder   44/45 [[Airmail].To Do]                    does not exist yet
+Host2-Host1                                                            0               0                  0
+
+Host1 folder   45/45 [INBOX.spam]                        Size:         0 Messages:     0 Biggest:         0
+Host2 folder   45/45 [spam]                               does not exist yet
+Host2-Host1                                                            0               0                  0
+
+Host1 Nb folders:                    45 folders
+Host2 Nb folders:                    45 folders
+
+Host1 Nb messages:                 3615 messages
+Host2 Nb messages:                 2796 messages
+
+Host1 Total size:             952955939 bytes (908.810 MiB)
+Host2 Total size:             615327186 bytes (586.822 MiB)
+
+Host1 Biggest message:         46448088 bytes (44.296 MiB)
+Host2 Biggest message:         21515769 bytes (20.519 MiB)
+
+Time spent on sizing:        19.4 seconds
+++++ Looping on each one of 45 folders to sync
+ETA: Tuesday 31 October 2023-10-31 19:46:10 -0700 MST  0 s  3615/3615 msgs left
+Folder    1/45 [INBOX]                             -> [INBOX]                            
+Host1: folder [INBOX] has 59 messages in total (mentioned by SELECT)
+Host2: folder [INBOX] has 59 messages in total (mentioned by SELECT)
+Host2: folder [INBOX] permanentflags: 
+Host1: Expunging INBOX 
+Host1: folder [INBOX] considering 59 messages
+Host2: folder [INBOX] considering 59 messages
+Host1: folder [INBOX] selected 59 messages, duplicates 0
+Host2: folder [INBOX] selected 59 messages, duplicates 0
+Host1: Expunging folder INBOX 
+ETA: Tuesday 31 October 2023-10-31 20:42:43 -0700 MST  3392 s  3556/3615 msgs left
+Folder    2/45 [INBOX.Action]                      -> [Action]                           
+Host1: folder [INBOX.Action] has 0 messages in total (mentioned by SELECT)
+Host2: folder [Action] has 0 messages in total (mentioned by SELECT)
+Host2: folder [Action] permanentflags: 
+Host1: Expunging INBOX.Action 
+Host1: folder [INBOX.Action] considering 0 messages
+Host2: folder [Action] considering 0 messages
+Host1: folder [INBOX.Action] selected 0 messages, duplicates 0
+Host2: folder [Action] selected 0 messages, duplicates 0
+Host1: Expunging folder INBOX.Action 
+ETA: Tuesday 31 October 2023-10-31 21:10:34 -0700 MST  5063 s  3556/3615 msgs left
+Folder    3/45 [INBOX.Allstar]                     -> [Allstar]                          
+Host1: folder [INBOX.Allstar] has 332 messages in total (mentioned by SELECT)
+Host2: folder [Allstar] has 332 messages in total (mentioned by SELECT)
+Host2: folder [Allstar] permanentflags: 
+Host1: Expunging INBOX.Allstar 
+Host1: folder [INBOX.Allstar] considering 332 messages
+Host2: folder [Allstar] considering 332 messages
+Host1: folder [INBOX.Allstar] selected 332 messages, duplicates 0
+Host2: folder [Allstar] selected 332 messages, duplicates 0
+Host1: Expunging folder INBOX.Allstar 
+ETA: Tuesday 31 October 2023-10-31 22:05:49 -0700 MST  8377 s  3224/3615 msgs left
+Folder    4/45 [INBOX.Anderson]                    -> [Anderson]                         
+Host1: folder [INBOX.Anderson] has 3 messages in total (mentioned by SELECT)
+Host2: folder [Anderson] has 3 messages in total (mentioned by SELECT)
+Host2: folder [Anderson] permanentflags: 
+Host1: Expunging INBOX.Anderson 
+Host1: folder [INBOX.Anderson] considering 3 messages
+Host2: folder [Anderson] considering 3 messages
+Host1: folder [INBOX.Anderson] selected 3 messages, duplicates 0
+Host2: folder [Anderson] selected 3 messages, duplicates 0
+Host1: Expunging folder INBOX.Anderson 
+ETA: Tuesday 31 October 2023-10-31 22:43:47 -0700 MST  10654 s  3221/3615 msgs left
+Folder    5/45 [INBOX.Apartments (Generic)]        -> [Apartments (Generic)]             
+Host1: folder [INBOX.Apartments (Generic)] has 46 messages in total (mentioned by SELECT)
+Host2: folder [Apartments (Generic)] has 46 messages in total (mentioned by SELECT)
+Host2: folder [Apartments (Generic)] permanentflags: 
+Host1: Expunging INBOX.Apartments (Generic) 
+Host1: folder [INBOX.Apartments (Generic)] considering 46 messages
+Host2: folder [Apartments (Generic)] considering 46 messages
+Host1: folder [INBOX.Apartments (Generic)] selected 46 messages, duplicates 0
+Host2: folder [Apartments (Generic)] selected 46 messages, duplicates 0
+Host1: Expunging folder INBOX.Apartments (Generic) 
+ETA: Tuesday 31 October 2023-10-31 23:21:21 -0700 MST  12907 s  3175/3615 msgs left
+Folder    6/45 [INBOX.Archive]                     -> [Archive]                          
+Host1: folder [INBOX.Archive] has 1 messages in total (mentioned by SELECT)
+Host2: folder [Archive] has 1 messages in total (mentioned by SELECT)
+Host2: folder [Archive] permanentflags: 
+Host1: Expunging INBOX.Archive 
+Host1: folder [INBOX.Archive] considering 1 messages
+Host2: folder [Archive] considering 1 messages
+Host1: folder [INBOX.Archive] selected 1 messages, duplicates 0
+Host2: folder [Archive] selected 1 messages, duplicates 0
+Host1: Expunging folder INBOX.Archive 
+ETA: Tuesday 31 October 2023-10-31 23:58:58 -0700 MST  15164 s  3174/3615 msgs left
+Folder    7/45 [INBOX.BiggerPockets]               -> [BiggerPockets]                    
+Host1: folder [INBOX.BiggerPockets] has 2 messages in total (mentioned by SELECT)
+Host2: folder [BiggerPockets] has 2 messages in total (mentioned by SELECT)
+Host2: folder [BiggerPockets] permanentflags: 
+Host1: Expunging INBOX.BiggerPockets 
+Host1: folder [INBOX.BiggerPockets] considering 2 messages
+Host2: folder [BiggerPockets] considering 2 messages
+Host1: folder [INBOX.BiggerPockets] selected 2 messages, duplicates 0
+Host2: folder [BiggerPockets] selected 2 messages, duplicates 0
+Host1: Expunging folder INBOX.BiggerPockets 
+ETA: Wednesday 01 November 2023-11-01 00:37:29 -0700 MST  17474 s  3172/3615 msgs left
+Folder    8/45 [INBOX.Chuck Baer]                  -> [Chuck Baer]                       
+Host1: folder [INBOX.Chuck Baer] has 142 messages in total (mentioned by SELECT)
+Host2: folder [Chuck Baer] has 142 messages in total (mentioned by SELECT)
+Host2: folder [Chuck Baer] permanentflags: 
+Host1: Expunging INBOX.Chuck Baer 
+Host1: folder [INBOX.Chuck Baer] considering 142 messages
+Host2: folder [Chuck Baer] considering 142 messages
+Host1: folder [INBOX.Chuck Baer] selected 142 messages, duplicates 0
+Host2: folder [Chuck Baer] selected 142 messages, duplicates 0
+Host1: Expunging folder INBOX.Chuck Baer 
+ETA: Wednesday 01 November 2023-11-01 01:04:23 -0700 MST  19087 s  3030/3615 msgs left
+Folder    9/45 [INBOX.Cozy]                        -> [Cozy]                             
+Host1: folder [INBOX.Cozy] has 16 messages in total (mentioned by SELECT)
+Host2: folder [Cozy] has 16 messages in total (mentioned by SELECT)
+Host2: folder [Cozy] permanentflags: 
+Host1: Expunging INBOX.Cozy 
+Host1: folder [INBOX.Cozy] considering 16 messages
+Host2: folder [Cozy] considering 16 messages
+Host1: folder [INBOX.Cozy] selected 16 messages, duplicates 0
+Host2: folder [Cozy] selected 16 messages, duplicates 0
+Host1: Expunging folder INBOX.Cozy 
+ETA: Wednesday 01 November 2023-11-01 01:39:59 -0700 MST  21222 s  3014/3615 msgs left
+Folder   10/45 [INBOX.Drafts]                      -> [Drafts]                           
+Host1: folder [INBOX.Drafts] has 1 messages in total (mentioned by SELECT)
+Host2: folder [Drafts] has 1 messages in total (mentioned by SELECT)
+Host2: folder [Drafts] permanentflags: 
+Host1: Expunging INBOX.Drafts 
+Host1: folder [INBOX.Drafts] considering 1 messages
+Host2: folder [Drafts] considering 1 messages
+Host1: folder [INBOX.Drafts] selected 1 messages, duplicates 0
+Host2: folder [Drafts] selected 1 messages, duplicates 0
+Host1: Expunging folder INBOX.Drafts 
+ETA: Wednesday 01 November 2023-11-01 02:15:35 -0700 MST  23357 s  3013/3615 msgs left
+Folder   11/45 [INBOX.Hawk]                        -> [Hawk]                             
+Host1: folder [INBOX.Hawk] has 0 messages in total (mentioned by SELECT)
+Host2: folder [Hawk] has 0 messages in total (mentioned by SELECT)
+Host2: folder [Hawk] permanentflags: 
+Host1: Expunging INBOX.Hawk 
+Host1: folder [INBOX.Hawk] considering 0 messages
+Host2: folder [Hawk] considering 0 messages
+Host1: folder [INBOX.Hawk] selected 0 messages, duplicates 0
+Host2: folder [Hawk] selected 0 messages, duplicates 0
+Host1: Expunging folder INBOX.Hawk 
+ETA: Wednesday 01 November 2023-11-01 02:37:43 -0700 MST  24685 s  3013/3615 msgs left
+Folder   12/45 [INBOX.Housefolios]                 -> [Housefolios]                      
+Host1: folder [INBOX.Housefolios] has 30 messages in total (mentioned by SELECT)
+Host2: folder [Housefolios] has 28 messages in total (mentioned by SELECT)
+Host2: folder [Housefolios] permanentflags: 
+Host1: Expunging INBOX.Housefolios 
+Host1: folder [INBOX.Housefolios] considering 30 messages
+Host2: folder [Housefolios] considering 28 messages
+Host1: folder [INBOX.Housefolios] selected 30 messages, duplicates 2
+Host2: folder [Housefolios] selected 28 messages, duplicates 0
+Host1: Expunging folder INBOX.Housefolios 
+ETA: Wednesday 01 November 2023-11-01 03:09:56 -0700 MST  26617 s  2983/3615 msgs left
+Folder   13/45 [INBOX.Investing]                   -> [Investing]                        
+Host1: folder [INBOX.Investing] has 358 messages in total (mentioned by SELECT)
+Host2: folder [Investing] has 358 messages in total (mentioned by SELECT)
+Host2: folder [Investing] permanentflags: 
+Host1: Expunging INBOX.Investing 
+Host1: folder [INBOX.Investing] considering 358 messages
+Host2: folder [Investing] considering 358 messages
+Host1: folder [INBOX.Investing] selected 358 messages, duplicates 0
+Host2: folder [Investing] selected 358 messages, duplicates 0
+Host1: Expunging folder INBOX.Investing 
+ETA: Wednesday 01 November 2023-11-01 02:56:33 -0700 MST  25814 s  2625/3615 msgs left
+Folder   14/45 [INBOX.Investors Choice - Cahokia]  -> [Investors Choice - Cahokia]       
+Host1: folder [INBOX.Investors Choice - Cahokia] has 12 messages in total (mentioned by SELECT)
+Host2: folder [Investors Choice - Cahokia] has 12 messages in total (mentioned by SELECT)
+Host2: folder [Investors Choice - Cahokia] permanentflags: 
+Host1: Expunging INBOX.Investors Choice - Cahokia 
+Host1: folder [INBOX.Investors Choice - Cahokia] considering 12 messages
+Host2: folder [Investors Choice - Cahokia] considering 12 messages
+Host1: folder [INBOX.Investors Choice - Cahokia] selected 12 messages, duplicates 0
+Host2: folder [Investors Choice - Cahokia] selected 12 messages, duplicates 0
+Host1: Expunging folder INBOX.Investors Choice - Cahokia 
+ETA: Wednesday 01 November 2023-11-01 03:25:49 -0700 MST  27569 s  2613/3615 msgs left
+Folder   15/45 [INBOX.Junk]                        -> [Junk]                             
+Host1: folder [INBOX.Junk] has 0 messages in total (mentioned by SELECT)
+Host2: folder [Junk] has 0 messages in total (mentioned by SELECT)
+Host2: folder [Junk] permanentflags: 
+Host1: Expunging INBOX.Junk 
+Host1: folder [INBOX.Junk] considering 0 messages
+Host2: folder [Junk] considering 0 messages
+Host1: folder [INBOX.Junk] selected 0 messages, duplicates 0
+Host2: folder [Junk] selected 0 messages, duplicates 0
+Host1: Expunging folder INBOX.Junk 
+ETA: Wednesday 01 November 2023-11-01 03:45:05 -0700 MST  28724 s  2613/3615 msgs left
+Folder   16/45 [INBOX.Martello_Mariconi - Cahokia] -> [Martello_Mariconi - Cahokia]      
+Host1: folder [INBOX.Martello_Mariconi - Cahokia] has 281 messages in total (mentioned by SELECT)
+Host2: folder [Martello_Mariconi - Cahokia] has 272 messages in total (mentioned by SELECT)
+Host2: folder [Martello_Mariconi - Cahokia] permanentflags: 
+Host1: Expunging INBOX.Martello_Mariconi - Cahokia 
+Host1: folder [INBOX.Martello_Mariconi - Cahokia] considering 281 messages
+Host2: folder [Martello_Mariconi - Cahokia] considering 272 messages
+Host1: folder [INBOX.Martello_Mariconi - Cahokia] selected 281 messages, duplicates 9
+Host2: folder [Martello_Mariconi - Cahokia] selected 272 messages, duplicates 0
+Host1: Expunging folder INBOX.Martello_Mariconi - Cahokia 
+ETA: Wednesday 01 November 2023-11-01 03:27:10 -0700 MST  27648 s  2332/3615 msgs left
+Folder   17/45 [INBOX.Olmstead]                    -> [Olmstead]                         
+Host1: folder [INBOX.Olmstead] has 28 messages in total (mentioned by SELECT)
+Host2: folder [Olmstead] has 28 messages in total (mentioned by SELECT)
+Host2: folder [Olmstead] permanentflags: 
+Host1: Expunging INBOX.Olmstead 
+Host1: folder [INBOX.Olmstead] considering 28 messages
+Host2: folder [Olmstead] considering 28 messages
+Host1: folder [INBOX.Olmstead] selected 28 messages, duplicates 0
+Host2: folder [Olmstead] selected 28 messages, duplicates 0
+Host1: Expunging folder INBOX.Olmstead 
+ETA: Wednesday 01 November 2023-11-01 03:49:20 -0700 MST  28977 s  2304/3615 msgs left
+Folder   18/45 [INBOX.PMI]                         -> [PMI]                              
+Host1: folder [INBOX.PMI] has 257 messages in total (mentioned by SELECT)
+Host2: folder [PMI] has 255 messages in total (mentioned by SELECT)
+Host2: folder [PMI] permanentflags: 
+Host1: Expunging INBOX.PMI 
+Host1: folder [INBOX.PMI] considering 257 messages
+Host2: folder [PMI] considering 255 messages
+Host1: folder [INBOX.PMI] selected 257 messages, duplicates 2
+Host2: folder [PMI] selected 255 messages, duplicates 0
+Host1: Expunging folder INBOX.PMI 
+ETA: Wednesday 01 November 2023-11-01 03:22:24 -0700 MST  27361 s  2047/3615 msgs left
+Folder   19/45 [INBOX.Properties - Arizona]        -> [Properties - Arizona]             
+Host1: folder [INBOX.Properties - Arizona] has 14 messages in total (mentioned by SELECT)
+Host2: folder [Properties - Arizona] has 14 messages in total (mentioned by SELECT)
+Host2: folder [Properties - Arizona] permanentflags: 
+Host1: Expunging INBOX.Properties - Arizona 
+Host1: folder [INBOX.Properties - Arizona] considering 14 messages
+Host2: folder [Properties - Arizona] considering 14 messages
+Host1: folder [INBOX.Properties - Arizona] selected 14 messages, duplicates 0
+Host2: folder [Properties - Arizona] selected 14 messages, duplicates 0
+Host1: Expunging folder INBOX.Properties - Arizona 
+ETA: Wednesday 01 November 2023-11-01 03:43:28 -0700 MST  28624 s  2033/3615 msgs left
+Folder   20/45 [INBOX.Properties - Florida]        -> [Properties - Florida]             
+Host1: folder [INBOX.Properties - Florida] has 131 messages in total (mentioned by SELECT)
+Host2: folder [Properties - Florida] has 131 messages in total (mentioned by SELECT)
+Host2: folder [Properties - Florida] permanentflags: 
+Host1: Expunging INBOX.Properties - Florida 
+Host1: folder [INBOX.Properties - Florida] considering 131 messages
+Host2: folder [Properties - Florida] considering 131 messages
+Host1: folder [INBOX.Properties - Florida] selected 131 messages, duplicates 0
+Host2: folder [Properties - Florida] selected 131 messages, duplicates 0
+Host1: Expunging folder INBOX.Properties - Florida 
+ETA: Wednesday 01 November 2023-11-01 03:36:45 -0700 MST  28220 s  1902/3615 msgs left
+Folder   21/45 [INBOX.Properties - Florida.Ocala]  -> [Properties - Florida.Ocala]       
+Host1: folder [INBOX.Properties - Florida.Ocala] has 65 messages in total (mentioned by SELECT)
+Host2: folder [Properties - Florida.Ocala] has 65 messages in total (mentioned by SELECT)
+Host2: folder [Properties - Florida.Ocala] permanentflags: 
+Host1: Expunging INBOX.Properties - Florida.Ocala 
+Host1: folder [INBOX.Properties - Florida.Ocala] considering 65 messages
+Host2: folder [Properties - Florida.Ocala] considering 65 messages
+Host1: folder [INBOX.Properties - Florida.Ocala] selected 65 messages, duplicates 0
+Host2: folder [Properties - Florida.Ocala] selected 65 messages, duplicates 0
+Host1: Expunging folder INBOX.Properties - Florida.Ocala 
+ETA: Wednesday 01 November 2023-11-01 03:43:23 -0700 MST  28618 s  1837/3615 msgs left
+Folder   22/45 [INBOX.Properties - Indiana]        -> [Properties - Indiana]             
+Host1: folder [INBOX.Properties - Indiana] has 21 messages in total (mentioned by SELECT)
+Host2: folder [Properties - Indiana] has 21 messages in total (mentioned by SELECT)
+Host2: folder [Properties - Indiana] permanentflags: 
+Host1: Expunging INBOX.Properties - Indiana 
+Host1: folder [INBOX.Properties - Indiana] considering 21 messages
+Host2: folder [Properties - Indiana] considering 21 messages
+Host1: folder [INBOX.Properties - Indiana] selected 21 messages, duplicates 0
+Host2: folder [Properties - Indiana] selected 21 messages, duplicates 0
+Host1: Expunging folder INBOX.Properties - Indiana 
+ETA: Wednesday 01 November 2023-11-01 04:00:56 -0700 MST  29670 s  1816/3615 msgs left
+Folder   23/45 [INBOX.Properties - Indiana.554 Kentucky] -> [Properties - Indiana.554 Kentucky]
+Host1: folder [INBOX.Properties - Indiana.554 Kentucky] has 7 messages in total (mentioned by SELECT)
+Host2: folder [Properties - Indiana.554 Kentucky] has 7 messages in total (mentioned by SELECT)
+Host2: folder [Properties - Indiana.554 Kentucky] permanentflags: 
+Host1: Expunging INBOX.Properties - Indiana.554 Kentucky 
+Host1: folder [INBOX.Properties - Indiana.554 Kentucky] considering 7 messages
+Host2: folder [Properties - Indiana.554 Kentucky] considering 7 messages
+Host1: folder [INBOX.Properties - Indiana.554 Kentucky] selected 7 messages, duplicates 0
+Host2: folder [Properties - Indiana.554 Kentucky] selected 7 messages, duplicates 0
+Host1: Expunging folder INBOX.Properties - Indiana.554 Kentucky 
+ETA: Wednesday 01 November 2023-11-01 04:20:46 -0700 MST  30859 s  1809/3615 msgs left
+Folder   24/45 [INBOX.Property Boss]               -> [Property Boss]                    
+Host1: folder [INBOX.Property Boss] has 20 messages in total (mentioned by SELECT)
+Host2: folder [Property Boss] has 20 messages in total (mentioned by SELECT)
+Host2: folder [Property Boss] permanentflags: 
+Host1: Expunging INBOX.Property Boss 
+Host1: folder [INBOX.Property Boss] considering 20 messages
+Host2: folder [Property Boss] considering 20 messages
+Host1: folder [INBOX.Property Boss] selected 20 messages, duplicates 0
+Host2: folder [Property Boss] selected 20 messages, duplicates 0
+Host1: Expunging folder INBOX.Property Boss 
+ETA: Wednesday 01 November 2023-11-01 04:36:56 -0700 MST  31828 s  1789/3615 msgs left
+Folder   25/45 [INBOX.ROI Turnkey]                 -> [ROI Turnkey]                      
+Host1: folder [INBOX.ROI Turnkey] has 1 messages in total (mentioned by SELECT)
+Host2: folder [ROI Turnkey] has 1 messages in total (mentioned by SELECT)
+Host2: folder [ROI Turnkey] permanentflags: 
+Host1: Expunging INBOX.ROI Turnkey 
+Host1: folder [INBOX.ROI Turnkey] considering 1 messages
+Host2: folder [ROI Turnkey] considering 1 messages
+Host1: folder [INBOX.ROI Turnkey] selected 1 messages, duplicates 0
+Host2: folder [ROI Turnkey] selected 1 messages, duplicates 0
+Host1: Expunging folder INBOX.ROI Turnkey 
+ETA: Wednesday 01 November 2023-11-01 04:57:21 -0700 MST  33053 s  1788/3615 msgs left
+Folder   26/45 [INBOX.RREI]                        -> [RREI]                             
+Host1: folder [INBOX.RREI] has 3 messages in total (mentioned by SELECT)
+Host2: folder [RREI] has 3 messages in total (mentioned by SELECT)
+Host2: folder [RREI] permanentflags: 
+Host1: Expunging INBOX.RREI 
+Host1: folder [INBOX.RREI] considering 3 messages
+Host2: folder [RREI] considering 3 messages
+Host1: folder [INBOX.RREI] selected 3 messages, duplicates 0
+Host2: folder [RREI] selected 3 messages, duplicates 0
+Host1: Expunging folder INBOX.RREI 
+ETA: Wednesday 01 November 2023-11-01 05:17:24 -0700 MST  34255 s  1785/3615 msgs left
+Folder   27/45 [INBOX.Real Wealth Network]         -> [Real Wealth Network]              
+Host1: folder [INBOX.Real Wealth Network] has 187 messages in total (mentioned by SELECT)
+Host2: folder [Real Wealth Network] has 187 messages in total (mentioned by SELECT)
+Host2: folder [Real Wealth Network] permanentflags: 
+Host1: Expunging INBOX.Real Wealth Network 
+Host1: folder [INBOX.Real Wealth Network] considering 187 messages
+Host2: folder [Real Wealth Network] considering 187 messages
+Host1: folder [INBOX.Real Wealth Network] selected 187 messages, duplicates 0
+Host2: folder [Real Wealth Network] selected 187 messages, duplicates 0
+Host1: Expunging folder INBOX.Real Wealth Network 
+ETA: Wednesday 01 November 2023-11-01 04:38:58 -0700 MST  31948 s  1598/3615 msgs left
+Folder   28/45 [INBOX.Realty Doctors]              -> [Realty Doctors]                   
+Host1: folder [INBOX.Realty Doctors] has 69 messages in total (mentioned by SELECT)
+Host2: folder [Realty Doctors] has 69 messages in total (mentioned by SELECT)
+Host2: folder [Realty Doctors] permanentflags: 
+Host1: Expunging INBOX.Realty Doctors 
+Host1: folder [INBOX.Realty Doctors] considering 69 messages
+Host2: folder [Realty Doctors] considering 69 messages
+Host1: folder [INBOX.Realty Doctors] selected 69 messages, duplicates 0
+Host2: folder [Realty Doctors] selected 69 messages, duplicates 0
+Host1: Expunging folder INBOX.Realty Doctors 
+ETA: Wednesday 01 November 2023-11-01 04:34:40 -0700 MST  31690 s  1529/3615 msgs left
+Folder   29/45 [INBOX.Realty Medics]               -> [Realty Medics]                    
+Host1: folder [INBOX.Realty Medics] has 390 messages in total (mentioned by SELECT)
+Host2: folder [Realty Medics] has 390 messages in total (mentioned by SELECT)
+Host2: folder [Realty Medics] permanentflags: 
+Host1: Expunging INBOX.Realty Medics 
+Host1: folder [INBOX.Realty Medics] considering 390 messages
+Host2: folder [Realty Medics] considering 390 messages
+Host1: folder [INBOX.Realty Medics] selected 390 messages, duplicates 0
+Host2: folder [Realty Medics] selected 390 messages, duplicates 0
+Host1: Expunging folder INBOX.Realty Medics 
+ETA: Wednesday 01 November 2023-11-01 02:36:14 -0700 MST  24583 s  1139/3615 msgs left
+Folder   30/45 [INBOX.Renshaw]                     -> [Renshaw]                          
+Host1: folder [INBOX.Renshaw] has 171 messages in total (mentioned by SELECT)
+Host2: folder [Renshaw] has 171 messages in total (mentioned by SELECT)
+Host2: folder [Renshaw] permanentflags: 
+Host1: Expunging INBOX.Renshaw 
+Host1: folder [INBOX.Renshaw] considering 171 messages
+Host2: folder [Renshaw] considering 171 messages
+Host1: folder [INBOX.Renshaw] selected 171 messages, duplicates 0
+Host2: folder [Renshaw] selected 171 messages, duplicates 0
+Host1: Expunging folder INBOX.Renshaw 
+ETA: Wednesday 01 November 2023-11-01 01:47:19 -0700 MST  21647 s  968/3615 msgs left
+Folder   31/45 [INBOX.Roofstock]                   -> [Roofstock]                        
+Host1: folder [INBOX.Roofstock] has 340 messages in total (mentioned by SELECT)
+Host2: folder [Roofstock] has 162 messages in total (mentioned by SELECT)
+Host2: folder [Roofstock] permanentflags: 
+Host1: Expunging INBOX.Roofstock 
+Host1: folder [INBOX.Roofstock] considering 340 messages
+Host2: folder [Roofstock] considering 162 messages
+Host1: folder [INBOX.Roofstock] selected 340 messages, duplicates 0
+Host2: folder [Roofstock] selected 162 messages, duplicates 0
+msg INBOX.Roofstock/167 {9467477}       copied to Roofstock/163        0.03 msgs/s  319.974 KiB/s 9.029 MiB copied ETA: Wednesday 01 November 2023-11-01 02:14:20 -0700 MST  23261 s  805/3615 msgs left
+msg INBOX.Roofstock/168 {51163}         copied to Roofstock/164        0.07 msgs/s  319.223 KiB/s 9.078 MiB copied ETA: Tuesday 31 October 2023-10-31 23:01:45 -0700 MST  11706 s  804/3615 msgs left
+msg INBOX.Roofstock/169 {65754}         copied to Roofstock/165        0.10 msgs/s  318.078 KiB/s 9.140 MiB copied ETA: Tuesday 31 October 2023-10-31 21:57:56 -0700 MST  7876 s  803/3615 msgs left
+msg INBOX.Roofstock/170 {1160314}       copied to Roofstock/166        0.13 msgs/s  346.009 KiB/s 10.247 MiB copied ETA: Tuesday 31 October 2023-10-31 21:28:00 -0700 MST  6080 s  802/3615 msgs left
+msg INBOX.Roofstock/171 {122469}        copied to Roofstock/167        0.16 msgs/s  347.250 KiB/s 10.364 MiB copied ETA: Tuesday 31 October 2023-10-31 21:08:16 -0700 MST  4896 s  801/3615 msgs left
+msg INBOX.Roofstock/172 {8034}          copied to Roofstock/168        0.19 msgs/s  345.038 KiB/s 10.371 MiB copied ETA: Tuesday 31 October 2023-10-31 20:55:05 -0700 MST  4104 s  800/3615 msgs left
+msg INBOX.Roofstock/173 {5667721}       copied to Roofstock/169        0.21 msgs/s  477.432 KiB/s 15.777 MiB copied ETA: Tuesday 31 October 2023-10-31 20:51:06 -0700 MST  3862 s  799/3615 msgs left
+msg INBOX.Roofstock/174 {574410}        copied to Roofstock/170        0.23 msgs/s  487.408 KiB/s 16.324 MiB copied ETA: Tuesday 31 October 2023-10-31 20:43:45 -0700 MST  3421 s  798/3615 msgs left
+msg INBOX.Roofstock/175 {14118}         copied to Roofstock/171        0.26 msgs/s  484.715 KiB/s 16.338 MiB copied ETA: Tuesday 31 October 2023-10-31 20:37:41 -0700 MST  3057 s  797/3615 msgs left
+msg INBOX.Roofstock/176 {207358}        copied to Roofstock/172        0.29 msgs/s  486.231 KiB/s 16.536 MiB copied ETA: Tuesday 31 October 2023-10-31 20:32:57 -0700 MST  2772 s  796/3615 msgs left
+msg INBOX.Roofstock/177 {23006}         copied to Roofstock/173        0.31 msgs/s  483.788 KiB/s 16.558 MiB copied ETA: Tuesday 31 October 2023-10-31 20:28:58 -0700 MST  2533 s  795/3615 msgs left
+msg INBOX.Roofstock/178 {94400}         copied to Roofstock/174        0.34 msgs/s  482.735 KiB/s 16.648 MiB copied ETA: Tuesday 31 October 2023-10-31 20:25:42 -0700 MST  2337 s  794/3615 msgs left
+msg INBOX.Roofstock/179 {121848}        copied to Roofstock/175        0.37 msgs/s  482.641 KiB/s 16.764 MiB copied ETA: Tuesday 31 October 2023-10-31 20:22:55 -0700 MST  2170 s  793/3615 msgs left
+msg INBOX.Roofstock/180 {59724}         copied to Roofstock/176        0.39 msgs/s  481.209 KiB/s 16.821 MiB copied ETA: Tuesday 31 October 2023-10-31 20:20:31 -0700 MST  2025 s  792/3615 msgs left
+msg INBOX.Roofstock/181 {71402}         copied to Roofstock/177        0.42 msgs/s  480.174 KiB/s 16.889 MiB copied ETA: Tuesday 31 October 2023-10-31 20:18:25 -0700 MST  1899 s  791/3615 msgs left
+msg INBOX.Roofstock/182 {1811778}       copied to Roofstock/178        0.43 msgs/s  517.359 KiB/s 18.617 MiB copied ETA: Tuesday 31 October 2023-10-31 20:17:06 -0700 MST  1819 s  790/3615 msgs left
+msg INBOX.Roofstock/183 {63103}         copied to Roofstock/179        0.46 msgs/s  515.839 KiB/s 18.677 MiB copied ETA: Tuesday 31 October 2023-10-31 20:15:28 -0700 MST  1721 s  789/3615 msgs left
+msg INBOX.Roofstock/184 {17384}         copied to Roofstock/180        0.48 msgs/s  512.108 KiB/s 18.693 MiB copied ETA: Tuesday 31 October 2023-10-31 20:14:04 -0700 MST  1636 s  788/3615 msgs left
+msg INBOX.Roofstock/185 {32173}         copied to Roofstock/181        0.51 msgs/s  509.918 KiB/s 18.724 MiB copied ETA: Tuesday 31 October 2023-10-31 20:12:45 -0700 MST  1557 s  787/3615 msgs left
+msg INBOX.Roofstock/186 {168016}        copied to Roofstock/182        0.53 msgs/s  510.887 KiB/s 18.884 MiB copied ETA: Tuesday 31 October 2023-10-31 20:11:35 -0700 MST  1488 s  786/3615 msgs left
+msg INBOX.Roofstock/187 {103586}        copied to Roofstock/183        0.55 msgs/s  510.344 KiB/s 18.983 MiB copied ETA: Tuesday 31 October 2023-10-31 20:10:32 -0700 MST  1424 s  785/3615 msgs left
+msg INBOX.Roofstock/188 {63606}         copied to Roofstock/184        0.57 msgs/s  508.797 KiB/s 19.044 MiB copied ETA: Tuesday 31 October 2023-10-31 20:09:34 -0700 MST  1366 s  784/3615 msgs left
+msg INBOX.Roofstock/189 {121899}        copied to Roofstock/185        0.60 msgs/s  508.576 KiB/s 19.160 MiB copied ETA: Tuesday 31 October 2023-10-31 20:08:42 -0700 MST  1313 s  783/3615 msgs left
+msg INBOX.Roofstock/190 {11669}         copied to Roofstock/186        0.62 msgs/s  505.961 KiB/s 19.171 MiB copied ETA: Tuesday 31 October 2023-10-31 20:07:53 -0700 MST  1264 s  782/3615 msgs left
+msg INBOX.Roofstock/191 {18311}         copied to Roofstock/187        0.64 msgs/s  503.502 KiB/s 19.189 MiB copied ETA: Tuesday 31 October 2023-10-31 20:07:08 -0700 MST  1219 s  781/3615 msgs left
+msg INBOX.Roofstock/192 {90968}         copied to Roofstock/188        0.66 msgs/s  502.745 KiB/s 19.275 MiB copied ETA: Tuesday 31 October 2023-10-31 20:06:27 -0700 MST  1178 s  780/3615 msgs left
+msg INBOX.Roofstock/193 {10549}         copied to Roofstock/189        0.68 msgs/s  500.143 KiB/s 19.285 MiB copied ETA: Tuesday 31 October 2023-10-31 20:05:49 -0700 MST  1139 s  779/3615 msgs left
+msg INBOX.Roofstock/194 {200504}        copied to Roofstock/190        0.70 msgs/s  501.856 KiB/s 19.477 MiB copied ETA: Tuesday 31 October 2023-10-31 20:05:14 -0700 MST  1104 s  778/3615 msgs left
+msg INBOX.Roofstock/195 {33126}         copied to Roofstock/191        0.72 msgs/s  498.875 KiB/s 19.508 MiB copied ETA: Tuesday 31 October 2023-10-31 20:04:43 -0700 MST  1073 s  777/3615 msgs left
+msg INBOX.Roofstock/196 {94003}         copied to Roofstock/192        0.74 msgs/s  498.326 KiB/s 19.598 MiB copied ETA: Tuesday 31 October 2023-10-31 20:04:12 -0700 MST  1042 s  776/3615 msgs left
+msg INBOX.Roofstock/197 {49461}         copied to Roofstock/193        0.76 msgs/s  495.779 KiB/s 19.645 MiB copied ETA: Tuesday 31 October 2023-10-31 20:03:45 -0700 MST  1014 s  775/3615 msgs left
+msg INBOX.Roofstock/198 {22443}         copied to Roofstock/194        0.78 msgs/s  493.406 KiB/s 19.666 MiB copied ETA: Tuesday 31 October 2023-10-31 20:03:18 -0700 MST  987 s  774/3615 msgs left
+msg INBOX.Roofstock/199 {4049}          copied to Roofstock/195        0.80 msgs/s  490.847 KiB/s 19.670 MiB copied ETA: Tuesday 31 October 2023-10-31 20:02:52 -0700 MST  961 s  773/3615 msgs left
+msg INBOX.Roofstock/200 {2235079}       copied to Roofstock/196        0.81 msgs/s  530.877 KiB/s 21.802 MiB copied ETA: Tuesday 31 October 2023-10-31 20:02:47 -0700 MST  955 s  772/3615 msgs left
+msg INBOX.Roofstock/201 {92749}         copied to Roofstock/197        0.82 msgs/s  524.951 KiB/s 21.890 MiB copied ETA: Tuesday 31 October 2023-10-31 20:02:33 -0700 MST  941 s  771/3615 msgs left
+msg INBOX.Roofstock/202 {152588}        copied to Roofstock/198        0.84 msgs/s  524.430 KiB/s 22.036 MiB copied ETA: Tuesday 31 October 2023-10-31 20:02:13 -0700 MST  920 s  770/3615 msgs left
+msg INBOX.Roofstock/203 {15273}         copied to Roofstock/199        0.85 msgs/s  521.723 KiB/s 22.050 MiB copied ETA: Tuesday 31 October 2023-10-31 20:01:53 -0700 MST  900 s  769/3615 msgs left
+msg INBOX.Roofstock/204 {160055}        copied to Roofstock/200        0.87 msgs/s  521.318 KiB/s 22.203 MiB copied ETA: Tuesday 31 October 2023-10-31 20:01:35 -0700 MST  881 s  768/3615 msgs left
+msg INBOX.Roofstock/205 {121094}        copied to Roofstock/201        0.89 msgs/s  521.277 KiB/s 22.319 MiB copied ETA: Tuesday 31 October 2023-10-31 20:01:16 -0700 MST  862 s  767/3615 msgs left
+msg INBOX.Roofstock/206 {12478}         copied to Roofstock/202        0.91 msgs/s  518.909 KiB/s 22.330 MiB copied ETA: Tuesday 31 October 2023-10-31 20:00:58 -0700 MST  844 s  766/3615 msgs left
+msg INBOX.Roofstock/207 {108840}        copied to Roofstock/203        0.93 msgs/s  518.526 KiB/s 22.434 MiB copied ETA: Tuesday 31 October 2023-10-31 20:00:41 -0700 MST  827 s  765/3615 msgs left
+msg INBOX.Roofstock/208 {23995}         copied to Roofstock/204        0.94 msgs/s  516.424 KiB/s 22.457 MiB copied ETA: Tuesday 31 October 2023-10-31 20:00:24 -0700 MST  810 s  764/3615 msgs left
+msg INBOX.Roofstock/209 {201701}        copied to Roofstock/205        0.96 msgs/s  517.798 KiB/s 22.649 MiB copied ETA: Tuesday 31 October 2023-10-31 20:00:09 -0700 MST  795 s  763/3615 msgs left
+msg INBOX.Roofstock/210 {19968}         copied to Roofstock/206        0.98 msgs/s  515.616 KiB/s 22.669 MiB copied ETA: Tuesday 31 October 2023-10-31 19:59:55 -0700 MST  780 s  762/3615 msgs left
+msg INBOX.Roofstock/211 {67366}         copied to Roofstock/207        0.99 msgs/s  514.477 KiB/s 22.733 MiB copied ETA: Tuesday 31 October 2023-10-31 19:59:40 -0700 MST  765 s  761/3615 msgs left
+msg INBOX.Roofstock/212 {99289}         copied to Roofstock/208        1.01 msgs/s  513.167 KiB/s 22.827 MiB copied ETA: Tuesday 31 October 2023-10-31 19:59:28 -0700 MST  753 s  760/3615 msgs left
+msg INBOX.Roofstock/213 {190381}        copied to Roofstock/209        1.03 msgs/s  514.391 KiB/s 23.009 MiB copied ETA: Tuesday 31 October 2023-10-31 19:59:15 -0700 MST  740 s  759/3615 msgs left
+msg INBOX.Roofstock/214 {37048}         copied to Roofstock/210        1.04 msgs/s  512.654 KiB/s 23.044 MiB copied ETA: Tuesday 31 October 2023-10-31 19:59:03 -0700 MST  727 s  758/3615 msgs left
+msg INBOX.Roofstock/215 {7900}          copied to Roofstock/211        1.06 msgs/s  510.393 KiB/s 23.052 MiB copied ETA: Tuesday 31 October 2023-10-31 19:58:51 -0700 MST  715 s  757/3615 msgs left
+msg INBOX.Roofstock/216 {49117}         copied to Roofstock/212        1.08 msgs/s  508.842 KiB/s 23.099 MiB copied ETA: Tuesday 31 October 2023-10-31 19:58:39 -0700 MST  703 s  756/3615 msgs left
+msg INBOX.Roofstock/217 {55471}         copied to Roofstock/213        1.09 msgs/s  507.039 KiB/s 23.152 MiB copied ETA: Tuesday 31 October 2023-10-31 19:58:29 -0700 MST  692 s  755/3615 msgs left
+msg INBOX.Roofstock/218 {13864}         copied to Roofstock/214        1.11 msgs/s  504.962 KiB/s 23.165 MiB copied ETA: Tuesday 31 October 2023-10-31 19:58:18 -0700 MST  681 s  754/3615 msgs left
+msg INBOX.Roofstock/219 {131140}        copied to Roofstock/215        1.12 msgs/s  504.397 KiB/s 23.290 MiB copied ETA: Tuesday 31 October 2023-10-31 19:58:09 -0700 MST  672 s  753/3615 msgs left
+msg INBOX.Roofstock/220 {22082}         copied to Roofstock/216        1.14 msgs/s  502.390 KiB/s 23.311 MiB copied ETA: Tuesday 31 October 2023-10-31 19:57:59 -0700 MST  662 s  752/3615 msgs left
+msg INBOX.Roofstock/221 {117695}        copied to Roofstock/217        1.15 msgs/s  502.113 KiB/s 23.423 MiB copied ETA: Tuesday 31 October 2023-10-31 19:57:50 -0700 MST  652 s  751/3615 msgs left
+msg INBOX.Roofstock/222 {120538}        copied to Roofstock/218        1.17 msgs/s  502.103 KiB/s 23.538 MiB copied ETA: Tuesday 31 October 2023-10-31 19:57:41 -0700 MST  643 s  750/3615 msgs left
+msg INBOX.Roofstock/223 {124060}        copied to Roofstock/219        1.18 msgs/s  501.939 KiB/s 23.656 MiB copied ETA: Tuesday 31 October 2023-10-31 19:57:32 -0700 MST  634 s  749/3615 msgs left
+msg INBOX.Roofstock/224 {17873}         copied to Roofstock/220        1.20 msgs/s  500.000 KiB/s 23.674 MiB copied ETA: Tuesday 31 October 2023-10-31 19:57:24 -0700 MST  625 s  748/3615 msgs left
+msg INBOX.Roofstock/225 {24366}         copied to Roofstock/221        1.21 msgs/s  498.178 KiB/s 23.697 MiB copied ETA: Tuesday 31 October 2023-10-31 19:57:15 -0700 MST  617 s  747/3615 msgs left
+msg INBOX.Roofstock/226 {87391}         copied to Roofstock/222        1.23 msgs/s  497.559 KiB/s 23.780 MiB copied ETA: Tuesday 31 October 2023-10-31 19:57:07 -0700 MST  608 s  746/3615 msgs left
+msg INBOX.Roofstock/227 {10091}         copied to Roofstock/223        1.24 msgs/s  495.290 KiB/s 23.790 MiB copied ETA: Tuesday 31 October 2023-10-31 19:57:00 -0700 MST  601 s  745/3615 msgs left
+msg INBOX.Roofstock/228 {236200}        copied to Roofstock/224        1.25 msgs/s  497.335 KiB/s 24.015 MiB copied ETA: Tuesday 31 October 2023-10-31 19:56:53 -0700 MST  593 s  744/3615 msgs left
+msg INBOX.Roofstock/229 {114970}        copied to Roofstock/225        1.27 msgs/s  496.498 KiB/s 24.125 MiB copied ETA: Tuesday 31 October 2023-10-31 19:56:46 -0700 MST  587 s  743/3615 msgs left
+msg INBOX.Roofstock/230 {93995}         copied to Roofstock/226        1.28 msgs/s  495.795 KiB/s 24.214 MiB copied ETA: Tuesday 31 October 2023-10-31 19:56:40 -0700 MST  580 s  742/3615 msgs left
+msg INBOX.Roofstock/231 {38918}         copied to Roofstock/227        1.29 msgs/s  494.254 KiB/s 24.251 MiB copied ETA: Tuesday 31 October 2023-10-31 19:56:33 -0700 MST  573 s  741/3615 msgs left
+msg INBOX.Roofstock/232 {28614}         copied to Roofstock/228        1.31 msgs/s  492.546 KiB/s 24.279 MiB copied ETA: Tuesday 31 October 2023-10-31 19:56:26 -0700 MST  566 s  740/3615 msgs left
+msg INBOX.Roofstock/233 {23269}         copied to Roofstock/229        1.32 msgs/s  490.817 KiB/s 24.301 MiB copied ETA: Tuesday 31 October 2023-10-31 19:56:20 -0700 MST  559 s  739/3615 msgs left
+msg INBOX.Roofstock/234 {84056}         copied to Roofstock/230        1.34 msgs/s  490.181 KiB/s 24.381 MiB copied ETA: Tuesday 31 October 2023-10-31 19:56:14 -0700 MST  553 s  738/3615 msgs left
+msg INBOX.Roofstock/235 {210509}        copied to Roofstock/231        1.35 msgs/s  491.695 KiB/s 24.582 MiB copied ETA: Tuesday 31 October 2023-10-31 19:56:08 -0700 MST  547 s  737/3615 msgs left
+msg INBOX.Roofstock/236 {227974}        copied to Roofstock/232        1.36 msgs/s  493.552 KiB/s 24.799 MiB copied ETA: Tuesday 31 October 2023-10-31 19:56:02 -0700 MST  541 s  736/3615 msgs left
+msg INBOX.Roofstock/237 {22230}         copied to Roofstock/233        1.37 msgs/s  491.341 KiB/s 24.820 MiB copied ETA: Tuesday 31 October 2023-10-31 19:55:57 -0700 MST  535 s  735/3615 msgs left
+msg INBOX.Roofstock/238 {5496980}       copied to Roofstock/234        1.33 msgs/s  568.221 KiB/s 30.063 MiB copied ETA: Tuesday 31 October 2023-10-31 19:56:16 -0700 MST  552 s  734/3615 msgs left
+msg INBOX.Roofstock/239 {119243}        copied to Roofstock/235        1.33 msgs/s  563.842 KiB/s 30.176 MiB copied ETA: Tuesday 31 October 2023-10-31 19:56:15 -0700 MST  550 s  733/3615 msgs left
+msg INBOX.Roofstock/240 {4429}          copied to Roofstock/236        1.35 msgs/s  561.720 KiB/s 30.181 MiB copied ETA: Tuesday 31 October 2023-10-31 19:56:09 -0700 MST  544 s  732/3615 msgs left
+msg INBOX.Roofstock/241 {18686}         copied to Roofstock/237        1.36 msgs/s  559.801 KiB/s 30.198 MiB copied ETA: Tuesday 31 October 2023-10-31 19:56:04 -0700 MST  538 s  731/3615 msgs left
+msg INBOX.Roofstock/242 {52246}         copied to Roofstock/238        1.37 msgs/s  558.169 KiB/s 30.248 MiB copied ETA: Tuesday 31 October 2023-10-31 19:55:58 -0700 MST  533 s  730/3615 msgs left
+msg INBOX.Roofstock/243 {13910}         copied to Roofstock/239        1.38 msgs/s  556.147 KiB/s 30.262 MiB copied ETA: Tuesday 31 October 2023-10-31 19:55:53 -0700 MST  528 s  729/3615 msgs left
+msg INBOX.Roofstock/244 {56793}         copied to Roofstock/240        1.39 msgs/s  554.863 KiB/s 30.316 MiB copied ETA: Tuesday 31 October 2023-10-31 19:55:48 -0700 MST  522 s  728/3615 msgs left
+msg INBOX.Roofstock/245 {105535}        copied to Roofstock/241        1.41 msgs/s  554.306 KiB/s 30.416 MiB copied ETA: Tuesday 31 October 2023-10-31 19:55:43 -0700 MST  517 s  727/3615 msgs left
+msg INBOX.Roofstock/246 {51684}         copied to Roofstock/242        1.42 msgs/s  552.991 KiB/s 30.466 MiB copied ETA: Tuesday 31 October 2023-10-31 19:55:38 -0700 MST  512 s  726/3615 msgs left
+msg INBOX.Roofstock/247 {104542}        copied to Roofstock/243        1.43 msgs/s  552.285 KiB/s 30.565 MiB copied ETA: Tuesday 31 October 2023-10-31 19:55:34 -0700 MST  507 s  725/3615 msgs left
+msg INBOX.Roofstock/248 {122492}        copied to Roofstock/244        1.44 msgs/s  551.650 KiB/s 30.682 MiB copied ETA: Tuesday 31 October 2023-10-31 19:55:30 -0700 MST  503 s  724/3615 msgs left
+msg INBOX.Roofstock/249 {10408}         copied to Roofstock/245        1.45 msgs/s  549.680 KiB/s 30.692 MiB copied ETA: Tuesday 31 October 2023-10-31 19:55:25 -0700 MST  498 s  723/3615 msgs left
+msg INBOX.Roofstock/250 {7094}          copied to Roofstock/246        1.46 msgs/s  547.610 KiB/s 30.699 MiB copied ETA: Tuesday 31 October 2023-10-31 19:55:21 -0700 MST  493 s  722/3615 msgs left
+msg INBOX.Roofstock/251 {60348}         copied to Roofstock/247        1.47 msgs/s  546.441 KiB/s 30.756 MiB copied ETA: Tuesday 31 October 2023-10-31 19:55:16 -0700 MST  489 s  721/3615 msgs left
+msg INBOX.Roofstock/252 {201702}        copied to Roofstock/248        1.49 msgs/s  547.550 KiB/s 30.949 MiB copied ETA: Tuesday 31 October 2023-10-31 19:55:12 -0700 MST  485 s  720/3615 msgs left
+msg INBOX.Roofstock/253 {250921}        copied to Roofstock/249        1.50 msgs/s  549.055 KiB/s 31.188 MiB copied ETA: Tuesday 31 October 2023-10-31 19:55:09 -0700 MST  481 s  719/3615 msgs left
+msg INBOX.Roofstock/254 {4973}          copied to Roofstock/250        1.51 msgs/s  547.047 KiB/s 31.193 MiB copied ETA: Tuesday 31 October 2023-10-31 19:55:05 -0700 MST  476 s  718/3615 msgs left
+msg INBOX.Roofstock/255 {93990}         copied to Roofstock/251        1.52 msgs/s  546.419 KiB/s 31.282 MiB copied ETA: Tuesday 31 October 2023-10-31 19:55:01 -0700 MST  472 s  717/3615 msgs left
+msg INBOX.Roofstock/256 {122146}        copied to Roofstock/252        1.53 msgs/s  546.237 KiB/s 31.399 MiB copied ETA: Tuesday 31 October 2023-10-31 19:54:57 -0700 MST  468 s  716/3615 msgs left
+msg INBOX.Roofstock/257 {126385}        copied to Roofstock/253        1.54 msgs/s  546.030 KiB/s 31.519 MiB copied ETA: Tuesday 31 October 2023-10-31 19:54:53 -0700 MST  464 s  715/3615 msgs left
+msg INBOX.Roofstock/258 {81092}         copied to Roofstock/254        1.55 msgs/s  545.261 KiB/s 31.597 MiB copied ETA: Tuesday 31 October 2023-10-31 19:54:50 -0700 MST  461 s  714/3615 msgs left
+msg INBOX.Roofstock/259 {123314}        copied to Roofstock/255        1.56 msgs/s  545.049 KiB/s 31.714 MiB copied ETA: Tuesday 31 October 2023-10-31 19:54:46 -0700 MST  457 s  713/3615 msgs left
+msg INBOX.Roofstock/260 {63096}         copied to Roofstock/256        1.57 msgs/s  543.954 KiB/s 31.775 MiB copied ETA: Tuesday 31 October 2023-10-31 19:54:43 -0700 MST  453 s  712/3615 msgs left
+msg INBOX.Roofstock/261 {13974}         copied to Roofstock/257        1.58 msgs/s  542.031 KiB/s 31.788 MiB copied ETA: Tuesday 31 October 2023-10-31 19:54:39 -0700 MST  449 s  711/3615 msgs left
+msg INBOX.Roofstock/262 {30821}         copied to Roofstock/258        1.59 msgs/s  540.498 KiB/s 31.817 MiB copied ETA: Tuesday 31 October 2023-10-31 19:54:36 -0700 MST  446 s  710/3615 msgs left
+msg INBOX.Roofstock/263 {162546}        copied to Roofstock/259        1.60 msgs/s  540.955 KiB/s 31.972 MiB copied ETA: Tuesday 31 October 2023-10-31 19:54:33 -0700 MST  442 s  709/3615 msgs left
+msg INBOX.Roofstock/264 {237956}        copied to Roofstock/260        1.61 msgs/s  542.520 KiB/s 32.199 MiB copied ETA: Tuesday 31 October 2023-10-31 19:54:30 -0700 MST  439 s  708/3615 msgs left
+msg INBOX.Roofstock/265 {67673}         copied to Roofstock/261        1.62 msgs/s  541.494 KiB/s 32.264 MiB copied ETA: Tuesday 31 October 2023-10-31 19:54:27 -0700 MST  436 s  707/3615 msgs left
+msg INBOX.Roofstock/266 {124430}        copied to Roofstock/262        1.63 msgs/s  541.053 KiB/s 32.382 MiB copied ETA: Tuesday 31 October 2023-10-31 19:54:24 -0700 MST  433 s  706/3615 msgs left
+msg INBOX.Roofstock/267 {9123}          copied to Roofstock/263        1.64 msgs/s  539.221 KiB/s 32.391 MiB copied ETA: Tuesday 31 October 2023-10-31 19:54:21 -0700 MST  429 s  705/3615 msgs left
+msg INBOX.Roofstock/268 {161822}        copied to Roofstock/264        1.65 msgs/s  539.520 KiB/s 32.545 MiB copied ETA: Tuesday 31 October 2023-10-31 19:54:18 -0700 MST  426 s  704/3615 msgs left
+msg INBOX.Roofstock/269 {88229}         copied to Roofstock/265        1.66 msgs/s  538.647 KiB/s 32.630 MiB copied ETA: Tuesday 31 October 2023-10-31 19:54:15 -0700 MST  423 s  703/3615 msgs left
+msg INBOX.Roofstock/270 {6002}          copied to Roofstock/266        1.67 msgs/s  536.782 KiB/s 32.635 MiB copied ETA: Tuesday 31 October 2023-10-31 19:54:12 -0700 MST  420 s  702/3615 msgs left
+msg INBOX.Roofstock/271 {261904}        copied to Roofstock/267        1.68 msgs/s  538.513 KiB/s 32.885 MiB copied ETA: Tuesday 31 October 2023-10-31 19:54:10 -0700 MST  417 s  701/3615 msgs left
+msg INBOX.Roofstock/272 {19956}         copied to Roofstock/268        1.69 msgs/s  536.923 KiB/s 32.904 MiB copied ETA: Tuesday 31 October 2023-10-31 19:54:07 -0700 MST  414 s  700/3615 msgs left
+msg INBOX.Roofstock/273 {93987}         copied to Roofstock/269        1.70 msgs/s  536.292 KiB/s 32.994 MiB copied ETA: Tuesday 31 October 2023-10-31 19:54:04 -0700 MST  412 s  699/3615 msgs left
+msg INBOX.Roofstock/274 {58744}         copied to Roofstock/270        1.71 msgs/s  535.057 KiB/s 33.050 MiB copied ETA: Tuesday 31 October 2023-10-31 19:54:02 -0700 MST  409 s  698/3615 msgs left
+msg INBOX.Roofstock/275 {23006}         copied to Roofstock/271        1.72 msgs/s  533.544 KiB/s 33.072 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:59 -0700 MST  406 s  697/3615 msgs left
+msg INBOX.Roofstock/276 {120171}        copied to Roofstock/272        1.73 msgs/s  533.172 KiB/s 33.186 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:57 -0700 MST  403 s  696/3615 msgs left
+msg INBOX.Roofstock/277 {13748}         copied to Roofstock/273        1.74 msgs/s  531.468 KiB/s 33.199 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:54 -0700 MST  401 s  695/3615 msgs left
+msg INBOX.Roofstock/278 {59932}         copied to Roofstock/274        1.74 msgs/s  530.472 KiB/s 33.257 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:52 -0700 MST  398 s  694/3615 msgs left
+msg INBOX.Roofstock/279 {123069}        copied to Roofstock/275        1.75 msgs/s  530.324 KiB/s 33.374 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:50 -0700 MST  395 s  693/3615 msgs left
+msg INBOX.Roofstock/280 {75009}         copied to Roofstock/276        1.76 msgs/s  529.441 KiB/s 33.446 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:47 -0700 MST  393 s  692/3615 msgs left
+msg INBOX.Roofstock/281 {140372}        copied to Roofstock/277        1.77 msgs/s  529.554 KiB/s 33.579 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:45 -0700 MST  390 s  691/3615 msgs left
+msg INBOX.Roofstock/282 {119251}        copied to Roofstock/278        1.78 msgs/s  529.426 KiB/s 33.693 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:43 -0700 MST  388 s  690/3615 msgs left
+msg INBOX.Roofstock/283 {5792}          copied to Roofstock/279        1.79 msgs/s  527.667 KiB/s 33.699 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:40 -0700 MST  385 s  689/3615 msgs left
+msg INBOX.Roofstock/284 {104701}        copied to Roofstock/280        1.80 msgs/s  527.282 KiB/s 33.798 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:38 -0700 MST  383 s  688/3615 msgs left
+msg INBOX.Roofstock/285 {22573}         copied to Roofstock/281        1.81 msgs/s  525.833 KiB/s 33.820 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:36 -0700 MST  380 s  687/3615 msgs left
+msg INBOX.Roofstock/286 {13939}         copied to Roofstock/282        1.81 msgs/s  523.980 KiB/s 33.833 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:34 -0700 MST  378 s  686/3615 msgs left
+msg INBOX.Roofstock/287 {14249}         copied to Roofstock/283        1.82 msgs/s  522.279 KiB/s 33.847 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:32 -0700 MST  376 s  685/3615 msgs left
+msg INBOX.Roofstock/288 {67373}         copied to Roofstock/284        1.83 msgs/s  521.447 KiB/s 33.911 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:30 -0700 MST  373 s  684/3615 msgs left
+msg INBOX.Roofstock/289 {898040}        copied to Roofstock/285        1.83 msgs/s  531.115 KiB/s 34.768 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:29 -0700 MST  372 s  683/3615 msgs left
+msg INBOX.Roofstock/290 {122173}        copied to Roofstock/286        1.84 msgs/s  530.997 KiB/s 34.884 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:27 -0700 MST  370 s  682/3615 msgs left
+msg INBOX.Roofstock/291 {122557}        copied to Roofstock/287        1.85 msgs/s  530.861 KiB/s 35.001 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:25 -0700 MST  368 s  681/3615 msgs left
+msg INBOX.Roofstock/292 {64446}         copied to Roofstock/288        1.86 msgs/s  529.922 KiB/s 35.062 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:23 -0700 MST  366 s  680/3615 msgs left
+msg INBOX.Roofstock/293 {38829}         copied to Roofstock/289        1.87 msgs/s  528.727 KiB/s 35.099 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:21 -0700 MST  363 s  679/3615 msgs left
+msg INBOX.Roofstock/294 {63093}         copied to Roofstock/290        1.88 msgs/s  527.862 KiB/s 35.160 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:19 -0700 MST  361 s  678/3615 msgs left
+msg INBOX.Roofstock/295 {11441}         copied to Roofstock/291        1.89 msgs/s  526.322 KiB/s 35.171 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:17 -0700 MST  359 s  677/3615 msgs left
+msg INBOX.Roofstock/296 {59286}         copied to Roofstock/292        1.89 msgs/s  525.386 KiB/s 35.227 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:16 -0700 MST  357 s  676/3615 msgs left
+msg INBOX.Roofstock/297 {22480}         copied to Roofstock/293        1.90 msgs/s  523.968 KiB/s 35.249 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:14 -0700 MST  355 s  675/3615 msgs left
+msg INBOX.Roofstock/298 {121825}        copied to Roofstock/294        1.91 msgs/s  523.846 KiB/s 35.365 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:12 -0700 MST  353 s  674/3615 msgs left
+msg INBOX.Roofstock/299 {57983}         copied to Roofstock/295        1.92 msgs/s  522.920 KiB/s 35.420 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:10 -0700 MST  351 s  673/3615 msgs left
+msg INBOX.Roofstock/300 {44369}         copied to Roofstock/296        1.93 msgs/s  521.855 KiB/s 35.462 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:08 -0700 MST  349 s  672/3615 msgs left
+msg INBOX.Roofstock/301 {862632}        copied to Roofstock/297        1.93 msgs/s  530.848 KiB/s 36.285 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:08 -0700 MST  348 s  671/3615 msgs left
+msg INBOX.Roofstock/302 {15519}         copied to Roofstock/298        1.94 msgs/s  529.384 KiB/s 36.300 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:06 -0700 MST  346 s  670/3615 msgs left
+msg INBOX.Roofstock/303 {90963}         copied to Roofstock/299        1.94 msgs/s  528.924 KiB/s 36.387 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:04 -0700 MST  344 s  669/3615 msgs left
+msg INBOX.Roofstock/304 {4640}          copied to Roofstock/300        1.95 msgs/s  527.306 KiB/s 36.391 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:03 -0700 MST  342 s  668/3615 msgs left
+msg INBOX.Roofstock/305 {276372}        copied to Roofstock/301        1.96 msgs/s  529.127 KiB/s 36.655 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:01 -0700 MST  340 s  667/3615 msgs left
+msg INBOX.Roofstock/306 {150646}        copied to Roofstock/302        1.97 msgs/s  529.386 KiB/s 36.798 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:00 -0700 MST  339 s  666/3615 msgs left
+msg INBOX.Roofstock/307 {404554}        copied to Roofstock/303        1.97 msgs/s  532.846 KiB/s 37.184 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:58 -0700 MST  337 s  665/3615 msgs left
+msg INBOX.Roofstock/308 {119069}        copied to Roofstock/304        1.98 msgs/s  532.473 KiB/s 37.298 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:57 -0700 MST  335 s  664/3615 msgs left
+msg INBOX.Roofstock/309 {27739}         copied to Roofstock/305        1.99 msgs/s  531.212 KiB/s 37.324 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:55 -0700 MST  334 s  663/3615 msgs left
+msg INBOX.Roofstock/310 {15714}         copied to Roofstock/306        2.00 msgs/s  529.783 KiB/s 37.339 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:54 -0700 MST  332 s  662/3615 msgs left
+msg INBOX.Roofstock/311 {84477}         copied to Roofstock/307        2.00 msgs/s  529.163 KiB/s 37.420 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:52 -0700 MST  330 s  661/3615 msgs left
+msg INBOX.Roofstock/312 {106023}        copied to Roofstock/308        2.01 msgs/s  528.849 KiB/s 37.521 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:51 -0700 MST  328 s  660/3615 msgs left
+msg INBOX.Roofstock/313 {201126}        copied to Roofstock/309        2.02 msgs/s  529.764 KiB/s 37.712 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:50 -0700 MST  327 s  659/3615 msgs left
+msg INBOX.Roofstock/314 {10760}         copied to Roofstock/310        2.02 msgs/s  528.313 KiB/s 37.723 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:48 -0700 MST  325 s  658/3615 msgs left
+msg INBOX.Roofstock/315 {98526}         copied to Roofstock/311        2.03 msgs/s  527.428 KiB/s 37.817 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:47 -0700 MST  324 s  657/3615 msgs left
+msg INBOX.Roofstock/316 {122437}        copied to Roofstock/312        2.04 msgs/s  527.365 KiB/s 37.933 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:46 -0700 MST  322 s  656/3615 msgs left
+msg INBOX.Roofstock/317 {7382}          copied to Roofstock/313        2.04 msgs/s  525.913 KiB/s 37.941 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:44 -0700 MST  320 s  655/3615 msgs left
+msg INBOX.Roofstock/318 {15903}         copied to Roofstock/314        2.05 msgs/s  524.555 KiB/s 37.956 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:43 -0700 MST  319 s  654/3615 msgs left
+msg INBOX.Roofstock/319 {800411}        copied to Roofstock/315        2.05 msgs/s  532.528 KiB/s 38.719 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:42 -0700 MST  318 s  653/3615 msgs left
+msg INBOX.Roofstock/320 {13909}         copied to Roofstock/316        2.06 msgs/s  531.028 KiB/s 38.732 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:41 -0700 MST  316 s  652/3615 msgs left
+msg INBOX.Roofstock/321 {47514}         copied to Roofstock/317        2.07 msgs/s  530.001 KiB/s 38.778 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:39 -0700 MST  315 s  651/3615 msgs left
+msg INBOX.Roofstock/322 {45331}         copied to Roofstock/318        2.08 msgs/s  529.019 KiB/s 38.821 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:38 -0700 MST  313 s  650/3615 msgs left
+msg INBOX.Roofstock/323 {67383}         copied to Roofstock/319        2.08 msgs/s  528.327 KiB/s 38.885 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:37 -0700 MST  312 s  649/3615 msgs left
+msg INBOX.Roofstock/324 {3329348}       copied to Roofstock/320        2.05 msgs/s  557.966 KiB/s 42.060 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:44 -0700 MST  317 s  648/3615 msgs left
+msg INBOX.Roofstock/325 {119585}        copied to Roofstock/321        2.05 msgs/s  556.008 KiB/s 42.174 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:44 -0700 MST  316 s  647/3615 msgs left
+msg INBOX.Roofstock/326 {10335}         copied to Roofstock/322        2.05 msgs/s  554.549 KiB/s 42.184 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:42 -0700 MST  315 s  646/3615 msgs left
+msg INBOX.Roofstock/327 {19971}         copied to Roofstock/323        2.06 msgs/s  553.184 KiB/s 42.203 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:41 -0700 MST  313 s  645/3615 msgs left
+msg INBOX.Roofstock/328 {56678}         copied to Roofstock/324        2.07 msgs/s  551.730 KiB/s 42.257 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:40 -0700 MST  312 s  644/3615 msgs left
+msg INBOX.Roofstock/329 {2705503}       copied to Roofstock/325        2.00 msgs/s  562.160 KiB/s 44.837 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:54 -0700 MST  322 s  643/3615 msgs left
+msg INBOX.Roofstock/330 {213053}        copied to Roofstock/326        2.00 msgs/s  562.008 KiB/s 45.041 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:53 -0700 MST  321 s  642/3615 msgs left
+msg INBOX.Roofstock/331 {43055}         copied to Roofstock/327        2.01 msgs/s  560.997 KiB/s 45.082 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:52 -0700 MST  320 s  641/3615 msgs left
+msg INBOX.Roofstock/332 {96300}         copied to Roofstock/328        2.01 msgs/s  560.573 KiB/s 45.173 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:51 -0700 MST  318 s  640/3615 msgs left
+msg INBOX.Roofstock/333 {121991}        copied to Roofstock/329        2.02 msgs/s  559.798 KiB/s 45.290 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:50 -0700 MST  317 s  639/3615 msgs left
+msg INBOX.Roofstock/334 {123484}        copied to Roofstock/330        2.02 msgs/s  559.147 KiB/s 45.408 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:49 -0700 MST  316 s  638/3615 msgs left
+msg INBOX.Roofstock/335 {159342}        copied to Roofstock/331        2.02 msgs/s  558.832 KiB/s 45.560 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:48 -0700 MST  315 s  637/3615 msgs left
+msg INBOX.Roofstock/336 {9170}          copied to Roofstock/332        2.03 msgs/s  557.436 KiB/s 45.568 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:47 -0700 MST  313 s  636/3615 msgs left
+msg INBOX.Roofstock/337 {63365}         copied to Roofstock/333        2.04 msgs/s  556.698 KiB/s 45.629 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:45 -0700 MST  312 s  635/3615 msgs left
+msg INBOX.Roofstock/338 {14085}         copied to Roofstock/334        2.04 msgs/s  555.412 KiB/s 45.642 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:44 -0700 MST  310 s  634/3615 msgs left
+msg INBOX.Roofstock/339 {95527}         copied to Roofstock/335        2.05 msgs/s  554.981 KiB/s 45.733 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:43 -0700 MST  309 s  633/3615 msgs left
+msg INBOX.Roofstock/340 {146934}        copied to Roofstock/336        2.06 msgs/s  555.111 KiB/s 45.873 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:42 -0700 MST  307 s  632/3615 msgs left
+msg INBOX.Roofstock/341 {96802}         copied to Roofstock/337        2.06 msgs/s  554.437 KiB/s 45.966 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:41 -0700 MST  306 s  631/3615 msgs left
+msg INBOX.Roofstock/342 {58632}         copied to Roofstock/338        2.07 msgs/s  553.569 KiB/s 46.022 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:40 -0700 MST  305 s  630/3615 msgs left
+msg INBOX.Roofstock/343 {58545}         copied to Roofstock/339        2.07 msgs/s  552.752 KiB/s 46.077 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:39 -0700 MST  303 s  629/3615 msgs left
+msg INBOX.Roofstock/344 {67453}         copied to Roofstock/340        2.08 msgs/s  552.026 KiB/s 46.142 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:37 -0700 MST  302 s  628/3615 msgs left
+Host1: Expunging folder INBOX.Roofstock 
+ETA: Tuesday 31 October 2023-10-31 19:52:38 -0700 MST  302 s  628/3615 msgs left
+Folder   32/45 [INBOX.SM - Flamingo]               -> [SM - Flamingo]                    
+Host1: folder [INBOX.SM - Flamingo] has 145 messages in total (mentioned by SELECT)
+Creating folder [SM - Flamingo] on host2
+Created folder [SM - Flamingo] on host2
+Host2: folder [SM - Flamingo] has 0 messages in total (mentioned by SELECT)
+Host2: folder [SM - Flamingo] permanentflags: 
+Host1: Expunging INBOX.SM - Flamingo 
+Host2: Subscribing to folder SM - Flamingo
+Host1: folder [INBOX.SM - Flamingo] considering 145 messages
+Host2: folder [SM - Flamingo] considering 0 messages
+Host1: folder [INBOX.SM - Flamingo] selected 145 messages, duplicates 0
+Host2: folder [SM - Flamingo] selected 0 messages, duplicates 0
+msg INBOX.SM - Flamingo/1 {6049}            copied to SM - Flamingo/1          2.04 msgs/s  537.343 KiB/s 46.148 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:46 -0700 MST  308 s  627/3615 msgs left
+msg INBOX.SM - Flamingo/2 {31732}           copied to SM - Flamingo/2          2.04 msgs/s  536.338 KiB/s 46.178 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:45 -0700 MST  307 s  626/3615 msgs left
+msg INBOX.SM - Flamingo/3 {12409}           copied to SM - Flamingo/3          2.05 msgs/s  535.103 KiB/s 46.190 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:43 -0700 MST  305 s  625/3615 msgs left
+msg INBOX.SM - Flamingo/4 {142442}          copied to SM - Flamingo/4          2.05 msgs/s  535.174 KiB/s 46.325 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:42 -0700 MST  304 s  624/3615 msgs left
+msg INBOX.SM - Flamingo/5 {29567}           copied to SM - Flamingo/5          2.06 msgs/s  534.135 KiB/s 46.354 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:41 -0700 MST  303 s  623/3615 msgs left
+msg INBOX.SM - Flamingo/6 {1247058}         copied to SM - Flamingo/6          2.06 msgs/s  544.632 KiB/s 47.543 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:41 -0700 MST  302 s  622/3615 msgs left
+msg INBOX.SM - Flamingo/7 {19637}           copied to SM - Flamingo/7          2.06 msgs/s  543.482 KiB/s 47.562 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:40 -0700 MST  301 s  621/3615 msgs left
+msg INBOX.SM - Flamingo/8 {8612}            copied to SM - Flamingo/8          2.07 msgs/s  542.252 KiB/s 47.570 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:39 -0700 MST  299 s  620/3615 msgs left
+msg INBOX.SM - Flamingo/9 {40819}           copied to SM - Flamingo/9          2.08 msgs/s  541.375 KiB/s 47.609 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:38 -0700 MST  298 s  619/3615 msgs left
+msg INBOX.SM - Flamingo/10 {8873}           copied to SM - Flamingo/10         2.08 msgs/s  540.113 KiB/s 47.617 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:37 -0700 MST  297 s  618/3615 msgs left
+msg INBOX.SM - Flamingo/11 {7862}           copied to SM - Flamingo/11         2.09 msgs/s  538.871 KiB/s 47.625 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:36 -0700 MST  295 s  617/3615 msgs left
+msg INBOX.SM - Flamingo/12 {17254}          copied to SM - Flamingo/12         2.09 msgs/s  537.311 KiB/s 47.641 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:35 -0700 MST  294 s  616/3615 msgs left
+msg INBOX.SM - Flamingo/13 {321444}         copied to SM - Flamingo/13         2.10 msgs/s  539.032 KiB/s 47.948 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:34 -0700 MST  293 s  615/3615 msgs left
+msg INBOX.SM - Flamingo/14 {95426}          copied to SM - Flamingo/14         2.10 msgs/s  538.637 KiB/s 48.039 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:33 -0700 MST  292 s  614/3615 msgs left
+msg INBOX.SM - Flamingo/15 {8591}           copied to SM - Flamingo/15         2.11 msgs/s  537.377 KiB/s 48.047 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:32 -0700 MST  291 s  613/3615 msgs left
+msg INBOX.SM - Flamingo/16 {43942}          copied to SM - Flamingo/16         2.11 msgs/s  536.343 KiB/s 48.089 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:31 -0700 MST  290 s  612/3615 msgs left
+msg INBOX.SM - Flamingo/17 {22461}          copied to SM - Flamingo/17         2.12 msgs/s  535.291 KiB/s 48.110 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:30 -0700 MST  288 s  611/3615 msgs left
+msg INBOX.SM - Flamingo/18 {34780}          copied to SM - Flamingo/18         2.12 msgs/s  534.370 KiB/s 48.143 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:29 -0700 MST  287 s  610/3615 msgs left
+msg INBOX.SM - Flamingo/19 {47593}          copied to SM - Flamingo/19         2.13 msgs/s  533.593 KiB/s 48.189 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:28 -0700 MST  286 s  609/3615 msgs left
+msg INBOX.SM - Flamingo/20 {42634}          copied to SM - Flamingo/20         2.14 msgs/s  532.785 KiB/s 48.230 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:27 -0700 MST  285 s  608/3615 msgs left
+msg INBOX.SM - Flamingo/21 {6695}           copied to SM - Flamingo/21         2.14 msgs/s  531.602 KiB/s 48.236 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:26 -0700 MST  283 s  607/3615 msgs left
+msg INBOX.SM - Flamingo/22 {127745}         copied to SM - Flamingo/22         2.15 msgs/s  531.554 KiB/s 48.358 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:25 -0700 MST  282 s  606/3615 msgs left
+msg INBOX.SM - Flamingo/23 {15097}          copied to SM - Flamingo/23         2.15 msgs/s  530.468 KiB/s 48.372 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:24 -0700 MST  281 s  605/3615 msgs left
+msg INBOX.SM - Flamingo/24 {12094}          copied to SM - Flamingo/24         2.16 msgs/s  529.321 KiB/s 48.384 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:23 -0700 MST  280 s  604/3615 msgs left
+msg INBOX.SM - Flamingo/25 {12107}          copied to SM - Flamingo/25         2.16 msgs/s  528.219 KiB/s 48.395 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:22 -0700 MST  279 s  603/3615 msgs left
+msg INBOX.SM - Flamingo/26 {310017}         copied to SM - Flamingo/26         2.17 msgs/s  529.931 KiB/s 48.691 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:22 -0700 MST  278 s  602/3615 msgs left
+msg INBOX.SM - Flamingo/27 {3402}           copied to SM - Flamingo/27         2.17 msgs/s  528.725 KiB/s 48.694 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:21 -0700 MST  276 s  601/3615 msgs left
+msg INBOX.SM - Flamingo/28 {10116}          copied to SM - Flamingo/28         2.18 msgs/s  527.609 KiB/s 48.704 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:20 -0700 MST  275 s  600/3615 msgs left
+msg INBOX.SM - Flamingo/29 {4664}           copied to SM - Flamingo/29         2.18 msgs/s  526.444 KiB/s 48.708 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:19 -0700 MST  274 s  599/3615 msgs left
+msg INBOX.SM - Flamingo/30 {7113}           copied to SM - Flamingo/30         2.19 msgs/s  525.300 KiB/s 48.715 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:18 -0700 MST  273 s  598/3615 msgs left
+msg INBOX.SM - Flamingo/31 {6376}           copied to SM - Flamingo/31         2.20 msgs/s  524.133 KiB/s 48.721 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:17 -0700 MST  272 s  597/3615 msgs left
+msg INBOX.SM - Flamingo/32 {14318}          copied to SM - Flamingo/32         2.20 msgs/s  523.057 KiB/s 48.735 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:16 -0700 MST  271 s  596/3615 msgs left
+msg INBOX.SM - Flamingo/33 {11334}          copied to SM - Flamingo/33         2.21 msgs/s  521.948 KiB/s 48.746 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:15 -0700 MST  270 s  595/3615 msgs left
+msg INBOX.SM - Flamingo/34 {16732}          copied to SM - Flamingo/34         2.21 msgs/s  520.493 KiB/s 48.761 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:15 -0700 MST  269 s  594/3615 msgs left
+msg INBOX.SM - Flamingo/35 {11915}          copied to SM - Flamingo/35         2.22 msgs/s  519.432 KiB/s 48.773 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:14 -0700 MST  268 s  593/3615 msgs left
+msg INBOX.SM - Flamingo/36 {15235}          copied to SM - Flamingo/36         2.22 msgs/s  518.402 KiB/s 48.787 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:13 -0700 MST  267 s  592/3615 msgs left
+msg INBOX.SM - Flamingo/37 {36921}          copied to SM - Flamingo/37         2.23 msgs/s  517.554 KiB/s 48.823 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:12 -0700 MST  266 s  591/3615 msgs left
+msg INBOX.SM - Flamingo/38 {3187900}        copied to SM - Flamingo/38         2.19 msgs/s  537.675 KiB/s 51.863 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:18 -0700 MST  270 s  590/3615 msgs left
+msg INBOX.SM - Flamingo/39 {3191903}        copied to SM - Flamingo/39         2.13 msgs/s  550.604 KiB/s 54.907 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:29 -0700 MST  277 s  589/3615 msgs left
+msg INBOX.SM - Flamingo/40 {2221}           copied to SM - Flamingo/40         2.13 msgs/s  549.465 KiB/s 54.909 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:28 -0700 MST  276 s  588/3615 msgs left
+msg INBOX.SM - Flamingo/41 {28008}          copied to SM - Flamingo/41         2.14 msgs/s  548.579 KiB/s 54.936 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:27 -0700 MST  275 s  587/3615 msgs left
+msg INBOX.SM - Flamingo/42 {3193221}        copied to SM - Flamingo/42         2.10 msgs/s  565.581 KiB/s 57.981 MiB copied ETA: Tuesday 31 October 2023-10-31 19:52:34 -0700 MST  280 s  586/3615 msgs left
+msg INBOX.SM - Flamingo/43 {30421097}       copied to SM - Flamingo/43         1.89 msgs/s  762.521 KiB/s 86.993 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:16 -0700 MST  309 s  585/3615 msgs left
+msg INBOX.SM - Flamingo/44 {25858}          copied to SM - Flamingo/44         1.90 msgs/s  761.297 KiB/s 87.017 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:15 -0700 MST  308 s  584/3615 msgs left
+msg INBOX.SM - Flamingo/45 {9276}           copied to SM - Flamingo/45         1.90 msgs/s  759.943 KiB/s 87.026 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:14 -0700 MST  307 s  583/3615 msgs left
+msg INBOX.SM - Flamingo/46 {5623479}        copied to SM - Flamingo/46         1.88 msgs/s  792.826 KiB/s 92.389 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:19 -0700 MST  310 s  582/3615 msgs left
+msg INBOX.SM - Flamingo/47 {35072}          copied to SM - Flamingo/47         1.88 msgs/s  791.638 KiB/s 92.423 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:18 -0700 MST  309 s  581/3615 msgs left
+msg INBOX.SM - Flamingo/48 {12090}          copied to SM - Flamingo/48         1.89 msgs/s  790.274 KiB/s 92.434 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:17 -0700 MST  307 s  580/3615 msgs left
+msg INBOX.SM - Flamingo/49 {8662}           copied to SM - Flamingo/49         1.89 msgs/s  788.909 KiB/s 92.442 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:16 -0700 MST  306 s  579/3615 msgs left
+msg INBOX.SM - Flamingo/50 {11955}          copied to SM - Flamingo/50         1.90 msgs/s  787.573 KiB/s 92.454 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:15 -0700 MST  305 s  578/3615 msgs left
+msg INBOX.SM - Flamingo/51 {46448088}       copied to SM - Flamingo/51         1.66 msgs/s  0.991 MiB/s 136.750 MiB copied ETA: Tuesday 31 October 2023-10-31 19:54:16 -0700 MST  348 s  577/3615 msgs left
+msg INBOX.SM - Flamingo/52 {17124188}       copied to SM - Flamingo/52         1.59 msgs/s  1.057 MiB/s 153.081 MiB copied ETA: Tuesday 31 October 2023-10-31 19:54:37 -0700 MST  363 s  576/3615 msgs left
+msg INBOX.SM - Flamingo/53 {5095}           copied to SM - Flamingo/53         1.59 msgs/s  1.055 MiB/s 153.086 MiB copied ETA: Tuesday 31 October 2023-10-31 19:54:36 -0700 MST  361 s  575/3615 msgs left
+msg INBOX.SM - Flamingo/54 {4870}           copied to SM - Flamingo/54         1.60 msgs/s  1.054 MiB/s 153.091 MiB copied ETA: Tuesday 31 October 2023-10-31 19:54:35 -0700 MST  359 s  574/3615 msgs left
+msg INBOX.SM - Flamingo/55 {4782}           copied to SM - Flamingo/55         1.60 msgs/s  1.052 MiB/s 153.095 MiB copied ETA: Tuesday 31 October 2023-10-31 19:54:33 -0700 MST  358 s  573/3615 msgs left
+msg INBOX.SM - Flamingo/57 {4375}           copied to SM - Flamingo/56         1.61 msgs/s  1.051 MiB/s 153.099 MiB copied ETA: Tuesday 31 October 2023-10-31 19:54:32 -0700 MST  356 s  572/3615 msgs left
+msg INBOX.SM - Flamingo/58 {12173}          copied to SM - Flamingo/57         1.61 msgs/s  1.049 MiB/s 153.111 MiB copied ETA: Tuesday 31 October 2023-10-31 19:54:30 -0700 MST  355 s  571/3615 msgs left
+msg INBOX.SM - Flamingo/59 {15316}          copied to SM - Flamingo/58         1.61 msgs/s  1.048 MiB/s 153.126 MiB copied ETA: Tuesday 31 October 2023-10-31 19:54:29 -0700 MST  353 s  570/3615 msgs left
+msg INBOX.SM - Flamingo/60 {7680}           copied to SM - Flamingo/59         1.62 msgs/s  1.046 MiB/s 153.133 MiB copied ETA: Tuesday 31 October 2023-10-31 19:54:28 -0700 MST  351 s  569/3615 msgs left
+msg INBOX.SM - Flamingo/61 {126925}         copied to SM - Flamingo/60         1.62 msgs/s  1.045 MiB/s 153.254 MiB copied ETA: Tuesday 31 October 2023-10-31 19:54:26 -0700 MST  350 s  568/3615 msgs left
+msg INBOX.SM - Flamingo/62 {12272}          copied to SM - Flamingo/61         1.63 msgs/s  1.044 MiB/s 153.266 MiB copied ETA: Tuesday 31 October 2023-10-31 19:54:25 -0700 MST  348 s  567/3615 msgs left
+msg INBOX.SM - Flamingo/63 {30997}          copied to SM - Flamingo/62         1.63 msgs/s  1.042 MiB/s 153.295 MiB copied ETA: Tuesday 31 October 2023-10-31 19:54:24 -0700 MST  347 s  566/3615 msgs left
+msg INBOX.SM - Flamingo/64 {3489}           copied to SM - Flamingo/63         1.64 msgs/s  1.041 MiB/s 153.299 MiB copied ETA: Tuesday 31 October 2023-10-31 19:54:22 -0700 MST  345 s  565/3615 msgs left
+msg INBOX.SM - Flamingo/65 {4108}           copied to SM - Flamingo/64         1.64 msgs/s  1.039 MiB/s 153.302 MiB copied ETA: Tuesday 31 October 2023-10-31 19:54:21 -0700 MST  344 s  564/3615 msgs left
+msg INBOX.SM - Flamingo/66 {35287}          copied to SM - Flamingo/65         1.64 msgs/s  1.038 MiB/s 153.336 MiB copied ETA: Tuesday 31 October 2023-10-31 19:54:20 -0700 MST  342 s  563/3615 msgs left
+msg INBOX.SM - Flamingo/67 {90386}          copied to SM - Flamingo/66         1.65 msgs/s  1.037 MiB/s 153.422 MiB copied ETA: Tuesday 31 October 2023-10-31 19:54:19 -0700 MST  341 s  562/3615 msgs left
+msg INBOX.SM - Flamingo/68 {90949}          copied to SM - Flamingo/67         1.65 msgs/s  1.036 MiB/s 153.509 MiB copied ETA: Tuesday 31 October 2023-10-31 19:54:17 -0700 MST  339 s  561/3615 msgs left
+msg INBOX.SM - Flamingo/69 {7007}           copied to SM - Flamingo/68         1.66 msgs/s  1.034 MiB/s 153.516 MiB copied ETA: Tuesday 31 October 2023-10-31 19:54:16 -0700 MST  338 s  560/3615 msgs left
+msg INBOX.SM - Flamingo/70 {44743}          copied to SM - Flamingo/69         1.66 msgs/s  1.033 MiB/s 153.558 MiB copied ETA: Tuesday 31 October 2023-10-31 19:54:15 -0700 MST  336 s  559/3615 msgs left
+msg INBOX.SM - Flamingo/71 {927117}         copied to SM - Flamingo/70         1.66 msgs/s  1.036 MiB/s 154.443 MiB copied ETA: Tuesday 31 October 2023-10-31 19:54:15 -0700 MST  336 s  558/3615 msgs left
+msg INBOX.SM - Flamingo/72 {7536}           copied to SM - Flamingo/71         1.67 msgs/s  1.034 MiB/s 154.450 MiB copied ETA: Tuesday 31 October 2023-10-31 19:54:13 -0700 MST  334 s  557/3615 msgs left
+msg INBOX.SM - Flamingo/73 {9483}           copied to SM - Flamingo/72         1.67 msgs/s  1.033 MiB/s 154.459 MiB copied ETA: Tuesday 31 October 2023-10-31 19:54:12 -0700 MST  333 s  556/3615 msgs left
+msg INBOX.SM - Flamingo/74 {14853}          copied to SM - Flamingo/73         1.68 msgs/s  1.031 MiB/s 154.473 MiB copied ETA: Tuesday 31 October 2023-10-31 19:54:11 -0700 MST  331 s  555/3615 msgs left
+msg INBOX.SM - Flamingo/75 {18043}          copied to SM - Flamingo/74         1.68 msgs/s  1.030 MiB/s 154.490 MiB copied ETA: Tuesday 31 October 2023-10-31 19:54:10 -0700 MST  330 s  554/3615 msgs left
+msg INBOX.SM - Flamingo/76 {19615}          copied to SM - Flamingo/75         1.68 msgs/s  1.029 MiB/s 154.509 MiB copied ETA: Tuesday 31 October 2023-10-31 19:54:08 -0700 MST  328 s  553/3615 msgs left
+msg INBOX.SM - Flamingo/77 {21924}          copied to SM - Flamingo/76         1.69 msgs/s  1.027 MiB/s 154.530 MiB copied ETA: Tuesday 31 October 2023-10-31 19:54:07 -0700 MST  327 s  552/3615 msgs left
+msg INBOX.SM - Flamingo/78 {23473}          copied to SM - Flamingo/77         1.69 msgs/s  1.026 MiB/s 154.552 MiB copied ETA: Tuesday 31 October 2023-10-31 19:54:06 -0700 MST  326 s  551/3615 msgs left
+msg INBOX.SM - Flamingo/79 {25828}          copied to SM - Flamingo/78         1.70 msgs/s  1.025 MiB/s 154.577 MiB copied ETA: Tuesday 31 October 2023-10-31 19:54:05 -0700 MST  324 s  550/3615 msgs left
+msg INBOX.SM - Flamingo/80 {28575}          copied to SM - Flamingo/79         1.70 msgs/s  1.023 MiB/s 154.604 MiB copied ETA: Tuesday 31 October 2023-10-31 19:54:04 -0700 MST  323 s  549/3615 msgs left
+msg INBOX.SM - Flamingo/81 {31548}          copied to SM - Flamingo/80         1.71 msgs/s  1.022 MiB/s 154.634 MiB copied ETA: Tuesday 31 October 2023-10-31 19:54:03 -0700 MST  321 s  548/3615 msgs left
+msg INBOX.SM - Flamingo/82 {31547}          copied to SM - Flamingo/81         1.71 msgs/s  1.021 MiB/s 154.664 MiB copied ETA: Tuesday 31 October 2023-10-31 19:54:01 -0700 MST  320 s  547/3615 msgs left
+msg INBOX.SM - Flamingo/83 {6099}           copied to SM - Flamingo/82         1.71 msgs/s  1.019 MiB/s 154.670 MiB copied ETA: Tuesday 31 October 2023-10-31 19:54:00 -0700 MST  319 s  546/3615 msgs left
+msg INBOX.SM - Flamingo/84 {34648}          copied to SM - Flamingo/83         1.72 msgs/s  1.018 MiB/s 154.703 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:59 -0700 MST  317 s  545/3615 msgs left
+msg INBOX.SM - Flamingo/85 {557}            copied to SM - Flamingo/84         1.72 msgs/s  1.016 MiB/s 154.704 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:58 -0700 MST  316 s  544/3615 msgs left
+msg INBOX.SM - Flamingo/86 {5864}           copied to SM - Flamingo/85         1.73 msgs/s  1.015 MiB/s 154.709 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:57 -0700 MST  315 s  543/3615 msgs left
+msg INBOX.SM - Flamingo/87 {5994}           copied to SM - Flamingo/86         1.73 msgs/s  1.014 MiB/s 154.715 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:56 -0700 MST  313 s  542/3615 msgs left
+msg INBOX.SM - Flamingo/88 {7805}           copied to SM - Flamingo/87         1.73 msgs/s  1.011 MiB/s 154.722 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:55 -0700 MST  312 s  541/3615 msgs left
+msg INBOX.SM - Flamingo/89 {12203}          copied to SM - Flamingo/88         1.74 msgs/s  1.010 MiB/s 154.734 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:54 -0700 MST  311 s  540/3615 msgs left
+msg INBOX.SM - Flamingo/90 {16313}          copied to SM - Flamingo/89         1.74 msgs/s  1.008 MiB/s 154.750 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:53 -0700 MST  310 s  539/3615 msgs left
+msg INBOX.SM - Flamingo/91 {19161}          copied to SM - Flamingo/90         1.74 msgs/s  1.007 MiB/s 154.768 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:52 -0700 MST  309 s  538/3615 msgs left
+msg INBOX.SM - Flamingo/92 {20396}          copied to SM - Flamingo/91         1.75 msgs/s  1.006 MiB/s 154.787 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:51 -0700 MST  307 s  537/3615 msgs left
+msg INBOX.SM - Flamingo/93 {22536}          copied to SM - Flamingo/92         1.75 msgs/s  1.004 MiB/s 154.809 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:50 -0700 MST  306 s  536/3615 msgs left
+msg INBOX.SM - Flamingo/94 {25618}          copied to SM - Flamingo/93         1.76 msgs/s  1.003 MiB/s 154.833 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:49 -0700 MST  305 s  535/3615 msgs left
+msg INBOX.SM - Flamingo/95 {26727}          copied to SM - Flamingo/94         1.76 msgs/s  1.002 MiB/s 154.859 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:48 -0700 MST  303 s  534/3615 msgs left
+msg INBOX.SM - Flamingo/96 {29666}          copied to SM - Flamingo/95         1.76 msgs/s  1.001 MiB/s 154.887 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:47 -0700 MST  302 s  533/3615 msgs left
+msg INBOX.SM - Flamingo/97 {5617}           copied to SM - Flamingo/96         1.77 msgs/s  0.999 MiB/s 154.892 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:46 -0700 MST  301 s  532/3615 msgs left
+msg INBOX.SM - Flamingo/98 {4127}           copied to SM - Flamingo/97         1.77 msgs/s  0.998 MiB/s 154.896 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:45 -0700 MST  300 s  531/3615 msgs left
+msg INBOX.SM - Flamingo/100 {6693}          copied to SM - Flamingo/98         1.78 msgs/s  0.996 MiB/s 154.903 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:44 -0700 MST  299 s  530/3615 msgs left
+msg INBOX.SM - Flamingo/101 {29499}         copied to SM - Flamingo/99         1.78 msgs/s  0.995 MiB/s 154.931 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:43 -0700 MST  297 s  529/3615 msgs left
+msg INBOX.SM - Flamingo/102 {4471}          copied to SM - Flamingo/100        1.78 msgs/s  0.994 MiB/s 154.935 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:42 -0700 MST  296 s  528/3615 msgs left
+msg INBOX.SM - Flamingo/103 {4318}          copied to SM - Flamingo/101        1.79 msgs/s  0.992 MiB/s 154.939 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:41 -0700 MST  295 s  527/3615 msgs left
+msg INBOX.SM - Flamingo/104 {6195}          copied to SM - Flamingo/102        1.79 msgs/s  0.991 MiB/s 154.945 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:40 -0700 MST  294 s  526/3615 msgs left
+msg INBOX.SM - Flamingo/105 {2456}          copied to SM - Flamingo/103        1.79 msgs/s  0.990 MiB/s 154.947 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:39 -0700 MST  293 s  525/3615 msgs left
+msg INBOX.SM - Flamingo/106 {8496}          copied to SM - Flamingo/104        1.80 msgs/s  0.988 MiB/s 154.956 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:38 -0700 MST  291 s  524/3615 msgs left
+msg INBOX.SM - Flamingo/108 {1305616}       copied to SM - Flamingo/105        1.80 msgs/s  0.991 MiB/s 156.201 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:39 -0700 MST  291 s  523/3615 msgs left
+msg INBOX.SM - Flamingo/109 {71618}         copied to SM - Flamingo/106        1.80 msgs/s  0.989 MiB/s 156.269 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:38 -0700 MST  291 s  522/3615 msgs left
+msg INBOX.SM - Flamingo/110 {73208}         copied to SM - Flamingo/107        1.80 msgs/s  0.987 MiB/s 156.339 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:38 -0700 MST  290 s  521/3615 msgs left
+msg INBOX.SM - Flamingo/111 {7198}          copied to SM - Flamingo/108        1.80 msgs/s  0.986 MiB/s 156.346 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:37 -0700 MST  288 s  520/3615 msgs left
+msg INBOX.SM - Flamingo/113 {25050}         copied to SM - Flamingo/109        1.81 msgs/s  0.985 MiB/s 156.370 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:36 -0700 MST  287 s  519/3615 msgs left
+msg INBOX.SM - Flamingo/114 {4208}          copied to SM - Flamingo/110        1.81 msgs/s  0.983 MiB/s 156.374 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:35 -0700 MST  286 s  518/3615 msgs left
+msg INBOX.SM - Flamingo/115 {6644}          copied to SM - Flamingo/111        1.81 msgs/s  0.982 MiB/s 156.380 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:34 -0700 MST  285 s  517/3615 msgs left
+msg INBOX.SM - Flamingo/116 {8304}          copied to SM - Flamingo/112        1.82 msgs/s  0.981 MiB/s 156.388 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:33 -0700 MST  284 s  516/3615 msgs left
+msg INBOX.SM - Flamingo/117 {5483}          copied to SM - Flamingo/113        1.82 msgs/s  0.979 MiB/s 156.393 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:32 -0700 MST  283 s  515/3615 msgs left
+msg INBOX.SM - Flamingo/118 {4372}          copied to SM - Flamingo/114        1.83 msgs/s  0.978 MiB/s 156.397 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:31 -0700 MST  281 s  514/3615 msgs left
+msg INBOX.SM - Flamingo/120 {6098}          copied to SM - Flamingo/115        1.83 msgs/s  0.977 MiB/s 156.403 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:30 -0700 MST  280 s  513/3615 msgs left
+msg INBOX.SM - Flamingo/121 {6179}          copied to SM - Flamingo/116        1.83 msgs/s  998.734 KiB/s 156.409 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:29 -0700 MST  279 s  512/3615 msgs left
+msg INBOX.SM - Flamingo/122 {8523}          copied to SM - Flamingo/117        1.84 msgs/s  997.432 KiB/s 156.417 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:29 -0700 MST  278 s  511/3615 msgs left
+msg INBOX.SM - Flamingo/123 {10307}         copied to SM - Flamingo/118        1.84 msgs/s  996.175 KiB/s 156.427 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:28 -0700 MST  277 s  510/3615 msgs left
+msg INBOX.SM - Flamingo/124 {12533}         copied to SM - Flamingo/119        1.84 msgs/s  994.882 KiB/s 156.439 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:27 -0700 MST  276 s  509/3615 msgs left
+msg INBOX.SM - Flamingo/125 {14558}         copied to SM - Flamingo/120        1.85 msgs/s  993.632 KiB/s 156.453 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:26 -0700 MST  275 s  508/3615 msgs left
+msg INBOX.SM - Flamingo/126 {16798}         copied to SM - Flamingo/121        1.85 msgs/s  991.843 KiB/s 156.469 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:25 -0700 MST  274 s  507/3615 msgs left
+msg INBOX.SM - Flamingo/128 {5971}          copied to SM - Flamingo/122        1.85 msgs/s  990.225 KiB/s 156.474 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:25 -0700 MST  273 s  506/3615 msgs left
+msg INBOX.SM - Flamingo/129 {12873}         copied to SM - Flamingo/123        1.86 msgs/s  988.975 KiB/s 156.487 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:24 -0700 MST  272 s  505/3615 msgs left
+msg INBOX.SM - Flamingo/131 {14790}         copied to SM - Flamingo/124        1.86 msgs/s  987.683 KiB/s 156.501 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:23 -0700 MST  271 s  504/3615 msgs left
+msg INBOX.SM - Flamingo/133 {4426}          copied to SM - Flamingo/125        1.86 msgs/s  986.359 KiB/s 156.505 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:22 -0700 MST  270 s  503/3615 msgs left
+msg INBOX.SM - Flamingo/134 {6243}          copied to SM - Flamingo/126        1.87 msgs/s  985.058 KiB/s 156.511 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:21 -0700 MST  269 s  502/3615 msgs left
+msg INBOX.SM - Flamingo/135 {1691406}       copied to SM - Flamingo/127        1.86 msgs/s  989.800 KiB/s 158.124 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:22 -0700 MST  269 s  501/3615 msgs left
+msg INBOX.SM - Flamingo/136 {10697}         copied to SM - Flamingo/128        1.87 msgs/s  988.353 KiB/s 158.134 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:21 -0700 MST  268 s  500/3615 msgs left
+msg INBOX.SM - Flamingo/137 {14143}         copied to SM - Flamingo/129        1.87 msgs/s  987.145 KiB/s 158.148 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:21 -0700 MST  267 s  499/3615 msgs left
+msg INBOX.SM - Flamingo/138 {16018}         copied to SM - Flamingo/130        1.87 msgs/s  985.910 KiB/s 158.163 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:20 -0700 MST  266 s  498/3615 msgs left
+msg INBOX.SM - Flamingo/139 {14952}         copied to SM - Flamingo/131        1.88 msgs/s  984.668 KiB/s 158.177 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:19 -0700 MST  265 s  497/3615 msgs left
+msg INBOX.SM - Flamingo/140 {41699}         copied to SM - Flamingo/132        1.88 msgs/s  983.547 KiB/s 158.217 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:18 -0700 MST  264 s  496/3615 msgs left
+msg INBOX.SM - Flamingo/145 {127857}        copied to SM - Flamingo/133        1.89 msgs/s  982.838 KiB/s 158.339 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:17 -0700 MST  263 s  495/3615 msgs left
+msg INBOX.SM - Flamingo/146 {75963}         copied to SM - Flamingo/134        1.89 msgs/s  981.875 KiB/s 158.411 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:17 -0700 MST  262 s  494/3615 msgs left
+msg INBOX.SM - Flamingo/147 {6094}          copied to SM - Flamingo/135        1.89 msgs/s  980.585 KiB/s 158.417 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:16 -0700 MST  261 s  493/3615 msgs left
+msg INBOX.SM - Flamingo/148 {7234}          copied to SM - Flamingo/136        1.90 msgs/s  979.285 KiB/s 158.424 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:15 -0700 MST  260 s  492/3615 msgs left
+msg INBOX.SM - Flamingo/149 {14981}         copied to SM - Flamingo/137        1.90 msgs/s  978.094 KiB/s 158.438 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:14 -0700 MST  259 s  491/3615 msgs left
+msg INBOX.SM - Flamingo/150 {13844}         copied to SM - Flamingo/138        1.90 msgs/s  976.893 KiB/s 158.452 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:13 -0700 MST  258 s  490/3615 msgs left
+msg INBOX.SM - Flamingo/151 {13840}         copied to SM - Flamingo/139        1.91 msgs/s  975.654 KiB/s 158.465 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:13 -0700 MST  257 s  489/3615 msgs left
+msg INBOX.SM - Flamingo/152 {13836}         copied to SM - Flamingo/140        1.91 msgs/s  974.418 KiB/s 158.478 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:12 -0700 MST  256 s  488/3615 msgs left
+msg INBOX.SM - Flamingo/153 {5122}          copied to SM - Flamingo/141        1.91 msgs/s  973.158 KiB/s 158.483 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:11 -0700 MST  255 s  487/3615 msgs left
+msg INBOX.SM - Flamingo/154 {8058}          copied to SM - Flamingo/142        1.92 msgs/s  971.927 KiB/s 158.491 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:10 -0700 MST  254 s  486/3615 msgs left
+msg INBOX.SM - Flamingo/155 {11036}         copied to SM - Flamingo/143        1.92 msgs/s  970.728 KiB/s 158.501 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:10 -0700 MST  253 s  485/3615 msgs left
+msg INBOX.SM - Flamingo/156 {11886}         copied to SM - Flamingo/144        1.92 msgs/s  969.514 KiB/s 158.512 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:09 -0700 MST  252 s  484/3615 msgs left
+msg INBOX.SM - Flamingo/157 {13844}         copied to SM - Flamingo/145        1.93 msgs/s  968.220 KiB/s 158.526 MiB copied ETA: Tuesday 31 October 2023-10-31 19:53:08 -0700 MST  251 s  483/3615 msgs left
+Host1: Expunging folder INBOX.SM - Flamingo 
+ETA: Tuesday 31 October 2023-10-31 19:53:08 -0700 MST  251 s  483/3615 msgs left
+Folder   33/45 [INBOX.SM - Hawk]                   -> [SM - Hawk]                        
+Host1: folder [INBOX.SM - Hawk] has 89 messages in total (mentioned by SELECT)
+Creating folder [SM - Hawk] on host2
+Created folder [SM - Hawk] on host2
+Host2: folder [SM - Hawk] has 0 messages in total (mentioned by SELECT)
+Host2: folder [SM - Hawk] permanentflags: 
+Host1: Expunging INBOX.SM - Hawk 
+Host2: Subscribing to folder SM - Hawk
+Host1: folder [INBOX.SM - Hawk] considering 89 messages
+Host2: folder [SM - Hawk] considering 0 messages
+Host1: folder [INBOX.SM - Hawk] selected 89 messages, duplicates 6
+Host2: folder [SM - Hawk] selected 0 messages, duplicates 0
