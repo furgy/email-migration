@@ -1,0 +1,48 @@
+name: Version Check
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  version-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check VERSION file exists
+        run: |
+          if [ ! -f VERSION ]; then
+            echo "ERROR: VERSION file not found"
+            exit 1
+          fi
+
+      - name: Validate VERSION format
+        run: |
+          VERSION=$(cat VERSION)
+          if ! echo "$VERSION" | grep -qE '^[0-9]+\.[0-9]+\.[0-9]+$'; then
+            echo "ERROR: VERSION file must contain valid semver (X.Y.Z)"
+            exit 1
+          fi
+
+      - name: Check version was bumped
+        run: |
+          CURRENT_VERSION=$(cat VERSION)
+          PREV_VERSION=$(git log --format=%s -n 2 | head -n 1 | grep -oE '[0-9]+\.[0-9]+\.[0-9]+' || echo "")
+          
+          if [ -z "$PREV_VERSION" ]; then
+            echo "First version bump commit - allowing"
+            exit 0
+          fi
+          
+          echo "Current version: $CURRENT_VERSION"
+          echo "Previous version: $PREV_VERSION"
+          
+          if [ "$CURRENT_VERSION" = "$PREV_VERSION" ]; then
+            echo "ERROR: Version must be bumped on push to main"
+            exit 1
+          fi
